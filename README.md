@@ -43,5 +43,5 @@ Raport z przebiegu symulacji zapisać w pliku (plikach) tekstowym.
    9. Polecenie 4: złożenie polecenia 1 i 2
 
 
-**Repozytorium: `https://github.com/mateusz-gluch-pk/so-projekt-fabryka-czekolady`**
+**Repozytorium: [`https://github.com/mateusz-gluch-pk/so-projekt-fabryka-czekolady`](https://github.com/mateusz-gluch-pk/so-projekt-fabryka-czekolady)**
 
