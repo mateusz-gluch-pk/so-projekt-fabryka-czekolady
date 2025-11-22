@@ -87,4 +87,3 @@ Metody:
 
  - Składnik == Czekolada -> char*
 
-
