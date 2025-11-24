@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 4.0)
 project(projekt)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 23)
 
 include(FetchContent)
 
@@ -13,10 +13,9 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(nlohmann_json)
 
-target_link_libraries(${PROJECT_NAME} PRIVATE nlohmann_json::nlohmann_json)
-
 include_directories(include)
 include_directories(include/stations)
+include_directories(include/objects)
 
 add_executable(projekt
         include/stations/warehouse.cpp
@@ -25,3 +24,5 @@ add_executable(projekt
         main.cpp
         include/objects/item.cpp
         include/objects/item.h)
+
+target_link_libraries(projekt PRIVATE nlohmann_json::nlohmann_json)

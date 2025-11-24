@@ -6,22 +6,25 @@
 #define PROJEKT_WAREHOUSE_H
 
 #include <array>
+#include <filesystem>
 #include <vector>
 #include <sys/types.h>
 #include "objects/item.h"
+
+namespace fs = std::filesystem;
 
 class Warehouse {
 	public:
 		Warehouse(const std::string &name, int capacity);
 		~Warehouse();
-		int insert(Item *item);
-		int take(std::string itemName);
+		void add(Item &item);
+		Item &get(std::string &itemName);
 		// WarehouseStats &stats();
 
 	private:
 		int _capacity;
 		std::string _name;
-		std::string _filename;
+		fs::path _filename;
 
 		// IPCS
 		key_t _key;
@@ -31,10 +34,13 @@ class Warehouse {
 		int _shmid;
 		int _semid;
 
-		int _sync();
-		void _write_shm(std::vector<Item> content);
-		std::vector<Item> _read_shm();
-		std::vector<Item> _read_file();
+		// shared memory wrappers
+		void _write_shm(std::vector<Item> &content);
+		std::vector<Item> &_read_shm();
+
+		// file wrappers
+		void _write_file(std::vector<Item> &content);
+		std::vector<Item> &_read_file();
 };
 
 #endif //PROJEKT_WAREHOUSE_H
