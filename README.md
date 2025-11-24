@@ -42,6 +42,11 @@ Raport z przebiegu symulacji zapisać w pliku (plikach) tekstowym.
    8. Polecenie 3: Próba dostawy kończy się błędem
    9. Polecenie 4: złożenie polecenia 1 i 2
 
+### Add-ons
+ - zrealizować UI terminalowe (FTXUI)
+ - zrealizować serializację do JSONa (nlohmann/json)
+ - zrealizować logowanie (spdlog)
+
 
 **Repozytorium: [`https://github.com/mateusz-gluch-pk/so-projekt-fabryka-czekolady`](https://github.com/mateusz-gluch-pk/so-projekt-fabryka-czekolady)**
 

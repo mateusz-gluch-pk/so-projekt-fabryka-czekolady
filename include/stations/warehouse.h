@@ -16,7 +16,7 @@ class Warehouse {
 		~Warehouse();
 		int insert(Item *item);
 		int take(std::string itemName);
-		WarehouseStats &stats();
+		// WarehouseStats &stats();
 
 	private:
 		int _capacity;
@@ -32,7 +32,9 @@ class Warehouse {
 		int _semid;
 
 		int _sync();
-
+		void _write_shm(std::vector<Item> content);
+		std::vector<Item> _read_shm();
+		std::vector<Item> _read_file();
 };
 
 #endif //PROJEKT_WAREHOUSE_H
