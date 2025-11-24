@@ -7,12 +7,12 @@
 #include <nlohmann/json.hpp>
 using json = nlohmann::json;
 
-int Item::stack(const Item *item) {
-    if (_name == item->_name) {
+int Item::stack(const Item &item) {
+    if (_name == item._name) {
         return -1;
     }
 
-    if (_size != item->_size) {
+    if (_size != item._size) {
         return -1;
     }
 

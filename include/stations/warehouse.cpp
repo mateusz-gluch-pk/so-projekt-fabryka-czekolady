@@ -63,8 +63,53 @@ Warehouse::~Warehouse () {
 	semctl(_semid, 0, IPC_RMID);
 }
 
+void Warehouse::add(const Item &item) {
+	// read content from shm
+	std::vector<Item> content = _read_shm();
+
+	// check capacity - if no space, just release semaphore
+
+	// add item to list (stack if already present)
+	bool stacked = false;
+	for (auto &warehouse_item: content) {
+		if (warehouse_item.name() == item.name()) {
+			warehouse_item.stack(item);
+			stacked = true;
+			break;
+		}
+	}
+	if (!stacked) content.push_back(item);
+
+	// write content to shm
+	_write_shm(content);
+}
+
+Item *Warehouse::get(const std::string &itemName) {
+	// read content from shm
+	std::vector<Item> content = _read_shm();
+
+	Item *ret = nullptr;
+	auto it = content.begin();
+	while (it != content.end()) {
+		if (it->name() == itemName) {
+			ret = it->unstack();
+		}
+
+		if (it->count() == 0) {
+			content.erase(it);
+		} else ++it;
+	}
+
+	// write content to shm
+	_write_shm(content);
+	return ret;
+}
+
 void Warehouse::_write_file(std::vector<Item> &content) {
+	// create dir if not exists
 	fs::create_directories(_filename.parent_path());
+
+	// open tmp file for write
 	fs::path tmp_filename = _filename;
 	_filename += ".tmp";
 
@@ -73,20 +118,25 @@ void Warehouse::_write_file(std::vector<Item> &content) {
 		throw std::runtime_error("Cannot open file for writing");
 	}
 
+	// serialize content
 	json content_json = content;
 	out << content_json.dump(2) << std::endl;
 	out.close();
 
+	// atomic rewrite tmp to target
 	fs::rename(tmp_filename, _filename);
 }
 
 std::vector<Item> &Warehouse::_read_file() {
+
+	// open file for reading
 	std::ifstream in{_filename};
 	if (!in) {
 		throw std::runtime_error("Cannot open file for reading");
 
 	}
 
+	// deserialize content
 	json content_json;
 	in >> content_json;
 	std::vector<Item> items = content_json.get<std::vector<Item>>();

@@ -17,8 +17,10 @@ class Warehouse {
 	public:
 		Warehouse(const std::string &name, int capacity);
 		~Warehouse();
-		void add(Item &item);
-		Item &get(std::string &itemName);
+		void add(const Item &item);
+
+		// pointer is necessary; retrieved item can (and will in many cases) be null!
+		Item *get(const std::string &itemName);
 		// WarehouseStats &stats();
 
 	private:

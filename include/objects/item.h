@@ -18,7 +18,7 @@ class Item {
         [[nodiscard]] int size() const {return _size;};
         [[nodiscard]] int count() const {return _count;};
 
-        int stack(const Item *item);
+        int stack(const Item &item);
         Item *unstack();
 
         friend void from_json(const nlohmann::json &j, Item &item);
