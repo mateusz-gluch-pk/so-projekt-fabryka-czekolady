@@ -22,90 +22,91 @@
 using json = nlohmann::json;
 namespace fs = std::filesystem;
 
-Warehouse::Warehouse(const std::string &name, const int capacity) {
+Warehouse::Warehouse(const std::string &name, const int capacity, const int variety) {
 	_name = name;
 	_filename = "warehouses/" + name + ".json";
 	_capacity = capacity;
+	_variety = variety;
 
 	const fs::path _keyfile = "warehouses/" + name + ".key";
+
+	// allocate memory for M kinds of Items
+	size_t total_size = sizeof(SharedVector<Item>) + sizeof(Item) * _variety;
 
 	// create key - common for sem and shared mem
 	_key = ftok(_keyfile.c_str(), 1);
 
 	// create ipcs
-	_shmid = shmget(_key, WAREHOUSE_SHM_SIZE, IPC_CREAT | WAREHOUSE_IPC_MODE);
-	_semid = semget(_key, IPC_CREAT | WAREHOUSE_IPC_MODE, 1);
+	_sem = Semaphore(_key);
+	_shm = SharedMemory<SharedVector<Item>>(_key, total_size);
+
+	_content = _shm.get();
+	_content->init(_variety);
 
 	// initialize warehouse content
 	if (fs::exists(_filename)) {
 		_content = _read_file();
-	} else {
-		_content = std::vector<Item>();
 	}
-
-	_shmaddr = shmat(_shmid, nullptr, SHM_RDONLY);
-};
+} ;
 
 // if everything works as intended, warehouse is destroyed only once...
 Warehouse::~Warehouse () {
 	// send signal to workers and deliverers - warehouse stops existing
 
-	// read final shm state
-	_content = _read_shm();
 	// save warehouse state to file
-	_write_file(_content);
+	if (_content != nullptr_) {
+		_write_file(*_content);
+	} else {
+		_write_file(SharedVector<Item>{});
+	}
 
-	// unattach shared memory (internal)
-	shmdt(_shmaddr);
-	// remove shared memory
-	shmctl(_shmid, IPC_RMID, nullptr);
-	// remove semaphore
-	semctl(_semid, 0, IPC_RMID);
+	// semaphore is removed automatically upon destruction
+	// as well as shared memory
 }
 
 void Warehouse::add(const Item &item) {
-	// read content from shm
-	std::vector<Item> content = _read_shm();
+	// lock warehouse
+	_sem.lock();
 
 	// check capacity - if no space, just release semaphore
 
 	// add item to list (stack if already present)
 	bool stacked = false;
-	for (auto &warehouse_item: content) {
+	for (auto &warehouse_item: *_content) {
 		if (warehouse_item.name() == item.name()) {
 			warehouse_item.stack(item);
 			stacked = true;
 			break;
 		}
 	}
-	if (!stacked) content.push_back(item);
+	if (!stacked) _content->push_back(item);
 
-	// write content to shm
-	_write_shm(content);
+	// unlock warehouse
+	_sem.unlock();
 }
 
 Item *Warehouse::get(const std::string &itemName) {
-	// read content from shm
-	std::vector<Item> content = _read_shm();
+	// lock warehouse
+	_sem.lock();
 
 	Item *ret = nullptr;
-	auto it = content.begin();
-	while (it != content.end()) {
+	auto it = _content->begin();
+	while (it != _content->end()) {
 		if (it->name() == itemName) {
 			ret = it->unstack();
 		}
 
 		if (it->count() == 0) {
-			content.erase(it);
+			_content->erase(it);
 		} else ++it;
 	}
 
-	// write content to shm
-	_write_shm(content);
+	// unlock warehouse
+	_sem.unlock();
 	return ret;
 }
 
-void Warehouse::_write_file(std::vector<Item> &content) {
+void Warehouse::_write_file(SharedVector<Item> &content) {
 	// create dir if not exists
 	fs::create_directories(_filename.parent_path());
 
@@ -127,8 +128,7 @@ void Warehouse::_write_file(std::vector<Item> &content) {
 	fs::rename(tmp_filename, _filename);
 }
 
-std::vector<Item> &Warehouse::_read_file() {
-
+SharedVector<Item> &Warehouse::_read_file() {
 	// open file for reading
 	std::ifstream in{_filename};
 	if (!in) {
@@ -139,6 +139,7 @@ std::vector<Item> &Warehouse::_read_file() {
 	// deserialize content
 	json content_json;
 	in >> content_json;
-	std::vector<Item> items = content_json.get<std::vector<Item>>();
+	SharedVector<Item> items = content_json.get<SharedVector<Item>>();
+
 	return items;
 }

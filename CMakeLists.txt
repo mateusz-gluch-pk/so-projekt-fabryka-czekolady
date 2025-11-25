@@ -23,6 +23,12 @@ add_executable(projekt
         logging/logger.cpp
         main.cpp
         include/objects/item.cpp
-        include/objects/item.h)
+        include/objects/item.h
+        include/ipcs/Semaphore.cpp
+        include/ipcs/Semaphore.h
+        include/ipcs/SharedMemory.cpp
+        include/ipcs/SharedMemory.h
+        include/objects/SharedVector.cpp
+        include/objects/SharedVector.h)
 
 target_link_libraries(projekt PRIVATE nlohmann_json::nlohmann_json)

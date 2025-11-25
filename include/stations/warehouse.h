@@ -9,13 +9,17 @@
 #include <filesystem>
 #include <vector>
 #include <sys/types.h>
+
+#include "SharedVector.h"
+#include "ipcs/Semaphore.h"
+#include "ipcs/SharedMemory.h"
 #include "objects/item.h"
 
 namespace fs = std::filesystem;
 
 class Warehouse {
 	public:
-		Warehouse(const std::string &name, int capacity);
+		Warehouse(const std::string &name, int capacity, int variety = 4);
 		~Warehouse();
 		void add(const Item &item);
 
@@ -25,24 +29,19 @@ class Warehouse {
 
 	private:
 		int _capacity;
+		int _variety;
 		std::string _name;
 		fs::path _filename;
 
 		// IPCS
 		key_t _key;
-
-		std::vector<Item> _content;
-		void *_shmaddr;
-		int _shmid;
-		int _semid;
-
-		// shared memory wrappers
-		void _write_shm(std::vector<Item> &content);
-		std::vector<Item> &_read_shm();
+		Semaphore _sem;
+		SharedMemory<SharedVector<Item>> _shm;
+		SharedVector<Item> *_content;
 
 		// file wrappers
-		void _write_file(std::vector<Item> &content);
-		std::vector<Item> &_read_file();
+		void _write_file(SharedVector<Item> &content);
+		SharedVector<Item> &_read_file();
 };
 
 #endif //PROJEKT_WAREHOUSE_H
