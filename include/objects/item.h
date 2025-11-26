@@ -7,14 +7,22 @@
 #include <string>
 #include <nlohmann/json.hpp>
 
+#define ITEM_NAME_LENGTH 20
 
 class Item {
     public:
-        Item(const std::string &name, const int size, const int count) {_name=name; _size=size; _count=count;};
+        Item(const std::string &name, int size, int count);
+
+        Item& operator=(const Item& other) {
+            if (this == &other) return *this;
+            std::memcpy(_name, other._name, ITEM_NAME_LENGTH);
+            _size  = other._size;
+            _count = other._count;
+            return *this;
+        }
 
         // [[nodiscard]] is a modern cpp quirk...
-        // ... as well as messy double const
-        [[nodiscard]] const std::string &name() const {return _name;};
+        [[nodiscard]] std::string name() const {return _name;};
         [[nodiscard]] int size() const {return _size;};
         [[nodiscard]] int count() const {return _count;};
 
@@ -25,7 +33,7 @@ class Item {
         friend void to_json(nlohmann::json &j, const Item &item);
 
     private:
-        std::string _name;
+        char _name[ITEM_NAME_LENGTH];
         int _size;
         int _count;
 };

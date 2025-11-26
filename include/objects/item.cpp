@@ -7,8 +7,15 @@
 #include <nlohmann/json.hpp>
 using json = nlohmann::json;
 
+Item::Item(const std::string &name, const int size, const int count): _size(size), _count(count) {
+    if (name.length() > ITEM_NAME_LENGTH) {
+        throw std::out_of_range("Item name is too long");
+    }
+    strcpy(_name, name.c_str());
+}
+
 int Item::stack(const Item &item) {
-    if (_name == item._name) {
+    if (strcmp(_name, item._name) == 0) {
         return -1;
     }
 
