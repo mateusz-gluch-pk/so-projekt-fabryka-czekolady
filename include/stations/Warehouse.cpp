@@ -2,7 +2,7 @@
 // Created by mateusz on 22.11.2025.
 //
 
-#include "warehouse.h"
+#include "Warehouse.h"
 
 #include <sys/shm.h>
 #include <sys/sem.h>
@@ -18,7 +18,7 @@
 #include <nlohmann/json.hpp>
 #include <utility>
 
-#include "item.h"
+#include "Item.h"
 
 using json = nlohmann::json;
 namespace fs = std::filesystem;

@@ -13,7 +13,7 @@
 #include "SharedVector.h"
 #include "ipcs/Semaphore.h"
 #include "ipcs/SharedMemory.h"
-#include "objects/item.h"
+#include "objects/Item.h"
 
 namespace fs = std::filesystem;
 
