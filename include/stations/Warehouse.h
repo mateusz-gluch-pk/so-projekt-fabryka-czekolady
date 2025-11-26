@@ -19,7 +19,7 @@ namespace fs = std::filesystem;
 
 class Warehouse {
 	public:
-		Warehouse(const std::string& name, int capacity, int variety);
+		Warehouse(const std::string& name, int capacity, int variety = 4);
 
 		~Warehouse();
 		void add(const Item &item) const;
