@@ -19,15 +19,26 @@ namespace fs = std::filesystem;
 
 class Warehouse {
 	public:
-		Warehouse(const std::string &name, int capacity, int variety = 4);
+		Warehouse(const std::string& name, int capacity, int variety);
+
 		~Warehouse();
-		void add(const Item &item);
+		void add(const Item &item) const;
 
 		// pointer is necessary; retrieved item can (and will in many cases) be null!
-		Item *get(const std::string &itemName);
+		Item *get(const std::string &itemName) const;
 		// WarehouseStats &stats();
 
 	private:
+		Warehouse(
+			std::string  name,
+			int capacity,
+			int variety,
+			std::string filename,
+			key_t key,
+			size_t total_size
+		);
+
+
 		int _capacity;
 		int _variety;
 		std::string _name;
@@ -40,8 +51,8 @@ class Warehouse {
 		SharedVector<Item> *_content;
 
 		// file wrappers
-		void _write_file(SharedVector<Item> &content);
-		SharedVector<Item> &_read_file();
+		void _write_file();
+		void _read_file() const;
 };
 
 #endif //PROJEKT_WAREHOUSE_H

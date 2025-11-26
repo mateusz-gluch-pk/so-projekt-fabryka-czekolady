@@ -16,60 +16,61 @@
 #include <fstream>
 
 #include <nlohmann/json.hpp>
+#include <utility>
 
 #include "item.h"
 
 using json = nlohmann::json;
 namespace fs = std::filesystem;
 
-Warehouse::Warehouse(const std::string &name, const int capacity, const int variety) {
-	_name = name;
-	_filename = "warehouses/" + name + ".json";
-	_capacity = capacity;
-	_variety = variety;
-
-	const fs::path _keyfile = "warehouses/" + name + ".key";
-
-	// allocate memory for M kinds of Items
-	size_t total_size = sizeof(SharedVector<Item>) + sizeof(Item) * _variety;
-
-	// create key - common for sem and shared mem
-	_key = ftok(_keyfile.c_str(), 1);
-
-	// create ipcs
-	_sem = Semaphore(_key);
-	_shm = SharedMemory<SharedVector<Item>>(_key, total_size);
-
+Warehouse::Warehouse(
+	std::string name,
+	const int capacity,
+	const int variety,
+	std::string filename,
+	const key_t key,
+	const size_t total_size):
+		_capacity(capacity),
+		_variety(variety),
+		_name(std::move(name)),
+		_filename(std::move(filename)),
+		_key(key),
+		_sem(key),
+		_shm(key, total_size)
+{
 	_content = _shm.get();
 	_content->init(_variety);
 
-	// initialize warehouse content
 	if (fs::exists(_filename)) {
-		_content = _read_file();
+		_read_file();
 	}
-} ;
+}
+
+Warehouse::Warehouse(const std::string &name, const int capacity, const int variety): Warehouse(
+	name,
+	capacity,
+	variety,
+	"warehouses/" + name + ".json",
+	ftok(("warehouses/" + name + ".key").c_str(), 1),
+	sizeof(SharedVector<Item>) + sizeof(Item) * variety
+) {}
 
 // if everything works as intended, warehouse is destroyed only once...
 Warehouse::~Warehouse () {
-	// send signal to workers and deliverers - warehouse stops existing
-
-	// save warehouse state to file
-	if (_content != nullptr_) {
-		_write_file(*_content);
-	} else {
-		_write_file(SharedVector<Item>{});
+	// save warehouse state to file - if there is any warehouse to begin with
+	if (_content != nullptr) {
+		_write_file();
 	}
 
 	// semaphore is removed automatically upon destruction
 	// as well as shared memory
 }
 
-void Warehouse::add(const Item &item) {
+void Warehouse::add(const Item &item) const {
 	// lock warehouse
 	_sem.lock();
 
 	// check capacity - if no space, just release semaphore
-
 	// add item to list (stack if already present)
 	bool stacked = false;
 	for (auto &warehouse_item: *_content) {
@@ -85,7 +86,7 @@ void Warehouse::add(const Item &item) {
 	_sem.unlock();
 }
 
-Item *Warehouse::get(const std::string &itemName) {
+Item *Warehouse::get(const std::string &itemName) const {
 	// lock warehouse
 	_sem.lock();
 
@@ -106,7 +107,7 @@ Item *Warehouse::get(const std::string &itemName) {
 	return ret;
 }
 
-void Warehouse::_write_file(SharedVector<Item> &content) {
+void Warehouse::_write_file() {
 	// create dir if not exists
 	fs::create_directories(_filename.parent_path());
 
@@ -120,7 +121,7 @@ void Warehouse::_write_file(SharedVector<Item> &content) {
 	}
 
 	// serialize content
-	json content_json = content;
+	json content_json = *_content;
 	out << content_json.dump(2) << std::endl;
 	out.close();
 
@@ -128,18 +129,17 @@ void Warehouse::_write_file(SharedVector<Item> &content) {
 	fs::rename(tmp_filename, _filename);
 }
 
-SharedVector<Item> &Warehouse::_read_file() {
+void Warehouse::_read_file() const {
 	// open file for reading
 	std::ifstream in{_filename};
 	if (!in) {
 		throw std::runtime_error("Cannot open file for reading");
-
 	}
 
 	// deserialize content
 	json content_json;
 	in >> content_json;
-	SharedVector<Item> items = content_json.get<SharedVector<Item>>();
 
-	return items;
+	// i can call it explicitly!
+	from_json(content_json, *_content);
 }
