@@ -10,4 +10,5 @@ class Process {
 };
 
 
+
 #endif //PROJEKT_PROCESS_H
