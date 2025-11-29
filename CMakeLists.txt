@@ -36,7 +36,6 @@ add_executable(projekt
         include/actors/LogCollector.h
         include/actors/Deliverer.cpp
         include/actors/Deliverer.h
-        include/ipcs/FIFO.h
         include/objects/ItemTemplate.cpp
         include/objects/ItemTemplate.h
         include/objects/Recipe.cpp
@@ -44,6 +43,8 @@ add_executable(projekt
         include/stations/Workstation.cpp
         include/stations/Workstation.h
         include/actors/Process.h
+        include/ipcs/MessageQueue.cpp
+        include/ipcs/MessageQueue.h
 )
 
 target_link_libraries(projekt PRIVATE nlohmann_json::nlohmann_json)

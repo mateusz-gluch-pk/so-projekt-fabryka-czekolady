@@ -9,11 +9,13 @@
 #include <sys/shm.h>
 #include <sys/types.h>
 
+#define SHM_PERMS 0644
+
 template<typename T>
 class SharedMemory {
     public:
         explicit SharedMemory(key_t key, size_t size, bool create = true): _key(key) {
-            _shmid = shmget(key, size, IPC_CREAT | 0644);
+            _shmid = shmget(key, size, IPC_CREAT | SHM_PERMS);
             if (_shmid == -1) {
                 throw std::runtime_error("Error creating shared memory");
             }
@@ -29,6 +31,7 @@ class SharedMemory {
             if (create) {
                 std::memset(_data, 0, sizeof(T));
             }
+            _owner = create;
         };
 
         // copying prohibited
@@ -69,7 +72,7 @@ class SharedMemory {
                 _data = nullptr;
             }
 
-            if (_shmid != -1) {
+            if (_shmid != -1 && _owner) {
                 shmctl(_shmid, IPC_RMID, nullptr);
                 _shmid = -1;
             }
@@ -77,6 +80,7 @@ class SharedMemory {
 
         key_t _key;
         int _shmid = -1;
+        bool _owner;;
         T* _data = nullptr;
 };
 

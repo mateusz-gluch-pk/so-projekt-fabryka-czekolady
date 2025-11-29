@@ -6,6 +6,8 @@
 #define PROJEKT_SEMAPHORE_H
 #include <sys/types.h>
 
+#define SEM_PERMS 0644
+
 // union SemaphoreUnion {
 //     int val;
 //     struct semid_ds* buf;

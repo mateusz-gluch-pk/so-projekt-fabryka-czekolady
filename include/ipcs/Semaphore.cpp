@@ -8,7 +8,7 @@
 #include <sys/sem.h>
 
 Semaphore::Semaphore(const key_t key, const int initial_value) {
-    _semid = semget(key, 1, IPC_CREAT | 0644);
+    _semid = semget(key, 1, IPC_CREAT | SEM_PERMS);
     if (_semid == -1) {
         throw std::runtime_error("semget failed");
     }
