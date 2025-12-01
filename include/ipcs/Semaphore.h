@@ -16,20 +16,18 @@
 
 class Semaphore {
     public:
-    explicit Semaphore(key_t key, int initial_value = 1);
+        explicit Semaphore(key_t key, int initial_value = 1);
+        ~Semaphore();
 
-    // copying is prohibited!
-    Semaphore(const Semaphore &) = delete;
-    Semaphore & operator=(const Semaphore &) = delete;
+        // copying is prohibited!
+        Semaphore(const Semaphore &) = delete;
+        Semaphore & operator=(const Semaphore &) = delete;
+        // but move is allowed
+        Semaphore(Semaphore && other) noexcept : _semid(other._semid) {other._semid=-1;};
+        Semaphore & operator=(Semaphore && other) noexcept;
 
-    // but move is allowed
-    Semaphore(Semaphore && other) noexcept : _semid(other._semid) {other._semid=-1;};
-    Semaphore & operator=(Semaphore && other) noexcept;
-
-    void lock() const;
-    void unlock() const;
-
-    ~Semaphore();
+        void lock() const;
+        void unlock() const;
 
     private:
         int _semid = -1;
