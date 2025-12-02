@@ -7,6 +7,13 @@
 
 
 class LogCollector {
+
+    public:
+    LogCollector();
+    ~LogCollector();
+
+
+
 };
 
 

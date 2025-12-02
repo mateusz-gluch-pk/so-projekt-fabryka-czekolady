@@ -45,6 +45,8 @@ add_executable(projekt
         include/actors/Process.h
         include/ipcs/MessageQueue.cpp
         include/ipcs/MessageQueue.h
+        include/objects/Message.cpp
+        include/objects/Message.h
 )
 
 target_link_libraries(projekt PRIVATE nlohmann_json::nlohmann_json)
