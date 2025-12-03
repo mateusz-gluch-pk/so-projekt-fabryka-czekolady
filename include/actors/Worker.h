@@ -7,11 +7,12 @@
 #include "IRunnable.h"
 #include "Warehouse.h"
 #include "Workstation.h"
+#include "logger/Logger.h"
 
 
 class Worker : public IRunnable {
     public:
-        Worker();
+        Worker(Logger *log): _log(log) {};
         ~Worker();
 
         // SIG process control (from outside)
@@ -23,6 +24,7 @@ class Worker : public IRunnable {
         void reload() override; //SIGHUP
 
     private:
+        Logger *_log;
         Warehouse *_in;
         Warehouse *_out;
         Workstation *_station;

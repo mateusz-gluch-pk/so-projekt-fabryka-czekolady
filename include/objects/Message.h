@@ -9,6 +9,7 @@
 #define MAX_MESSAGE_LENGTH 255
 
 enum MessageLevel {
+    INVALID = -1,
     DEBUG,
     INFO,
     WARNING,
@@ -18,6 +19,9 @@ enum MessageLevel {
 
 class Message {
     public:
+        long mtype;
+
+        Message(): _message(""), _level(MessageLevel::INVALID), _timestamp(0) {};
         Message(MessageLevel level, const std::string &message);
 
         // to logfmt
