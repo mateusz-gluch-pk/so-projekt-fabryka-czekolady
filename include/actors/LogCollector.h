@@ -4,8 +4,10 @@
 
 #ifndef PROJEKT_LOGCOLLECTOR_H
 #define PROJEKT_LOGCOLLECTOR_H
+#include <atomic>
 #include <iostream>
 #include <fstream>
+#include <thread>
 
 #include "IRunnable.h"
 #include "Message.h"
@@ -14,37 +16,29 @@
 
 
 class LogCollector: public IRunnable{
-
     public:
-        LogCollector(MessageQueue<Message> msq, std::string filename, bool tty = true);
-        ~LogCollector();
+        LogCollector(MessageQueue<Message> *msq, const std::string &filename, const bool tty = true);
+        ~LogCollector() override;
 
-        void run() override {
-            while (true) {
-                Message msg;
-                _msq->receive(&msg);
-                _write_log(msg);
-            }
-        };
-
+        void run() override;
         void stop() override;
         void pause() override;
         void resume() override;
         void reload() override;
 
     private:
-        void _write_log(Message& msg) {
-            auto log = msg.string();
-            if (_tty) {
-                std::cout << log;
-            }
-            _file << log;
-        };
+        std::ofstream _open_file() const;
+        void _close_file();
+        void _write_log(Message& msg);;
 
         MessageQueue<Message> *_msq;
         std::string _filename;
         std::ofstream _file;
         bool _tty;
+
+        std::atomic<bool> _running;
+        std::atomic<bool> _paused;
+        std::atomic<bool> _reload;
 };
 
 
