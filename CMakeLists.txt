@@ -53,6 +53,8 @@ add_executable(projekt
         include/actors/LogCollector.h
         include/actors/Deliverer.cpp
         include/actors/Deliverer.h
+        include/logger/Logger.cpp
+        include/logger/Logger.h
 )
 
 target_link_libraries(projekt PRIVATE nlohmann_json::nlohmann_json)
