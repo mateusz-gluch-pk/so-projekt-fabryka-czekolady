@@ -4,9 +4,19 @@
 
 #ifndef PROJEKT_DELIVERER_H
 #define PROJEKT_DELIVERER_H
+#include "IRunnable.h"
 
 
-class Deliverer {
+class Deliverer : public IRunnable {
+    public:
+        Deliverer();
+        ~Deliverer();
+
+        void run() override;
+        void stop() override;
+        void pause() override;
+        void resume() override;
+        void reload() override;
 };
 
 

@@ -7,6 +7,16 @@
 
 
 class Supervisor {
+
+    public:
+    Supervisor();
+    ~Supervisor();
+
+    void run();
+    void stop();
+    void pause();
+    void resume();
+    void reload();
 };
 
 

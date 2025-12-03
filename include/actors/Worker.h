@@ -4,34 +4,28 @@
 
 #ifndef PROJEKT_WORKER_H
 #define PROJEKT_WORKER_H
-#include "Process.h"
+#include "IRunnable.h"
 #include "Warehouse.h"
 #include "Workstation.h"
 
 
-class Worker {
+class Worker : public IRunnable {
     public:
         Worker();
+        ~Worker();
 
         // SIG process control (from outside)
         // Process run();
-        int run();
-        void stop(); //SIGTERM
-        void pause(); //SIGSTOP
-        void resume(); //SIGCONT
-        void reload(); //SIGHUP
+        void run() override;
+        void stop() override; //SIGTERM
+        void pause() override; //SIGSTOP
+        void resume() override; //SIGCONT
+        void reload() override; //SIGHUP
 
     private:
-        std::string _name;
-        int _pid;
-        int _ppid;
-
-        // Process _process;
         Warehouse *_in;
         Warehouse *_out;
         Workstation *_station;
-
-        void _loop();
 };
 
 

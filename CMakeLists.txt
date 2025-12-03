@@ -18,16 +18,33 @@ include_directories(include/stations)
 include_directories(include/objects)
 
 add_executable(projekt
+        main.cpp
+
         include/stations/Warehouse.cpp
         include/stations/Warehouse.h
-        logging/logger.cpp
-        main.cpp
+        include/stations/Workstation.cpp
+        include/stations/Workstation.h
+
         include/objects/Item.cpp
         include/objects/Item.h
+        include/objects/SharedVector.h
+        include/objects/ItemTemplate.cpp
+        include/objects/ItemTemplate.h
+        include/objects/Recipe.cpp
+        include/objects/Recipe.h
+        include/objects/Message.cpp
+        include/objects/Message.h
+
         include/ipcs/Semaphore.cpp
         include/ipcs/Semaphore.h
         include/ipcs/SharedMemory.h
-        include/objects/SharedVector.h
+        include/ipcs/MessageQueue.cpp
+        include/ipcs/MessageQueue.h
+
+        include/processes/ProcessController.cpp
+        include/processes/ProcessController.h
+
+        include/actors/IRunnable.h
         include/actors/Supervisor.cpp
         include/actors/Supervisor.h
         include/actors/Worker.cpp
@@ -36,17 +53,6 @@ add_executable(projekt
         include/actors/LogCollector.h
         include/actors/Deliverer.cpp
         include/actors/Deliverer.h
-        include/objects/ItemTemplate.cpp
-        include/objects/ItemTemplate.h
-        include/objects/Recipe.cpp
-        include/objects/Recipe.h
-        include/stations/Workstation.cpp
-        include/stations/Workstation.h
-        include/actors/Process.h
-        include/ipcs/MessageQueue.cpp
-        include/ipcs/MessageQueue.h
-        include/objects/Message.cpp
-        include/objects/Message.h
 )
 
 target_link_libraries(projekt PRIVATE nlohmann_json::nlohmann_json)
