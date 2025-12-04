@@ -7,7 +7,10 @@
 Deliverer::Deliverer(const ItemTemplate &tpl, Warehouse *dst, Logger *log) :
     _tpl(tpl),
     _dst(dst),
-    _log(log) {
+    _log(log),
+    _running(true),
+    _paused(false),
+    _reloading(false) {
 }
 
 void Deliverer::run() {
