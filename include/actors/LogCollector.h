@@ -5,7 +5,6 @@
 #ifndef PROJEKT_LOGCOLLECTOR_H
 #define PROJEKT_LOGCOLLECTOR_H
 #include <atomic>
-#include <iostream>
 #include <fstream>
 #include <thread>
 
@@ -27,6 +26,9 @@ class LogCollector: public IRunnable{
         void reload() override;
 
     private:
+        void _main();
+        void _reload();
+
         std::ofstream _open_file() const;
         void _close_file();
         void _write_log(Message& msg);;
@@ -36,9 +38,7 @@ class LogCollector: public IRunnable{
         std::ofstream _file;
         bool _tty;
 
-        std::atomic<bool> _running;
-        std::atomic<bool> _paused;
-        std::atomic<bool> _reload;
+        std::atomic<bool> _running, _paused, _reloading;
 };
 
 
