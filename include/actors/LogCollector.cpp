@@ -31,11 +31,8 @@ void LogCollector::run() {
 }
 
 void LogCollector::stop() { _running = false; }
-
 void LogCollector::pause() { _paused = true; }
-
 void LogCollector::resume() { _paused = false; }
-
 void LogCollector::reload() { _reload = true; }
 
 std::ofstream LogCollector::_open_file() const {

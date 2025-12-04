@@ -25,7 +25,7 @@ class Message {
         Message(MessageLevel level, const std::string &message);
 
         // to logfmt
-        std::string string();
+        std::string string() const;
 
         // to JSON
         // std::string serialize();

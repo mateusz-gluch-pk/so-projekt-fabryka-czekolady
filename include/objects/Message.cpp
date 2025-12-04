@@ -18,7 +18,7 @@ Message::Message(const MessageLevel level, const std::string &message) {
     strcpy(_message, message.c_str());
 }
 
-std::string Message::string() {
+std::string Message::string() const {
     const std::string time_str = std::to_string(_timestamp);
     const std::string level_str = _level_str();
     return time_str + " " + level_str + " " + std::string(_message);
