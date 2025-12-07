@@ -61,4 +61,5 @@ void Worker::_main() {
     output = nullptr;
 }
 
+// Use RELOAD to make the worker check its warehouses - if not available; turn into IDLE
 void Worker::_reload() {}
