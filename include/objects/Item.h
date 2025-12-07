@@ -11,6 +11,8 @@
 
 class Item {
     public:
+    Item();
+
         Item(const std::string &name, int size, int count);
 
         Item& operator=(const Item& other) {
@@ -19,6 +21,10 @@ class Item {
             _size  = other._size;
             _count = other._count;
             return *this;
+        }
+
+        bool operator==(const Item& other) const {
+            return strcmp(_name, other._name) == 0;
         }
 
         // [[nodiscard]] is a modern cpp quirk...

@@ -86,15 +86,14 @@ void Warehouse::add(const Item &item) const {
 	_sem.unlock();
 }
 
-Item *Warehouse::get(const std::string &itemName) const {
+void Warehouse::get(const std::string &itemName, Item *output) const {
 	// lock warehouse
 	_sem.lock();
 
-	Item *ret = nullptr;
 	auto it = _content->begin();
 	while (it != _content->end()) {
 		if (it->name() == itemName) {
-			ret = it->unstack();
+			*output = *it->unstack();
 		}
 
 		if (it->count() == 0) {
@@ -104,7 +103,6 @@ Item *Warehouse::get(const std::string &itemName) const {
 
 	// unlock warehouse
 	_sem.unlock();
-	return ret;
 }
 
 void Warehouse::_write_file() {

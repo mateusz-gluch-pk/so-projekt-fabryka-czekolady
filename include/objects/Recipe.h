@@ -11,13 +11,8 @@
 
 class Recipe {
     public:
-        Recipe(const std::vector<Item> &inputs, const Item &output): _inputs(inputs), _output(output) {};
-
-        std::string first_missin
-
-        Item transform(std::vector<Item> inputs) {
-            return Item(_output.name(), _output.size(), 1);
-        }
+        Recipe(const std::vector<Item> &inputs, const Item &output);
+        std::string try_produce(std::vector<Item> inputs, Item *output) const;
 
     private:
         std::vector<Item> _inputs;

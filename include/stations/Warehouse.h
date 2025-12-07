@@ -25,7 +25,7 @@ class Warehouse {
 		void add(const Item &item) const;
 
 		// pointer is necessary; retrieved item can (and will in many cases) be null!
-		Item *get(const std::string &itemName) const;
+		void get(const std::string &itemName, Item *output) const;
 		// WarehouseStats &stats();
 
 	private:

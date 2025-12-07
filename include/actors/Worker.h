@@ -17,42 +17,18 @@ namespace sthr = std::this_thread;
 
 class Worker : public IRunnable {
     public:
-        Worker(Logger *log, Warehouse *in, Warehouse *out, Workstation *station):
-            _log(log),
-            _in(in),
-            _out(out),
-            _station(station),
-            _running(true),
-            _paused(false),
-            _reloading(false) {
-        }
-        ~Worker() override {};
+        Worker(Logger *log, Warehouse *in, Warehouse *out, Workstation *station);
+        ~Worker() override {}
 
-        void run() override {
-            while (_running) {
-                if (_paused) {
-                    sthr::sleep_for(stime::milliseconds(100));
-                    continue;
-                }
-
-                if (_reloading) {
-                    _reload();
-                    _reloading = false;
-                }
-
-                _main();
-            }
-        };
+        void run() override;
         void stop() override;
         void pause() override;
         void resume() override;
         void reload() override;
 
     private:
-        void _main() {
-
-        }
-        void _reload() {}
+        void _main();
+        void _reload();
 
         Logger *_log;
         Warehouse *_in;
@@ -60,8 +36,7 @@ class Worker : public IRunnable {
         Workstation *_station;
 
         Recipe _recipe;
-
-
+        std::vector<Item> _inventory;
         std::atomic<bool> _running, _paused, _reloading;
 };
 
