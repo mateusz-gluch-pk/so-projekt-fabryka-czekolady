@@ -9,13 +9,18 @@
 #include <sys/types.h>
 #include <sys/msg.h>
 
+#include "logger/IQueue.h"
+#include "logger/Logger.h"
+
 #define MSQ_PERMS 0644
 
+
 template <typename T>
-class MessageQueue {
+class MessageQueue : public IQueue<T> {
 public:
-    MessageQueue(key_t key, bool create=true);
-    ~MessageQueue();
+    explicit MessageQueue(key_t key, bool create, IQueue<Message> *external_msq);
+
+    ~MessageQueue() override;
 
     // copying is prohibited!
     MessageQueue(const MessageQueue &) = delete;
@@ -24,37 +29,58 @@ public:
     MessageQueue(MessageQueue && other) noexcept;
     MessageQueue &operator=(MessageQueue && other) noexcept;
 
-    void send(T data);
-    void receive(T *data);
+    void send(T data) override;
+    void receive(T *data) override;
 
 private:
+    Logger *_log;
     int _msqid = -1;
     bool _owner;
 };
 
 template<typename T>
-MessageQueue<T>::MessageQueue(key_t key, bool create) {
+MessageQueue<T>::MessageQueue(const key_t key, const bool create, IQueue<Message> *external_msq) {
     int flags = create ? (IPC_CREAT | MSQ_PERMS) : MSQ_PERMS;
 
     _msqid = msgget(key, flags);
-    if (_msqid == -1)
-        throw std::runtime_error("msgget failed");
+    if (_msqid == -1) {
+        perror("Cannot create message queue");
+        exit(errno);
+    }
+
+    if (external_msq != nullptr) {
+        _log = new Logger(MessageLevel::INFO, external_msq);
+    } else if constexpr (std::is_same<T, Message>::value) {
+        _log = new Logger(MessageLevel::INFO, this);
+    } else {
+        perror("Cannot create message queue");
+        exit(errno);
+    }
 
     _owner = create;
+    _log->info("Created message queue %d", _msqid);
 }
 
 
 template<typename T>
 MessageQueue<T>::~MessageQueue() {
     if (_owner) {
-        msgctl(_msqid, IPC_RMID, nullptr);
+        const int ret = msgctl(_msqid, IPC_RMID, nullptr);
+        if (ret == -1) {
+            _log->fatal("Cannot remove message queue %d", _msqid);
+        }
+        _log->info("Deleted message queue %d", _msqid);
     }
+
+    delete _log;
+    _log = nullptr;
 }
 
 template<typename T>
 MessageQueue<T>::MessageQueue(MessageQueue &&other) noexcept:
     _msqid(other._msqid),
-    _owner(other._owner) {
+    _owner(other._owner),
+    _log(other._logger) {
     other._msqid = -1;
     other._owner = false;
 }
@@ -67,6 +93,7 @@ MessageQueue<T> & MessageQueue<T>::operator=(MessageQueue<T> &&other) noexcept {
 
     _msqid = other._msqid;
     _owner = other._owner;
+    _log = other._logger;
     other._msqid = -1;
     other._owner = false;
     return *this;
@@ -77,14 +104,19 @@ void MessageQueue<T>::send(T data) {
     const void *data_ptr = reinterpret_cast<void *>(&data);
     const int result = msgsnd(_msqid, data_ptr, sizeof(T), IPC_NOWAIT);
     if (result == -1) {
-        throw std::runtime_error("msgsnd failed");
+        _log->fatal("Cannot send message to message queue %d", _msqid);
     }
+    _log->info("Sent message to message queue %d", _msqid);
 }
 
 template<typename T>
 void MessageQueue<T>::receive(T *data) {
     void *data_ptr = reinterpret_cast<void *>(data);
-    msgrcv(_msqid, data_ptr, sizeof(T), IPC_NOWAIT, 0);
+    const int msize = msgrcv(_msqid, data_ptr, sizeof(T), IPC_NOWAIT, 0);
+    if (msize == -1) {
+        _log->fatal("Cannot receive message from message queue %d", _msqid);
+    }
+    _log->info("Received message from message queue %d", _msqid);
 }
 
 
