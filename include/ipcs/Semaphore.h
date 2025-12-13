@@ -6,6 +6,8 @@
 #define PROJEKT_SEMAPHORE_H
 #include <sys/types.h>
 
+#include "logger/Logger.h"
+
 #define SEM_PERMS 0644
 
 // union SemaphoreUnion {
@@ -16,7 +18,7 @@
 
 class Semaphore {
     public:
-        explicit Semaphore(key_t key, int initial_value = 1);
+        explicit Semaphore(key_t key, Logger* log, int initial_value = 1);
         ~Semaphore();
 
         // copying is prohibited!
@@ -30,6 +32,7 @@ class Semaphore {
         void unlock() const;
 
     private:
+        Logger* _log;
         int _semid = -1;
 };
 

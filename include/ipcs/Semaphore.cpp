@@ -7,20 +7,25 @@
 #include <stdexcept>
 #include <sys/sem.h>
 
-Semaphore::Semaphore(const key_t key, const int initial_value) {
+#include "logger/Logger.h"
+
+Semaphore::Semaphore(const key_t key, Logger *log, const int initial_value): _log(log) {
     _semid = semget(key, 1, IPC_CREAT | SEM_PERMS);
     if (_semid == -1) {
-        throw std::runtime_error("semget failed");
+        _log->fatal("Failed to create semaphore");
     }
 
     if (semctl(_semid, 0, SETVAL, initial_value) == -1) {
-        throw std::runtime_error("semctl SETVAL failed");
+        _log->fatal("Failed to set semaphore value");
     }
+
+    _log->info("Semaphore %d created with value %d", _semid, initial_value);
 }
 
 Semaphore::~Semaphore() {
     // if sem is valid - remove from system
     if (_semid != -1) {
+        _log->info("Semaphore %d destroyed", _semid);
         semctl(_semid, 0, IPC_RMID);
     }
 }
@@ -40,8 +45,10 @@ void Semaphore::lock() const {
     // flags - SEM_UNDO; unlock if process exits
     sembuf op = {0, +1, SEM_UNDO};
     if (semop(_semid, &op, 1) == -1) {
-        throw std::runtime_error("semop lock failed");
+        _log->fatal("Failed to lock semaphore %d", _semid);
     }
+
+    _log->debug("Semaphore %d locked", _semid);
 }
 
 void Semaphore::unlock() const {
@@ -51,6 +58,8 @@ void Semaphore::unlock() const {
     // flags - IPC_NOWAIT
     sembuf op = {0, -1, IPC_NOWAIT};
     if (semop(_semid, &op, 1) == -1) {
-        throw std::runtime_error("semop unlock failed");
+        _log->fatal("Failed to unlock semaphore %d", _semid);
     }
+
+    _log->debug("Semaphore %d unlocked", _semid);
 }

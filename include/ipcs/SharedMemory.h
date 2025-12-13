@@ -14,24 +14,25 @@
 template<typename T>
 class SharedMemory {
     public:
-        explicit SharedMemory(key_t key, size_t size, bool create = true);;
+        explicit SharedMemory(key_t key, size_t size, Logger* log, bool create = true);;
         ~SharedMemory() {detach();};
 
         // copying prohibited
         SharedMemory(const SharedMemory&) = delete;
         SharedMemory& operator=(const SharedMemory&) = delete;
         // moving allowed
-        SharedMemory(SharedMemory&& other) noexcept;;
-        SharedMemory& operator=(SharedMemory&& other) noexcept;;
+        SharedMemory(SharedMemory&& other) noexcept;
+        SharedMemory& operator=(SharedMemory&& other) noexcept;
 
         // get pointer to data
-        T* get() {return _data;};
-        T& operator*() {return *_data;};
-        T* operator->() {return _data;};
+        T* get();
+        T& operator*();
+        T* operator->();
 
     private:
         void detach();
 
+        Logger *_log;
         key_t _key;
         int _shmid = -1;
         bool _owner;;
@@ -39,15 +40,15 @@ class SharedMemory {
 };
 
 template<typename T>
-SharedMemory<T>::SharedMemory(key_t key, size_t size, bool create): _key(key) {
+SharedMemory<T>::SharedMemory(key_t key, size_t size, Logger*log, bool create): _key(key), _log(log) {
     _shmid = shmget(key, size, IPC_CREAT | SHM_PERMS);
     if (_shmid == -1) {
-        throw std::runtime_error("Error creating shared memory");
+        _log->fatal("Cannot create shared memory");
     }
 
     void* ptr = shmat(_shmid, nullptr, 0);
     if (ptr == reinterpret_cast<void *>(-1)) {
-        throw std::runtime_error("Error attaching shared memory");
+        _log->fatal("Cannot attach to shared memory %d", _shmid);
     }
 
     _data = static_cast<T*>(ptr);
@@ -55,8 +56,10 @@ SharedMemory<T>::SharedMemory(key_t key, size_t size, bool create): _key(key) {
     // initialize memory
     if (create) {
         std::memset(_data, 0, sizeof(T));
+        _log->info("Initializing shared memory %d", _shmid);
     }
     _owner = create;
+    _log->info("Created shared memory %d", _shmid);
 }
 
 template<typename T>
@@ -85,17 +88,36 @@ SharedMemory<T> & SharedMemory<T>::operator=(SharedMemory &&other) noexcept {
 }
 
 template<typename T>
+T * SharedMemory<T>::get() {
+    _log->debug("Fetching pointer to shared memory %d data", _shmid);
+    return _data;
+}
+
+template<typename T>
+T & SharedMemory<T>::operator*() {
+    _log->debug("Fetching pointer to shared memory %d data", _shmid);
+    return *_data;
+}
+
+template<typename T>
+T * SharedMemory<T>::operator->() {
+    _log->debug("Fetching pointer to shared memory %d data", _shmid);
+    return _data;
+}
+
+template<typename T>
 void SharedMemory<T>::detach() {
     if (_data) {
         shmdt(_data);
         _data = nullptr;
+        _log->info("Detached shared memory %d", _shmid);
     }
 
     if (_shmid != -1 && _owner) {
         shmctl(_shmid, IPC_RMID, nullptr);
         _shmid = -1;
+        _log->info("Deleted shared memory %d", _shmid);
     }
 }
-
 
 #endif //PROJEKT_SHAREDMEMORY_H

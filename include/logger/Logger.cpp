@@ -69,6 +69,7 @@ void Logger::fatal(const char *fmt, ...) const {
     const auto msg = Message(MessageLevel::FATAL, payload);
     _msq->send(msg);
     perror(msg.string().c_str());
+    exit(errno);
 }
 
 std::string Logger::_format(const char *fmt, va_list args) {
