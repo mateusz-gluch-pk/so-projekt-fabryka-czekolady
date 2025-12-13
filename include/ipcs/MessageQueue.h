@@ -59,7 +59,11 @@ MessageQueue<T>::MessageQueue(const key_t key, const bool create, IQueue<Message
     }
 
     _owner = create;
-    _log->info("Created message queue %d", _msqid);
+    if (_owner) {
+        _log->info("Created message queue %d", _msqid);
+    } else {
+        _log->info("Attached to message queue %d", _msqid);
+    }
 }
 
 
@@ -105,17 +109,17 @@ void MessageQueue<T>::send(T data) {
     const void *data_ptr = reinterpret_cast<void *>(&data);
     const int result = msgsnd(_msqid, data_ptr, sizeof(T), IPC_NOWAIT);
     if (result == -1) {
-        _log->fatal("Cannot send message to message queue %d", _msqid);
+        _log->fatal("Cannot send message to message queue %d; errno: %d", _msqid, errno);
     }
     _log->info("Sent message to message queue %d", _msqid);
 }
 
 template<typename T>
 void MessageQueue<T>::receive(T *data) {
-    void *data_ptr = reinterpret_cast<void *>(data);
-    const int msize = msgrcv(_msqid, data_ptr, sizeof(T), IPC_NOWAIT, 0);
+    auto *data_ptr = reinterpret_cast<void *>(data);
+    const int msize = msgrcv(_msqid, data_ptr, sizeof(T), 0, IPC_NOWAIT);
     if (msize == -1) {
-        _log->fatal("Cannot receive message from message queue %d", _msqid);
+        _log->fatal("Cannot receive message from message queue %d; errno: %d", _msqid, errno);
     }
     _log->info("Received message from message queue %d", _msqid);
 }

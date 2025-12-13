@@ -4,6 +4,8 @@
 
 #include "Logger.h"
 
+#include <stdexcept>
+
 void Logger::debug(const char *fmt, ...) const {
     if (_level > MessageLevel::DEBUG) {
         return;
@@ -69,7 +71,7 @@ void Logger::fatal(const char *fmt, ...) const {
     const auto msg = Message(MessageLevel::FATAL, payload);
     _msq->send(msg);
     perror(msg.string().c_str());
-    exit(errno);
+    throw std::runtime_error(payload);
 }
 
 std::string Logger::_format(const char *fmt, va_list args) {
