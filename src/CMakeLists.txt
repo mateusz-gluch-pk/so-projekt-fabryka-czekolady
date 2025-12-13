@@ -11,7 +11,7 @@ target_include_directories(factorylib
         PUBLIC ${PROJECT_SOURCE_DIR}/include
 )
 
-target_link_libraries(your_lib
+target_link_libraries(factorylib
         PUBLIC nlohmann_json::nlohmann_json
 )
 
