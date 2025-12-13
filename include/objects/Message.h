@@ -38,4 +38,6 @@ class Message {
         time_t _timestamp;
 };
 
+std::ostream &operator<<(std::ostream &os, const Message &msg);
+
 #endif //PROJEKT_MESSAGE_H

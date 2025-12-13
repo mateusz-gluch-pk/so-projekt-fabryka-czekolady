@@ -3,8 +3,12 @@ file(GLOB_RECURSE LIB_SOURCES
         ${PROJECT_SOURCE_DIR}/include/*.cpp
         ${PROJECT_SOURCE_DIR}/include/*.cxx
 )
-add_library(factorylib
+add_library(factorylib STATIC
         ${LIB_SOURCES}
+)
+
+set_target_properties(factorylib PROPERTIES
+        POSITION_INDEPENDENT_CODE ON
 )
 
 target_include_directories(factorylib
@@ -15,5 +19,6 @@ target_link_libraries(factorylib
         PUBLIC nlohmann_json::nlohmann_json
 )
 
-add_executable(factory src/main.cpp)
+add_executable(factory main.cpp)
+
 target_link_libraries(factory PRIVATE factorylib)

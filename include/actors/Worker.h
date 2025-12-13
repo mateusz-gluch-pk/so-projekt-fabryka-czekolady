@@ -8,8 +8,8 @@
 #include <bits/this_thread_sleep.h>
 
 #include "IRunnable.h"
-#include "Warehouse.h"
-#include "Workstation.h"
+#include "stations/Warehouse.h"
+#include "stations/Workstation.h"
 #include "logger/Logger.h"
 
 namespace stime = std::chrono;

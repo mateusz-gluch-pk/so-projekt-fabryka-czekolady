@@ -10,7 +10,7 @@ namespace stime = std::chrono;
 namespace sthr = std::this_thread;
 
 LogCollector::LogCollector(MessageQueue<Message> *msq, const std::string &filename, const bool tty):
-    _msq(msq), _filename(filename), _tty(tty), _running(true), _paused(false), _reload(false) {
+    _msq(msq), _filename(filename), _tty(tty), _running(true), _paused(false), _reloading(false) {
     _file = _open_file();
 }
 

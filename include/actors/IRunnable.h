@@ -8,11 +8,11 @@
 class IRunnable {
     public:
         virtual ~IRunnable() = default;
-        virtual void run(); // fork
-        virtual void stop(); // SIGTERM
-        virtual void pause(); // SIGSTOP
-        virtual void resume(); // SIGCONT
-        virtual void reload(); // SIGHUP
+        virtual void run() = 0; // fork
+        virtual void stop() = 0; // SIGTERM
+        virtual void pause() = 0; // SIGSTOP
+        virtual void resume() = 0; // SIGCONT
+        virtual void reload() = 0; // SIGHUP
 };
 
 

@@ -10,7 +10,7 @@
 #include <vector>
 #include <sys/types.h>
 
-#include "SharedVector.h"
+#include "objects/SharedVector.h"
 #include "ipcs/Semaphore.h"
 #include "ipcs/SharedMemory.h"
 #include "objects/Item.h"
@@ -19,7 +19,7 @@ namespace fs = std::filesystem;
 
 class Warehouse {
 	public:
-		Warehouse(const std::string& name, int capacity, int variety = 4);
+		Warehouse(const std::string& name, int capacity, Logger *log, int variety = 4);
 
 		~Warehouse();
 		void add(const Item &item) const;
@@ -35,7 +35,8 @@ class Warehouse {
 			int variety,
 			std::string filename,
 			key_t key,
-			size_t total_size
+			size_t total_size,
+			Logger *log
 		);
 
 

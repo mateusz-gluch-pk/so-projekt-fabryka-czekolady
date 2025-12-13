@@ -7,7 +7,7 @@
 #include <stdarg.h>
 
 #include "IQueue.h"
-#include "Message.h"
+#include "objects/Message.h"
 
 class Logger {
 public:

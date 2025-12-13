@@ -39,3 +39,8 @@ std::string Message::_level_str() const {
     }
     return "UNK";
 }
+
+std::ostream &operator<<(std::ostream &os, const Message &msg) {
+    os << msg.string();
+    return os;
+}

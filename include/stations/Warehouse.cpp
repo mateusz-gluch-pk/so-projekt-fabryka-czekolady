@@ -15,10 +15,14 @@
 
 #include <fstream>
 
+#include "objects/SharedVector.h"
+#include "objects/Item.h"
+
 #include <nlohmann/json.hpp>
 #include <utility>
 
-#include "Item.h"
+template void to_json(nlohmann::json &j, SharedVector<Item> const &vec);
+template void from_json(const nlohmann::json &j, SharedVector<Item> &vec);
 
 using json = nlohmann::json;
 namespace fs = std::filesystem;
@@ -29,14 +33,15 @@ Warehouse::Warehouse(
 	const int variety,
 	std::string filename,
 	const key_t key,
-	const size_t total_size):
+	const size_t total_size,
+	Logger *log):
 		_capacity(capacity),
 		_variety(variety),
 		_name(std::move(name)),
 		_filename(std::move(filename)),
 		_key(key),
-		_sem(key),
-		_shm(key, total_size)
+		_sem(key, log),
+		_shm(key, total_size, log)
 {
 	_content = _shm.get();
 	_content->init(_variety);
@@ -46,13 +51,14 @@ Warehouse::Warehouse(
 	}
 }
 
-Warehouse::Warehouse(const std::string &name, const int capacity, const int variety): Warehouse(
+Warehouse::Warehouse(const std::string &name, const int capacity, Logger *log, const int variety): Warehouse(
 	name,
 	capacity,
 	variety,
 	"warehouses/" + name + ".json",
 	ftok(("warehouses/" + name + ".key").c_str(), 1),
-	sizeof(SharedVector<Item>) + sizeof(Item) * variety
+	sizeof(SharedVector<Item>) + sizeof(Item) * variety,
+	log
 ) {}
 
 // if everything works as intended, warehouse is destroyed only once...
@@ -135,9 +141,12 @@ void Warehouse::_read_file() const {
 	}
 
 	// deserialize content
-	json content_json;
-	in >> content_json;
+	json j;
+	in >> j;
 
 	// i can call it explicitly!
-	from_json(content_json, *_content);
+	_content->_size = j.size();
+	for (size_t i = 0; i < j.size(); ++i) {
+		(*_content)[i] = j[i].get<Item>();
+	}
 }

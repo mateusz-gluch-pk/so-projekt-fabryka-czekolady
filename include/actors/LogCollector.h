@@ -9,8 +9,7 @@
 #include <thread>
 
 #include "IRunnable.h"
-#include "Message.h"
-#include "MessageQueue.h"
+#include "objects/Message.h"
 #include "ipcs/MessageQueue.h"
 
 

@@ -11,6 +11,7 @@
 
 #include "logger/IQueue.h"
 #include "logger/Logger.h"
+#include "objects/Message.h"
 
 #define MSQ_PERMS 0644
 

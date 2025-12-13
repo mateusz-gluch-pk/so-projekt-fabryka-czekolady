@@ -8,8 +8,8 @@
 #include <thread>
 
 #include "IRunnable.h"
-#include "ItemTemplate.h"
-#include "Warehouse.h"
+#include "objects/ItemTemplate.h"
+#include "stations/Warehouse.h"
 #include "logger/Logger.h"
 
 namespace stime = std::chrono;

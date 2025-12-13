@@ -7,6 +7,7 @@
 #include <unistd.h>
 #include <wait.h>
 #include <ipcs/MessageQueue.h>
+#include <objects/Message.h>
 
 #include "../helpers/MockQueue.h"
 
