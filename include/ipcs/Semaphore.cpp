@@ -9,22 +9,26 @@
 
 #include "logger/Logger.h"
 
-Semaphore::Semaphore(const key_t key, Logger *log, const int initial_value): _log(log) {
+Semaphore::Semaphore(const key_t key, Logger *log, const bool create, const int initial_value): _log(log), _owner(create) {
     _semid = semget(key, 1, IPC_CREAT | SEM_PERMS);
     if (_semid == -1) {
         _log->fatal("Failed to create semaphore");
     }
 
-    if (semctl(_semid, 0, SETVAL, initial_value) == -1) {
-        _log->fatal("Failed to set semaphore value");
+    if (_owner) {
+        if (semctl(_semid, 0, SETVAL, initial_value) == -1) {
+            _log->fatal("Failed to set semaphore value");
+        }
+        _log->info("Semaphore %d created with value %d and key %x", _semid, initial_value, key);
+    } else {
+        _log->info("Acquired semaphore %d with value %d and key %x", _semid, initial_value, key);
     }
 
-    _log->info("Semaphore %d created with value %d", _semid, initial_value);
 }
 
 Semaphore::~Semaphore() {
     // if sem is valid - remove from system
-    if (_semid != -1) {
+    if (_semid != -1 && _owner) {
         _log->info("Semaphore %d destroyed", _semid);
         semctl(_semid, 0, IPC_RMID);
     }

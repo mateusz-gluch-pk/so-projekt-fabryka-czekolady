@@ -1,5 +1,7 @@
 add_executable(tests
         ipcs/MessageQueue.cpp
+        ipcs/Semaphore.cpp
+        ipcs/SharedMemory.cpp
 )
 
 target_link_libraries(tests

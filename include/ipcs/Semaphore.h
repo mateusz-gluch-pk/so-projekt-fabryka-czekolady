@@ -10,28 +10,24 @@
 
 #define SEM_PERMS 0644
 
-// union SemaphoreUnion {
-//     int val;
-//     struct semid_ds* buf;
-//     unsigned short* array;
-// };
-
 class Semaphore {
     public:
-        explicit Semaphore(key_t key, Logger* log, int initial_value = 1);
+        explicit Semaphore(key_t key, Logger* log, bool create = true, int initial_value = 1);
         ~Semaphore();
 
         // copying is prohibited!
         Semaphore(const Semaphore &) = delete;
         Semaphore & operator=(const Semaphore &) = delete;
+
         // but move is allowed
-        Semaphore(Semaphore && other) noexcept : _semid(other._semid) {other._semid=-1;};
+        Semaphore(Semaphore && other) noexcept : _semid(other._semid), _owner(other._owner), _log(other._log) {other._semid=-1;};
         Semaphore & operator=(Semaphore && other) noexcept;
 
         void lock() const;
         void unlock() const;
 
     private:
+        bool _owner;
         Logger* _log;
         int _semid = -1;
 };

@@ -11,7 +11,7 @@
 
 #include "../helpers/MockQueue.h"
 
-constexpr key_t TEST_KEY = 0x1234;
+constexpr key_t TEST_KEY = 0x1000;
 
 TEST(MessageQueue, SendReceiveSameProcess) {
     MockQueue<Message> queue;
