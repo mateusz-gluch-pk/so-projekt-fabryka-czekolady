@@ -51,7 +51,6 @@ TEST(MessageQueue, SendReceiveDifferentProcess) {
         }
     }
 
-
     EXPECT_TRUE(got_message);
     EXPECT_EQ(received, 42);
 

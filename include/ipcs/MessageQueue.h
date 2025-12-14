@@ -14,7 +14,7 @@
 #include "objects/Message.h"
 
 #define MSQ_PERMS 0644
-
+#define MSQ_LOG_LEVEL MessageLevel::INFO
 
 template <typename T>
 class MessageQueue : public IQueue<T> {
@@ -50,9 +50,9 @@ MessageQueue<T>::MessageQueue(const key_t key, const bool create, IQueue<Message
     }
 
     if (external_msq != nullptr) {
-        _log = new Logger(MessageLevel::INFO, external_msq);
+        _log = new Logger(MSQ_LOG_LEVEL, external_msq);
     } else if constexpr (std::is_same<T, Message>::value) {
-        _log = new Logger(MessageLevel::INFO, this);
+        _log = new Logger(MSQ_LOG_LEVEL, this);
     } else {
         perror("Cannot create message queue");
         exit(errno);
@@ -116,13 +116,16 @@ void MessageQueue<T>::send(T data) {
 
 template<typename T>
 void MessageQueue<T>::receive(T *data) {
-    auto *data_ptr = reinterpret_cast<void *>(data);
-    const int msize = msgrcv(_msqid, data_ptr, sizeof(T), 0, IPC_NOWAIT);
+    void *data_ptr = malloc(sizeof(T));
+    const int msize = msgrcv(_msqid, data_ptr, sizeof(T), 0, 0);
     if (msize == -1) {
+        free(data_ptr);
         _log->fatal("Cannot receive message from message queue %d; errno: %d", _msqid, errno);
     }
-    _log->info("Received message from message queue %d", _msqid);
-}
 
+    *data = *(static_cast<T *>(data_ptr));
+    _log->info("Received message from message queue %d", _msqid);
+    free(data_ptr);
+}
 
 #endif //PROJEKT_MESSAGEQUEUE_H
