@@ -41,7 +41,7 @@ private:
 
 template<typename T>
 MessageQueue<T>::MessageQueue(const key_t key, const bool create, IQueue<Message> *external_msq) {
-    int flags = create ? (IPC_CREAT | MSQ_PERMS) : MSQ_PERMS;
+    int flags = create ? (IPC_CREAT | IPC_EXCL | MSQ_PERMS) : MSQ_PERMS;
 
     _msqid = msgget(key, flags);
     if (_msqid == -1) {

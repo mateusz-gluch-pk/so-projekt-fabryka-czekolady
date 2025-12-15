@@ -10,8 +10,7 @@
 #include "logger/Logger.h"
 
 Semaphore::Semaphore(const key_t key, Logger *log, const bool create, const int initial_value): _log(log), _owner(create) {
-    int flags = SEM_PERMS;
-    if (create) flags |= IPC_CREAT | IPC_EXCL;
+    int flags = create ? (IPC_CREAT | IPC_EXCL | SEM_PERMS) : SEM_PERMS;
     _semid = semget(key, 1, flags);
     if (_semid == -1) {
         _log->fatal("Failed to create semaphore");

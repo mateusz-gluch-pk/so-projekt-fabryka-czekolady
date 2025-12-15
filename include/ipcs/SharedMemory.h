@@ -41,8 +41,7 @@ class SharedMemory {
 
 template<typename T>
 SharedMemory<T>::SharedMemory(key_t key, size_t size, Logger*log, bool create): _key(key), _log(log) {
-    int flags = SHM_PERMS;
-    if (create) flags |= IPC_CREAT | IPC_EXCL;
+    int flags = create ? (IPC_CREAT | IPC_EXCL | SHM_PERMS) : SHM_PERMS;
 
     _shmid = shmget(key, size, flags);
     if (_shmid == -1) {
