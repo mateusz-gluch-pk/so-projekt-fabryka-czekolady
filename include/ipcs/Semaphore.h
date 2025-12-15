@@ -25,6 +25,7 @@ class Semaphore {
 
         void lock() const;
         void unlock() const;
+        [[nodiscard]] int value() const;
 
     private:
         bool _owner;

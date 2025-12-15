@@ -21,7 +21,7 @@ class Message {
     public:
         long mtype;
 
-        Message(): _message(""), _level(MessageLevel::INVALID), _timestamp(0) {};
+        Message(): mtype(0), _message(""), _level(MessageLevel::INVALID), _pid(0), _timestamp(0) {};
         Message(MessageLevel level, const std::string &message);
 
         // to logfmt
@@ -35,6 +35,7 @@ class Message {
 
         char _message[MAX_MESSAGE_LENGTH];
         MessageLevel _level;
+        pid_t _pid;
         time_t _timestamp;
 };
 

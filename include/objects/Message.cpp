@@ -6,7 +6,11 @@
 
 #include <cstring>
 #include <ctime>
+#include <chrono>
 #include <stdexcept>
+#include <unistd.h>
+
+namespace ts = std::chrono;
 
 Message::Message(const MessageLevel level, const std::string &message) {
     if (message.length() >= MAX_MESSAGE_LENGTH) {
@@ -15,13 +19,17 @@ Message::Message(const MessageLevel level, const std::string &message) {
 
     _timestamp = time(nullptr);
     _level = level;
+    _pid = getpid();
     strcpy(_message, message.c_str());
 }
 
 std::string Message::string() const {
-    const std::string time_str = std::to_string(_timestamp);
+    ts::sys_seconds tp{ts::seconds{_timestamp}};
+    ts::zoned_time local{ts::current_zone(), tp};
+
+    const std::string time_str = std::format("{:%Y-%m-%d %H:%M:%S}", local);
     const std::string level_str = _level_str();
-    return time_str + " " + level_str + " " + std::string(_message);
+    return time_str + " " + level_str + " [" + std::to_string(_pid) + "] " + std::string(_message);
 }
 
 std::string Message::_level_str() const {

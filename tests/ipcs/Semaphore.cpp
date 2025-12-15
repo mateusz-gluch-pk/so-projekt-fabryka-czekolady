@@ -7,10 +7,40 @@
 
 #include "../helpers/MockQueue.h"
 
+#define UTICK 1e6
+
 constexpr key_t TEST_KEY = 0x1001;
 
 TEST(Semaphore, LockUnlockSingleProcess) {
     auto mq = MockQueue<Message>();
-    auto log = Logger(MessageLevel::INFO, &mq);
-    auto sem = Semaphore(TEST_KEY, log);
+    auto log = Logger(MessageLevel::DEBUG, &mq);
+    auto sem = Semaphore(TEST_KEY, &log);
+
+    sem.lock();
+    ASSERT_EQ(0, sem.value());
+    sem.unlock();
+    ASSERT_EQ(1, sem.value());
 }
+
+TEST(Semaphore, LockWaitMultiProcess) {
+    auto mq = MockQueue<Message>();
+    auto log = Logger(MessageLevel::DEBUG, &mq);
+    auto sem = Semaphore(TEST_KEY, &log);
+
+    pid_t pid = fork();
+    if (pid == 0) {
+        auto t0 = time(nullptr);
+        sem.lock();               // must block
+        auto t1 = time(nullptr);
+
+        ASSERT_GE(t1 - t0, 1);
+        sem.unlock();
+        exit(0);
+    }
+
+    sem.lock();
+    sleep(1);
+    sem.unlock();
+    waitpid(pid, nullptr, 0);
+}
+
