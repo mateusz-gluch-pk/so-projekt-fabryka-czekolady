@@ -14,7 +14,7 @@
 template<typename T>
 class SharedMemory {
     public:
-        explicit SharedMemory(key_t key, size_t size, Logger* log, bool create = true);;
+        explicit SharedMemory(key_t key, size_t size, Logger* log, bool create = true);
         ~SharedMemory() {detach();};
 
         // copying prohibited
@@ -41,7 +41,10 @@ class SharedMemory {
 
 template<typename T>
 SharedMemory<T>::SharedMemory(key_t key, size_t size, Logger*log, bool create): _key(key), _log(log) {
-    _shmid = shmget(key, size, IPC_CREAT | SHM_PERMS);
+    int flags = SHM_PERMS;
+    if (create) flags |= IPC_CREAT | IPC_EXCL;
+
+    _shmid = shmget(key, size, flags);
     if (_shmid == -1) {
         _log->fatal("Cannot create shared memory");
     }
@@ -109,14 +112,14 @@ template<typename T>
 void SharedMemory<T>::detach() {
     if (_data) {
         shmdt(_data);
-        _data = nullptr;
         _log->info("Detached shared memory %d", _shmid);
+        _data = nullptr;
     }
 
     if (_shmid != -1 && _owner) {
         shmctl(_shmid, IPC_RMID, nullptr);
-        _shmid = -1;
         _log->info("Deleted shared memory %d", _shmid);
+        _shmid = -1;
     }
 }
 
