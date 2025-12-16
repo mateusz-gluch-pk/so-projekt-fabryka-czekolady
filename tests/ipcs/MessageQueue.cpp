@@ -15,7 +15,7 @@ constexpr key_t TEST_KEY = 0x1000;
 
 TEST(MessageQueue, SendReceiveSameProcess) {
     MockQueue<Message> queue;
-    MessageQueue<int> mq(TEST_KEY, true, &queue);
+    auto mq = MessageQueue<int>::create(TEST_KEY, &queue);
 
     int message = 42;
     mq.send(message);
@@ -28,13 +28,13 @@ TEST(MessageQueue, SendReceiveSameProcess) {
 
 TEST(MessageQueue, SendReceiveDifferentProcess) {
     MockQueue<Message> queue;
-    MessageQueue<int> mq(TEST_KEY, true, &queue);
+    auto mq = MessageQueue<int>::create(TEST_KEY, &queue);
 
     pid_t pid = fork();
     ASSERT_NE(pid, -1);
 
     if (pid == 0) {
-        MessageQueue<int> mq(TEST_KEY, false, &queue);
+        mq = MessageQueue<int>::attach(TEST_KEY, &queue);
         int val = 42;
         mq.send(val);
         exit(0);
@@ -60,15 +60,15 @@ TEST(MessageQueue, SendReceiveDifferentProcess) {
 
 TEST(MessageQueue, MultipleMessage) {
     MockQueue<Message> queue;
-    MessageQueue<int> mq(TEST_KEY, true, &queue);
+    auto mq = MessageQueue<int>::create(TEST_KEY, &queue);
 
     pid_t pid = fork();
     ASSERT_NE(pid, -1);
 
     if (pid == 0) {
-        MessageQueue<int> child(TEST_KEY, false, &queue);
+        mq = MessageQueue<int>::attach(TEST_KEY, &queue);
         for (int i = 1; i <= 5; ++i) {
-            child.send(i*10);
+            mq.send(i*10);
         }
         _exit(0);
     }

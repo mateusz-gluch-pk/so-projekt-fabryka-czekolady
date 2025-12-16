@@ -19,6 +19,9 @@
 template <typename T>
 class MessageQueue : public IQueue<T> {
 public:
+    static MessageQueue attach(const key_t key, IQueue<Message> *external_msq) { return MessageQueue(key, true, external_msq); };
+    static MessageQueue create(const key_t key, IQueue<Message> *external_msq) { return MessageQueue(key, false, external_msq); };
+
     explicit MessageQueue(key_t key, bool create, IQueue<Message> *external_msq);
 
     ~MessageQueue() override;
@@ -85,7 +88,7 @@ template<typename T>
 MessageQueue<T>::MessageQueue(MessageQueue &&other) noexcept:
     _msqid(other._msqid),
     _owner(other._owner),
-    _log(other._logger) {
+    _log(other._log) {
     other._msqid = -1;
     other._owner = false;
 }
@@ -98,7 +101,7 @@ MessageQueue<T> & MessageQueue<T>::operator=(MessageQueue<T> &&other) noexcept {
 
     _msqid = other._msqid;
     _owner = other._owner;
-    _log = other._logger;
+    _log = other._log;
     other._msqid = -1;
     other._owner = false;
     return *this;

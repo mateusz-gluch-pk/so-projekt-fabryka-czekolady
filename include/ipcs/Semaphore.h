@@ -12,6 +12,9 @@
 
 class Semaphore {
     public:
+        static Semaphore attach(key_t key, Logger* log) {return Semaphore(key, log, false);};
+        static Semaphore create(key_t key, Logger* log) {return Semaphore(key, log, true);};
+
         explicit Semaphore(key_t key, Logger* log, bool create = true, int initial_value = 1);
         ~Semaphore();
 

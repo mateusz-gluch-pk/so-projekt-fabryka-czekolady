@@ -14,7 +14,7 @@ constexpr key_t TEST_KEY = 0x1001;
 TEST(Semaphore, LockUnlockSingleProcess) {
     auto mq = MockQueue<Message>();
     auto log = Logger(MessageLevel::DEBUG, &mq);
-    auto sem = Semaphore(TEST_KEY, &log);
+    auto sem = Semaphore::create(TEST_KEY, &log);
 
     sem.lock();
     ASSERT_EQ(0, sem.value());
@@ -25,10 +25,11 @@ TEST(Semaphore, LockUnlockSingleProcess) {
 TEST(Semaphore, LockWaitMultiProcess) {
     auto mq = MockQueue<Message>();
     auto log = Logger(MessageLevel::DEBUG, &mq);
-    auto sem = Semaphore(TEST_KEY, &log);
+    auto sem = Semaphore::create(TEST_KEY, &log);
 
     pid_t pid = fork();
     if (pid == 0) {
+        sem = Semaphore::attach(TEST_KEY, &log);
         auto t0 = time(nullptr);
         sem.lock();               // must block
         auto t1 = time(nullptr);
