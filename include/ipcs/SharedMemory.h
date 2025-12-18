@@ -5,9 +5,10 @@
 #ifndef PROJEKT_SHAREDMEMORY_H
 #define PROJEKT_SHAREDMEMORY_H
 #include <cstring>
-#include <stdexcept>
 #include <sys/shm.h>
 #include <sys/types.h>
+
+#include "logger/Logger.h"
 
 #define SHM_PERMS 0644
 
@@ -72,9 +73,11 @@ SharedMemory<T>::SharedMemory(SharedMemory &&other) noexcept:
     _key(other._key),
     _shmid(other._shmid),
     _owner(other._owner),
-    _data(other._data) {
+    _data(other._data),
+    _log(other._log) {
     other._shmid = -1;
     other._data = nullptr;
+    other._log = nullptr;
 }
 
 template<typename T>

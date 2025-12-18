@@ -46,6 +46,8 @@ std::string Message::_level_str() const {
             return"ERR";
         case MessageLevel::FATAL:
             return "FTL";
+        case INVALID:
+            return "INV";
     }
     return "UNK";
 }

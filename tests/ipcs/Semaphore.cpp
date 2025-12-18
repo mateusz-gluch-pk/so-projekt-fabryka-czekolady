@@ -5,7 +5,7 @@
 #include "ipcs/Semaphore.h"
 #include <gtest/gtest.h>
 
-#include "../helpers/MockQueue.h"
+#include "../../include/logger/MockQueue.h"
 
 constexpr key_t TEST_KEY = 0x1001;
 

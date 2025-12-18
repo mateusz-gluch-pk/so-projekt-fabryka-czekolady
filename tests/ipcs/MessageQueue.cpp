@@ -7,9 +7,6 @@
 #include <unistd.h>
 #include <wait.h>
 #include <ipcs/MessageQueue.h>
-#include <objects/Message.h>
-
-#include "../helpers/MockQueue.h"
 
 constexpr key_t TEST_KEY = 0x1000;
 

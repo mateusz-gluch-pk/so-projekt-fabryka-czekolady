@@ -4,12 +4,10 @@
 
 #ifndef PROJEKT_MESSAGEQUEUE_H
 #define PROJEKT_MESSAGEQUEUE_H
-#include <stdexcept>
-#include <sys/ipc.h>
 #include <sys/types.h>
 #include <sys/msg.h>
 
-#include "../../tests/helpers/MockQueue.h"
+#include "logger/MockQueue.h"
 #include "logger/IQueue.h"
 #include "logger/Logger.h"
 #include "objects/Message.h"
