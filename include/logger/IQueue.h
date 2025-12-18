@@ -9,8 +9,8 @@ template<typename T>
 class IQueue {
     public:
         virtual ~IQueue() = default;
-        virtual void send(T data) {}
-        virtual void receive(T *data) {}
+        virtual void send(T data) const {}
+        virtual void receive(T *data) const {}
 };
 
 #endif //PROJEKT_IQUEUE_H

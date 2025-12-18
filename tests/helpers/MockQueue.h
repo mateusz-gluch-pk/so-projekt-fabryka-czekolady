@@ -11,8 +11,8 @@
 
 template<typename T>
 class MockQueue: public IQueue<T> {
-    void send(T m) override {std::cout << m << std::endl;}
-    void receive(T *m) override {}
+    void send(T m) const override {std::cout << m << std::endl;}
+    void receive(T *m) const override {}
 };
 
 #endif //PROJEKT_MOCKQUEUE_H

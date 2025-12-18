@@ -20,8 +20,8 @@
 template <typename T>
 class MessageQueue : public IQueue<T> {
 public:
-    static MessageQueue attach(const key_t key) { return MessageQueue(key, true); };
-    static MessageQueue create(const key_t key) { return MessageQueue(key, false); };
+    static MessageQueue attach(const key_t key) { return MessageQueue(key, false); };
+    static MessageQueue create(const key_t key) { return MessageQueue(key, true); };
 
     explicit MessageQueue(key_t key, bool create);
 
@@ -34,8 +34,8 @@ public:
     MessageQueue(MessageQueue && other) noexcept;
     MessageQueue &operator=(MessageQueue && other) noexcept;
 
-    void send(T data) override;
-    void receive(T *data) override;
+    void send(T data) const override;
+    void receive(T *data) const override;
 
 private:
     Logger *_log;
@@ -106,7 +106,7 @@ MessageQueue<T> & MessageQueue<T>::operator=(MessageQueue<T> &&other) noexcept {
 }
 
 template<typename T>
-void MessageQueue<T>::send(T data) {
+void MessageQueue<T>::send(T data) const {
     const void *data_ptr = reinterpret_cast<void *>(&data);
     const int result = msgsnd(_msqid, data_ptr, sizeof(T), IPC_NOWAIT);
     if (result == -1) {
@@ -116,7 +116,7 @@ void MessageQueue<T>::send(T data) {
 }
 
 template<typename T>
-void MessageQueue<T>::receive(T *data) {
+void MessageQueue<T>::receive(T *data) const {
     void *data_ptr = malloc(sizeof(T));
     const int msize = msgrcv(_msqid, data_ptr, sizeof(T), 0, 0);
 
