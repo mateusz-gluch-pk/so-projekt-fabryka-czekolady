@@ -8,6 +8,7 @@
 #include <thread>
 
 #include "IRunnable.h"
+#include "ipcs/MessageQueue.h"
 #include "objects/ItemTemplate.h"
 #include "stations/Warehouse.h"
 #include "logger/Logger.h"
@@ -30,6 +31,11 @@ class Deliverer : public IRunnable {
     private:
         void _main() const;
         void _reload();
+
+        void _reattach() {
+            _log->setQueue(static_cast<IQueue<Message>>(MessageQueue<Message>::attach(_log->key())));
+            _dst->reattach(_log);
+        }
 
         ItemTemplate _tpl;
         Warehouse *_dst;

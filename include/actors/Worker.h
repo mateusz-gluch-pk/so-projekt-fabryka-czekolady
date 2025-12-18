@@ -8,6 +8,7 @@
 #include <bits/this_thread_sleep.h>
 
 #include "IRunnable.h"
+#include "ipcs/MessageQueue.h"
 #include "stations/Warehouse.h"
 #include "stations/Workstation.h"
 #include "logger/Logger.h"
@@ -29,6 +30,12 @@ class Worker : public IRunnable {
     private:
         void _main();
         void _reload();
+
+        void _reattach() {
+            _log->setQueue(static_cast<IQueue<Message>>(MessageQueue<Message>::attach(_log->key())));
+            _in->reattach(_log);
+            _out->reattach(_log);
+        };
 
         Logger *_log;
         Warehouse *_in;

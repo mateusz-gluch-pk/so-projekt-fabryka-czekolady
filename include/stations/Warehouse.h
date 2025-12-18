@@ -28,6 +28,13 @@ class Warehouse {
 		void get(const std::string &itemName, Item *output) const;
 		// WarehouseStats &stats();
 
+		void reattach(Logger *log) {
+			size_t total_size = sizeof(SharedVector<Item>) + sizeof(Item) * _variety;
+			_sem = Semaphore::attach(_key, log);
+			_shm = SharedMemory<SharedVector<Item>>::attach(_key, total_size, log);
+			_log = log;
+		};
+
 	private:
 		Warehouse(
 			std::string  name,
@@ -50,6 +57,9 @@ class Warehouse {
 		Semaphore _sem;
 		SharedMemory<SharedVector<Item>> _shm;
 		SharedVector<Item> *_content;
+
+		// logger
+		Logger *_log;
 
 		// file wrappers
 		void _write_file();

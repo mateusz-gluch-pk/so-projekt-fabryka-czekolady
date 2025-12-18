@@ -15,7 +15,7 @@
 
 class LogCollector: public IRunnable{
     public:
-        LogCollector(MessageQueue<Message> *msq, const std::string &filename, const bool tty = true);
+        LogCollector(key_t key, const std::string &filename, const bool tty = true);
         ~LogCollector() override;
 
         void run() override;
@@ -27,12 +27,16 @@ class LogCollector: public IRunnable{
     private:
         void _main();
         void _reload();
+        void _reattach() {
+            _msq = MessageQueue<Message>::attach(_key);
+        }
 
         std::ofstream _open_file() const;
         void _close_file();
         void _write_log(Message& msg);;
 
-        MessageQueue<Message> *_msq;
+        key_t _key;
+        MessageQueue<Message> _msq;
         std::string _filename;
         std::ofstream _file;
         bool _tty;

@@ -41,7 +41,8 @@ Warehouse::Warehouse(
 		_filename(std::move(filename)),
 		_key(key),
 		_sem(key, log),
-		_shm(key, total_size, log)
+		_shm(key, total_size, log),
+		_log(log)
 {
 	_content = _shm.get();
 	_content->init(_variety);

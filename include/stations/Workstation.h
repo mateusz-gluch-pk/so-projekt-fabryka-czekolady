@@ -21,12 +21,18 @@ class Workstation {
         Recipe &recipe() const {return *_recipe;};
         Item &create(std::vector<Item> items);
 
+        void reattach(Logger *log) {
+            _sem = Semaphore(_key, log);
+            _log = log;
+        }
+
     private:
-        Workstation(std::string name, Recipe *recipe, const key_t key, Logger *log): _name(std::move(name)), _log(log), _recipe(recipe), _sem(key, log) {};
+        Workstation(std::string name, Recipe *recipe, const key_t key, Logger *log): _name(std::move(name)), _log(log), _recipe(recipe), _sem(key, log), _key(key){};
         std::string _name;
         Logger *_log;
         Recipe *_recipe;
         Semaphore _sem;
+        key_t _key;
 };
 
 
