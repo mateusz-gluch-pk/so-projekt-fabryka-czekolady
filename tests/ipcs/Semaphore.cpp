@@ -7,8 +7,6 @@
 
 #include "../helpers/MockQueue.h"
 
-#define UTICK 1e6
-
 constexpr key_t TEST_KEY = 0x1001;
 
 TEST(Semaphore, LockUnlockSingleProcess) {
