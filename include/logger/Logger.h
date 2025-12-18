@@ -11,17 +11,21 @@
 
 class Logger {
 public:
-    Logger(const MessageLevel level, IQueue<Message> *msq): _msq(msq), _level(level) {};
+    Logger(const MessageLevel level, IQueue<Message> msq, const key_t key = 0x0): _msq(msq), _level(level), _key(key) {};
     void debug(const char *fmt, ...) const;
     void info(const char *fmt, ...) const;
     void warn(const char *fmt, ...) const;
     void error(const char *fmt, ...) const;
     void fatal(const char *fmt, ...) const;
 
+    void setQueue(IQueue<Message> msq) {_msq = msq;}
+    [[nodiscard]] key_t key() const {return _key;}
+    [[nodiscard]] MessageLevel level() const {return _level;}
 private:
     static std::string _format(const char *fmt, va_list args);
 
-    IQueue<Message> *_msq;
+    key_t _key;
+    IQueue<Message> _msq;
     MessageLevel _level;
 };
 

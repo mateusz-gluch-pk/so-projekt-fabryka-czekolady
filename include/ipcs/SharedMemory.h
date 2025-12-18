@@ -14,8 +14,8 @@
 template<typename T>
 class SharedMemory {
     public:
-        static SharedMemory attach(key_t key, Logger* log) {return SharedMemory(key, log, false);}
-        static SharedMemory create(key_t key, Logger* log) {return SharedMemory(key, log, true);}
+        static SharedMemory attach(key_t key, size_t size, Logger* log) {return SharedMemory(key, size, log, false);}
+        static SharedMemory create(key_t key, size_t size, Logger* log) {return SharedMemory(key, size, log, true);}
 
         explicit SharedMemory(key_t key, size_t size, Logger* log, bool create = true);
         ~SharedMemory() {detach();};

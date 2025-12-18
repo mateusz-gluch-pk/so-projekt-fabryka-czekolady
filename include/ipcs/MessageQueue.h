@@ -9,6 +9,7 @@
 #include <sys/types.h>
 #include <sys/msg.h>
 
+#include "../../tests/helpers/MockQueue.h"
 #include "logger/IQueue.h"
 #include "logger/Logger.h"
 #include "objects/Message.h"
@@ -19,10 +20,10 @@
 template <typename T>
 class MessageQueue : public IQueue<T> {
 public:
-    static MessageQueue attach(const key_t key, IQueue<Message> *external_msq) { return MessageQueue(key, true, external_msq); };
-    static MessageQueue create(const key_t key, IQueue<Message> *external_msq) { return MessageQueue(key, false, external_msq); };
+    static MessageQueue attach(const key_t key) { return MessageQueue(key, true); };
+    static MessageQueue create(const key_t key) { return MessageQueue(key, false); };
 
-    explicit MessageQueue(key_t key, bool create, IQueue<Message> *external_msq);
+    explicit MessageQueue(key_t key, bool create);
 
     ~MessageQueue() override;
 
@@ -43,7 +44,7 @@ private:
 };
 
 template<typename T>
-MessageQueue<T>::MessageQueue(const key_t key, const bool create, IQueue<Message> *external_msq) {
+MessageQueue<T>::MessageQueue(const key_t key, const bool create) {
     int flags = create ? (IPC_CREAT | IPC_EXCL | MSQ_PERMS) : MSQ_PERMS;
 
     _msqid = msgget(key, flags);
@@ -52,13 +53,10 @@ MessageQueue<T>::MessageQueue(const key_t key, const bool create, IQueue<Message
         exit(errno);
     }
 
-    if (external_msq != nullptr) {
-        _log = new Logger(MSQ_LOG_LEVEL, external_msq);
-    } else if constexpr (std::is_same<T, Message>::value) {
-        _log = new Logger(MSQ_LOG_LEVEL, this);
+    if constexpr (std::is_same_v<T, Message>) {
+        _log = new Logger(MSQ_LOG_LEVEL, *this);
     } else {
-        perror("Cannot create message queue");
-        exit(errno);
+        _log = new Logger(MSQ_LOG_LEVEL, static_cast<IQueue<Message>>(MockQueue<Message>()));
     }
 
     _owner = create;

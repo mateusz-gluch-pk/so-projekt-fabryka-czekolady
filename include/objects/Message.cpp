@@ -12,6 +12,8 @@
 
 namespace ts = std::chrono;
 
+Message::Message(): mtype(0), _message(""), _level(MessageLevel::INVALID), _pid(0), _timestamp(0) {}
+
 Message::Message(const MessageLevel level, const std::string &message) {
     if (message.length() >= MAX_MESSAGE_LENGTH) {
         throw new std::length_error("Message too long");
