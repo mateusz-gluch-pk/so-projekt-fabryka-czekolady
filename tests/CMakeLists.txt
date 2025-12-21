@@ -2,6 +2,11 @@ add_executable(tests
         ipcs/MessageQueue.cpp
         ipcs/Semaphore.cpp
         ipcs/SharedMemory.cpp
+        stations/Warehouse.cpp
+        stations/Workstation.cpp
+        actors/Worker.cpp
+        actors/Deliverer.cpp
+        actors/LogCollector.cpp
 )
 
 target_link_libraries(tests
