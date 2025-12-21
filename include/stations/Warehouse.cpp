@@ -12,6 +12,7 @@
 
 #define WAREHOUSE_SHM_SIZE 4096
 #define WAREHOUSE_IPC_MODE 0644
+#define WAREHOUSE_DIR "warehouses"
 
 #include <fstream>
 
@@ -27,23 +28,34 @@ template void from_json(const nlohmann::json &j, SharedVector<Item> &vec);
 using json = nlohmann::json;
 namespace fs = std::filesystem;
 
+static key_t _make_key(const std::string& name) {
+	const std::string dir(WAREHOUSE_DIR);
+	fs::create_directories(dir);
+
+	const std::string key_filename = dir + "/" + name + ".key";
+	if (!fs::exists(key_filename)) {
+		std::ofstream _stream(key_filename);
+	}
+
+	return ftok(key_filename.c_str(), 1);
+}
+
 Warehouse::Warehouse(
 	std::string name,
 	const int capacity,
 	const int variety,
-	std::string filename,
-	const key_t key,
 	const size_t total_size,
 	Logger *log):
 		_capacity(capacity),
 		_variety(variety),
 		_name(std::move(name)),
-		_filename(std::move(filename)),
-		_key(key),
-		_sem(key, log),
-		_shm(key, total_size, log),
+		_key(_make_key(name)),
+		_sem(_key, log),
+		_shm(_key, total_size, log),
 		_log(log)
-{
+	{
+	std::string dir(WAREHOUSE_DIR);
+	_filename = dir + "/" + name + ".json";
 	_content = _shm.get();
 	_content->init(_variety);
 
@@ -56,8 +68,6 @@ Warehouse::Warehouse(const std::string &name, const int capacity, Logger *log, c
 	name,
 	capacity,
 	variety,
-	"warehouses/" + name + ".json",
-	ftok(("warehouses/" + name + ".key").c_str(), 1),
 	sizeof(SharedVector<Item>) + sizeof(Item) * variety,
 	log
 ) {}

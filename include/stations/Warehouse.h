@@ -40,12 +40,9 @@ class Warehouse {
 			std::string  name,
 			int capacity,
 			int variety,
-			std::string filename,
-			key_t key,
 			size_t total_size,
 			Logger *log
 		);
-
 
 		int _capacity;
 		int _variety;
