@@ -11,7 +11,7 @@
 
 class Logger {
 public:
-    Logger(const MessageLevel level, IQueue<Message> *msq = nullptr, const key_t key = 0x0): _msq(msq), _level(level), _key(key) {};
+    Logger(const MessageLevel level, IQueue<Message> *msq = nullptr, const key_t key = 0x0): _key(key), _msq(msq), _level(level) {};
     void debug(const char *fmt, ...) const;
     void info(const char *fmt, ...) const;
     void warn(const char *fmt, ...) const;

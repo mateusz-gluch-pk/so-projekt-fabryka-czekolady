@@ -13,7 +13,7 @@
 #include "objects/Message.h"
 
 #define MSQ_PERMS 0644
-#define MSQ_LOG_LEVEL MessageLevel::INFO
+#define MSQ_LOG_LEVEL MessageLevel::DEBUG
 
 template <typename T>
 class MessageQueue : public IQueue<T> {
@@ -36,6 +36,7 @@ public:
     void receive(T *data) const override;
 
 private:
+    IQueue<Message> *_local_msq = nullptr;
     Logger *_log;
     int _msqid = -1;
     bool _owner;
@@ -52,9 +53,11 @@ MessageQueue<T>::MessageQueue(const key_t key, const bool create) {
     }
 
     if constexpr (std::is_same_v<T, Message>) {
-        _log = new Logger(MSQ_LOG_LEVEL, *this);
+        _log = new Logger(MSQ_LOG_LEVEL, this);
     } else {
-        _log = new Logger(MSQ_LOG_LEVEL, static_cast<IQueue<Message>>(MockQueue<Message>()));
+        _local_msq = new MockQueue<Message>();
+        _log = new Logger(MSQ_LOG_LEVEL, _local_msq);
+        _log->info("Types incompatible for loopback - creating local message queue");
     }
 
     _owner = create;
@@ -74,6 +77,12 @@ MessageQueue<T>::~MessageQueue() {
             _log->fatal("Cannot remove message queue %d", _msqid);
         }
         _log->info("Deleted message queue %d", _msqid);
+    }
+
+    if (_local_msq != nullptr) {
+        _log->info("Deleting local message queue");
+        delete _local_msq;
+        _local_msq = nullptr;
     }
 
     delete _log;
@@ -106,7 +115,7 @@ MessageQueue<T> & MessageQueue<T>::operator=(MessageQueue<T> &&other) noexcept {
 template<typename T>
 void MessageQueue<T>::send(T data) const {
     const void *data_ptr = reinterpret_cast<void *>(&data);
-    const int result = msgsnd(_msqid, data_ptr, sizeof(T), IPC_NOWAIT);
+    const int result = msgsnd(_msqid, data_ptr, sizeof(T) - sizeof(long), IPC_NOWAIT);
     if (result == -1) {
         _log->fatal("Cannot send message to message queue %d; errno: %d", _msqid, errno);
     }
@@ -115,20 +124,20 @@ void MessageQueue<T>::send(T data) const {
 
 template<typename T>
 void MessageQueue<T>::receive(T *data) const {
-    void *data_ptr = malloc(sizeof(T));
-    const int msize = msgrcv(_msqid, data_ptr, sizeof(T), 0, 0);
+    // void *data_ptr = malloc(sizeof(T));
+    const int msize = msgrcv(_msqid, data, sizeof(T) - sizeof(long), 0, 0);
 
     if (msize == -1) {
-        free(data_ptr);
-        data_ptr = nullptr;
+        // free(data_ptr);
+        // data_ptr = nullptr;
         _log->fatal("Cannot receive message from message queue %d; errno: %d", _msqid, errno);
         return;
     }
 
-    *data = *(static_cast<T *>(data_ptr));
+    // *data = *(static_cast<T *>(data_ptr));
     _log->debug("Received message from message queue %d", _msqid);
-    free(data_ptr);
-    data_ptr = nullptr;
+    // free(data_ptr);
+    // data_ptr = nullptr;
 }
 
 #endif //PROJEKT_MESSAGEQUEUE_H

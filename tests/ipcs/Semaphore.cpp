@@ -10,8 +10,8 @@
 constexpr key_t TEST_KEY = 0x1001;
 
 TEST(Semaphore, LockUnlockSingleProcess) {
-    const auto mq = MockQueue<Message>();
-    auto log = Logger(MessageLevel::DEBUG, static_cast<IQueue<Message>>(mq));
+    auto mq = MockQueue<Message>();
+    auto log = Logger(MessageLevel::DEBUG, &mq);
     auto sem = Semaphore::create(TEST_KEY, &log);
 
     sem.lock();
@@ -22,7 +22,7 @@ TEST(Semaphore, LockUnlockSingleProcess) {
 
 TEST(Semaphore, LockWaitMultiProcess) {
     auto mq = MockQueue<Message>();
-    auto log = Logger(MessageLevel::DEBUG, static_cast<IQueue<Message>>(mq));
+    auto log = Logger(MessageLevel::DEBUG, &mq);
     auto sem = Semaphore::create(TEST_KEY, &log);
 
     pid_t pid = fork();
@@ -31,15 +31,21 @@ TEST(Semaphore, LockWaitMultiProcess) {
         auto t0 = time(nullptr);
         sem.lock();               // must block
         auto t1 = time(nullptr);
-
-        ASSERT_GE(t1 - t0, 1);
         sem.unlock();
+
+        if (t1 <= t0) {
+            exit(1);
+        }
         exit(0);
     }
 
     sem.lock();
     sleep(1);
     sem.unlock();
-    waitpid(pid, nullptr, 0);
+
+    int status = 0;
+    waitpid(pid, &status, 0);
+    ASSERT_TRUE(WIFEXITED(status));
+    EXPECT_EQ(WEXITSTATUS(status), 0);
 }
 

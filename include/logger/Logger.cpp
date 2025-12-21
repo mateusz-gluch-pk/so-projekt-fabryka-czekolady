@@ -16,7 +16,7 @@ void Logger::debug(const char *fmt, ...) const {
     const std::string payload = _format(fmt, args);
     va_end(args);
     const auto msg = Message(MessageLevel::DEBUG, payload);
-    _msq.send(msg);
+    _msq->send(msg);
 }
 
 void Logger::info(const char *fmt, ...) const {
@@ -29,7 +29,7 @@ void Logger::info(const char *fmt, ...) const {
     const std::string payload = _format(fmt, args);
     va_end(args);
     const auto msg = Message(MessageLevel::INFO, payload);
-    _msq.send(msg);
+    _msq->send(msg);
 }
 
 void Logger::warn(const char *fmt, ...) const {
@@ -42,7 +42,7 @@ void Logger::warn(const char *fmt, ...) const {
     const std::string payload = _format(fmt, args);
     va_end(args);
     const auto msg = Message(MessageLevel::WARNING, payload);
-    _msq.send(msg);
+    _msq->send(msg);
 }
 
 void Logger::error(const char *fmt, ...) const {
@@ -55,7 +55,7 @@ void Logger::error(const char *fmt, ...) const {
     const std::string payload = _format(fmt, args);
     va_end(args);
     const auto msg = Message(MessageLevel::ERROR, payload);
-    _msq.send(msg);
+    _msq->send(msg);
     perror(msg.string().c_str());
 }
 
@@ -69,7 +69,7 @@ void Logger::fatal(const char *fmt, ...) const {
     const std::string payload = _format(fmt, args);
     va_end(args);
     const auto msg = Message(MessageLevel::FATAL, payload);
-    _msq.send(msg);
+    _msq->send(msg);
     perror(msg.string().c_str());
     throw std::runtime_error(payload);
 }

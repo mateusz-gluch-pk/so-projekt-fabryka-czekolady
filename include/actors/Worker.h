@@ -19,7 +19,12 @@ namespace sthr = std::this_thread;
 class Worker : public IRunnable {
     public:
         Worker(Logger *log, Warehouse *in, Warehouse *out, Workstation *station);
-        ~Worker() override {}
+        ~Worker() override {
+            if (_msq != nullptr) {
+                delete _msq;
+                _msq = nullptr;
+            }
+        }
 
         void run() override;
         void stop() override;
@@ -32,11 +37,13 @@ class Worker : public IRunnable {
         void _reload();
 
         void _reattach() {
-            _log->setQueue(static_cast<IQueue<Message>>(MessageQueue<Message>::attach(_log->key())));
+            _msq = new MessageQueue<Message>(_log->key(), false);
+            _log->setQueue(_msq);
             _in->reattach(_log);
             _out->reattach(_log);
         };
 
+        MessageQueue<Message> *_msq;
         Logger *_log;
         Warehouse *_in;
         Warehouse *_out;

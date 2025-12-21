@@ -20,7 +20,12 @@ namespace sthr = std::this_thread;
 class Deliverer : public IRunnable {
     public:
         Deliverer(const ItemTemplate &tpl, Warehouse *dst, Logger *log);;
-        ~Deliverer() override {}
+        ~Deliverer() override {
+            if (_msq != nullptr) {
+                delete _msq;
+                _msq = nullptr;
+            }
+        }
 
         void run() override;
         void stop() override;
@@ -33,10 +38,12 @@ class Deliverer : public IRunnable {
         void _reload();
 
         void _reattach() {
-            _log->setQueue(static_cast<IQueue<Message>>(MessageQueue<Message>::attach(_log->key())));
+            _msq = new MessageQueue<Message>(_log->key(), false);
+            _log->setQueue(_msq);
             _dst->reattach(_log);
         }
 
+        MessageQueue<Message> *_msq;
         ItemTemplate _tpl;
         Warehouse *_dst;
         Logger *_log;

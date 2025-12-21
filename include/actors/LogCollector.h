@@ -28,15 +28,15 @@ class LogCollector: public IRunnable{
         void _main();
         void _reload();
         void _reattach() {
-            _msq = MessageQueue<Message>::attach(_key);
+            _msq = new MessageQueue<Message>(_key, false);
         }
 
         std::ofstream _open_file() const;
         void _close_file();
         void _write_log(Message& msg);;
 
+        MessageQueue<Message> *_msq = nullptr;
         key_t _key;
-        MessageQueue<Message> _msq;
         std::string _filename;
         std::ofstream _file;
         bool _tty;

@@ -9,12 +9,19 @@
 namespace stime = std::chrono;
 namespace sthr = std::this_thread;
 
-LogCollector::LogCollector(key_t key, const std::string &filename, const bool tty):
-    _msq(MessageQueue<Message>::attach(key)), _key(key), _filename(filename), _tty(tty), _running(true), _paused(false), _reloading(false) {
+LogCollector::LogCollector(const key_t key, const std::string &filename, const bool tty):
+    _key(key), _filename(filename), _tty(tty), _running(true), _paused(false), _reloading(false) {
     _file = _open_file();
 }
 
-LogCollector::~LogCollector() {_close_file();}
+LogCollector::~LogCollector() {
+    _close_file();
+
+    if (_msq != nullptr) {
+        delete _msq;
+        _msq = nullptr;
+    }
+}
 
 void LogCollector::run() {
     while (_running) {
@@ -39,7 +46,7 @@ void LogCollector::reload() { _reloading = true; }
 
 void LogCollector::_main() {
     Message msg;
-    _msq.receive(&msg);
+    _msq->receive(&msg);
     _write_log(msg);
 }
 
