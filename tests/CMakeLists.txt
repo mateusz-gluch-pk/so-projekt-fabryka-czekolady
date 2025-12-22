@@ -8,6 +8,9 @@ add_executable(tests
         actors/Deliverer.cpp
         actors/LogCollector.cpp
         objects/Item.cpp
+        objects/ItemTemplate.cpp
+        objects/Recipe.cpp
+        objects/SharedVector.cpp
 )
 
 target_link_libraries(tests
