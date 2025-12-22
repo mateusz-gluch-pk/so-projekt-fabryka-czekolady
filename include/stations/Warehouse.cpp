@@ -76,18 +76,16 @@ Warehouse::Warehouse(
 		_owner(create)
 	{
 	std::string dir(WAREHOUSE_DIR);
-	_filename = dir + "/" + name + ".json";
+	_filename = dir + "/" + _name + ".json";
 	_content = _shm.get();
 	_content->init(_variety);
 
-	if (fs::exists(_filename)) {
+	if (fs::exists(_filename) && _owner) {
 		_read_file();
 		_log->info("[%s] Warehouse state read from file", _name.c_str());
-	} else {
+		_log->info("[%s] Created warehouse with variety %d", _name.c_str(), variety);
+	} else if (_owner) {
 		_log->info("[%s] Initializing warehouse", _name.c_str());
-	}
-
-	if (_owner) {
 		_log->info("[%s] Created warehouse with variety %d", _name.c_str(), variety);
 	} else {
 		_log->info("[%s] Attached warehouse with variety %d", _name.c_str(), variety);
@@ -117,16 +115,17 @@ Warehouse::~Warehouse () {
 	// save warehouse state to file - if there is any warehouse to begin with
 	if (_content != nullptr && _owner) {
 		_write_file();
-		_log->info("[%s] Saved warehouse content to file", _name.c_str());
+		_log->info("[%s] Saved warehouse content to file %s", _name.c_str(), _filename.c_str());
 	}
 
 	// semaphore is removed automatically upon destruction
 	// as well as shared memory
 }
 
-void Warehouse::add(Item &item) const {
+void Warehouse::add(Item &item) {
 	// lock warehouse
 	_sem.lock();
+	_content = _shm.get();
 
 	// check capacity - if no space, just release semaphore
 	if (usage() + item.size() > _capacity) {
@@ -147,10 +146,15 @@ void Warehouse::add(Item &item) const {
 			break;
 		}
 	}
-	if (!stacked) {
+
+
+	if (!stacked && _content->size() != _variety) {
 		_content->push_back(item);
+		item = Item(item.name(), item.size(), 0);
 		_log->info("[%s] Added unique item %s to warehouse", _name.c_str(), item.name().c_str());
-		_log->debug("[%s] Warehouse variety: %d/%d", _name.c_str(), _content->size(), variety());
+		_log->debug("[%s] Warehouse variety: %d/%d", _name.c_str(), _content->size(), _variety);
+	} else if (!stacked && _content->size() == _variety) {
+		_log->error("[%s] Warehouse has reached max variety - cannot add item %s", _name.c_str(), item.name().c_str());
 	}
 
 	_log->debug("[%s] Warehouse capacity: %d/%d", _name.c_str(), usage(), _capacity);
@@ -158,9 +162,10 @@ void Warehouse::add(Item &item) const {
 	_sem.unlock();
 }
 
-void Warehouse::get(const std::string &itemName, Item *output) const {
+void Warehouse::get(const std::string &itemName, Item *output) {
 	// lock warehouse
 	_sem.lock();
+	_content = _shm.get();
 
 	auto it = _content->begin();
 	while (it != _content->end()) {
@@ -203,8 +208,7 @@ void Warehouse::_write_file() {
 	fs::create_directories(_filename.parent_path());
 
 	// open tmp file for write
-	fs::path tmp_filename = _filename;
-	_filename += ".tmp";
+	fs::path tmp_filename = _filename.generic_string() + ".tmp";
 
 	std::ofstream out{tmp_filename};
 	if (!out) {
@@ -213,7 +217,7 @@ void Warehouse::_write_file() {
 
 	// serialize content
 	json content_json = *_content;
-	out << content_json.dump(2) << std::endl;
+	out << content_json.dump() << std::endl;
 	out.close();
 
 	// atomic rewrite tmp to target

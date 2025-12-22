@@ -4,16 +4,27 @@
 
 #include "stations/Warehouse.h"
 
+#include <fstream>
 #include <gtest/gtest.h>
 
 #include "logger/MockQueue.h"
 
+#include <cstdlib>
+#include <ctime>
+
 namespace fs = std::filesystem;
+
+static std::string tname() {
+    std::ostringstream oss;
+    std::srand(static_cast<unsigned>(std::time(nullptr)));
+    oss << "test" << std::rand() % 1000000;
+    return oss.str();
+}
 
 TEST(Warehouse, SingleProcessInit) {
     MockQueue<Message> msq;
     Logger log(DEBUG, &msq);
-    const auto warehouse = Warehouse::create("test", 1, &log, 1);
+    const auto warehouse = Warehouse::create(tname(), 1, &log, 1);
 
     ASSERT_EQ(true, fs::is_regular_file("warehouses/test.key"));
 
@@ -21,21 +32,107 @@ TEST(Warehouse, SingleProcessInit) {
     ASSERT_EQ(1, warehouse.capacity());
     ASSERT_EQ(1, warehouse.variety());
     ASSERT_EQ(0, warehouse.usage());
-    ASSERT_EQ("test", warehouse.name());
 }
 
 TEST(Warehouse, AddRemoveItem) {
+    MockQueue<Message> msq;
+    Logger log(DEBUG, &msq);
+    auto warehouse = Warehouse::create(tname(), 2, &log, 1);
 
+    // add item
+    Item i("a", 1, 1);
+    warehouse.add(i);
+    ASSERT_EQ(1, warehouse.items().size());
+    ASSERT_EQ(i, warehouse.items()[0]);
+    ASSERT_EQ(1, warehouse.items()[0].count());
+    ASSERT_EQ(1, warehouse.usage());
+    ASSERT_EQ(0, i.count());
+
+    // retrieve item
+    Item j;
+    warehouse.get("a", &j);
+    ASSERT_EQ(0, warehouse.items().size());
+    ASSERT_EQ(0, warehouse.usage());
+    ASSERT_EQ(i, j);
+    ASSERT_EQ(1, j.count());
+
+    // exceeding capacity means soft failure (warn)
+    Item k("double a", 3, 1);
+    warehouse.add(k);
+    ASSERT_EQ(0, warehouse.items().size());
+    ASSERT_EQ(0, warehouse.usage());
+    ASSERT_EQ(1, k.count());
+
+    // exceeding variety means hard failure (error)
+    Item l("a", 1, 1);
+    Item m("b", 1, 1);
+    warehouse.add(l);
+    warehouse.add(m);
+    ASSERT_EQ(1, warehouse.items().size());
+    ASSERT_EQ(1, warehouse.usage());
+    ASSERT_EQ(0, l.count());
+    ASSERT_EQ(1, m.count());
 }
 
 TEST(Warehouse, FileStorage) {
+    MockQueue<Message> msq;
+    Logger log(DEBUG, &msq);
 
+    {
+        auto warehouse = new Warehouse(tname(), 3, &log, 2);
+
+        Item i("a", 1, 1);
+        Item j("b", 1, 1);
+        Item k("a", 1, 1);
+        warehouse->add(i);
+        warehouse->add(j);
+        warehouse->add(k);
+
+        delete warehouse;
+        warehouse = nullptr;
+    }
+
+    ASSERT_EQ(true, fs::is_regular_file("warehouses/test.json"));
+
+    std::ifstream f{"warehouses/test.json"};
+    if (!f) {
+        FAIL() << "File not found";
+    }
+
+    std::string expected = R"([{"count":2,"name":"a","size":1},{"count":1,"name":"b","size":1}])";
+    std::string actual;
+    f >> actual;
+    ASSERT_EQ(expected, actual);
 }
 
-TEST(Warehouse, MultiProcessInit) {
+TEST(Warehouse, MultiProcess) {
+    MockQueue<Message> msq;
+    Logger log(DEBUG, &msq);
+    auto parent = Warehouse::create(tname(), 2, &log, 1);
 
-}
+    pid_t pid = fork();
+    if (pid == 0) {
+        auto child = new Warehouse(tname(), 2, &log, 1, false);
+        // add item
+        Item i("a", 1, 1);
+        child->add(i);
+        delete child;
+        child = nullptr;
+        _exit(0);
+    }
 
-TEST(Warehouse, MultiProcessEdit) {
+    // retrieve item
+    Item j;
+    while (j.count() == 0) {
+        parent.get("a", &j);
+        usleep(1000000);
+    }
 
+    ASSERT_EQ(0, parent.items().size());
+    ASSERT_EQ(0, parent.usage());
+    ASSERT_EQ(1, j.count());
+    ASSERT_EQ("a", j.name());
+    ASSERT_EQ(1, j.size());
+
+    waitpid(pid, nullptr, 0);
 }

@@ -25,10 +25,10 @@ class Warehouse {
 		Warehouse(const std::string& name, int capacity, Logger *log, int variety = 4, bool create = true);
 		~Warehouse();
 
-		void add(Item &item) const;
+		void add(Item &item);
 
 		// pointer is necessary; retrieved item can (and will in many cases) be null!
-		void get(const std::string &itemName, Item *output) const;
+		void get(const std::string &itemName, Item *output);
 
 		[[nodiscard]] std::vector<Item> items() const;
 		[[nodiscard]] const std::string &name() const;
