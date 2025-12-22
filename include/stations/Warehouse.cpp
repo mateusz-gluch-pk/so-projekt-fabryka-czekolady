@@ -83,7 +83,7 @@ Warehouse::~Warehouse () {
 	// as well as shared memory
 }
 
-void Warehouse::add(const Item &item) const {
+void Warehouse::add(Item &item) const {
 	// lock warehouse
 	_sem.lock();
 

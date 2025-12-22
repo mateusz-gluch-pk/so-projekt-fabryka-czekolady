@@ -11,8 +11,7 @@
 
 class Item {
     public:
-    Item();
-
+        Item();
         Item(const std::string &name, int size, int count);
 
         Item& operator=(const Item& other) {
@@ -24,7 +23,7 @@ class Item {
         }
 
         bool operator==(const Item& other) const {
-            return strcmp(_name, other._name) == 0;
+            return strcmp(_name, other._name) == 0 && _size == other._size;
         }
 
         // [[nodiscard]] is a modern cpp quirk...
@@ -32,7 +31,7 @@ class Item {
         [[nodiscard]] int size() const {return _size;};
         [[nodiscard]] int count() const {return _count;};
 
-        int stack(const Item &item);
+        int stack(Item &item);
         Item *unstack();
 
         friend void from_json(const nlohmann::json &j, Item &item);
@@ -53,7 +52,11 @@ inline void to_json(nlohmann::json &j, const Item &item) {
 }
 
 inline void from_json(const nlohmann::json &j, Item &item) {
-    j.at("name").get_to(item._name);
+    std::string name;
+    j.at("name").get_to(name);
+    std::strncpy(item._name, name.c_str(), ITEM_NAME_LENGTH - 1);
+    item._name[ITEM_NAME_LENGTH - 1] = '\0';
+
     j.at("size").get_to(item._size);
     j.at("count").get_to(item._count);
 }

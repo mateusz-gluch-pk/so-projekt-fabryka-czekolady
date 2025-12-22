@@ -7,6 +7,7 @@ add_executable(tests
         actors/Worker.cpp
         actors/Deliverer.cpp
         actors/LogCollector.cpp
+        objects/Item.cpp
 )
 
 target_link_libraries(tests

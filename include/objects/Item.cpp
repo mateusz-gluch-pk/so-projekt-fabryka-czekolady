@@ -16,16 +16,16 @@ Item::Item(const std::string &name, const int size, const int count): _size(size
     strcpy(_name, name.c_str());
 }
 
-int Item::stack(const Item &item) {
-    if (strcmp(_name, item._name) == 0) {
+int Item::stack(Item &item) {
+    // names must match to stack
+    // size must match too
+    if (*this != item) {
         return -1;
     }
 
-    if (_size != item._size) {
-        return -1;
-    }
-
-    _count++;
+    // total count should be preserved -- and stacking is a operation complete
+    _count += item._count;
+    item._count = 0;
     return _count;
 }
 

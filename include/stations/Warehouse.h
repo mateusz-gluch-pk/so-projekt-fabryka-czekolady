@@ -22,7 +22,7 @@ class Warehouse {
 		Warehouse(const std::string& name, int capacity, Logger *log, int variety = 4);
 
 		~Warehouse();
-		void add(const Item &item) const;
+		void add(Item &item) const;
 
 		// pointer is necessary; retrieved item can (and will in many cases) be null!
 		void get(const std::string &itemName, Item *output) const;

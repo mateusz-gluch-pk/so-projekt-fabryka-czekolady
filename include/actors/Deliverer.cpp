@@ -39,7 +39,7 @@ void Deliverer::reload() { _reloading = true; }
 
 void Deliverer::_main() const {
     sthr::sleep_for(stime::milliseconds(_tpl.delay()));
-    const auto item = _tpl.get();
+    auto item = _tpl.get();
     _dst->add(item);
 }
 
