@@ -5,6 +5,7 @@ file(GLOB_RECURSE LIB_SOURCES
 )
 add_library(factorylib STATIC
         ${LIB_SOURCES}
+        ../include/stations/WarehouseStats.h
 )
 
 set_target_properties(factorylib PROPERTIES

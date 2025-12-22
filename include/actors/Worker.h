@@ -24,6 +24,9 @@ class Worker : public IRunnable {
                 delete _msq;
                 _msq = nullptr;
             }
+
+            delete _in;
+            delete _out;
         }
 
         void run() override;
@@ -39,12 +42,13 @@ class Worker : public IRunnable {
         void _reattach() {
             _msq = new MessageQueue<Message>(_log->key(), false);
             _log->setQueue(_msq);
-            _in->reattach(_log);
-            _out->reattach(_log);
+            _in = new Warehouse(_in->name(), _in->capacity(), _log, _in->variety(), false);
+            _out = new Warehouse(_out->name(), _out->capacity(), _log, _out->variety(), false);
         };
 
         MessageQueue<Message> *_msq;
         Logger *_log;
+
         Warehouse *_in;
         Warehouse *_out;
         Workstation *_station;

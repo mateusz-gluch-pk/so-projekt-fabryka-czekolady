@@ -10,6 +10,7 @@
 #include <vector>
 #include <sys/types.h>
 
+#include "WarehouseStats.h"
 #include "objects/SharedVector.h"
 #include "ipcs/Semaphore.h"
 #include "ipcs/SharedMemory.h"
@@ -19,30 +20,24 @@ namespace fs = std::filesystem;
 
 class Warehouse {
 	public:
-		Warehouse(const std::string& name, int capacity, Logger *log, int variety = 4);
-
+		static Warehouse attach(const std::string& name, int capacity, Logger *log, int variety = 4);
+		static Warehouse create(const std::string& name, int capacity, Logger *log, int variety = 4);
+		Warehouse(const std::string& name, int capacity, Logger *log, int variety = 4, bool create = true);
 		~Warehouse();
+
 		void add(Item &item) const;
 
 		// pointer is necessary; retrieved item can (and will in many cases) be null!
 		void get(const std::string &itemName, Item *output) const;
-		// WarehouseStats &stats();
 
-		void reattach(Logger *log) {
-			size_t total_size = sizeof(SharedVector<Item>) + sizeof(Item) * _variety;
-			_sem = Semaphore::attach(_key, log);
-			_shm = SharedMemory<SharedVector<Item>>::attach(_key, total_size, log);
-			_log = log;
-		};
+		[[nodiscard]] std::vector<Item> items() const;
+		[[nodiscard]] const std::string &name() const;
+		[[nodiscard]] int capacity() const;
+		[[nodiscard]] int variety() const;
+		[[nodiscard]] int usage() const;
 
 	private:
-		Warehouse(
-			std::string  name,
-			int capacity,
-			int variety,
-			size_t total_size,
-			Logger *log
-		);
+		Warehouse(std::string name, int capacity, int variety, size_t total_size, key_t key, Logger *log, bool create);
 
 		int _capacity;
 		int _variety;
@@ -50,7 +45,7 @@ class Warehouse {
 		fs::path _filename;
 
 		// IPCS
-		key_t _key;
+		bool _owner;
 		Semaphore _sem;
 		SharedMemory<SharedVector<Item>> _shm;
 		SharedVector<Item> *_content;

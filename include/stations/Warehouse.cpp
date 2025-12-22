@@ -28,7 +28,7 @@ template void from_json(const nlohmann::json &j, SharedVector<Item> &vec);
 using json = nlohmann::json;
 namespace fs = std::filesystem;
 
-static key_t _make_key(const std::string& name) {
+static key_t make_key(const std::string& name) {
 	const std::string dir(WAREHOUSE_DIR);
 	fs::create_directories(dir);
 
@@ -40,19 +40,35 @@ static key_t _make_key(const std::string& name) {
 	return ftok(key_filename.c_str(), 1);
 }
 
+int Warehouse::variety() const {return _variety;}
+
+int Warehouse::usage() const {
+	if (_content == nullptr) {
+		return 0;
+	}
+
+	int usage = 0;
+	for (auto &it : *_content) {
+		usage += it.count() * it.size();
+	}
+	return usage;
+}
+
 Warehouse::Warehouse(
 	std::string name,
 	const int capacity,
 	const int variety,
 	const size_t total_size,
-	Logger *log):
+	key_t key,
+	Logger *log,
+	bool create):
 		_capacity(capacity),
 		_variety(variety),
 		_name(std::move(name)),
-		_key(_make_key(name)),
-		_sem(_key, log),
-		_shm(_key, total_size, log),
-		_log(log)
+		_sem(key, log, create),
+		_shm(key, total_size, log, create),
+		_log(log),
+		_owner(create)
 	{
 	std::string dir(WAREHOUSE_DIR);
 	_filename = dir + "/" + name + ".json";
@@ -64,13 +80,23 @@ Warehouse::Warehouse(
 	}
 }
 
-Warehouse::Warehouse(const std::string &name, const int capacity, Logger *log, const int variety): Warehouse(
+Warehouse::Warehouse(const std::string &name, const int capacity, Logger *log, const int variety, bool create): Warehouse(
 	name,
 	capacity,
 	variety,
 	sizeof(SharedVector<Item>) + sizeof(Item) * variety,
-	log
+	make_key(name),
+	log,
+	create
 ) {}
+
+Warehouse Warehouse::attach(const std::string &name, int capacity, Logger *log, int variety) {
+	return Warehouse(name, capacity, log, variety, false);
+}
+
+Warehouse Warehouse::create(const std::string &name, int capacity, Logger *log, int variety) {
+	return Warehouse(name, capacity, log, variety);
+}
 
 // if everything works as intended, warehouse is destroyed only once...
 Warehouse::~Warehouse () {
@@ -121,6 +147,22 @@ void Warehouse::get(const std::string &itemName, Item *output) const {
 	// unlock warehouse
 	_sem.unlock();
 }
+
+std::vector<Item> Warehouse::items() const {
+	if (_content == nullptr) {
+		return {};
+	}
+
+	std::vector<Item> items;
+	for (auto &item: *_content) {
+		items.push_back(item);
+	}
+	return items;
+}
+
+const std::string & Warehouse::name() const {return _name;}
+
+int Warehouse::capacity() const {return _capacity;}
 
 void Warehouse::_write_file() {
 	// create dir if not exists

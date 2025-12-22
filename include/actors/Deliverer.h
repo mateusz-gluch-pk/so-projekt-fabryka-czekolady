@@ -25,6 +25,8 @@ class Deliverer : public IRunnable {
                 delete _msq;
                 _msq = nullptr;
             }
+
+            delete _dst;
         }
 
         void run() override;
@@ -40,7 +42,7 @@ class Deliverer : public IRunnable {
         void _reattach() {
             _msq = new MessageQueue<Message>(_log->key(), false);
             _log->setQueue(_msq);
-            _dst->reattach(_log);
+            _dst = new Warehouse(_dst->name(), _dst->capacity(), _log, _dst->variety());
         }
 
         MessageQueue<Message> *_msq;
