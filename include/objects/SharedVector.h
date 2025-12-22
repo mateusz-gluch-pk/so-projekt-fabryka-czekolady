@@ -13,35 +13,17 @@
 template<typename T>
 class SharedVector {
     public:
-        SharedVector() : _data(nullptr), _size(0), _capacity(0) {}
+        SharedVector();
         explicit SharedVector(const int capacity): _data(new T[capacity]), _size(0), _capacity(capacity) {}
+        void init(const int capacity);
+        ~SharedVector();
 
-        void init(const int capacity) {
-            _data = new T[capacity];
-            _capacity = capacity;
-        }
-
-        ~SharedVector() {
-            if (_data != nullptr) delete[] _data;
-        }
-
-        void push_back(const T &item) {
-            if (_size >= _capacity) {
-                throw std::runtime_error("vector reached full capacity");
-            }
-            _data[_size++] = item;
-        }
+        void push_back(const T &item);
 
         // overload [] - so that SharedVector won't hurt my eyes so much
-        T& operator[](size_t index) {
-            if (index >= _size) throw std::out_of_range("index out of range");
-            return _data[index];
-        }
+        T& operator[](size_t index);
 
-        const T& operator[](size_t index) const {
-            if (index >= _size) throw std::out_of_range("index out of range");
-            return _data[index];
-        }
+        const T& operator[](size_t index) const;
 
         // support "auto" range loops
         T* begin() { return _data; }
@@ -50,19 +32,7 @@ class SharedVector {
         const T* begin() const { return _data; }
         const T* end()   const { return _data + _size; }
 
-        void erase(T* it) {
-            // check range
-            if (it < begin() || it >= end())
-                throw std::out_of_range("iterator out of range");
-
-            // move content one step back
-            for (T* i = it + 1; i < end(); ++i) {
-                *(i - 1) = *i;
-            }
-
-            // decrease nominal size
-            --_size;
-        }
+        void erase(T* it);
 
         int size() const { return _size; }
         int capacity() const { return _capacity; }
@@ -78,6 +48,55 @@ class SharedVector {
         size_t _size;
         size_t _capacity;
 };
+
+template<typename T>
+SharedVector<T>::SharedVector(): _data(nullptr), _size(0), _capacity(0) {}
+
+template<typename T>
+void SharedVector<T>::init(const int capacity) {
+    _data = new T[capacity];
+    _capacity = capacity;
+}
+
+template<typename T>
+SharedVector<T>::~SharedVector() {
+    if (_data != nullptr) delete[] _data;
+}
+
+template<typename T>
+void SharedVector<T>::push_back(const T &item) {
+    if (_size >= _capacity) {
+        throw std::runtime_error("vector reached full capacity");
+    }
+    _data[_size++] = item;
+}
+
+template<typename T>
+T & SharedVector<T>::operator[](size_t index) {
+    if (index >= _size) throw std::out_of_range("index out of range");
+    return _data[index];
+}
+
+template<typename T>
+const T & SharedVector<T>::operator[](size_t index) const {
+    if (index >= _size) throw std::out_of_range("index out of range");
+    return _data[index];
+}
+
+template<typename T>
+void SharedVector<T>::erase(T *it) {
+    // check range
+    if (it < begin() || it >= end())
+        throw std::out_of_range("iterator out of range");
+
+    // move content one step back
+    for (T* i = it + 1; i < end(); ++i) {
+        *(i - 1) = *i;
+    }
+
+    // decrease nominal size
+    --_size;
+}
 
 template<typename T>
 void to_json(nlohmann::json& j, const SharedVector<T>& vec) {
