@@ -9,5 +9,5 @@
 #include "Item.h"
 
 // Force instantiation for SharedVector<Item>
-template void to_json(nlohmann::json &j, SharedVector<Item> const &vec);
-template void from_json(nlohmann::json const &j, SharedVector<Item> &vec);
+// template void to_json(nlohmann::json &j, SharedVector<Item> const &vec);
+// template void from_json(nlohmann::json const &j, SharedVector<Item> &vec);
