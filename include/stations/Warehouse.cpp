@@ -28,19 +28,24 @@ template void from_json(const nlohmann::json &j, SharedVector<Item> &vec);
 using json = nlohmann::json;
 namespace fs = std::filesystem;
 
-static key_t make_key(const std::string& name) {
+static key_t make_key(const std::string& name, Logger *log) {
 	const std::string dir(WAREHOUSE_DIR);
 	fs::create_directories(dir);
 
 	const std::string key_filename = dir + "/" + name + ".key";
 	if (!fs::exists(key_filename)) {
+		log->info("Creating key file %s", key_filename.c_str());
 		std::ofstream _stream(key_filename);
 	}
 
-	return ftok(key_filename.c_str(), 1);
+	const key_t key = ftok(key_filename.c_str(), 1);
+	log->info("Fetched key from file %s", key_filename.c_str());
+	return key;
 }
 
-int Warehouse::variety() const {return _variety;}
+int Warehouse::variety() const {
+	return _variety;
+}
 
 int Warehouse::usage() const {
 	if (_content == nullptr) {
@@ -77,6 +82,15 @@ Warehouse::Warehouse(
 
 	if (fs::exists(_filename)) {
 		_read_file();
+		_log->info("[%s] Warehouse state read from file", _name.c_str());
+	} else {
+		_log->info("[%s] Initializing warehouse", _name.c_str());
+	}
+
+	if (_owner) {
+		_log->info("[%s] Created warehouse with variety %d", _name.c_str(), variety);
+	} else {
+		_log->info("[%s] Attached warehouse with variety %d", _name.c_str(), variety);
 	}
 }
 
@@ -85,7 +99,7 @@ Warehouse::Warehouse(const std::string &name, const int capacity, Logger *log, c
 	capacity,
 	variety,
 	sizeof(SharedVector<Item>) + sizeof(Item) * variety,
-	make_key(name),
+	make_key(name, log),
 	log,
 	create
 ) {}
@@ -101,8 +115,9 @@ Warehouse Warehouse::create(const std::string &name, int capacity, Logger *log, 
 // if everything works as intended, warehouse is destroyed only once...
 Warehouse::~Warehouse () {
 	// save warehouse state to file - if there is any warehouse to begin with
-	if (_content != nullptr) {
+	if (_content != nullptr && _owner) {
 		_write_file();
+		_log->info("[%s] Saved warehouse content to file", _name.c_str());
 	}
 
 	// semaphore is removed automatically upon destruction
@@ -114,17 +129,31 @@ void Warehouse::add(Item &item) const {
 	_sem.lock();
 
 	// check capacity - if no space, just release semaphore
+	if (usage() + item.size() > _capacity) {
+		_log->warn("[%s] Warehouse is full. Cannot add item %s", _name.c_str(), item.name().c_str());
+		_sem.unlock();
+		return;
+	}
+
+
 	// add item to list (stack if already present)
 	bool stacked = false;
 	for (auto &warehouse_item: *_content) {
-		if (warehouse_item.name() == item.name()) {
+		if (warehouse_item == item) {
 			warehouse_item.stack(item);
 			stacked = true;
+			_log->info("[%s] Added item %s to warehouse", _name.c_str(), item.name().c_str());
+			_log->debug("[%s] %s stack size: %d", _name.c_str(), warehouse_item.name().c_str(), warehouse_item.count());
 			break;
 		}
 	}
-	if (!stacked) _content->push_back(item);
+	if (!stacked) {
+		_content->push_back(item);
+		_log->info("[%s] Added unique item %s to warehouse", _name.c_str(), item.name().c_str());
+		_log->debug("[%s] Warehouse variety: %d/%d", _name.c_str(), _content->size(), variety());
+	}
 
+	_log->debug("[%s] Warehouse capacity: %d/%d", _name.c_str(), usage(), _capacity);
 	// unlock warehouse
 	_sem.unlock();
 }
@@ -137,13 +166,18 @@ void Warehouse::get(const std::string &itemName, Item *output) const {
 	while (it != _content->end()) {
 		if (it->name() == itemName) {
 			*output = *it->unstack();
+			_log->info("[%s] Found item %s in warehouse", _name.c_str(), itemName.c_str());
+			_log->debug("[%s] %s stack size: %d", _name.c_str(), itemName.c_str(), it->count());
 		}
 
 		if (it->count() == 0) {
+			_log->info("[%s] Last item %s fetched from warehouse. Deleting", _name.c_str(), it->name().c_str());
 			_content->erase(it);
+			_log->debug("[%s] Warehouse variety: %d/%d", _name.c_str(), _content->size(), variety());
 		} else ++it;
 	}
 
+	_log->debug("[%s] Warehouse capacity: %d/%d", _name.c_str(), usage(), _capacity);
 	// unlock warehouse
 	_sem.unlock();
 }
@@ -174,7 +208,7 @@ void Warehouse::_write_file() {
 
 	std::ofstream out{tmp_filename};
 	if (!out) {
-		throw std::runtime_error("Cannot open file for writing");
+		_log->fatal("[%s] Cannot open file %s for writing", _name.c_str(), tmp_filename.c_str());
 	}
 
 	// serialize content
@@ -190,7 +224,7 @@ void Warehouse::_read_file() const {
 	// open file for reading
 	std::ifstream in{_filename};
 	if (!in) {
-		throw std::runtime_error("Cannot open file for reading");
+		_log->fatal("[%s] Cannot open file %s for reading", _name.c_str(), _filename.c_str());
 	}
 
 	// deserialize content

@@ -12,7 +12,7 @@ namespace fs = std::filesystem;
 
 TEST(Warehouse, SingleProcessInit) {
     MockQueue<Message> msq;
-    Logger log(MessageLevel::DEBUG, &msq);
+    Logger log(DEBUG, &msq);
     const auto warehouse = Warehouse::create("test", 1, &log, 1);
 
     ASSERT_EQ(true, fs::is_regular_file("warehouses/test.key"));
