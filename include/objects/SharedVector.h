@@ -123,26 +123,4 @@ void from_json(const nlohmann::json& j, SharedVector<T>& vec) {
     }
 }
 
-// namespace nlohmann {
-//     template <>
-//     struct adl_serializer<SharedVector<Item>> {
-//         static void to_json(json& j, const SharedVector<Item>& vec) {
-//             j = json::array();
-//             for (size_t i = 0; i < vec._size; ++i) {
-//                 j.push_back(vec[i]);
-//             }
-//         }
-//
-//         static void from_json(const json& j, SharedVector<Item>& vec) {
-//             if (!j.is_array())
-//                 throw std::runtime_error("JSON must be array for SharedVector<Item>");
-//             vec._size = j.size();
-//             for (size_t i = 0; i < j.size(); ++i) {
-//                 vec[i] = j[i].get<Item>();
-//             }
-//         }
-//     };
-//
-// } // namespace nlohmann
-
 #endif //PROJEKT_SHAREDVECTOR_H
