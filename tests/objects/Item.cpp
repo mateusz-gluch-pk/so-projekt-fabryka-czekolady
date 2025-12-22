@@ -69,7 +69,6 @@ TEST(Item, JSONSerialize) {
     ASSERT_EQ(expected, actual);
 
     json jin = json::parse(actual);
-    std::cout << jin.type_name() << std::endl;
     Item retrieved = jin.get<Item>();
     ASSERT_EQ(retrieved, a);
     ASSERT_EQ(retrieved.count(), a.count());
