@@ -230,10 +230,5 @@ void Warehouse::_read_file() const {
 	// deserialize content
 	json j;
 	in >> j;
-
-	// i can call it explicitly!
-	// _content->_size = j.size();
-	for (size_t i = 0; i < j.size(); ++i) {
-		(*_content)[i] = j[i].get<Item>();
-	}
+	from_json(j, *_content);
 }
