@@ -124,7 +124,7 @@ TEST(Warehouse, MultiProcess) {
     Item j;
     while (j.count() == 0) {
         parent.get("a", &j);
-        usleep(1000000);
+        usleep(10000);
     }
 
     ASSERT_EQ(0, parent.items().size());

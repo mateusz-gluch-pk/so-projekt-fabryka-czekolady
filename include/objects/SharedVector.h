@@ -41,7 +41,7 @@ class SharedVector {
         friend void to_json(nlohmann::json &j, const SharedVector<U, JCapacity> &vec);
 
         T data[Capacity];
-        size_t size;
+        size_t size = 0;
         size_t capacity = Capacity;
 };
 
@@ -61,9 +61,7 @@ class SharedVector {
 
 template<typename T, size_t Capacity>
 void SharedVector<T, Capacity>::push_back(const T &item) {
-    if (size >= capacity) {
-        throw std::runtime_error("vector reached full capacity");
-    }
+    if (size >= Capacity) throw std::runtime_error("vector reached full capacity");
     data[size++] = item;
 }
 
