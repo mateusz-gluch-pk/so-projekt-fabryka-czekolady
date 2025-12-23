@@ -15,10 +15,10 @@
 template<typename T>
 class SharedMemory {
     public:
-        static SharedMemory attach(key_t key, size_t size, Logger* log) {return SharedMemory(key, size, log, false);}
-        static SharedMemory create(key_t key, size_t size, Logger* log) {return SharedMemory(key, size, log, true);}
+        static SharedMemory attach(key_t key, size_t size, const Logger* log) {return SharedMemory(key, size, log, false);}
+        static SharedMemory create(key_t key, size_t size, const Logger* log) {return SharedMemory(key, size, log, true);}
 
-        explicit SharedMemory(key_t key, size_t size, Logger* log, bool create = true);
+        explicit SharedMemory(key_t key, size_t size, const Logger* log, bool create = true);
         ~SharedMemory() {detach();};
 
         // copying prohibited
@@ -29,14 +29,14 @@ class SharedMemory {
         SharedMemory& operator=(SharedMemory&& other) noexcept;
 
         // get pointer to data
-        T* get();
-        T& operator*();
-        T* operator->();
+        T* get() const;
+        T& operator*() const;
+        T* operator->() const;
 
     private:
         void detach();
 
-        Logger *_log;
+        const Logger *_log;
         key_t _key;
         int _shmid = -1;
         bool _owner;;
@@ -44,7 +44,7 @@ class SharedMemory {
 };
 
 template<typename T>
-SharedMemory<T>::SharedMemory(key_t key, size_t size, Logger*log, bool create): _key(key), _log(log) {
+SharedMemory<T>::SharedMemory(key_t key, size_t size, const Logger *log, bool create): _key(key), _log(log) {
     int flags = create ? (IPC_CREAT | IPC_EXCL | SHM_PERMS) : SHM_PERMS;
 
     _shmid = shmget(key, size, flags);
@@ -96,19 +96,19 @@ SharedMemory<T> & SharedMemory<T>::operator=(SharedMemory &&other) noexcept {
 }
 
 template<typename T>
-T * SharedMemory<T>::get() {
+T * SharedMemory<T>::get() const {
     _log->debug("Fetching pointer to shared memory %d data", _shmid);
     return _data;
 }
 
 template<typename T>
-T & SharedMemory<T>::operator*() {
+T & SharedMemory<T>::operator*() const {
     _log->debug("Fetching pointer to shared memory %d data", _shmid);
     return *_data;
 }
 
 template<typename T>
-T * SharedMemory<T>::operator->() {
+T * SharedMemory<T>::operator->() const {
     _log->debug("Fetching pointer to shared memory %d data", _shmid);
     return _data;
 }

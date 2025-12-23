@@ -4,29 +4,42 @@
 
 #include "Deliverer.h"
 
-Deliverer::Deliverer(const ItemTemplate &tpl, Warehouse *dst, Logger *log) :
-    _tpl(tpl),
-    _dst(dst),
+#include <utility>
+
+Deliverer::Deliverer(std::string name, ItemTemplate tpl, const Warehouse &dst, const Logger &log) :
+    _name(std::move(name)),
+    _tpl(std::move(tpl)),
     _log(log),
+    _msq(log.key(), false),
     _running(true),
     _paused(false),
     _reloading(false) {
+    _dst.emplace(dst.name(), dst.capacity(), &_log, false);
 }
 
-void Deliverer::run() {
+void Deliverer::run(ProcessStats &stats) {
+    _reattach();
+
     while (_running) {
+        stats.state = RUNNING;
+
         if (_paused) {
+            stats.state = PAUSED;
             sthr::sleep_for(stime::milliseconds(100));
             continue;
         }
 
         if (_reloading) {
+            stats.state = RELOADING;
             _reload();
             _reloading = false;
+            stats.reloads++;
         }
 
         _main();
+        stats.loops++;
     }
+    stats.state = STOPPED;
 }
 
 void Deliverer::stop() { _running = false; }

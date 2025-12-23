@@ -7,29 +7,39 @@
 #include <csignal>
 #include <memory>
 
+#include "ProcessStats.h"
 #include "actors/IRunnable.h"
-
+#include "ipcs/MessageQueue.h"
+#include "ipcs/SharedMemory.h"
 
 class ProcessController {
     public:
-        explicit ProcessController(std::unique_ptr<IRunnable> proc): _proc(std::move(proc)) {};
-        ~ProcessController();;
+        explicit ProcessController(std::unique_ptr<IRunnable> proc, const Logger &log);
+
+        ~ProcessController();
         void run();
         void stop() const;
         void pause() const;
         void resume() const;
         void reload() const;
+        [[nodiscard]] const ProcessStats &stats() const { return *_stats; };
 
     private:
         static void _setup_handlers();
-        static void _handle_run(int);;
-        static void _handle_stop(int);;
-        static void _handle_pause(int);;
-        static void _handle_resume(int);;
-        static void _handle_reload(int);;
+        static void _handle_run(int);
+        static void _handle_stop(int);
+        static void _handle_pause(int);
+        static void _handle_resume(int);
+        static void _handle_reload(int);
+
+        key_t _key;
+        MessageQueue<Message> _msq;
+        Logger _log;
 
         std::unique_ptr<IRunnable> _proc;
+        SharedMemory<ProcessStats> _stats;
         static std::unique_ptr<ProcessController> _cls;
+
         pid_t _pid = -1;
 };
 

@@ -12,6 +12,7 @@
 #include "objects/ItemTemplate.h"
 #include "stations/Warehouse.h"
 #include "logger/Logger.h"
+#include "processes/ProcessStats.h"
 
 namespace stime = std::chrono;
 namespace sthr = std::this_thread;
@@ -19,36 +20,32 @@ namespace sthr = std::this_thread;
 
 class Deliverer : public IRunnable {
     public:
-        Deliverer(const ItemTemplate &tpl, Warehouse *dst, Logger *log);;
-        ~Deliverer() override {
-            if (_msq != nullptr) {
-                delete _msq;
-                _msq = nullptr;
-            }
+        Deliverer(std::string name, ItemTemplate tpl, const Warehouse &dst, const Logger &log);
 
-            delete _dst;
-        }
-
-        void run() override;
+        void run(ProcessStats &stats) override;
         void stop() override;
         void pause() override;
         void resume() override;
         void reload() override;
+        const std::string &name() override { return _name; }
 
     private:
         void _main() const;
         void _reload();
 
         void _reattach() {
-            _msq = new MessageQueue<Message>(_log->key(), false);
-            _log->setQueue(_msq);
-            _dst = new Warehouse(_dst->name(), _dst->capacity(), _log, _dst->variety());
+            _msq = MessageQueue<Message>(_log.key(), false);
+            _log.setQueue(&_msq);
+            _dst.emplace(_dst->name(), _dst->capacity(), &_log, false);
         }
 
-        MessageQueue<Message> *_msq;
+        std::string _name;
         ItemTemplate _tpl;
-        Warehouse *_dst;
-        Logger *_log;
+        ProcessStats _stats;
+
+        MessageQueue<Message> _msq;
+        std::optional<Warehouse> _dst;
+        Logger _log;
 
         std::atomic<bool> _running, _paused, _reloading;
 };

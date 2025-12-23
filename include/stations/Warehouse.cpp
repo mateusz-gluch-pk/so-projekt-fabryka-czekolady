@@ -25,7 +25,7 @@
 using json = nlohmann::json;
 namespace fs = std::filesystem;
 
-static key_t make_key(const std::string& name, Logger *log) {
+static key_t make_key(const std::string& name, const Logger *log) {
 	const std::string dir(WAREHOUSE_DIR);
 	fs::create_directories(dir);
 
@@ -116,10 +116,9 @@ Warehouse::~Warehouse () {
 	// as well as shared memory
 }
 
-void Warehouse::add(Item &item) {
+void Warehouse::add(Item &item) const {
 	// lock warehouse
 	_sem.lock();
-	_content = _shm.get();
 
 	// check capacity - if no space, just release semaphore
 	if (usage() + item.size() > _capacity) {
@@ -156,10 +155,9 @@ void Warehouse::add(Item &item) {
 	_sem.unlock();
 }
 
-void Warehouse::get(const std::string &itemName, Item *output) {
+void Warehouse::get(const std::string &itemName, Item *output) const {
 	// lock warehouse
 	_sem.lock();
-	_content = _shm.get();
 
 	auto it = _content->begin();
 	while (it != _content->end()) {

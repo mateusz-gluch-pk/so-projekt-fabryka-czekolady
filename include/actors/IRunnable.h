@@ -8,11 +8,12 @@
 class IRunnable {
     public:
         virtual ~IRunnable() = default;
-        virtual void run() = 0; // fork
+        virtual void run(ProcessStats &stats) = 0; // fork
         virtual void stop() = 0; // SIGTERM
         virtual void pause() = 0; // SIGSTOP
         virtual void resume() = 0; // SIGCONT
         virtual void reload() = 0; // SIGHUP
+        virtual const std::string &name() = 0;
 };
 
 
