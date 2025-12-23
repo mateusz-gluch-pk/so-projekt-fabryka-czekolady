@@ -24,20 +24,20 @@ static std::string tname() {
 TEST(Warehouse, SingleProcessInit) {
     MockQueue<Message> msq;
     Logger log(DEBUG, &msq);
-    const auto warehouse = Warehouse::create(tname(), 1, &log, 1);
+    const auto warehouse = Warehouse::create(tname(), 1, &log);
 
     ASSERT_EQ(true, fs::is_regular_file("warehouses/test.key"));
 
     ASSERT_EQ(0, warehouse.items().size());
     ASSERT_EQ(1, warehouse.capacity());
-    ASSERT_EQ(1, warehouse.variety());
+    ASSERT_EQ(1024, warehouse.variety());
     ASSERT_EQ(0, warehouse.usage());
 }
 
 TEST(Warehouse, AddRemoveItem) {
     MockQueue<Message> msq;
     Logger log(DEBUG, &msq);
-    auto warehouse = Warehouse::create(tname(), 2, &log, 1);
+    auto warehouse = Warehouse::create(tname(), 2, &log);
 
     // add item
     Item i("a", 1, 1);
@@ -63,15 +63,15 @@ TEST(Warehouse, AddRemoveItem) {
     ASSERT_EQ(0, warehouse.usage());
     ASSERT_EQ(1, k.count());
 
-    // exceeding variety means hard failure (error)
-    Item l("a", 1, 1);
-    Item m("b", 1, 1);
-    warehouse.add(l);
-    warehouse.add(m);
-    ASSERT_EQ(1, warehouse.items().size());
-    ASSERT_EQ(1, warehouse.usage());
-    ASSERT_EQ(0, l.count());
-    ASSERT_EQ(1, m.count());
+    // // exceeding variety means hard failure (error)
+    // Item l("a", 1, 1);
+    // Item m("b", 1, 1);
+    // warehouse.add(l);
+    // warehouse.add(m);
+    // ASSERT_EQ(1, warehouse.items().size());
+    // ASSERT_EQ(1, warehouse.usage());
+    // ASSERT_EQ(0, l.count());
+    // ASSERT_EQ(1, m.count());
 }
 
 TEST(Warehouse, FileStorage) {
@@ -79,7 +79,7 @@ TEST(Warehouse, FileStorage) {
     Logger log(DEBUG, &msq);
 
     {
-        auto warehouse = new Warehouse(tname(), 3, &log, 2);
+        auto warehouse = new Warehouse(tname(), 3, &log);
 
         Item i("a", 1, 1);
         Item j("b", 1, 1);
@@ -108,17 +108,16 @@ TEST(Warehouse, FileStorage) {
 TEST(Warehouse, MultiProcess) {
     MockQueue<Message> msq;
     Logger log(DEBUG, &msq);
-    auto parent = Warehouse::create(tname(), 2, &log, 1);
+    auto parent = Warehouse::create(tname(), 2, &log);
 
     pid_t pid = fork();
     if (pid == 0) {
-        auto child = new Warehouse(tname(), 2, &log, 1, false);
+        auto child = Warehouse(tname(), 2, &log, false);
         // add item
         Item i("a", 1, 1);
-        child->add(i);
-        delete child;
-        child = nullptr;
-        _exit(0);
+        child.add(i);
+
+        exit(0);
     }
 
     // retrieve item

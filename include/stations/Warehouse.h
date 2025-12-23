@@ -16,13 +16,15 @@
 #include "ipcs/SharedMemory.h"
 #include "objects/Item.h"
 
+#define WAREHOUSE_MAX_VARIETY 1024
+
 namespace fs = std::filesystem;
 
 class Warehouse {
 	public:
-		static Warehouse attach(const std::string& name, int capacity, Logger *log, int variety = 4);
-		static Warehouse create(const std::string& name, int capacity, Logger *log, int variety = 4);
-		Warehouse(const std::string& name, int capacity, Logger *log, int variety = 4, bool create = true);
+		static Warehouse attach(const std::string& name, int capacity, Logger *log);
+		static Warehouse create(const std::string& name, int capacity, Logger *log);
+		Warehouse(const std::string& name, int capacity, Logger *log, bool create = true);
 		~Warehouse();
 
 		void add(Item &item);
@@ -37,18 +39,17 @@ class Warehouse {
 		[[nodiscard]] int usage() const;
 
 	private:
-		Warehouse(std::string name, int capacity, int variety, size_t total_size, key_t key, Logger *log, bool create);
+		Warehouse(std::string name, int capacity, size_t total_size, key_t key, Logger *log, bool create);
 
 		int _capacity;
-		int _variety;
 		std::string _name;
 		fs::path _filename;
 
 		// IPCS
 		bool _owner;
 		Semaphore _sem;
-		SharedMemory<SharedVector<Item>> _shm;
-		SharedVector<Item> *_content;
+		SharedMemory<SharedVector<Item, WAREHOUSE_MAX_VARIETY>> _shm;
+		SharedVector<Item, WAREHOUSE_MAX_VARIETY> *_content;
 
 		// logger
 		Logger *_log;

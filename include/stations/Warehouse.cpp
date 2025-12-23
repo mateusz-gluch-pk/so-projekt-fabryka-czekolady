@@ -22,9 +22,6 @@
 #include <nlohmann/json.hpp>
 #include <utility>
 
-template void to_json(nlohmann::json &j, SharedVector<Item> const &vec);
-template void from_json(const nlohmann::json &j, SharedVector<Item> &vec);
-
 using json = nlohmann::json;
 namespace fs = std::filesystem;
 
@@ -44,7 +41,7 @@ static key_t make_key(const std::string& name, Logger *log) {
 }
 
 int Warehouse::variety() const {
-	return _variety;
+	return WAREHOUSE_MAX_VARIETY;
 }
 
 int Warehouse::usage() const {
@@ -62,13 +59,11 @@ int Warehouse::usage() const {
 Warehouse::Warehouse(
 	std::string name,
 	const int capacity,
-	const int variety,
 	const size_t total_size,
 	key_t key,
 	Logger *log,
 	bool create):
 		_capacity(capacity),
-		_variety(variety),
 		_name(std::move(name)),
 		_sem(key, log, create),
 		_shm(key, total_size, log, create),
@@ -78,8 +73,8 @@ Warehouse::Warehouse(
 	std::string dir(WAREHOUSE_DIR);
 	_filename = dir + "/" + _name + ".json";
 	_content = _shm.get();
-	_content->init(_variety);
 
+	constexpr int variety = WAREHOUSE_MAX_VARIETY;
 	if (fs::exists(_filename) && _owner) {
 		_read_file();
 		_log->info("[%s] Warehouse state read from file", _name.c_str());
@@ -92,22 +87,21 @@ Warehouse::Warehouse(
 	}
 }
 
-Warehouse::Warehouse(const std::string &name, const int capacity, Logger *log, const int variety, bool create): Warehouse(
+Warehouse::Warehouse(const std::string &name, const int capacity, Logger *log, bool create): Warehouse(
 	name,
 	capacity,
-	variety,
-	sizeof(SharedVector<Item>) + sizeof(Item) * variety,
+	sizeof(SharedVector<Item, WAREHOUSE_MAX_VARIETY>) + sizeof(Item) * WAREHOUSE_MAX_VARIETY,
 	make_key(name, log),
 	log,
 	create
 ) {}
 
-Warehouse Warehouse::attach(const std::string &name, int capacity, Logger *log, int variety) {
-	return Warehouse(name, capacity, log, variety, false);
+Warehouse Warehouse::attach(const std::string &name, int capacity, Logger *log) {
+	return Warehouse(name, capacity, log, false);
 }
 
-Warehouse Warehouse::create(const std::string &name, int capacity, Logger *log, int variety) {
-	return Warehouse(name, capacity, log, variety);
+Warehouse Warehouse::create(const std::string &name, int capacity, Logger *log) {
+	return Warehouse(name, capacity, log);
 }
 
 // if everything works as intended, warehouse is destroyed only once...
@@ -147,13 +141,13 @@ void Warehouse::add(Item &item) {
 		}
 	}
 
-
-	if (!stacked && _content->size() != _variety) {
+	constexpr int variety = WAREHOUSE_MAX_VARIETY;
+	if (!stacked && _content->size != variety) {
 		_content->push_back(item);
 		item = Item(item.name(), item.size(), 0);
 		_log->info("[%s] Added unique item %s to warehouse", _name.c_str(), item.name().c_str());
-		_log->debug("[%s] Warehouse variety: %d/%d", _name.c_str(), _content->size(), _variety);
-	} else if (!stacked && _content->size() == _variety) {
+		_log->debug("[%s] Warehouse variety: %d/%d", _name.c_str(), _content->size, variety);
+	} else if (!stacked && _content->size == variety) {
 		_log->error("[%s] Warehouse has reached max variety - cannot add item %s", _name.c_str(), item.name().c_str());
 	}
 
@@ -178,7 +172,7 @@ void Warehouse::get(const std::string &itemName, Item *output) {
 		if (it->count() == 0) {
 			_log->info("[%s] Last item %s fetched from warehouse. Deleting", _name.c_str(), it->name().c_str());
 			_content->erase(it);
-			_log->debug("[%s] Warehouse variety: %d/%d", _name.c_str(), _content->size(), variety());
+			_log->debug("[%s] Warehouse variety: %d/%d", _name.c_str(), _content->size, variety());
 		} else ++it;
 	}
 

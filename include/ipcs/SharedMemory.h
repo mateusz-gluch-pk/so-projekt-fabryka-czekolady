@@ -52,16 +52,16 @@ SharedMemory<T>::SharedMemory(key_t key, size_t size, Logger*log, bool create): 
         _log->fatal("Cannot create shared memory");
     }
 
-    void* ptr = shmat(_shmid, nullptr, 0);
+    void *ptr = shmat(_shmid, nullptr, 0);
     if (ptr == reinterpret_cast<void *>(-1)) {
         _log->fatal("Cannot attach to shared memory %d", _shmid);
     }
 
-    _data = static_cast<T*>(ptr);
+    _data = static_cast<T *>(ptr);
 
     // initialize memory
     if (create) {
-        std::memset(_data, 0, sizeof(T));
+        std::memset(_data, 0, size);
         _log->info("Initializing shared memory %d", _shmid);
     }
     _owner = create;

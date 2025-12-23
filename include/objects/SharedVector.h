@@ -10,13 +10,13 @@
 
 #include "Item.h"
 
-template<typename T>
+template<typename T, size_t Capacity>
 class SharedVector {
     public:
-        SharedVector();
-        explicit SharedVector(const int capacity): _data(new T[capacity]), _size(0), _capacity(capacity) {}
-        void init(const int capacity);
-        ~SharedVector();
+        // SharedVector();
+        // explicit SharedVector(const int capacity): _data(new T[capacity]), _size(0), _capacity(capacity) {}
+        // void init(const int capacity);
+        // ~SharedVector();
 
         void push_back(const T &item);
 
@@ -26,65 +26,61 @@ class SharedVector {
         const T& operator[](size_t index) const;
 
         // support "auto" range loops
-        T* begin() { return _data; }
-        T* end()   { return _data + _size; }
+        T* begin() { return data; }
+        T* end()   { return data + size; }
 
-        const T* begin() const { return _data; }
-        const T* end()   const { return _data + _size; }
+        const T* begin() const { return data; }
+        const T* end()   const { return data + size; }
 
         void erase(T* it);
 
-        int size() const { return _size; }
-        int capacity() const { return _capacity; }
+        template<typename U, size_t JCapacity>
+        friend void from_json(const nlohmann::json &j, SharedVector<U, JCapacity> &vec);
 
-        template<typename U>
-        friend void from_json(const nlohmann::json &j, SharedVector<U> &vec);
+        template<typename U, size_t JCapacity>
+        friend void to_json(nlohmann::json &j, const SharedVector<U, JCapacity> &vec);
 
-        template<typename U>
-        friend void to_json(nlohmann::json &j, const SharedVector<U> &vec);
-
-    private:
-        T* _data;
-        size_t _size;
-        size_t _capacity;
+        T data[Capacity];
+        size_t size;
+        size_t capacity = Capacity;
 };
 
-template<typename T>
-SharedVector<T>::SharedVector(): _data(nullptr), _size(0), _capacity(0) {}
+// template<typename T>
+// SharedVector<T>::SharedVector(): _data(nullptr), _size(0), _capacity(0) {}
 
-template<typename T>
-void SharedVector<T>::init(const int capacity) {
-    _data = new T[capacity];
-    _capacity = capacity;
-}
+// template<typename T>
+// void SharedVector<T>::init(const int capacity) {
+//     _data = new T[capacity];
+//     _capacity = capacity;
+// }
 
-template<typename T>
-SharedVector<T>::~SharedVector() {
-    if (_data != nullptr) delete[] _data;
-}
+// template<typename T>
+// SharedVector<T>::~SharedVector() {
+//     if (_data != nullptr) delete[] _data;
+// }
 
-template<typename T>
-void SharedVector<T>::push_back(const T &item) {
-    if (_size >= _capacity) {
+template<typename T, size_t Capacity>
+void SharedVector<T, Capacity>::push_back(const T &item) {
+    if (size >= capacity) {
         throw std::runtime_error("vector reached full capacity");
     }
-    _data[_size++] = item;
+    data[size++] = item;
 }
 
-template<typename T>
-T & SharedVector<T>::operator[](size_t index) {
-    if (index >= _size) throw std::out_of_range("index out of range");
-    return _data[index];
+template<typename T, size_t Capacity>
+T & SharedVector<T, Capacity>::operator[](size_t index) {
+    if (index >= size) throw std::out_of_range("index out of range");
+    return data[index];
 }
 
-template<typename T>
-const T & SharedVector<T>::operator[](size_t index) const {
-    if (index >= _size) throw std::out_of_range("index out of range");
-    return _data[index];
+template<typename T, size_t Capacity>
+const T & SharedVector<T, Capacity>::operator[](size_t index) const {
+    if (index >= size) throw std::out_of_range("index out of range");
+    return data[index];
 }
 
-template<typename T>
-void SharedVector<T>::erase(T *it) {
+template<typename T, size_t Capacity>
+void SharedVector<T, Capacity>::erase(T *it) {
     // check range
     if (it < begin() || it >= end())
         throw std::out_of_range("iterator out of range");
@@ -95,30 +91,30 @@ void SharedVector<T>::erase(T *it) {
     }
 
     // decrease nominal size
-    --_size;
+    --size;
 }
 
-template<typename T>
-void to_json(nlohmann::json& j, const SharedVector<T>& vec) {
+template<typename T, size_t Capacity>
+void to_json(nlohmann::json& j, const SharedVector<T, Capacity>& vec) {
     j = nlohmann::json::array();
     const T* data = vec.begin();
-    for (size_t i = 0; i < vec.size(); ++i) {
+    for (size_t i = 0; i < vec.size; ++i) {
         j.push_back(data[i]);
     }
 }
 
-template<typename T>
-void from_json(const nlohmann::json& j, SharedVector<T>& vec) {
+template<typename T, size_t Capacity>
+void from_json(const nlohmann::json& j, SharedVector<T, Capacity>& vec) {
     if (!j.is_array())
         throw std::runtime_error("JSON is not an array for SharedVector");
 
-    if (j.size() > vec.capacity())
+    if (j.size() > vec.capacity)
         throw std::runtime_error("JSON array too large for SharedVector capacity");
 
-    vec._size = j.size();
+    vec.size = j.size();
     T* data = vec.begin();
 
-    for (size_t i = 0; i < vec._size; ++i) {
+    for (size_t i = 0; i < vec.size; ++i) {
         data[i] = j[i].get<T>();
     }
 }
