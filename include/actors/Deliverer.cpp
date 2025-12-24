@@ -6,19 +6,19 @@
 
 #include <utility>
 
-Deliverer::Deliverer(std::string name, ItemTemplate tpl, const Warehouse &dst, const Logger &log) :
+Deliverer::Deliverer(std::string name, ItemTemplate tpl, Warehouse &dst, Logger &log) :
     _name(std::move(name)),
     _tpl(std::move(tpl)),
     _log(log),
-    _msq(log.key(), false),
     _running(true),
     _paused(false),
     _reloading(false) {
+    _log.info(_msg("Trying to attach warehouse").c_str());
     _dst.emplace(dst.name(), dst.capacity(), &_log, false);
 }
 
-void Deliverer::run(ProcessStats &stats) {
-    _reattach();
+void Deliverer::run(ProcessStats &stats, Logger &log) {
+    _reattach(log);
 
     while (_running) {
         if (_paused) {

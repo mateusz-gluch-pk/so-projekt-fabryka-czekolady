@@ -20,9 +20,9 @@ namespace sthr = std::this_thread;
 
 class Deliverer : public IRunnable {
     public:
-        Deliverer(std::string name, ItemTemplate tpl, const Warehouse &dst, const Logger &log);
+        Deliverer(std::string name, ItemTemplate tpl, Warehouse &dst, Logger &log);
 
-        void run(ProcessStats &stats) override;
+        void run(ProcessStats &stats, Logger &log) override;
         void stop() override;
         void pause() override;
         void resume() override;
@@ -33,24 +33,19 @@ class Deliverer : public IRunnable {
         void _main() const;
         void _reload();
 
-        void _reattach() {
-            _msq = MessageQueue<Message>(_log.key(), false);
-            _log.setQueue(&_msq);
-            _dst.emplace(_dst->name(), _dst->capacity(), &_log, false);
+        void _reattach(Logger &log) {
+            _log = log;
+            _dst.emplace(_dst->name(), _dst->capacity(), &log, false);
         }
 
         [[nodiscard]] std::string _msg(const std::string &msg) const {
-            return "Deliverer" + _name + ": " + msg;
+            return "Deliverer " + _name + ": " + msg;
         }
-
         std::string _name;
         ItemTemplate _tpl;
-        ProcessStats _stats;
 
-        MessageQueue<Message> _msq;
+        Logger &_log;
         std::optional<Warehouse> _dst;
-        Logger _log;
-
         std::atomic<bool> _running, _paused, _reloading;
 };
 

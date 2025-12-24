@@ -29,7 +29,7 @@ class Worker : public IRunnable {
             delete _out;
         }
 
-        void run(ProcessStats &stats) override;
+        void run(ProcessStats &stats, Logger &log) override;
         void stop() override;
         void pause() override;
         void resume() override;

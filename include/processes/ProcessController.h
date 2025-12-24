@@ -14,7 +14,7 @@
 
 class ProcessController {
     public:
-        explicit ProcessController(std::unique_ptr<IRunnable> proc, const Logger &log);
+        explicit ProcessController(std::unique_ptr<IRunnable> proc, const Logger &log, bool debug = false);
 
         ~ProcessController();
         void run();
@@ -32,6 +32,7 @@ class ProcessController {
         static void _handle_resume(int);
         static void _handle_reload(int);
 
+        bool _debug;
         key_t _key;
         MessageQueue<Message> _msq;
         Logger _log;

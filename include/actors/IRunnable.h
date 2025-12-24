@@ -8,10 +8,12 @@
 #include "processes/ProcessStats.h"
 #include <string>
 
+#include "logger/Logger.h"
+
 class IRunnable {
     public:
         virtual ~IRunnable() = default;
-        virtual void run(ProcessStats &stats) = 0; // fork
+        virtual void run(ProcessStats &stats, Logger &log) = 0; // fork
         virtual void stop() = 0; // SIGTERM
         virtual void pause() = 0; // SIGSTOP
         virtual void resume() = 0; // SIGCONT

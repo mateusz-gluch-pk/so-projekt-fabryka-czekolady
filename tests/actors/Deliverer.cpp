@@ -8,14 +8,13 @@
 
 #include "processes/ProcessController.h"
 
-
 TEST(Deliverer, ProcessControl) {
     MockQueue<Message> msq;
     Logger log(DEBUG, &msq);
     ItemTemplate tpl("a", 1, 100);
     Warehouse destination("test-dst", 2, &log);
 
-    std::unique_ptr<Deliverer> deliverer = std::make_unique<Deliverer>("test", tpl, destination, log);
+    auto deliverer = std::make_unique<Deliverer>("test", tpl, destination, log);
     ProcessController proc(std::move(deliverer), log);
 
     // run deliverer - after a while, warehouse should have a new item

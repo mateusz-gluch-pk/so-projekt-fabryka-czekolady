@@ -33,7 +33,7 @@ class Warehouse {
 		void get(const std::string &itemName, Item *output) const;
 
 		[[nodiscard]] std::vector<Item> items() const;
-		[[nodiscard]] const std::string &name() const;
+		std::string name() const;
 		[[nodiscard]] int capacity() const;
 		[[nodiscard]] int variety() const;
 		[[nodiscard]] int usage() const;

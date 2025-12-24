@@ -18,7 +18,7 @@ class LogCollector: public IRunnable{
         LogCollector(key_t key, const std::string &filename, const bool tty = true);
         ~LogCollector() override;
 
-        void run(ProcessStats &stats) override;
+        void run(ProcessStats &stats, Logger &log) override;
         void stop() override;
         void pause() override;
         void resume() override;

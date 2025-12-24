@@ -12,7 +12,9 @@
 
 #include "ipcs/MessageQueue.h"
 
+#define RELEASE false
 #define PROCESS_DIR "processes"
+
 namespace fs = std::filesystem;
 
 std::unique_ptr<ProcessController> ProcessController::_cls = nullptr;
@@ -32,7 +34,8 @@ static key_t make_key(const std::string& name, const Logger *log) {
     return key;
 }
 
-ProcessController::ProcessController(std::unique_ptr<IRunnable> proc, const Logger &log):
+ProcessController::ProcessController(std::unique_ptr<IRunnable> proc, const Logger &log, const bool debug):
+    _debug(debug),
     _key(make_key(proc->name(), &log)),
     _msq(log.key(), false),
     _log(log),
@@ -53,11 +56,16 @@ void ProcessController::run() {
     if (pid == 0) {
         // this makes process controller behave like a singleton in child
         _cls = std::make_unique<ProcessController>(std::move(_proc), _log);
-        auto msq = MessageQueue<Message>::attach(_log.key());
-        _log.setQueue(&msq);
+
+        // if debug - we are using Mock Queue, no need to reattach
+        if (!_debug) {
+            _msq = MessageQueue<Message>::attach(_log.key());
+            _log.setQueue(&_msq);
+        }
+
         _stats = SharedMemory<ProcessStats>::attach(_key, sizeof(ProcessStats), &_log);
         _setup_handlers();
-        _cls->_proc->run(*_stats);
+        _cls->_proc->run(*_stats, _log);
         std::exit(0);
     }
 

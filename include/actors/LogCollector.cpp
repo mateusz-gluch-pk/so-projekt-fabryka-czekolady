@@ -23,7 +23,7 @@ LogCollector::~LogCollector() {
     }
 }
 
-void LogCollector::run(ProcessStats &stats) {
+void LogCollector::run(ProcessStats &stats, Logger &log) {
     while (_running) {
         if (_paused) {
             // safe sleep for 0.1s

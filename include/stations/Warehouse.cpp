@@ -191,7 +191,7 @@ std::vector<Item> Warehouse::items() const {
 	return items;
 }
 
-const std::string & Warehouse::name() const {return _name;}
+std::string Warehouse::name() const {return _name;}
 
 int Warehouse::capacity() const {return _capacity;}
 
