@@ -23,7 +23,7 @@ void Deliverer::run(ProcessStats &stats, Logger &log) {
     while (_running) {
         if (_paused) {
             stats.state = PAUSED;
-            sthr::sleep_for(stime::milliseconds(100));
+            sthr::sleep_for(stime::milliseconds(10));
             continue;
         }
 
@@ -32,6 +32,7 @@ void Deliverer::run(ProcessStats &stats, Logger &log) {
             _reload();
             _reloading = false;
             stats.reloads++;
+            continue;
         }
 
         stats.state = RUNNING;
@@ -49,7 +50,7 @@ void Deliverer::stop() {
 }
 
 void Deliverer::pause() {
-    _log.info(_msg("Received SIGSTOP - pausing").c_str());
+    _log.info(_msg("Received SIGUSR1 - pausing").c_str());
     _paused = true;
 }
 
@@ -64,8 +65,8 @@ void Deliverer::reload() {
 }
 
 void Deliverer::_main() const {
-    sthr::sleep_for(stime::milliseconds(_tpl.delay_ms()));
     _log.info(_msg("Delivering item to warehouse").c_str());
+    sthr::sleep_for(stime::milliseconds(_tpl.delay_ms()));
     auto item = _tpl.get();
     _dst->add(item);
 }

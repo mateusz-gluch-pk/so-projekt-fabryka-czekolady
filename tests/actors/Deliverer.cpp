@@ -8,7 +8,7 @@
 
 #include "processes/ProcessController.h"
 
-#define SLEEP 100000
+#define SLEEP 10*1000
 
 static std::string tname() {
     std::ostringstream oss;
@@ -36,15 +36,16 @@ TEST(Deliverer, ProcessControl) {
     ASSERT_EQ(0, proc.stats().reloads);
 
     // run for a loop
+    usleep(5*SLEEP);
+    ASSERT_EQ(RUNNING, proc.stats().state);
+    ASSERT_EQ(0, proc.stats().loops);
+
+    // stop immediately after delivering one item
+    proc.pause();
     while (proc.stats().loops == 0) {
         usleep(SLEEP);
     }
-    ASSERT_EQ(RUNNING, proc.stats().state);
-    ASSERT_EQ(1, proc.stats().loops);
-
-    // pause! - so that we can check warehouse
-    proc.pause();
-    // usleep(5*SLEEP);
+    ASSERT_EQ(PAUSED, proc.stats().state);
     ASSERT_EQ(1, proc.stats().loops);
 
     // item should appear in warehouse
@@ -53,17 +54,17 @@ TEST(Deliverer, ProcessControl) {
     ASSERT_EQ(1, destination.items()[0].count());
 
     // resume
+    proc.resume();
     usleep(5*SLEEP);
-    ASSERT_EQ(PAUSED, proc.stats().state);
-    // proc.resume();
     ASSERT_EQ(RUNNING, proc.stats().state);
     ASSERT_EQ(1, proc.stats().loops);
 
     // run for another loop
+    proc.pause();
     while (proc.stats().loops == 1) {
         usleep(SLEEP);
     }
-    ASSERT_EQ(RUNNING, proc.stats().state);
+    ASSERT_EQ(PAUSED, proc.stats().state);
     ASSERT_EQ(2, proc.stats().loops);
 
     proc.stop();

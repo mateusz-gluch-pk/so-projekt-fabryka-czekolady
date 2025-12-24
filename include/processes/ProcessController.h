@@ -33,6 +33,13 @@ class ProcessController {
         static void _handle_resume(int);
         static void _handle_reload(int);
 
+        [[nodiscard]] std::string _msg(const std::string &msg) const {
+            std::ostringstream ss;
+            ss << _pid;
+            return "processes/ProcessController/" + ss.str() + ":\t" + msg;
+        }
+
+        bool _debug = false;
         key_t _key;
         MessageQueue<Message> *_msq = nullptr;
         Logger _log;
