@@ -16,7 +16,7 @@ Worker::Worker(Logger *log, Warehouse *in, Warehouse *out, Workstation *station)
     _reloading(false) {
 }
 
-void Worker::run() {
+void Worker::run(ProcessStats &stats) {
     while (_running) {
         if (_paused) {
             sthr::sleep_for(stime::milliseconds(100));

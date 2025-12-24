@@ -8,12 +8,14 @@
 #include <filesystem>
 #include <fstream>
 #include <math.h>
+#include <sys/wait.h>
 
 #include "ipcs/MessageQueue.h"
 
 #define PROCESS_DIR "processes"
 namespace fs = std::filesystem;
 
+std::unique_ptr<ProcessController> ProcessController::_cls = nullptr;
 
 static key_t make_key(const std::string& name, const Logger *log) {
     const std::string dir(PROCESS_DIR);
@@ -36,6 +38,7 @@ ProcessController::ProcessController(std::unique_ptr<IRunnable> proc, const Logg
     _log(log),
     _proc(std::move(proc)),
     _stats(_key, sizeof(ProcessStats), &log) {
+    _cls = nullptr;
 }
 
 ProcessController::~ProcessController() {
@@ -47,11 +50,13 @@ ProcessController::~ProcessController() {
 void ProcessController::run() {
     const pid_t pid = fork();
     if (pid == 0) {
+        // this makes process controller behave like a singleton in child
+        _cls = std::make_unique<ProcessController>(std::move(_proc), _log);
         auto msq = MessageQueue<Message>::attach(_log.key());
         _log.setQueue(&msq);
         _stats = SharedMemory<ProcessStats>::attach(_key, sizeof(ProcessStats), &_log);
         _setup_handlers();
-        _proc->run(*_stats);
+        _cls->_proc->run(*_stats);
         std::exit(0);
     }
 
@@ -62,10 +67,25 @@ void ProcessController::run() {
     }
 }
 
-void ProcessController::stop() const {kill(_pid, SIGTERM);}
-void ProcessController::pause() const {kill(_pid, SIGSTOP);}
-void ProcessController::resume() const {kill(_pid, SIGCONT);}
-void ProcessController::reload() const {kill(_pid, SIGHUP);}
+void ProcessController::stop() {
+    kill(_pid, SIGTERM);
+
+    // this terminates the process - so we waitpid for him to die
+    waitpid(_pid, nullptr, 0);
+    _pid = -1;
+}
+
+void ProcessController::pause() const {
+    kill(_pid, SIGSTOP);
+}
+
+void ProcessController::resume() const {
+    kill(_pid, SIGCONT);
+}
+
+void ProcessController::reload() const {
+    kill(_pid, SIGHUP);
+}
 
 void ProcessController::_setup_handlers() {
     signal(SIGTERM, _handle_stop);
@@ -74,7 +94,7 @@ void ProcessController::_setup_handlers() {
     signal(SIGHUP, _handle_reload);
 }
 
-void ProcessController::_handle_run(int) {_cls->_proc->run();}
+// void ProcessController::_handle_run(int) {_cls->_proc->run(*_stats);}
 void ProcessController::_handle_stop(int) {_cls->_proc->stop();}
 void ProcessController::_handle_pause(int) {_cls->_proc->pause();}
 void ProcessController::_handle_resume(int) {_cls->_proc->resume();}

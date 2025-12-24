@@ -18,7 +18,7 @@ class ProcessController {
 
         ~ProcessController();
         void run();
-        void stop() const;
+        void stop();
         void pause() const;
         void resume() const;
         void reload() const;
@@ -26,7 +26,7 @@ class ProcessController {
 
     private:
         static void _setup_handlers();
-        static void _handle_run(int);
+        // static void _handle_run(int);
         static void _handle_stop(int);
         static void _handle_pause(int);
         static void _handle_resume(int);

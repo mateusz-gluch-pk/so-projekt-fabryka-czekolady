@@ -21,8 +21,6 @@ void Deliverer::run(ProcessStats &stats) {
     _reattach();
 
     while (_running) {
-        stats.state = RUNNING;
-
         if (_paused) {
             stats.state = PAUSED;
             sthr::sleep_for(stime::milliseconds(100));
@@ -36,6 +34,8 @@ void Deliverer::run(ProcessStats &stats) {
             stats.reloads++;
         }
 
+        stats.state = RUNNING;
+        // _main is a <long> operation
         _main();
         stats.loops++;
     }

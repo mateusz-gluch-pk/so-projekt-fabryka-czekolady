@@ -18,7 +18,7 @@ class LogCollector: public IRunnable{
         LogCollector(key_t key, const std::string &filename, const bool tty = true);
         ~LogCollector() override;
 
-        void run() override;
+        void run(ProcessStats &stats) override;
         void stop() override;
         void pause() override;
         void resume() override;
@@ -26,7 +26,7 @@ class LogCollector: public IRunnable{
 
     private:
         void _main();
-        void _reload();
+        void _reload() {};
         void _reattach() {
             _msq = new MessageQueue<Message>(_key, false);
         }

@@ -5,6 +5,9 @@
 #ifndef PROJEKT_IRUNNABLE_H
 #define PROJEKT_IRUNNABLE_H
 
+#include "processes/ProcessStats.h"
+#include <string>
+
 class IRunnable {
     public:
         virtual ~IRunnable() = default;
