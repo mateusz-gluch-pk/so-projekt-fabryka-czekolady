@@ -6,6 +6,7 @@
 #define PROJEKT_PROCESSCONTROLLER_H
 #include <csignal>
 #include <memory>
+#include <optional>
 
 #include "ProcessStats.h"
 #include "actors/IRunnable.h"
@@ -14,7 +15,7 @@
 
 class ProcessController {
     public:
-        explicit ProcessController(std::unique_ptr<IRunnable> proc, const Logger &log, bool debug = false);
+        explicit ProcessController(std::unique_ptr<IRunnable> proc, const Logger &log, bool create = true, bool debug = false);
 
         ~ProcessController();
         void run();
@@ -32,16 +33,15 @@ class ProcessController {
         static void _handle_resume(int);
         static void _handle_reload(int);
 
-        bool _debug;
         key_t _key;
-        MessageQueue<Message> _msq;
+        MessageQueue<Message> *_msq = nullptr;
         Logger _log;
 
         std::unique_ptr<IRunnable> _proc;
         SharedMemory<ProcessStats> _stats;
         static std::unique_ptr<ProcessController> _cls;
 
-        pid_t _pid = -1;
+        pid_t _pid;
 };
 
 #endif //PROJEKT_PROCESSCONTROLLER_H
