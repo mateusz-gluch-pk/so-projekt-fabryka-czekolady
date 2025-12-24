@@ -4,6 +4,7 @@
 
 #ifndef PROJEKT_SEMAPHORE_H
 #define PROJEKT_SEMAPHORE_H
+#include <sstream>
 #include <sys/types.h>
 
 #include "logger/Logger.h"
@@ -31,6 +32,12 @@ class Semaphore {
         [[nodiscard]] int value() const;
 
     private:
+        [[nodiscard]] std::string _msg(const std::string &msg) const {
+            std::ostringstream ss;
+            ss << _semid;
+            return "ipcs/Semaphore/" + ss.str() + ":\t" + msg;
+        }
+
         bool _owner;
         Logger* _log;
         int _semid = -1;

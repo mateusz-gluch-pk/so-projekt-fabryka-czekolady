@@ -31,7 +31,7 @@ std::string Message::string() const {
 
     const std::string time_str = std::format("{:%Y-%m-%d %H:%M:%S}", local);
     const std::string level_str = _level_str();
-    return time_str + " " + level_str + " [" + std::to_string(_pid) + "] " + std::string(_message);
+    return time_str + "\t" + level_str + "\t[" + std::to_string(_pid) + "]\t" + std::string(_message);
 }
 
 std::string Message::_level_str() const {

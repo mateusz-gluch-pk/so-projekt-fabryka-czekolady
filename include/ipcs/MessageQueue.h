@@ -4,6 +4,7 @@
 
 #ifndef PROJEKT_MESSAGEQUEUE_H
 #define PROJEKT_MESSAGEQUEUE_H
+#include <sstream>
 #include <sys/types.h>
 #include <sys/msg.h>
 
@@ -36,6 +37,12 @@ public:
     void receive(T *data) const override;
 
 private:
+    [[nodiscard]] std::string _msg(const std::string &msg) const {
+        std::ostringstream ss;
+        ss << _msqid;
+        return "ipcs/MessageQueue/" + ss.str() + ":\t" + msg;
+    }
+
     IQueue<Message> *_local_msq = nullptr;
     Logger *_log;
     int _msqid = -1;
@@ -57,30 +64,30 @@ MessageQueue<T>::MessageQueue(const key_t key, const bool create) {
     } else {
         _local_msq = new MockQueue<Message>();
         _log = new Logger(MSQ_LOG_LEVEL, _local_msq);
-        _log->info("Types incompatible for loopback - creating local message queue");
+        _log->info(_msg("Message is not Message - creating local queue").c_str());
     }
 
     _owner = create;
     if (_owner) {
-        _log->info("Created message queue %d with key %x", _msqid, key);
+        _log->info(_msg("Created with key %x").c_str(), key);
     } else {
-        _log->info("Attached to message queue %d with key %x", _msqid, key);
+        _log->info(_msg("Attached with key %x").c_str(), key);
     }
 }
 
 
 template<typename T>
 MessageQueue<T>::~MessageQueue() {
-    if (_owner) {
+    if (_msqid != -1 && _owner) {
         const int ret = msgctl(_msqid, IPC_RMID, nullptr);
         if (ret == -1) {
-            _log->fatal("Cannot remove message queue %d", _msqid);
+            _log->fatal(_msg("Cannot delete; errno: %d").c_str(), errno);
         }
-        _log->info("Deleted message queue %d", _msqid);
+        _log->info(_msg("Deleted").c_str());
     }
 
     if (_local_msq != nullptr) {
-        _log->info("Deleting local message queue");
+        _log->info(_msg("Deleted local").c_str());
         delete _local_msq;
         _local_msq = nullptr;
     }
@@ -117,9 +124,9 @@ void MessageQueue<T>::send(T data) const {
     const void *data_ptr = reinterpret_cast<void *>(&data);
     const int result = msgsnd(_msqid, data_ptr, sizeof(T) - sizeof(long), IPC_NOWAIT);
     if (result == -1) {
-        _log->fatal("Cannot send message to message queue %d; errno: %d", _msqid, errno);
+        _log->fatal(_msg("Cannot send; errno: %d").c_str(), errno);
     }
-    _log->debug("Sent message to message queue %d", _msqid);
+    _log->debug(_msg("Sent").c_str());
 }
 
 template<typename T>
@@ -130,12 +137,12 @@ void MessageQueue<T>::receive(T *data) const {
     if (msize == -1) {
         // free(data_ptr);
         // data_ptr = nullptr;
-        _log->fatal("Cannot receive message from message queue %d; errno: %d", _msqid, errno);
+        _log->fatal(_msg("Cannot receive; errno: %d").c_str(), errno);
         return;
     }
 
     // *data = *(static_cast<T *>(data_ptr));
-    _log->debug("Received message from message queue %d", _msqid);
+    _log->debug(_msg("Received").c_str());
     // free(data_ptr);
     // data_ptr = nullptr;
 }

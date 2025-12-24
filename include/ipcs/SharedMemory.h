@@ -8,9 +8,23 @@
 #include <sys/shm.h>
 #include <sys/types.h>
 
+#include <typeinfo>
+#include <cxxabi.h>
+#include <memory>
+
 #include "logger/Logger.h"
 
 #define SHM_PERMS 0644
+
+template<typename T>
+std::string type_name() {
+    int status;
+    std::unique_ptr<char[], void(*)(void*)> res{
+        abi::__cxa_demangle(typeid(T).name(), nullptr, nullptr, &status),
+        std::free
+    };
+    return (status == 0) ? res.get() : typeid(T).name();
+}
 
 template<typename T>
 class SharedMemory {
@@ -36,36 +50,45 @@ class SharedMemory {
     private:
         void detach();
 
+        [[nodiscard]] std::string _msg(const std::string &msg) const {
+            std::ostringstream ss;
+            ss << _shmid  << "/" << type_name<T>();
+            return "ipcs/SharedMemory/" + ss.str() + ":\t" + msg;
+        }
+
         const Logger *_log;
         key_t _key;
         int _shmid = -1;
-        bool _owner;;
+        bool _owner;
         T* _data = nullptr;
 };
 
 template<typename T>
-SharedMemory<T>::SharedMemory(key_t key, size_t size, const Logger *log, bool create): _key(key), _log(log) {
-    int flags = create ? (IPC_CREAT | IPC_EXCL | SHM_PERMS) : SHM_PERMS;
-
+SharedMemory<T>::SharedMemory(key_t key, size_t size, const Logger *log, bool create):
+    _key(key),
+    _log(log),
+    _owner(create) {
+    const int flags = _owner ? (IPC_CREAT | IPC_EXCL | SHM_PERMS) : SHM_PERMS;
     _shmid = shmget(key, size, flags);
     if (_shmid == -1) {
-        _log->fatal("Cannot create shared memory");
+        _log->fatal(_msg("Cannot create; errno: %d").c_str(), errno);
     }
 
     void *ptr = shmat(_shmid, nullptr, 0);
     if (ptr == reinterpret_cast<void *>(-1)) {
-        _log->fatal("Cannot attach to shared memory %d", _shmid);
+        _log->fatal(_msg("Cannot attach; errno: %d").c_str(), errno);
     }
 
     _data = static_cast<T *>(ptr);
-
     // initialize memory
-    if (create) {
+    if (_owner) {
+        _log->info(_msg("Initializing").c_str());
         std::memset(_data, 0, size);
-        _log->info("Initializing shared memory %d", _shmid);
+
+        _log->info(_msg("Created with key %x").c_str(), key);
+    } else {
+        _log->info(_msg("Acquired with key %x").c_str(), key);
     }
-    _owner = create;
-    _log->info("Created shared memory %d", _shmid);
 }
 
 template<typename T>
@@ -97,19 +120,19 @@ SharedMemory<T> & SharedMemory<T>::operator=(SharedMemory &&other) noexcept {
 
 template<typename T>
 T * SharedMemory<T>::get() const {
-    _log->debug("Fetching pointer to shared memory %d data", _shmid);
+    _log->debug(_msg("Fetching pointer").c_str());
     return _data;
 }
 
 template<typename T>
 T & SharedMemory<T>::operator*() const {
-    _log->debug("Fetching pointer to shared memory %d data", _shmid);
+    _log->debug(_msg("Fetching pointer").c_str());
     return *_data;
 }
 
 template<typename T>
 T * SharedMemory<T>::operator->() const {
-    _log->debug("Fetching pointer to shared memory %d data", _shmid);
+    _log->debug(_msg("Fetching pointer").c_str());
     return _data;
 }
 
@@ -117,13 +140,13 @@ template<typename T>
 void SharedMemory<T>::detach() {
     if (_data) {
         shmdt(_data);
-        _log->info("Detached shared memory %d", _shmid);
+        _log->info(_msg("Detached").c_str());
         _data = nullptr;
     }
 
     if (_shmid != -1 && _owner) {
         shmctl(_shmid, IPC_RMID, nullptr);
-        _log->info("Deleted shared memory %d", _shmid);
+        _log->info(_msg("Deleted").c_str());
         _shmid = -1;
     }
 }

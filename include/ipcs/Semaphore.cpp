@@ -13,16 +13,16 @@ Semaphore::Semaphore(const key_t key, Logger *log, const bool create, const int 
     int flags = create ? (IPC_CREAT | IPC_EXCL | SEM_PERMS) : SEM_PERMS;
     _semid = semget(key, 1, flags);
     if (_semid == -1) {
-        _log->fatal("Failed to create semaphore");
+        _log->fatal(_msg("Cannot create; errno: %d").c_str(), errno);
     }
 
     if (_owner) {
         if (semctl(_semid, 0, SETVAL, initial_value) == -1) {
-            _log->fatal("Failed to set semaphore value");
+            _log->fatal(_msg("Cannot set value %d; errno: %d").c_str(), initial_value, errno);
         }
-        _log->info("Semaphore %d created with value %d and key %x", _semid, initial_value, key);
+        _log->info(_msg("Created with value %d and key %x").c_str(), initial_value, key);
     } else {
-        _log->info("Acquired semaphore %d with key %x", _semid, key);
+        _log->info(_msg("Acquired with key %x").c_str(), key);
     }
 
 }
@@ -30,8 +30,11 @@ Semaphore::Semaphore(const key_t key, Logger *log, const bool create, const int 
 Semaphore::~Semaphore() {
     // if sem is valid - remove from system
     if (_semid != -1 && _owner) {
-        _log->info("Semaphore %d destroyed", _semid);
-        semctl(_semid, 0, IPC_RMID);
+        _log->info(_msg("Deleted").c_str());
+        const int ret = semctl(_semid, 0, IPC_RMID);
+        if (ret == -1) {
+            _log->fatal(_msg("Cannot delete; errno: %d").c_str(), errno);
+        }
     }
 }
 
@@ -50,10 +53,10 @@ void Semaphore::lock() const {
     // flags - SEM_UNDO; unlock if process exits
     sembuf op = {0, -1, SEM_UNDO};
     if (semop(_semid, &op, 1) == -1) {
-        _log->fatal("Failed to lock semaphore %d", _semid);
+        _log->fatal(_msg("Cannot lock; errno: %d").c_str(), errno);
     }
 
-    _log->debug("Semaphore %d locked", _semid);
+    _log->debug(_msg("Locked").c_str());
 }
 
 void Semaphore::unlock() const {
@@ -63,17 +66,17 @@ void Semaphore::unlock() const {
     // flags - IPC_NOWAIT
     sembuf op = {0, +1, IPC_NOWAIT};
     if (semop(_semid, &op, 1) == -1) {
-        _log->fatal("Failed to unlock semaphore %d", _semid);
+        _log->fatal(_msg("Cannot unlock; errno: %d").c_str(), errno);
     }
 
-    _log->debug("Semaphore %d unlocked", _semid);
+    _log->debug(_msg("Unlocked").c_str());
 }
 
 int Semaphore::value() const {
     // look up semaphore
     int v = semctl(_semid, 0, GETVAL);
     if (v == -1) {
-        _log->error("Failed to get semaphore %d value", _semid);
+        _log->error(_msg("Cannot get value").c_str());
     }
     return v;
 }

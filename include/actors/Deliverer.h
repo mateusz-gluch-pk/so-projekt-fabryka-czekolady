@@ -39,7 +39,7 @@ class Deliverer : public IRunnable {
         }
 
         [[nodiscard]] std::string _msg(const std::string &msg) const {
-            return "Deliverer " + _name + ": " + msg;
+            return "actors/Deliverer/" + _name + ":\t" + msg;
         }
         std::string _name;
         ItemTemplate _tpl;

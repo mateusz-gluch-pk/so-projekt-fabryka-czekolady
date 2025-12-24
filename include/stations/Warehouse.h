@@ -33,13 +33,17 @@ class Warehouse {
 		void get(const std::string &itemName, Item *output) const;
 
 		[[nodiscard]] std::vector<Item> items() const;
-		std::string name() const;
+		[[nodiscard]] std::string name() const;
 		[[nodiscard]] int capacity() const;
-		[[nodiscard]] int variety() const;
+		static int variety() ;
 		[[nodiscard]] int usage() const;
 
 	private:
 		Warehouse(std::string name, int capacity, size_t total_size, key_t key, Logger *log, bool create);
+
+		[[nodiscard]] std::string _msg(const std::string &msg) const {
+			return "stations/Warehouse/" + _name + ":\t" + msg;
+		}
 
 		int _capacity;
 		std::string _name;

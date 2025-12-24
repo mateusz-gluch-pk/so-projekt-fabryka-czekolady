@@ -31,16 +31,16 @@ static key_t make_key(const std::string& name, const Logger *log) {
 
 	const std::string key_filename = dir + "/" + name + ".key";
 	if (!fs::exists(key_filename)) {
-		log->info("Creating key file %s", key_filename.c_str());
+		log->debug("key:\tCreating %s", key_filename.c_str());
 		std::ofstream _stream(key_filename);
 	}
 
 	const key_t key = ftok(key_filename.c_str(), 1);
-	log->info("Fetched key from file %s", key_filename.c_str());
+	log->debug("key:\tFetched %s - %x", key_filename.c_str(), key);
 	return key;
 }
 
-int Warehouse::variety() const {
+int Warehouse::variety() {
 	return WAREHOUSE_MAX_VARIETY;
 }
 
@@ -77,13 +77,13 @@ Warehouse::Warehouse(
 	constexpr int variety = WAREHOUSE_MAX_VARIETY;
 	if (fs::exists(_filename) && _owner) {
 		_read_file();
-		_log->info("[%s] Warehouse state read from file", _name.c_str());
-		_log->info("[%s] Created warehouse with variety %d", _name.c_str(), variety);
+		_log->info(_msg("Loaded state").c_str());
+		_log->info(_msg("Created - variety: %d").c_str(), variety);
 	} else if (_owner) {
-		_log->info("[%s] Initializing warehouse", _name.c_str());
-		_log->info("[%s] Created warehouse with variety %d", _name.c_str(), variety);
+		_log->info(_msg("Initializing").c_str());
+		_log->info(_msg("Created - variety: %d").c_str(), variety);
 	} else {
-		_log->info("[%s] Attached warehouse with variety %d", _name.c_str(), variety);
+		_log->info(_msg("Attached - variety: %d").c_str(), variety);
 	}
 }
 
@@ -109,7 +109,7 @@ Warehouse::~Warehouse () {
 	// save warehouse state to file - if there is any warehouse to begin with
 	if (_content != nullptr && _owner) {
 		_write_file();
-		_log->info("[%s] Saved warehouse content to file %s", _name.c_str(), _filename.c_str());
+		_log->info(_msg("Saved to file %s").c_str(), _filename.c_str());
 	}
 
 	// semaphore is removed automatically upon destruction
@@ -122,7 +122,7 @@ void Warehouse::add(Item &item) const {
 
 	// check capacity - if no space, just release semaphore
 	if (usage() + item.size() > _capacity) {
-		_log->warn("[%s] Warehouse is full. Cannot add item %s", _name.c_str(), item.name().c_str());
+		_log->warn(_msg("Max capacity - cannot add item %s").c_str(), item.name().c_str());
 		_sem.unlock();
 		return;
 	}
@@ -134,23 +134,22 @@ void Warehouse::add(Item &item) const {
 		if (warehouse_item == item) {
 			warehouse_item.stack(item);
 			stacked = true;
-			_log->info("[%s] Added item %s to warehouse", _name.c_str(), item.name().c_str());
-			_log->debug("[%s] %s stack size: %d", _name.c_str(), warehouse_item.name().c_str(), warehouse_item.count());
+			_log->info(_msg("Added item %s").c_str(), item.name().c_str());
+			_log->debug(_msg("%s stack size: %d").c_str(), item.name().c_str(), warehouse_item.count());
 			break;
 		}
 	}
 
-	constexpr int variety = WAREHOUSE_MAX_VARIETY;
-	if (!stacked && _content->size != variety) {
+	if (!stacked && _content->size != variety()) {
 		_content->push_back(item);
 		item = Item(item.name(), item.size(), 0);
-		_log->info("[%s] Added unique item %s to warehouse", _name.c_str(), item.name().c_str());
-		_log->debug("[%s] Warehouse variety: %d/%d", _name.c_str(), _content->size, variety);
-	} else if (!stacked && _content->size == variety) {
-		_log->error("[%s] Warehouse has reached max variety - cannot add item %s", _name.c_str(), item.name().c_str());
+		_log->info(_msg("Added new item %s").c_str(), item.name().c_str());
+		_log->debug(_msg("Variety: %d/%d").c_str(), _content->size, variety());
+	} else if (!stacked && _content->size == variety()) {
+		_log->error(_msg("Max variety - cannot add item %s").c_str(), item.name().c_str());
 	}
 
-	_log->debug("[%s] Warehouse capacity: %d/%d", _name.c_str(), usage(), _capacity);
+	_log->debug(_msg("Capacity: %d/%d").c_str(), usage(), _capacity);
 	// unlock warehouse
 	_sem.unlock();
 }
@@ -163,18 +162,18 @@ void Warehouse::get(const std::string &itemName, Item *output) const {
 	while (it != _content->end()) {
 		if (it->name() == itemName) {
 			*output = *it->unstack();
-			_log->info("[%s] Found item %s in warehouse", _name.c_str(), itemName.c_str());
-			_log->debug("[%s] %s stack size: %d", _name.c_str(), itemName.c_str(), it->count());
+			_log->info(_msg("Found item %s").c_str(), itemName.c_str());
+			_log->debug(_msg("%s stack size: %d").c_str(), itemName.c_str(), it->count());
 		}
 
 		if (it->count() == 0) {
-			_log->info("[%s] Last item %s fetched from warehouse. Deleting", _name.c_str(), it->name().c_str());
+			_log->info(_msg("Last item %s fetched. Deleting.").c_str(), it->name().c_str());
 			_content->erase(it);
-			_log->debug("[%s] Warehouse variety: %d/%d", _name.c_str(), _content->size, variety());
+			_log->debug(_msg("Variety: %d/%d").c_str(), _content->size, variety());
 		} else ++it;
 	}
 
-	_log->debug("[%s] Warehouse capacity: %d/%d", _name.c_str(), usage(), _capacity);
+	_log->debug(_msg("Capacity: %d/%d").c_str(), usage(), _capacity);
 	// unlock warehouse
 	_sem.unlock();
 }
