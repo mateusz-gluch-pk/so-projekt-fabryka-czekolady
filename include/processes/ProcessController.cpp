@@ -43,6 +43,7 @@ ProcessController::ProcessController(std::unique_ptr<IRunnable> proc, const Logg
 
 ProcessController::~ProcessController() {
     if (_pid != -1) {
+        _log.info("Controller terminated. Sending SIGKILL to %d", _pid);
         kill(_pid, SIGKILL);
     }
 }
@@ -61,29 +62,36 @@ void ProcessController::run() {
     }
 
     if (pid > 0) {
+        _log.info("Created process %d", _pid);
         _pid = pid;
     } else {
-        throw std::runtime_error("fork failed");
+        _log.fatal("Fork failed");
+        // throw std::runtime_error("fork failed");
     }
 }
 
 void ProcessController::stop() {
+    _log.debug("Sending SIGTERM to %d", _pid);
     kill(_pid, SIGTERM);
 
     // this terminates the process - so we waitpid for him to die
     waitpid(_pid, nullptr, 0);
+    _log.debug("Process %d terminated", _pid);
     _pid = -1;
 }
 
 void ProcessController::pause() const {
+    _log.debug("Sending SIGSTOP to %d", _pid);
     kill(_pid, SIGSTOP);
 }
 
 void ProcessController::resume() const {
+    _log.debug("Sending SIGCONT to %d", _pid);
     kill(_pid, SIGCONT);
 }
 
 void ProcessController::reload() const {
+    _log.debug("Sending SIGHUP to %d", _pid);
     kill(_pid, SIGHUP);
 }
 

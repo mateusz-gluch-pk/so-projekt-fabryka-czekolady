@@ -37,21 +37,35 @@ void Deliverer::run(ProcessStats &stats) {
         stats.state = RUNNING;
         // _main is a <long> operation
         _main();
+        _log.debug(_msg("Loop completed").c_str());
         stats.loops++;
     }
     stats.state = STOPPED;
 }
 
-void Deliverer::stop() { _running = false; }
+void Deliverer::stop() {
+    _log.info(_msg("Received SIGTERM - pausing").c_str());
+    _running = false;
+}
 
-void Deliverer::pause() { _paused = true; }
+void Deliverer::pause() {
+    _log.info(_msg("Received SIGSTOP - pausing").c_str());
+    _paused = true;
+}
 
-void Deliverer::resume() { _paused = false; }
+void Deliverer::resume() {
+    _log.info(_msg("Received SIGCONT - resuming").c_str());
+    _paused = false;
+}
 
-void Deliverer::reload() { _reloading = true; }
+void Deliverer::reload() {
+    _log.info(_msg("Received SIGHUP - reloading").c_str());
+    _reloading = true;
+}
 
 void Deliverer::_main() const {
     sthr::sleep_for(stime::milliseconds(_tpl.delay_ms()));
+    _log.info(_msg("Delivering item to warehouse").c_str());
     auto item = _tpl.get();
     _dst->add(item);
 }

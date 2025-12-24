@@ -39,6 +39,10 @@ class Deliverer : public IRunnable {
             _dst.emplace(_dst->name(), _dst->capacity(), &_log, false);
         }
 
+        [[nodiscard]] std::string _msg(const std::string &msg) const {
+            return "Deliverer" + _name + ": " + msg;
+        }
+
         std::string _name;
         ItemTemplate _tpl;
         ProcessStats _stats;
