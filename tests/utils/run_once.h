@@ -11,25 +11,25 @@
 #define TICK 10 * 1000
 
 inline void run_once(ProcessController &proc) {
+    ProcessStats stats = proc.stats();
     // run deliverer - after a while, warehouse should have a new item
-    if (proc.stats().state == CREATED) {
+    if (stats.state == CREATED) {
         proc.run();
     } else {
         proc.resume();
     }
     // run for a loop
     usleep(5*TICK);
-    ASSERT_EQ(RUNNING, proc.stats().state);
-    ASSERT_EQ(0, proc.stats().loops);
+    ASSERT_EQ(RUNNING, stats.state);
+    ASSERT_EQ(0, stats.loops);
 
     // stop immediately after delivering one item
     proc.pause();
-    while (proc.stats().loops == 0) {
+    while (stats.loops == 0) {
         usleep(TICK);
     }
-    ASSERT_EQ(PAUSED, proc.stats().state);
-    ASSERT_EQ(1, proc.stats().loops);
-
+    ASSERT_EQ(PAUSED, stats.state);
+    ASSERT_EQ(1, stats.loops);
 }
 
 

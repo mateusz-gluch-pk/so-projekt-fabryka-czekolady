@@ -13,8 +13,8 @@ Deliverer::Deliverer(std::string name, ItemTemplate tpl, Warehouse &dst, Logger 
     _running(true),
     _paused(false),
     _reloading(false) {
-    _log.info(_msg("Trying to attach warehouse").c_str());
     _dst.emplace(dst.name(), dst.capacity(), &_log, false);
+    _log.info(_msg("Created").c_str());
 }
 
 void Deliverer::run(ProcessStats &stats, Logger &log) {

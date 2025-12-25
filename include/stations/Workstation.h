@@ -1,39 +1,61 @@
+// //
+// // Created by mateusz on 26.11.2025.
+// //
 //
-// Created by mateusz on 26.11.2025.
+// #ifndef PROJEKT_WORKSTATION_H
+// #define PROJEKT_WORKSTATION_H
+// #include <utility>
+// #include <vector>
+// #include <sys/ipc.h>
 //
-
-#ifndef PROJEKT_WORKSTATION_H
-#define PROJEKT_WORKSTATION_H
-#include <utility>
-#include <vector>
-#include <sys/ipc.h>
-
-#include "objects/Item.h"
-#include "objects/Recipe.h"
-#include "ipcs/Semaphore.h"
-
-
-class Workstation {
-    public:
-        Workstation(const std::string &name, Recipe *recipe, Logger *log):
-            Workstation(name, recipe, ftok(("workstations/" + name + ".key").c_str(), 1), log) {};
-
-        Recipe &recipe() const {return *_recipe;};
-        Item &create(std::vector<Item> items);
-
-        void reattach(Logger *log) {
-            _sem = Semaphore(_key, log);
-            _log = log;
-        }
-
-    private:
-        Workstation(std::string name, Recipe *recipe, const key_t key, Logger *log): _name(std::move(name)), _log(log), _recipe(recipe), _sem(key, log), _key(key){};
-        std::string _name;
-        Logger *_log;
-        Recipe *_recipe;
-        Semaphore _sem;
-        key_t _key;
-};
-
-
-#endif //PROJEKT_WORKSTATION_H
+// #include "ipcs/key.h"
+// #include "objects/Item.h"
+// #include "objects/Recipe.h"
+// #include "ipcs/Semaphore.h"
+// #include "ipcs/SharedMemory.h"
+//
+// #define WORKSTATION_DIR "workstations"
+//
+// class Workstation {
+//     public:
+//         static Workstation create(const std::string &name, Recipe &recipe, Logger &log) {
+//             return Workstation(name, &recipe, log);
+//         }
+//
+//         static Workstation attach(const std::string &name, Logger &log) {
+//             return Workstation(name, nullptr, log);
+//         }
+//
+//         Workstation(const std::string &name, const Recipe *recipe, Logger &log):
+//             _key(make_key(WORKSTATION_DIR, name, log)),
+//             _owner(recipe != nullptr),
+//             _name(name),
+//             _log(log),
+//             _sem(_key, &log, _owner) {
+//             // copy recipe over to shared memory
+//             if (_owner) {
+//                 *_shm = *recipe;
+//             }
+//         }
+//
+//         const Recipe &recipe() const {return *_shm;}
+//         Item &create(std::vector<Item> items) {
+//             _sem.lock();
+//             _sem.unlock();
+//         // }
+//     private:
+//         [[nodiscard]] std::string _msg(const std::string &msg) const {
+//             return "stations/Workstation/" + _name + ":\t" + msg;
+//         }
+//         key_t _key;
+//         bool _owner;
+//
+//         std::string _name;
+//         Logger &_log;
+//
+//         const Recipe _recipe;
+//         Semaphore _sem;
+// };
+//
+//
+// #endif //PROJEKT_WORKSTATION_H

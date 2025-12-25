@@ -10,31 +10,15 @@
 #include <math.h>
 #include <sys/wait.h>
 
+#include "ipcs/key.h"
 #include "ipcs/MessageQueue.h"
 
 #define PROCESS_DIR "processes"
 
-namespace fs = std::filesystem;
-
 std::unique_ptr<ProcessController> ProcessController::_cls = nullptr;
 
-static key_t make_key(const std::string& name, const Logger &log) {
-    const std::string dir(PROCESS_DIR);
-    fs::create_directories(dir);
-
-    const std::string key_filename = dir + "/" + name + ".key";
-    if (!fs::exists(key_filename)) {
-        log.debug("processes/key:\tCreating %s", key_filename.c_str());
-        std::ofstream _stream(key_filename);
-    }
-
-    const key_t key = ftok(key_filename.c_str(), 1);
-    log.debug("processes/key:\tFetched %s - %x", key_filename.c_str(), key);
-    return key;
-}
-
 ProcessController::ProcessController(std::unique_ptr<IRunnable> proc, const Logger &log, const bool create, const bool debug):
-    _key(make_key(proc->name(), log)),
+    _key(make_key(PROCESS_DIR, proc->name(), log)),
     _debug(debug),
     _log(log),
     _proc(std::move(proc)),

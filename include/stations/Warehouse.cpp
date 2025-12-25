@@ -22,23 +22,10 @@
 #include <nlohmann/json.hpp>
 #include <utility>
 
+#include "ipcs/key.h"
+
 using json = nlohmann::json;
 namespace fs = std::filesystem;
-
-static key_t make_key(const std::string& name, const Logger *log) {
-	const std::string dir(WAREHOUSE_DIR);
-	fs::create_directories(dir);
-
-	const std::string key_filename = dir + "/" + name + ".key";
-	if (!fs::exists(key_filename)) {
-		log->debug("stations/key:\tCreating %s", key_filename.c_str());
-		std::ofstream _stream(key_filename);
-	}
-
-	const key_t key = ftok(key_filename.c_str(), 1);
-	log->debug("stations/key:\tFetched %s - %x", key_filename.c_str(), key);
-	return key;
-}
 
 int Warehouse::variety() {
 	return WAREHOUSE_MAX_VARIETY;
@@ -91,7 +78,7 @@ Warehouse::Warehouse(const std::string &name, const int capacity, Logger *log, b
 	name,
 	capacity,
 	sizeof(SharedVector<Item, WAREHOUSE_MAX_VARIETY>) + sizeof(Item) * WAREHOUSE_MAX_VARIETY,
-	make_key(name, log),
+	make_key(WAREHOUSE_DIR, name, log),
 	log,
 	create
 ) {}

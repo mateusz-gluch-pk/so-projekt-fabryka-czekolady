@@ -41,11 +41,14 @@ class Deliverer : public IRunnable {
         [[nodiscard]] std::string _msg(const std::string &msg) const {
             return "actors/Deliverer/" + _name + ":\t" + msg;
         }
+
         std::string _name;
         ItemTemplate _tpl;
 
-        Logger &_log;
         std::optional<Warehouse> _dst;
+
+        Logger &_log;
+
         std::atomic<bool> _running, _paused, _reloading;
 };
 

@@ -12,22 +12,14 @@
 #include "stations/Warehouse.h"
 #include "stations/Workstation.h"
 #include "logger/Logger.h"
+#include "objects/Recipe.h"
 
 namespace stime = std::chrono;
 namespace sthr = std::this_thread;
 
 class Worker : public IRunnable {
     public:
-        Worker(Logger *log, Warehouse *in, Warehouse *out, Workstation *station);
-        ~Worker() override {
-            if (_msq != nullptr) {
-                delete _msq;
-                _msq = nullptr;
-            }
-
-            delete _in;
-            delete _out;
-        }
+        Worker(std::string name, Recipe recipe, Warehouse &in, Warehouse &out, Logger &log);
 
         void run(ProcessStats &stats, Logger &log) override;
         void stop() override;
@@ -39,21 +31,24 @@ class Worker : public IRunnable {
         void _main();
         void _reload();
 
-        void _reattach() {
-            _msq = new MessageQueue<Message>(_log->key(), false);
-            _log->setQueue(_msq);
-            _in = new Warehouse(_in->name(), _in->capacity(), _log, false);
-            _out = new Warehouse(_out->name(), _out->capacity(), _log, false);
+        void _reattach(Logger &log) {
+            _log = log;
+            _in.emplace(_in->name(), _in->capacity(), &log, false);
+            _out.emplace(_out->name(), _out->capacity(), &log, false);
         };
 
-        MessageQueue<Message> *_msq;
-        Logger *_log;
+        [[nodiscard]] std::string _msg(const std::string &msg) const {
+            return "actors/Worker/" + _name + ":\t" + msg;
+        }
 
-        Warehouse *_in;
-        Warehouse *_out;
-        Workstation *_station;
-
+        std::string _name;
         Recipe _recipe;
+
+        std::optional<Warehouse> _in;
+        std::optional<Warehouse> _out;
+
+        Logger &_log;
+
         std::vector<Item> _inventory;
         std::atomic<bool> _running, _paused, _reloading;
 };

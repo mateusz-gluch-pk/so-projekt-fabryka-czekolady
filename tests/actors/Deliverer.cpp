@@ -21,10 +21,12 @@ TEST(Deliverer, ProcessControl) {
     auto deliverer = std::make_unique<Deliverer>("test", tpl, destination, log);
     ProcessController proc(std::move(deliverer), log, true, true);
 
+    ProcessStats stats = proc.stats();
+
     // initialize with empty stats!
-    ASSERT_EQ(CREATED, proc.stats().state);
-    ASSERT_EQ(0, proc.stats().loops);
-    ASSERT_EQ(0, proc.stats().reloads);
+    ASSERT_EQ(CREATED, stats.state);
+    ASSERT_EQ(0, stats.loops);
+    ASSERT_EQ(0, stats.reloads);
 
     run_once(proc);
 
@@ -38,8 +40,8 @@ TEST(Deliverer, ProcessControl) {
 
     proc.stop();
     usleep(5*TICK);
-    ASSERT_EQ(STOPPED, proc.stats().state);
-    ASSERT_EQ(2, proc.stats().loops);
+    ASSERT_EQ(STOPPED, stats.state);
+    ASSERT_EQ(2, stats.loops);
 }
 
 TEST(Deliverer, MultiDeliverer) {

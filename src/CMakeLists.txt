@@ -8,6 +8,7 @@ add_library(factorylib STATIC
         ../include/stations/WarehouseStats.h
         ../include/processes/ProcessStats.cpp
         ../include/processes/ProcessStats.h
+        ../include/ipcs/key.h
 )
 
 set_target_properties(factorylib PROPERTIES
