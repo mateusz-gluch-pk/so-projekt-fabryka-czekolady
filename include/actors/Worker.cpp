@@ -36,7 +36,6 @@ void Worker::run(ProcessStats &stats, Logger &log) {
         }
 
         stats.state = RUNNING;
-        // _main is a <long> operation
         _main();
         _log.debug(_msg("Loop completed").c_str());
         stats.loops++;
@@ -66,17 +65,26 @@ void Worker::reload() {
 
 void Worker::_main() {
     Item output;
-    _log.info(_msg("Producing %s").c_str(), _recipe.name());
+
+    // sleep for a tick (optional)
+    sthr::sleep_for(stime::milliseconds(10));
+
+    _log.debug(_msg("Producing %s").c_str(), _recipe.name().c_str());
     const std::string missing = _recipe.try_produce(_inventory, &output);
 
     if (output.count() != 0) {
+        _log.info("Produced %s", output.name().c_str());
         _out->add(output);
         return;
     }
 
+    _log.info("Failed to produce %s, missing %s", _recipe.name().c_str(), missing.c_str());
     _in->get(missing, &output);
-    if (output.count() == 0) {
+    if (output.count() != 0) {
+        _log.info("Retrieved %s", output.name().c_str());
         _inventory.push_back(output);
+    } else {
+        _log.warn("Failed to retrieve %s", output.name().c_str());
     }
 }
 

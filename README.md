@@ -17,16 +17,26 @@
  - Fabryka i magazyn kończą pracę jednocześnie po otrzymaniu polecenia_4 od dyrektora.
  - Aktualny stan magazynu zapisany w pliku, po ponownym uruchomieniu stan magazynu jest odtwarzany z pliku.
 
+Składniki - Item(name, size, count):
+ - A: {"A", 1, 1}
+ - B: {"B", 1, 1}
+ - C: {"C", 2, 1}
+ - D: {"D", 3, 1}
+
+Przepisy Recipe(inputs, output):
+ - 1: {\["A", "B", "D"\], "T1"}
+ - 2: {\["A", "B", "C"\], "T2"}
+
 ### Cel: 
 
 Napisz programy dla procesów: dyrektor, dostawca i pracownik reprezentujących odpowiednio:
-dyrektora, dostawców produktów A, B, C i D oraz pracowników na stanowiskach 1 i 2. 
+dyrektora, dostawców produktów A, B, C i D oraz (pracowników na stanowiskach) 1 i 2. 
 
 Raport z przebiegu symulacji zapisać w pliku (plikach) tekstowym.
 
 ### Cel (dodatkowy):
  - Polecenie 5, 6, 7, 8 - uruchomienie fabryki, magazynu i dostawców przez dyrektora
- - Pracownik jest generyczny (ten sam kod działa jako pracownik 1 i 2)
+ - **[done]** Pracownik jest generyczny (ten sam kod działa jako pracownik 1 i 2)
  - **[done]** Dostawca jest generyczny (ten sam kod działa jako dostawca A--D) 
  - **[done]** "Dynamicznie" przydzielana pamięć dla symulacji magazynu
 
@@ -36,7 +46,7 @@ Raport z przebiegu symulacji zapisać w pliku (plikach) tekstowym.
    2. **[done]** Pobranie składnika z magazynu A, B, C, D -> oczekujemy zmniejszenia stanu magazynowego o 1 i zmniejszenia zajętości magazynu o X
    3. Pobranie składnika z pustego magazynu -> błąd bez zamknięcia symulacji -- pracownik czeka
    4. Dostawa składnika do pełnego magazynu -> błąd bez zamknięcia symulacji -- dostawca czeka
-   5. Wyprodukowanie czekolady 1, 2 (bez pobrania z magazynu; pracownik pobiera z inf. magazynu)  
+   5. **[done]** Wyprodukowanie czekolady 1, 2 (bez pobrania z magazynu; pracownik pobiera z inf. magazynu)  
    6. Polecenie 1: Próba wyprodukowania czekolady kończy się błędem
    7. Polecenie 2: Próba dostawy/pobrania kończy się błędem
    8. Polecenie 3: Próba dostawy kończy się błędem

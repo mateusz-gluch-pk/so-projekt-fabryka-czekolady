@@ -78,7 +78,7 @@ Warehouse::Warehouse(const std::string &name, const int capacity, Logger *log, b
 	name,
 	capacity,
 	sizeof(SharedVector<Item, WAREHOUSE_MAX_VARIETY>) + sizeof(Item) * WAREHOUSE_MAX_VARIETY,
-	make_key(WAREHOUSE_DIR, name, log),
+	make_key(WAREHOUSE_DIR, name, *log),
 	log,
 	create
 ) {}

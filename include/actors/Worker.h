@@ -26,6 +26,7 @@ class Worker : public IRunnable {
         void pause() override;
         void resume() override;
         void reload() override;
+        const std::string &name() override { return _name; }
 
     private:
         void _main();

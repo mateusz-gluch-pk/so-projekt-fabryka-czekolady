@@ -23,7 +23,7 @@ class ProcessController {
         void pause() const;
         void resume() const;
         void reload() const;
-        [[nodiscard]] const ProcessStats &stats() const { return *_stats; };
+        [[nodiscard]] const ProcessStats *stats() const { return _stats.get(); };
 
     private:
         static void _setup_handlers();
