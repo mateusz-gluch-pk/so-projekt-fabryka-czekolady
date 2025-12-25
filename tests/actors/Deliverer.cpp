@@ -7,46 +7,26 @@
 #include <gtest/gtest.h>
 
 #include "processes/ProcessController.h"
+#include "../utils/test_name.h"
+#include "../utils/run_once.h"
 
-#define SLEEP 10*1000
-
-static std::string tname() {
-    std::ostringstream oss;
-    std::srand(static_cast<unsigned>(std::time(nullptr)));
-    oss << "test" << std::rand() % 1000000;
-    return oss.str();
-}
+#define TICK 10 * 1000
 
 TEST(Deliverer, ProcessControl) {
     MockQueue<Message> msq;
     Logger log(DEBUG, &msq);
     ItemTemplate tpl("a", 1, 100);
-    Warehouse destination(tname(), 2, &log);
+    Warehouse destination(test_name(), 2, &log);
 
     auto deliverer = std::make_unique<Deliverer>("test", tpl, destination, log);
     ProcessController proc(std::move(deliverer), log, true, true);
-
-    // run deliverer - after a while, warehouse should have a new item
-    proc.run();
-    // check when a loop executes
 
     // initialize with empty stats!
     ASSERT_EQ(CREATED, proc.stats().state);
     ASSERT_EQ(0, proc.stats().loops);
     ASSERT_EQ(0, proc.stats().reloads);
 
-    // run for a loop
-    usleep(5*SLEEP);
-    ASSERT_EQ(RUNNING, proc.stats().state);
-    ASSERT_EQ(0, proc.stats().loops);
-
-    // stop immediately after delivering one item
-    proc.pause();
-    while (proc.stats().loops == 0) {
-        usleep(SLEEP);
-    }
-    ASSERT_EQ(PAUSED, proc.stats().state);
-    ASSERT_EQ(1, proc.stats().loops);
+    run_once(proc);
 
     // item should appear in warehouse
     ASSERT_EQ(1, destination.items().size());
@@ -54,21 +34,10 @@ TEST(Deliverer, ProcessControl) {
     ASSERT_EQ(1, destination.items()[0].count());
 
     // resume
-    proc.resume();
-    usleep(5*SLEEP);
-    ASSERT_EQ(RUNNING, proc.stats().state);
-    ASSERT_EQ(1, proc.stats().loops);
-
-    // run for another loop
-    proc.pause();
-    while (proc.stats().loops == 1) {
-        usleep(SLEEP);
-    }
-    ASSERT_EQ(PAUSED, proc.stats().state);
-    ASSERT_EQ(2, proc.stats().loops);
+    run_once(proc);
 
     proc.stop();
-    usleep(5*SLEEP);
+    usleep(5*TICK);
     ASSERT_EQ(STOPPED, proc.stats().state);
     ASSERT_EQ(2, proc.stats().loops);
 }

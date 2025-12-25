@@ -27,13 +27,13 @@ Raport z przebiegu symulacji zapisać w pliku (plikach) tekstowym.
 ### Cel (dodatkowy):
  - Polecenie 5, 6, 7, 8 - uruchomienie fabryki, magazynu i dostawców przez dyrektora
  - Pracownik jest generyczny (ten sam kod działa jako pracownik 1 i 2)
- - Dostawca jest generyczny (ten sam kod działa jako dostawca A--D)
- - Dynamicznie przydzielana pamięć dla symulacji magazynu
+ - **[done]** Dostawca jest generyczny (ten sam kod działa jako dostawca A--D) 
+ - **[done]** "Dynamicznie" przydzielana pamięć dla symulacji magazynu
 
 ### TESTY
 
-   1. Dostawa składnika: A, B, C, D -> oczekujemy zwiększenia stanu magazynowego o 1 i zwiększenia zajętości magazynu o X
-   2. Pobranie składnika z magazynu A, B, C, D -> oczekujemy zmniejszenia stanu magazynowego o 1 i zmniejszenia zajętości magazynu o X
+   1. **[done]** Dostawa składnika: A, B, C, D -> oczekujemy zwiększenia stanu magazynowego o 1 i zwiększenia zajętości magazynu o X
+   2. **[done]** Pobranie składnika z magazynu A, B, C, D -> oczekujemy zmniejszenia stanu magazynowego o 1 i zmniejszenia zajętości magazynu o X
    3. Pobranie składnika z pustego magazynu -> błąd bez zamknięcia symulacji -- pracownik czeka
    4. Dostawa składnika do pełnego magazynu -> błąd bez zamknięcia symulacji -- dostawca czeka
    5. Wyprodukowanie czekolady 1, 2 (bez pobrania z magazynu; pracownik pobiera z inf. magazynu)  

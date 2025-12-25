@@ -12,19 +12,14 @@
 #include <cstdlib>
 #include <ctime>
 
-namespace fs = std::filesystem;
+#include "../utils/test_name.h"
 
-static std::string tname() {
-    std::ostringstream oss;
-    std::srand(static_cast<unsigned>(std::time(nullptr)));
-    oss << "test" << std::rand() % 1000000;
-    return oss.str();
-}
+namespace fs = std::filesystem;
 
 TEST(Warehouse, SingleProcessInit) {
     MockQueue<Message> msq;
     Logger log(DEBUG, &msq);
-    const auto warehouse = Warehouse::create(tname(), 1, &log);
+    const auto warehouse = Warehouse::create(test_name(), 1, &log);
 
     ASSERT_EQ(true, fs::is_regular_file("warehouses/test.key"));
 
@@ -37,7 +32,7 @@ TEST(Warehouse, SingleProcessInit) {
 TEST(Warehouse, AddRemoveItem) {
     MockQueue<Message> msq;
     Logger log(DEBUG, &msq);
-    auto warehouse = Warehouse::create(tname(), 2, &log);
+    auto warehouse = Warehouse::create(test_name(), 2, &log);
 
     // add item
     Item i("a", 1, 1);
@@ -79,7 +74,7 @@ TEST(Warehouse, FileStorage) {
     Logger log(DEBUG, &msq);
 
     {
-        auto warehouse = new Warehouse(tname(), 3, &log);
+        auto warehouse = new Warehouse(test_name(), 3, &log);
 
         Item i("a", 1, 1);
         Item j("b", 1, 1);
@@ -108,11 +103,11 @@ TEST(Warehouse, FileStorage) {
 TEST(Warehouse, MultiProcess) {
     MockQueue<Message> msq;
     Logger log(DEBUG, &msq);
-    auto parent = Warehouse::create(tname(), 2, &log);
+    auto parent = Warehouse::create(test_name(), 2, &log);
 
     pid_t pid = fork();
     if (pid == 0) {
-        auto child = Warehouse(tname(), 2, &log, false);
+        auto child = Warehouse(test_name(), 2, &log, false);
         // add item
         Item i("a", 1, 1);
         child.add(i);

@@ -11,6 +11,8 @@ add_executable(tests
         objects/ItemTemplate.cpp
         objects/Recipe.cpp
         objects/SharedVector.cpp
+        utils/run_once.h
+        utils/test_name.h
 )
 
 target_link_libraries(tests
