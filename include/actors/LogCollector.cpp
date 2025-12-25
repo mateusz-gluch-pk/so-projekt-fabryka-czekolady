@@ -6,21 +6,27 @@
 
 #include <iostream>
 
+#include "ipcs/key.h"
+
 namespace stime = std::chrono;
 namespace sthr = std::this_thread;
 
-LogCollector::LogCollector(const key_t key, const std::string &filename, const bool tty):
-    _key(key), _filename(filename), _tty(tty), _running(true), _paused(false), _reloading(false) {
-    _file = _open_file();
+LogCollector::LogCollector(std::string name, MessageLevel level, bool tty):
+    _name(name),
+    _tty(tty),
+    _running(true), _reloading(false), _paused(false)
+{
+    MockQueue<Message> local_mq;
+    Logger local_logger(level, &local_mq);
+    key_t key = make_key(LOGGING_DIR, name, local_logger);
+
+    // this queue persists as long as main process
+    _msq.emplace(key, true);
+    _log = Logger(level, _msq, key);
 }
 
 LogCollector::~LogCollector() {
     _close_file();
-
-    if (_msq != nullptr) {
-        delete _msq;
-        _msq = nullptr;
-    }
 }
 
 void LogCollector::run(ProcessStats &stats, Logger &log) {
