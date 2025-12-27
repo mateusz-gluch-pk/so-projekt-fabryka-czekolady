@@ -23,6 +23,15 @@ target_link_libraries(factorylib
         PUBLIC nlohmann_json::nlohmann_json
 )
 
-add_executable(factory main.cpp)
+add_executable(factory main.cpp
+        ../include/services/WarehouseService.cpp
+        ../include/services/WarehouseService.h
+        ../include/services/WorkerService.cpp
+        ../include/services/WorkerService.h
+        ../include/services/DelivererService.cpp
+        ../include/services/DelivererService.h
+        ../include/services/LoggerService.cpp
+        ../include/services/LoggerService.h
+)
 
 target_link_libraries(factory PRIVATE factorylib)

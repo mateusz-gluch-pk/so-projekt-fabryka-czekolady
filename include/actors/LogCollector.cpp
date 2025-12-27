@@ -17,7 +17,7 @@ LogCollector::LogCollector(std::string name, Logger &log, bool tty):
     _log(log),
     _tty(tty),
     _running(true), _reloading(false), _paused(false) {
-    _msq.emplace(make_key(LOGGING_DIR, _name, log), false);
+    _msq.emplace(make_key(LOGGING_DIR, _name, &log), false);
 }
 
 LogCollector::~LogCollector() {

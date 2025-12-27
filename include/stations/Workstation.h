@@ -26,7 +26,7 @@ class Workstation {
         }
 
         Workstation(const std::string &name, const Recipe *recipe, Logger &log):
-            _key(make_key(WORKSTATION_DIR, name, log)),
+            _key(make_key(WORKSTATION_DIR, name, &log)),
             _owner(recipe != nullptr),
             _name(name),
             _log(log),

@@ -54,8 +54,8 @@ Raport z przebiegu symulacji zapisać w pliku (plikach) tekstowym.
 
 ### Add-ons
  - zrealizować UI terminalowe (FTXUI)
- - zrealizować serializację do JSONa (nlohmann/json)
- - zrealizować logowanie (spdlog)
+ - **[done]** zrealizować serializację do JSONa (nlohmann/json)
+ - **[done]** zrealizować logowanie (spdlog) - *zrobione własnym frameworkiem*
 
 
 **Repozytorium: [`https://github.com/mateusz-gluch-pk/so-projekt-fabryka-czekolady`](https://github.com/mateusz-gluch-pk/so-projekt-fabryka-czekolady)**

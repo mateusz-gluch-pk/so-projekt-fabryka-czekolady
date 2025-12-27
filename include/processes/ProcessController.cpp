@@ -18,7 +18,7 @@
 std::unique_ptr<ProcessController> ProcessController::_cls = nullptr;
 
 ProcessController::ProcessController(std::unique_ptr<IRunnable> proc, const Logger &log, const bool create, const bool debug):
-    _key(make_key(PROCESS_DIR, proc->name(), log)),
+    _key(make_key(PROCESS_DIR, proc->name(), &log)),
     _debug(debug),
     _log(log),
     _proc(std::move(proc)),

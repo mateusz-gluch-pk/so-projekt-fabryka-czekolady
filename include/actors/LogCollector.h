@@ -33,7 +33,7 @@ class LogCollector: public IRunnable{
         void _reattach(Logger &log) {
             _file = _open_file();
             _log = log;
-            _msq.emplace(make_key(LOGGING_DIR, _name, log), false);
+            _msq.emplace(make_key(LOGGING_DIR, _name, &log), false);
         }
 
         [[nodiscard]] std::string _msg(const std::string &msg) const {
@@ -42,7 +42,6 @@ class LogCollector: public IRunnable{
 
         std::ofstream _open_file() const;
         void _close_file();
-        void _write_log(Message& msg);;
 
         std::string _name;
         bool _tty;

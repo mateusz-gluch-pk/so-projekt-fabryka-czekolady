@@ -21,7 +21,7 @@ TEST(LogCollector, ProcessControl) {
     MockQueue<Message> msq;
     Logger log(DEBUG, &msq);
 
-    MessageQueue<Message> target_msq(make_key(LOGGING_DIR, "test", log), true);
+    MessageQueue<Message> target_msq(make_key(LOGGING_DIR, "test", &log), true);
     Logger target(DEBUG, &target_msq);
 
     // target logger should be at least of level WARN - to avoid test file pollution
