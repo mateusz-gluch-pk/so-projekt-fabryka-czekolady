@@ -44,7 +44,7 @@ void Worker::run(ProcessStats &stats, Logger &log) {
 }
 
 void Worker::stop() {
-    _log.info(_msg("Received SIGTERM - pausing").c_str());
+    _log.info(_msg("Received SIGTERM - terminating").c_str());
     _running = false;
 }
 

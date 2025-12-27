@@ -59,13 +59,8 @@ MessageQueue<T>::MessageQueue(const key_t key, const bool create) {
         exit(errno);
     }
 
-    if constexpr (std::is_same_v<T, Message>) {
-        _log = new Logger(MSQ_LOG_LEVEL, this);
-    } else {
-        _local_msq = new MockQueue<Message>();
-        _log = new Logger(MSQ_LOG_LEVEL, _local_msq);
-        _log->info(_msg("Message is not Message - creating local queue").c_str());
-    }
+    _local_msq = new MockQueue<Message>();
+    _log = new Logger(MSQ_LOG_LEVEL, _local_msq);
 
     _owner = create;
     if (_owner) {
@@ -126,12 +121,12 @@ void MessageQueue<T>::send(T data) const {
     if (result == -1) {
         _log->fatal(_msg("Cannot send; errno: %d").c_str(), errno);
     }
+
     _log->debug(_msg("Sent").c_str());
 }
 
 template<typename T>
 void MessageQueue<T>::receive(T *data) const {
-    // void *data_ptr = malloc(sizeof(T));
     const int msize = msgrcv(_msqid, data, sizeof(T) - sizeof(long), 0, 0);
 
     if (msize == -1) {
@@ -141,10 +136,7 @@ void MessageQueue<T>::receive(T *data) const {
         return;
     }
 
-    // *data = *(static_cast<T *>(data_ptr));
     _log->debug(_msg("Received").c_str());
-    // free(data_ptr);
-    // data_ptr = nullptr;
 }
 
 #endif //PROJEKT_MESSAGEQUEUE_H

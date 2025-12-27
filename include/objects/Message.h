@@ -19,7 +19,7 @@ enum MessageLevel {
 
 class Message {
     public:
-        long mtype;
+        long mtype = 1;
 
         Message();
         Message(MessageLevel level, const std::string &message);
@@ -30,7 +30,7 @@ class Message {
         // to JSON
         // std::string serialize();
 
-    private:
+    // private:
         std::string _level_str() const;
 
         char _message[MAX_MESSAGE_LENGTH];

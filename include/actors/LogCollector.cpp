@@ -4,6 +4,7 @@
 
 #include "LogCollector.h"
 
+#include <chrono>
 #include <iostream>
 
 #include "ipcs/key.h"
@@ -11,18 +12,12 @@
 namespace stime = std::chrono;
 namespace sthr = std::this_thread;
 
-LogCollector::LogCollector(std::string name, MessageLevel level, bool tty):
-    _name(name),
+LogCollector::LogCollector(std::string name, Logger &log, bool tty):
+    _name(std::move(name)),
+    _log(log),
     _tty(tty),
-    _running(true), _reloading(false), _paused(false)
-{
-    MockQueue<Message> local_mq;
-    Logger local_logger(level, &local_mq);
-    key_t key = make_key(LOGGING_DIR, name, local_logger);
-
-    // this queue persists as long as main process
-    _msq.emplace(key, true);
-    _log = Logger(level, _msq, key);
+    _running(true), _reloading(false), _paused(false) {
+    _msq.emplace(make_key(LOGGING_DIR, _name, log), false);
 }
 
 LogCollector::~LogCollector() {
@@ -30,50 +25,82 @@ LogCollector::~LogCollector() {
 }
 
 void LogCollector::run(ProcessStats &stats, Logger &log) {
+    _reattach(log);
+
     while (_running) {
         if (_paused) {
-            // safe sleep for 0.1s
-            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            stats.state = PAUSED;
+            sthr::sleep_for(stime::milliseconds(10));
+            continue;
         }
 
         if (_reloading) {
+            stats.state = RELOADING;
             _reload();
             _reloading = false;
+            stats.reloads++;
+            continue;
         }
 
+        stats.state = RUNNING;
         _main();
+        _log.debug(_msg("Loop completed").c_str());
+        stats.loops++;
     }
+    stats.state = STOPPED;
 }
 
-void LogCollector::stop() { _running = false; }
-void LogCollector::pause() { _paused = true; }
-void LogCollector::resume() { _paused = false; }
-void LogCollector::reload() { _reloading = true; }
+void LogCollector::stop() {
+    _log.info(_msg("Received SIGTERM - terminating").c_str());
+    _running = false;
+}
+
+void LogCollector::pause() {
+    _log.info(_msg("Received SIGUSR1 - pausing").c_str());
+    _paused = true;
+}
+
+void LogCollector::resume() {
+    _log.info(_msg("Received SIGCONT - resuming").c_str());
+    _paused = false;
+}
+
+void LogCollector::reload() {
+    _log.info(_msg("Received SIGHUP - reloading").c_str());
+    _reloading = true;
+}
 
 void LogCollector::_main() {
     Message msg;
+
+    // sleep for a tick
+    sthr::sleep_for(stime::milliseconds(10));
+
     _msq->receive(&msg);
-    _write_log(msg);
+    const auto log = msg.string();
+    if (_tty) {
+        std::cout << log << std::endl;
+    }
+    _file << log;
 }
 
 std::ofstream LogCollector::_open_file() const {
-    auto file = std::ofstream(_filename, std::ios::app);
+    stime::sys_seconds tp{stime::seconds{time(nullptr)}};
+    stime::zoned_time local{stime::current_zone(), tp};
+    const std::string time_str = std::format("{:%Y_%m_%d_%H_%M_%S}", local);
+    const std::string filename = std::string(LOGGING_DIR) + "/" + _name + "_" +  time_str + ".log";
+
+    auto file = std::ofstream(filename, std::ios::app);
     if (!file.is_open()) {
-        throw std::runtime_error("LogCollector: could not open log file");
+        _log.fatal(_msg("Could not open file").c_str());
     }
+    _log.info(_msg("File %s opened").c_str(), filename.c_str());
     return file;
 }
 
 void LogCollector::_close_file() {
     if (_file.is_open()) {
         _file.close();
+        _log.info(_msg("Log file closed").c_str());
     }
-}
-
-void LogCollector::_write_log(Message &msg) {
-    const auto log = msg.string();
-    if (_tty) {
-        std::cout << log;
-    }
-    _file << log;
 }
