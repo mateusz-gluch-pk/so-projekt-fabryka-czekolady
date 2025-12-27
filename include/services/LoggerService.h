@@ -15,19 +15,9 @@
 // Use as source for root logger
 class LoggerService {
     public:
-        LoggerService(const std::string &name, const MessageLevel level):
-        _key(make_key(LOGGING_DIR, name)),
-        _msq(_key, true),
-        _rootLogger(level, &_msq, _key),
-        _collector(std::make_unique<LogCollector>(name, _rootLogger, true), _rootLogger) {
-            _collector.run();
-        }
-
-        ~LoggerService() {
-            _collector.stop();
-        }
-
-        Logger &get() {return _rootLogger;}
+        LoggerService(const std::string &name, MessageLevel level);
+        ~LoggerService();
+        Logger &get();
 
     private:
         key_t _key;
