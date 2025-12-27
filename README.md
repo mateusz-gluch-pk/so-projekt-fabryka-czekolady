@@ -44,8 +44,8 @@ Raport z przebiegu symulacji zapisać w pliku (plikach) tekstowym.
 
    1. **[done]** Dostawa składnika: A, B, C, D -> oczekujemy zwiększenia stanu magazynowego o 1 i zwiększenia zajętości magazynu o X
    2. **[done]** Pobranie składnika z magazynu A, B, C, D -> oczekujemy zmniejszenia stanu magazynowego o 1 i zmniejszenia zajętości magazynu o X
-   3. Pobranie składnika z pustego magazynu -> błąd bez zamknięcia symulacji -- pracownik czeka
-   4. Dostawa składnika do pełnego magazynu -> błąd bez zamknięcia symulacji -- dostawca czeka
+   3. **[done]** Pobranie składnika z pustego magazynu -> błąd bez zamknięcia symulacji -- pracownik czeka
+   4. **[done]** Dostawa składnika do pełnego magazynu -> błąd bez zamknięcia symulacji -- dostawca czeka
    5. **[done]** Wyprodukowanie czekolady 1, 2 (bez pobrania z magazynu; pracownik pobiera z inf. magazynu)  
    6. Polecenie 1: Próba wyprodukowania czekolady kończy się błędem
    7. Polecenie 2: Próba dostawy/pobrania kończy się błędem

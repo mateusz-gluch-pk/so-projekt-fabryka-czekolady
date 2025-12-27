@@ -7,13 +7,14 @@
 
 #include <cstdlib>
 #include <ctime>
+#include <random>
 #include <sstream>
 
-
 inline std::string test_name() {
-    std::ostringstream oss;
-    std::srand(static_cast<unsigned>(std::time(nullptr)));
-    oss << "test" << std::rand() % 1000000;
-    return oss.str();
+    static std::mt19937 rng{std::random_device{}()};
+    static std::uniform_int_distribution<int> dist(0, 999999);
+
+    return "test" + std::to_string(dist(rng));
 }
+
 #endif //FACTORY_TEST_NAME_H

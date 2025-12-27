@@ -103,11 +103,12 @@ TEST(Warehouse, FileStorage) {
 TEST(Warehouse, MultiProcess) {
     MockQueue<Message> msq;
     Logger log(DEBUG, &msq);
-    auto parent = Warehouse::create(test_name(), 2, &log);
+    std::string tname = test_name();
+    auto parent = Warehouse::create(tname, 2, &log);
 
     pid_t pid = fork();
     if (pid == 0) {
-        auto child = Warehouse(test_name(), 2, &log, false);
+        auto child = Warehouse(tname, 2, &log, false);
         // add item
         Item i("a", 1, 1);
         child.add(i);
