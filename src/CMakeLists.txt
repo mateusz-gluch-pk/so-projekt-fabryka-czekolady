@@ -23,6 +23,13 @@ target_link_libraries(factorylib
         PUBLIC nlohmann_json::nlohmann_json
 )
 
+target_link_libraries(factorylib PRIVATE
+        # Chose a submodule
+        ftxui::component
+        ftxui::dom
+        ftxui::screen
+)
+
 add_executable(factory main.cpp
         ../include/services/WarehouseService.cpp
         ../include/services/WarehouseService.h

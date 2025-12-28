@@ -13,6 +13,7 @@ add_executable(tests
         objects/SharedVector.cpp
         utils/run_once.h
         utils/test_name.h
+        Supervisor.cpp
 )
 
 target_link_libraries(tests
