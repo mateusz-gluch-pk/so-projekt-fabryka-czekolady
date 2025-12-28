@@ -38,7 +38,7 @@ public:
     void destroy(const std::string &name);
 
     WorkerStats *get(const std::string &name);
-    std::vector<WorkerStats> get_all();
+    std::vector<WorkerStats *> get_all();
 
     void pause(const std::string &name);
     void resume(const std::string &name);

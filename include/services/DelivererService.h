@@ -38,7 +38,7 @@ public:
     DelivererStats *create(const std::string &name, const ItemTemplate &tpl, Warehouse &dst);
     void destroy(const std::string &name);
     DelivererStats *get(const std::string &name);
-    std::vector<DelivererStats> get_all();
+    std::vector<DelivererStats *> get_all();
 
     void pause(const std::string &name);
     void resume(const std::string &name);

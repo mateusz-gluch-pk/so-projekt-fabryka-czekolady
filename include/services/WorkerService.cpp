@@ -71,12 +71,12 @@ WorkerStats *WorkerService::get(const std::string &name) {
 //     return it->second->stats();
 // }
 
-std::vector<WorkerStats> WorkerService::get_all() {
-    std::vector<WorkerStats> result;
+std::vector<WorkerStats *> WorkerService::get_all() {
+    std::vector<WorkerStats *> result;
     result.reserve(_stats.size());
 
     for (auto &pair : _stats) {
-        result.push_back(pair.second);
+        result.push_back(&pair.second);
     }
 
     _log.info(_msg("Fetched all workers").c_str());

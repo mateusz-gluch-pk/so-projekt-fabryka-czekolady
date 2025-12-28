@@ -72,12 +72,12 @@ DelivererStats *DelivererService::get(const std::string &name) {
 //     return it->second->stats();
 // }
 
-std::vector<DelivererStats> DelivererService::get_all() {
-    std::vector<DelivererStats> result;
+std::vector<DelivererStats *> DelivererService::get_all() {
+    std::vector<DelivererStats *> result;
     result.reserve(_stats.size());
 
     for (auto &pair : _stats) {
-        result.push_back(pair.second);
+        result.push_back(&pair.second);
     }
 
     _log.info(_msg("Fetched all deliverers").c_str());
