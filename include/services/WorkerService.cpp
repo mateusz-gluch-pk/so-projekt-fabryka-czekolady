@@ -10,9 +10,10 @@ WorkerService::~WorkerService() {
         delete pair.second;
     }
     _workers.clear();
+    _stats.clear();
 }
 
-ProcessController * WorkerService::
+WorkerStats *WorkerService::
 create(const std::string &name, const Recipe &recipe, Warehouse &in, Warehouse &out) {
     if (_workers.contains(name)) {
         _log.error(_msg("Worker exists: " + name).c_str());
@@ -24,8 +25,9 @@ create(const std::string &name, const Recipe &recipe, Warehouse &in, Warehouse &
         const auto pw = new ProcessController(std::move(w), _log);
         pw->run();
         _workers[name] = pw;
+        _stats[name] = WorkerStats(name, in.name(), out.name(), recipe, pw->stats());
         _log.info(_msg("Created worker: " + name).c_str());
-        return pw;
+        return &_stats[name];
     } catch (...) {
         _log.error(_msg("Failed to create worker: " + name).c_str());
         return nullptr;
@@ -33,6 +35,8 @@ create(const std::string &name, const Recipe &recipe, Warehouse &in, Warehouse &
 }
 
 void WorkerService::destroy(const std::string &name) {
+    _stats.erase(name);
+
     auto it = _workers.find(name);
     if (it == _workers.end()) {
         _log.error(_msg("Worker not found: " + name).c_str());
@@ -45,33 +49,33 @@ void WorkerService::destroy(const std::string &name) {
     _log.info(_msg("Deleted worker: " + name).c_str());
 }
 
-ProcessController * WorkerService::get(const std::string &name) {
-    auto it = _workers.find(name);
-    if (it == _workers.end()) {
+WorkerStats *WorkerService::get(const std::string &name) {
+    auto it = _stats.find(name);
+    if (it == _stats.end()) {
         _log.error(_msg("Worker not found: " + name).c_str());
         return nullptr;
     }
 
     _log.info(_msg("Fetched worker: " + name).c_str());
-    return it->second;
+    return &it->second;
 }
 
-const ProcessStats * WorkerService::get_stats(const std::string &name) {
-    auto it = _workers.find(name);
-    if (it == _workers.end()) {
-        _log.error(_msg("Worker not found: " + name).c_str());
-        return nullptr;
-    }
+// const ProcessStats * WorkerService::get_stats(const std::string &name) {
+//     auto it = _workers.find(name);
+//     if (it == _workers.end()) {
+//         _log.error(_msg("Worker not found: " + name).c_str());
+//         return nullptr;
+//     }
+//
+//     _log.info(_msg("Fetched worker: " + name).c_str());
+//     return it->second->stats();
+// }
 
-    _log.info(_msg("Fetched worker: " + name).c_str());
-    return it->second->stats();
-}
+std::vector<WorkerStats> WorkerService::get_all() {
+    std::vector<WorkerStats> result;
+    result.reserve(_stats.size());
 
-std::vector<ProcessController *> WorkerService::get_all() {
-    std::vector<ProcessController *> result;
-    result.reserve(_workers.size());
-
-    for (auto &pair : _workers) {
+    for (auto &pair : _stats) {
         result.push_back(pair.second);
     }
 
@@ -79,17 +83,17 @@ std::vector<ProcessController *> WorkerService::get_all() {
     return result;
 }
 
-std::vector<const ProcessStats *> WorkerService::get_all_stats() {
-    std::vector<const ProcessStats *> result;
-    result.reserve(_workers.size());
-
-    for (auto &pair : _workers) {
-        result.push_back(pair.second->stats());
-    }
-
-    _log.info(_msg("Fetched all workers stats").c_str());
-    return result;
-}
+// std::vector<const ProcessStats *> WorkerService::get_all_stats() {
+//     std::vector<const ProcessStats *> result;
+//     result.reserve(_workers.size());
+//
+//     for (auto &pair : _workers) {
+//         result.push_back(pair.second->stats());
+//     }
+//
+//     _log.info(_msg("Fetched all workers stats").c_str());
+//     return result;
+// }
 
 void WorkerService::pause(const std::string &name) {
     auto it = _workers.find(name);

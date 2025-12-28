@@ -8,19 +8,37 @@
 #include "logger/Logger.h"
 #include "processes/ProcessController.h"
 
+// Data class for deliverer data
+class WorkerStats {
+public:
+    WorkerStats();
+    WorkerStats(std::string name, std::string in_name, std::string out_name, const Recipe &recipe, const ProcessStats *stats):
+    name(std::move(name)),
+    in_name(std::move(in_name)),
+    out_name(std::move(out_name)),
+    recipe(recipe),
+    stats(stats)
+    {}
+
+    std::string name;
+    std::string in_name;
+    std::string out_name;
+    Recipe recipe;
+
+    // read only pointer to shm
+    const ProcessStats *stats = nullptr;
+};
+
 class WorkerService {
 public:
     explicit WorkerService(Logger &_log): _log(_log) {};
     ~WorkerService();
 
-    ProcessController *create(const std::string &name, const Recipe &recipe, Warehouse &in, Warehouse &out);
+    WorkerStats *create(const std::string &name, const Recipe &recipe, Warehouse &in, Warehouse &out);
     void destroy(const std::string &name);
 
-    ProcessController *get(const std::string &name);
-    std::vector<ProcessController *> get_all();
-
-    const ProcessStats *get_stats(const std::string &name);
-    std::vector<const ProcessStats *> get_all_stats();
+    WorkerStats *get(const std::string &name);
+    std::vector<WorkerStats> get_all();
 
     void pause(const std::string &name);
     void resume(const std::string &name);
@@ -34,6 +52,7 @@ private:
 
     Logger &_log;
     std::map<std::string, ProcessController *> _workers;
+    std::map<std::string, WorkerStats> _stats;
 };
 
 #endif //FACTORY_WORKERSERVICE_H

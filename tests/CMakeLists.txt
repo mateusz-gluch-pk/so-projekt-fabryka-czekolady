@@ -14,6 +14,9 @@ add_executable(tests
         utils/run_once.h
         utils/test_name.h
         Supervisor.cpp
+        services/WarehouseService.cpp
+        services/WorkerService.cpp
+        services/DelivererService.cpp
 )
 
 target_link_libraries(tests

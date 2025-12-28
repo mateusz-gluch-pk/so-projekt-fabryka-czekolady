@@ -9,10 +9,12 @@ DelivererService::~DelivererService() {
         pair.second->stop();
         delete pair.second;
     }
+
     _deliverers.clear();
+    _stats.clear();
 }
 
-ProcessController * DelivererService::create(const std::string &name, const ItemTemplate &tpl, Warehouse &dst) {
+DelivererStats *DelivererService::create(const std::string &name, const ItemTemplate &tpl, Warehouse &dst) {
     if (_deliverers.contains(name)) {
         _log.error(_msg("Deliverer exists: " + name).c_str());
         return nullptr;
@@ -23,8 +25,9 @@ ProcessController * DelivererService::create(const std::string &name, const Item
         const auto pd = new ProcessController(std::move(d), _log);
         pd->run();
         _deliverers[name] = pd;
+        _stats[name] = DelivererStats(name, dst.name(), tpl, pd->stats());
         _log.info(_msg("Created deliverer: " + name).c_str());
-        return pd;
+        return &_stats[name];
     } catch (...) {
         _log.error(_msg("Failed to create deliverer: " + name).c_str());
         return nullptr;
@@ -32,6 +35,8 @@ ProcessController * DelivererService::create(const std::string &name, const Item
 }
 
 void DelivererService::destroy(const std::string &name) {
+    _stats.erase(name);
+
     auto it = _deliverers.find(name);
     if (it == _deliverers.end()) {
         _log.error(_msg("Deliverer not found: " + name).c_str());
@@ -41,36 +46,37 @@ void DelivererService::destroy(const std::string &name) {
     it->second->stop();
     delete it->second;
     _deliverers.erase(it);
+
     _log.info(_msg("Deleted deliverer: " + name).c_str());
 }
 
-ProcessController * DelivererService::get(const std::string &name) {
-    auto it = _deliverers.find(name);
-    if (it == _deliverers.end()) {
+DelivererStats *DelivererService::get(const std::string &name) {
+    auto it = _stats.find(name);
+    if (it == _stats.end()) {
         _log.error(_msg("Deliverer not found: " + name).c_str());
         return nullptr;
     }
 
     _log.info(_msg("Fetched deliverer: " + name).c_str());
-    return it->second;
+    return &it->second;
 }
 
-const ProcessStats * DelivererService::get_stats(const std::string &name) {
-    auto it = _deliverers.find(name);
-    if (it == _deliverers.end()) {
-        _log.error(_msg("Deliverer not found: " + name).c_str());
-        return nullptr;
-    }
+// const ProcessStats * DelivererService::get_stats(const std::string &name) {
+//     auto it = _deliverers.find(name);
+//     if (it == _deliverers.end()) {
+//         _log.error(_msg("Deliverer not found: " + name).c_str());
+//         return nullptr;
+//     }
+//
+//     _log.info(_msg("Fetched deliverer: " + name).c_str());
+//     return it->second->stats();
+// }
 
-    _log.info(_msg("Fetched deliverer: " + name).c_str());
-    return it->second->stats();
-}
+std::vector<DelivererStats> DelivererService::get_all() {
+    std::vector<DelivererStats> result;
+    result.reserve(_stats.size());
 
-std::vector<ProcessController *> DelivererService::get_all() {
-    std::vector<ProcessController *> result;
-    result.reserve(_deliverers.size());
-
-    for (auto &pair : _deliverers) {
+    for (auto &pair : _stats) {
         result.push_back(pair.second);
     }
 
@@ -78,17 +84,17 @@ std::vector<ProcessController *> DelivererService::get_all() {
     return result;
 }
 
-std::vector<const ProcessStats *> DelivererService::get_all_stats() {
-    std::vector<const ProcessStats *> result;
-    result.reserve(_deliverers.size());
-
-    for (auto &pair : _deliverers) {
-        result.push_back(pair.second->stats());
-    }
-
-    _log.info(_msg("Fetched all deliverers stats").c_str());
-    return result;
-}
+// std::vector<const ProcessStats *> DelivererService::get_all_stats() {
+//     std::vector<const ProcessStats *> result;
+//     result.reserve(_deliverers.size());
+//
+//     for (auto &pair : _deliverers) {
+//         result.push_back(pair.second->stats());
+//     }
+//
+//     _log.info(_msg("Fetched all deliverers stats").c_str());
+//     return result;
+// }
 
 void DelivererService::pause(const std::string &name) {
     auto it = _deliverers.find(name);

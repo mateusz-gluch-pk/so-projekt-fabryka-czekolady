@@ -11,19 +11,34 @@
 #include "logger/Logger.h"
 #include "processes/ProcessController.h"
 
+// Data class for deliverer data
+class DelivererStats {
+    public:
+    DelivererStats();
+    DelivererStats(std::string name, std::string dst_name, const ItemTemplate &tpl, const ProcessStats *stats):
+    name(std::move(name)),
+    dst_name(std::move(dst_name)),
+    tpl(tpl),
+    stats(stats)
+    {}
+
+    std::string name;
+    std::string dst_name;
+    ItemTemplate tpl;
+
+    // read only pointer to shm
+    const ProcessStats *stats = nullptr;
+};
 
 class DelivererService {
 public:
     explicit DelivererService(Logger &_log): _log(_log) {};
     ~DelivererService();
 
-    ProcessController *create(const std::string &name, const ItemTemplate &tpl, Warehouse &dst);
+    DelivererStats *create(const std::string &name, const ItemTemplate &tpl, Warehouse &dst);
     void destroy(const std::string &name);
-    ProcessController *get(const std::string &name);
-    std::vector<ProcessController *> get_all();
-
-    const ProcessStats *get_stats(const std::string &name);
-    std::vector<const ProcessStats *> get_all_stats();
+    DelivererStats *get(const std::string &name);
+    std::vector<DelivererStats> get_all();
 
     void pause(const std::string &name);
     void resume(const std::string &name);
@@ -37,6 +52,7 @@ private:
 
     Logger &_log;
     std::map<std::string, ProcessController *> _deliverers;
+    std::map<std::string, DelivererStats> _stats;
 };
 
 

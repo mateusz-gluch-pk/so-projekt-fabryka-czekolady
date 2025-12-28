@@ -20,9 +20,6 @@ TEST(Supervisor, StopWorkers) {
 
     auto src = warehouses.create(test_name(), 100);
     auto dst = warehouses.create(test_name(), 50);
-
-
-
 }
 
 TEST(Supervisor, StopDeliverers) {
