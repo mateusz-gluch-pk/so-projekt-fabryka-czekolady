@@ -10,7 +10,7 @@
 #include "../utils/test_name.h"
 #include "../utils/run_once.h"
 
-#define TICK 10 * 1000
+#define TICK 1000
 
 TEST(Deliverer, ProcessControl) {
     MockQueue<Message> msq;

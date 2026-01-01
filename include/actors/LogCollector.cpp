@@ -73,9 +73,6 @@ void LogCollector::reload() {
 void LogCollector::_main() {
     Message msg;
 
-    // sleep for a tick
-    sthr::sleep_for(stime::milliseconds(10));
-
     _msq->receive(&msg);
     const auto log = msg.string();
     if (_tty) {

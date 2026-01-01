@@ -34,9 +34,10 @@ TEST(LogCollector, ProcessControl) {
     ASSERT_EQ(CREATED, stats->state);
     ASSERT_EQ(0, stats->loops);
     ASSERT_EQ(0, stats->reloads);
-
     target.warn("TEST");
-    run_once(proc);
+
+    proc.run();
+    usleep(TICK);
 
     ASSERT_EQ(true, fs::is_directory("logging"));
 

@@ -8,7 +8,7 @@
 #include <gtest/gtest.h>
 #include "processes/ProcessController.h"
 
-#define TICK 10 * 1000
+#define TICK 1000
 
 inline void run_once(ProcessController &proc) {
     // run deliverer - after a while, warehouse should have a new item
@@ -20,7 +20,7 @@ inline void run_once(ProcessController &proc) {
     }
     int loops = stats->loops;
     // run for a loop
-    usleep(TICK);
+    usleep(10 * TICK);
     ASSERT_EQ(RUNNING, stats->state);
     ASSERT_EQ(loops, stats->loops);
 
@@ -49,7 +49,7 @@ inline void run_once(ProcessController &p1, ProcessController &p2) {
     int loops2 = s2->loops;
 
     // run for a loop
-    usleep(TICK);
+    usleep(10*TICK);
     ASSERT_EQ(RUNNING, s1->state);
     ASSERT_EQ(loops1, s1->loops);
     ASSERT_EQ(RUNNING, s2->state);
@@ -58,7 +58,7 @@ inline void run_once(ProcessController &p1, ProcessController &p2) {
     // stop immediately after delivering one item
     p1.pause();
     p2.pause();
-    while (s1->loops == loops1) {
+    while (s1->loops == loops1 || s2->loops == loops2) {
         usleep(TICK);
     }
 
