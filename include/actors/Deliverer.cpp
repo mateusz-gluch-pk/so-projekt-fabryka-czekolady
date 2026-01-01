@@ -29,8 +29,8 @@ void Deliverer::run(ProcessStats &stats, Logger &log) {
 
         if (_reloading) {
             stats.state = RELOADING;
+            sthr::sleep_for(stime::milliseconds(100));
             _reload();
-            _reloading = false;
             stats.reloads++;
             continue;
         }
@@ -66,11 +66,16 @@ void Deliverer::reload() {
 
 void Deliverer::_main() const {
     _log.info(_msg("Delivering item to warehouse").c_str());
-    sthr::sleep_for(stime::milliseconds(_tpl.delay_ms()));
     auto item = _tpl.get();
     _dst->add(item);
+    sthr::sleep_for(stime::milliseconds(_tpl.delay_ms()));
 }
 
 void Deliverer::_reload() {
-    sthr::sleep_for(stime::milliseconds(100));
+    try {
+        _reattach(_log);
+        _reloading = true;
+    } catch (std::exception &e) {
+        _log.warn(e.what());
+    }
 }

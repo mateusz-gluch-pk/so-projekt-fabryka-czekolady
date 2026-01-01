@@ -50,12 +50,14 @@ public:
     };
 
     void stop_warehouses() {
+        _workers.reload_all();
+        _deliverers.reload_all();
+        sthr::sleep_for(std::chrono::milliseconds(10));
+
         auto warehouses = _warehouses.get_all();
         for (auto wh: warehouses) {
             _warehouses.destroy(wh->name());
         }
-        _workers.reload_all();
-        _deliverers.reload_all();
     };
 
     void stop_all() {

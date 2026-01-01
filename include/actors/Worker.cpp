@@ -29,8 +29,8 @@ void Worker::run(ProcessStats &stats, Logger &log) {
 
         if (_reloading) {
             stats.state = RELOADING;
+            sthr::sleep_for(stime::milliseconds(100));
             _reload();
-            _reloading = false;
             stats.reloads++;
             continue;
         }
@@ -69,26 +69,31 @@ void Worker::_main() {
     // sleep for a tick (optional)
     sthr::sleep_for(stime::milliseconds(10));
 
-    _log.debug(_msg("Producing %s").c_str(), _recipe.name().c_str());
+    _log.debug(_msg("Producing " + _recipe.name()).c_str());
     const std::string missing = _recipe.try_produce(_inventory, &output);
 
     if (output.count() != 0) {
-        _log.info("Produced %s", output.name().c_str());
+        _log.info(_msg("Produced " + output.name()).c_str());
         _out->add(output);
         return;
     }
 
-    _log.info("Failed to produce %s, missing %s", _recipe.name().c_str(), missing.c_str());
+    _log.info(_msg("Failed to produce " + _recipe.name() + ", missing " + missing).c_str());
     _in->get(missing, &output);
     if (output.count() != 0) {
-        _log.info("Retrieved %s", output.name().c_str());
+        _log.info(_msg("Retrieved " + output.name()).c_str());
         _inventory.push_back(output);
     } else {
-        _log.warn("Failed to retrieve %s", output.name().c_str());
+        _log.warn(_msg("Failed to retrieve" + output.name()).c_str());
     }
 }
 
 // Use RELOAD to make the worker check its warehouses - if not available; turn into IDLE
 void Worker::_reload() {
-    sthr::sleep_for(stime::milliseconds(100));
+    try {
+        _reattach(_log);
+        _reloading = false;
+    } catch (std::exception &e) {
+        _log.warn(e.what());
+    }
 }
