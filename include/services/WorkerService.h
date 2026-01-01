@@ -31,7 +31,7 @@ public:
 
 class WorkerService {
 public:
-    explicit WorkerService(Logger &_log): _log(_log) {};
+    explicit WorkerService(Logger &_log, const bool debug = false): _log(_log), _debug(debug) {};
     ~WorkerService();
 
     WorkerStats *create(const std::string &name, const Recipe &recipe, Warehouse &in, Warehouse &out);
@@ -53,6 +53,7 @@ private:
     Logger &_log;
     std::map<std::string, ProcessController *> _workers;
     std::map<std::string, WorkerStats> _stats;
+    bool _debug;
 };
 
 #endif //FACTORY_WORKERSERVICE_H

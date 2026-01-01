@@ -24,7 +24,7 @@ DelivererStats *DelivererService::create(const std::string &name, const ItemTemp
 
     try {
         auto d = std::make_unique<Deliverer>(name, tpl, dst, _log);
-        const auto pd = new ProcessController(std::move(d), _log);
+        const auto pd = new ProcessController(std::move(d), _log, true, _debug);
         pd->run();
         _deliverers[name] = pd;
         _stats[name] = DelivererStats(name, dst.name(), tpl, pd->stats());

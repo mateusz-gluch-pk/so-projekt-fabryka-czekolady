@@ -14,7 +14,7 @@
 // Data class for deliverer data
 class DelivererStats {
     public:
-    DelivererStats() {};
+    DelivererStats() = default;
     DelivererStats(std::string name, std::string dst_name, const ItemTemplate &tpl, const ProcessStats *stats):
     name(std::move(name)),
     dst_name(std::move(dst_name)),
@@ -32,7 +32,7 @@ class DelivererStats {
 
 class DelivererService {
 public:
-    explicit DelivererService(Logger &_log): _log(_log) {};
+    explicit DelivererService(Logger &_log, const bool debug = false): _log(_log), _debug(debug) {};
     ~DelivererService();
 
     DelivererStats *create(const std::string &name, const ItemTemplate &tpl, Warehouse &dst);
@@ -53,6 +53,7 @@ private:
     Logger &_log;
     std::map<std::string, ProcessController *> _deliverers;
     std::map<std::string, DelivererStats> _stats;
+    bool _debug;
 };
 
 

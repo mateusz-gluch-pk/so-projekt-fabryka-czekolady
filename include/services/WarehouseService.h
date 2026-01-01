@@ -11,7 +11,7 @@
 
 class WarehouseService {
 public:
-    explicit WarehouseService(Logger &log): _log(log) {}
+    explicit WarehouseService(Logger &log, const bool debug = false): _log(log), _debug(debug) {}
     ~WarehouseService();
 
     Warehouse *create(const std::string &name, int capacity);
@@ -30,6 +30,7 @@ private:
 
     std::map<std:: string, Warehouse *> _warehouses;
     Logger &_log;
+    bool _debug;
 };
 
 #endif //FACTORY_WAREHOUSESERVICE_H

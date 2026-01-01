@@ -6,7 +6,9 @@
 
 WorkerService::~WorkerService() {
     for (auto &pair: _workers) {
-        pair.second->stop();
+        if (pair.second->stats()->state != STOPPED) {
+            pair.second->stop();
+        }
         delete pair.second;
     }
     _workers.clear();
@@ -22,7 +24,7 @@ create(const std::string &name, const Recipe &recipe, Warehouse &in, Warehouse &
 
     try {
         auto w = std::make_unique<Worker>(name, recipe, in, out, _log);
-        const auto pw = new ProcessController(std::move(w), _log);
+        const auto pw = new ProcessController(std::move(w), _log, true, _debug);
         pw->run();
         _workers[name] = pw;
         _stats[name] = WorkerStats(name, in.name(), out.name(), recipe, pw->stats());
@@ -44,9 +46,7 @@ void WorkerService::destroy(const std::string &name) {
     }
 
     it->second->stop();
-    delete it->second;
-    _workers.erase(it);
-    _log.info(_msg("Deleted worker: " + name).c_str());
+    _log.info(_msg("(Soft) Deleted worker: " + name).c_str());
 }
 
 WorkerStats *WorkerService::get(const std::string &name) {

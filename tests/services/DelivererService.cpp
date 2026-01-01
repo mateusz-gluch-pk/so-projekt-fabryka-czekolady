@@ -21,7 +21,7 @@ TEST(DelivererService, CRUD) {
     ItemTemplate tpl("a", 1, 10);
     Warehouse dst(test_name(), 1, &logger);
 
-    DelivererService deliverers(logger);
+    DelivererService deliverers(logger, true);
 
     // create one deliverer
     {
@@ -90,7 +90,7 @@ TEST(DelivererService, ProcessControl) {
     ItemTemplate tpl("a", 1, 100);
     Warehouse destination(test_name(), 2, &log);
 
-    DelivererService deliverers(log);
+    DelivererService deliverers(log, true);
     auto d = deliverers.create("test", tpl, destination);
 
     // initialize with empty proc.stats()!
