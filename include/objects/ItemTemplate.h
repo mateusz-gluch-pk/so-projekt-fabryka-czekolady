@@ -13,13 +13,14 @@
 class ItemTemplate {
     public:
         ItemTemplate(const std::string &name, int size, int base_delay);
+        ItemTemplate() {};
         [[nodiscard]] int delay_ms() const;
         [[nodiscard]] Item get() const;
 
     private:
         std::string _name;
-        int _size;
-        int _base_delay;
+        int _size = 0;
+        int _base_delay = 0;
 };
 
 #endif //PROJEKT_ITEMTEMPLATE_H

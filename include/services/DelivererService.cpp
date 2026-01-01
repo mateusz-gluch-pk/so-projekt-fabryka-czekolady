@@ -35,8 +35,6 @@ DelivererStats *DelivererService::create(const std::string &name, const ItemTemp
 }
 
 void DelivererService::destroy(const std::string &name) {
-    _stats.erase(name);
-
     auto it = _deliverers.find(name);
     if (it == _deliverers.end()) {
         _log.error(_msg("Deliverer not found: " + name).c_str());
@@ -44,10 +42,7 @@ void DelivererService::destroy(const std::string &name) {
     }
 
     it->second->stop();
-    delete it->second;
-    _deliverers.erase(it);
-
-    _log.info(_msg("Deleted deliverer: " + name).c_str());
+    _log.info(_msg("(Soft) Deleted deliverer: " + name).c_str());
 }
 
 DelivererStats *DelivererService::get(const std::string &name) {

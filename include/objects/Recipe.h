@@ -12,6 +12,7 @@
 class Recipe {
     public:
         Recipe(const std::vector<Item> &inputs, const Item &output);
+        Recipe() {};
         std::string try_produce(std::vector<Item> &inputs, Item *output) const;
         [[nodiscard]] std::string name() const {return _output.name();};
 

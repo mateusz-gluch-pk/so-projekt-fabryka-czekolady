@@ -38,14 +38,14 @@ public:
     void stop_deliverers() {
         auto deliverers = _deliverers.get_all();
         for (auto deliverer: deliverers) {
-            deliverer->stop();
+            _deliverers.destroy(deliverer->name);
         }
     };
 
     void stop_workers() {
         auto workers = _workers.get_all();
         for (auto worker : workers) {
-            worker->stop();
+            _workers.destroy(worker->name);
         }
     };
 

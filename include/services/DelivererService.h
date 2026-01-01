@@ -14,7 +14,7 @@
 // Data class for deliverer data
 class DelivererStats {
     public:
-    DelivererStats();
+    DelivererStats() {};
     DelivererStats(std::string name, std::string dst_name, const ItemTemplate &tpl, const ProcessStats *stats):
     name(std::move(name)),
     dst_name(std::move(dst_name)),

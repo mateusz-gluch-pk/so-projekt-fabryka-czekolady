@@ -76,17 +76,6 @@ TEST(DelivererService, CRUD) {
         ASSERT_EQ("a", one->tpl.get().name());
         ASSERT_EQ(1, one->tpl.get().size());
     }
-
-    // delete another
-    {
-        deliverers.destroy("another");
-
-        const auto another = deliverers.get("another");
-        ASSERT_EQ(nullptr, another);
-
-        const auto one = deliverers.get("one");
-        ASSERT_NE(nullptr, one);
-    }
 }
 
 TEST(DelivererService, ProcessControl) {
@@ -126,4 +115,8 @@ TEST(DelivererService, ProcessControl) {
     }
     ASSERT_EQ(RELOADING, stats->state);
     ASSERT_EQ(2, stats->loops);
+
+    deliverers.destroy("test");
+    ASSERT_EQ(STOPPED, stats->state);
+    ASSERT_EQ(3, stats->loops);
 }

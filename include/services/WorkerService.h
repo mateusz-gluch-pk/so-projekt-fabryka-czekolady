@@ -11,7 +11,7 @@
 // Data class for deliverer data
 class WorkerStats {
 public:
-    WorkerStats();
+    WorkerStats() {};
     WorkerStats(std::string name, std::string in_name, std::string out_name, const Recipe &recipe, const ProcessStats *stats):
     name(std::move(name)),
     in_name(std::move(in_name)),

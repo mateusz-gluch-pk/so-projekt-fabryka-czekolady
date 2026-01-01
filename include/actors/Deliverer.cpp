@@ -45,7 +45,7 @@ void Deliverer::run(ProcessStats &stats, Logger &log) {
 }
 
 void Deliverer::stop() {
-    _log.info(_msg("Received SIGTERM - pausing").c_str());
+    _log.info(_msg("Received SIGTERM - terminating").c_str());
     _running = false;
 }
 
@@ -71,4 +71,6 @@ void Deliverer::_main() const {
     _dst->add(item);
 }
 
-void Deliverer::_reload() {}
+void Deliverer::_reload() {
+    sthr::sleep_for(stime::milliseconds(100));
+}

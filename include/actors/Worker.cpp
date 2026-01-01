@@ -89,4 +89,6 @@ void Worker::_main() {
 }
 
 // Use RELOAD to make the worker check its warehouses - if not available; turn into IDLE
-void Worker::_reload() {}
+void Worker::_reload() {
+    sthr::sleep_for(stime::milliseconds(100));
+}
