@@ -14,7 +14,7 @@
 #include "objects/Message.h"
 
 #define MSQ_PERMS 0644
-#define MSQ_LOG_LEVEL MessageLevel::DEBUG
+#define MSQ_LOG_LEVEL MessageLevel::INFO
 
 template <typename T>
 class MessageQueue : public IQueue<T> {
@@ -117,9 +117,9 @@ MessageQueue<T> & MessageQueue<T>::operator=(MessageQueue<T> &&other) noexcept {
 template<typename T>
 void MessageQueue<T>::send(T data) const {
     const void *data_ptr = reinterpret_cast<void *>(&data);
-    const int result = msgsnd(_msqid, data_ptr, sizeof(T) - sizeof(long), IPC_NOWAIT);
+    const int result = msgsnd(_msqid, data_ptr, sizeof(T) - sizeof(long), 0);
     if (result == -1) {
-        _log->fatal(_msg("Cannot send; errno: %d").c_str(), errno);
+        _log->error(_msg("Cannot send; errno: %d").c_str(), errno);
     }
 
     _log->debug(_msg("Sent").c_str());

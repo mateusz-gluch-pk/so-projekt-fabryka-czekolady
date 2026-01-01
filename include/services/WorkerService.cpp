@@ -37,8 +37,6 @@ create(const std::string &name, const Recipe &recipe, Warehouse &in, Warehouse &
 }
 
 void WorkerService::destroy(const std::string &name) {
-    _stats.erase(name);
-
     auto it = _workers.find(name);
     if (it == _workers.end()) {
         _log.error(_msg("Worker not found: " + name).c_str());

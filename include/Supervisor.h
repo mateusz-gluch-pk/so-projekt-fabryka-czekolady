@@ -33,7 +33,7 @@ public:
         _log(log), _exit(exit), _warehouses(warehouses), _workers(workers), _deliverers(deliverers)
     {}
 
-    ~Supervisor();
+    ~Supervisor() = default;
 
     void stop_deliverers() {
         auto deliverers = _deliverers.get_all();
