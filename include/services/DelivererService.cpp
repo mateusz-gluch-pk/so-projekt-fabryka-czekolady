@@ -6,7 +6,9 @@
 
 DelivererService::~DelivererService() {
     for (auto &pair: _deliverers) {
-        pair.second->stop();
+        if (pair.second->stats()->state != STOPPED) {
+            pair.second->stop();
+        }
         delete pair.second;
     }
 
