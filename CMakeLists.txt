@@ -10,12 +10,12 @@ include(FetchContent)
 FetchContent_Declare(
         nlohmann_json
         GIT_REPOSITORY https://github.com/nlohmann/json.git
-        GIT_TAG master
+        GIT_TAG v3.11.3
 )
 FetchContent_MakeAvailable(nlohmann_json)
 
 FetchContent_Declare(ftxui
-        GIT_REPOSITORY https://github.com/ArthurSonzogni/ftxui
+        GIT_REPOSITORY https://github.com/ArthurSonzogni/FTXUI.git
         GIT_TAG v6.1.9
 )
 

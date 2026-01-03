@@ -3,12 +3,9 @@ file(GLOB_RECURSE LIB_SOURCES
         ${PROJECT_SOURCE_DIR}/include/*.cpp
         ${PROJECT_SOURCE_DIR}/include/*.cxx
 )
+
 add_library(factorylib STATIC
         ${LIB_SOURCES}
-        ../include/stations/WarehouseStats.h
-        ../include/processes/ProcessStats.cpp
-        ../include/processes/ProcessStats.h
-        ../include/ipcs/key.h
 )
 
 set_target_properties(factorylib PROPERTIES
@@ -29,23 +26,7 @@ target_link_libraries(factorylib
         ftxui::component
         ftxui::dom
 )
-add_executable(factory main.cpp
-        ../include/services/WarehouseService.cpp
-        ../include/services/WarehouseService.h
-        ../include/services/WorkerService.cpp
-        ../include/services/WorkerService.h
-        ../include/services/DelivererService.cpp
-        ../include/services/DelivererService.h
-        ../include/services/LoggerService.cpp
-        ../include/services/LoggerService.h
-        ../include/ui/ControlPanel.cpp
-        ../include/ui/ControlPanel.h
-        ../include/ui/Logs.cpp
-        ../include/ui/Logs.h
-        ../include/ui/Dashboard.cpp
-        ../include/ui/Dashboard.h
-        ../include/ui/Layout.cpp
-        ../include/ui/Layout.h
-)
+
+add_executable(factory main.cpp)
 
 target_link_libraries(factory PRIVATE factorylib)
