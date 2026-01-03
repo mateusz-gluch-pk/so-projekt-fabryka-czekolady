@@ -18,11 +18,15 @@ class LoggerService {
         LoggerService(const std::string &name, MessageLevel level);
         ~LoggerService();
         Logger &get();
+        [[nodiscard]] const SharedVector<Message, LOGGING_BUFFER_SIZE> *logs() const {return _buffer.get();};
 
     private:
         key_t _key;
         MessageQueue<Message> _msq;
         Logger _rootLogger;
+
+        SharedMemory<SharedVector<Message, LOGGING_BUFFER_SIZE>> _buffer;
+
         ProcessController _collector;
 };
 

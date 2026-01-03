@@ -13,8 +13,11 @@
 #include "ipcs/key.h"
 #include "objects/Message.h"
 #include "ipcs/MessageQueue.h"
+#include "ipcs/SharedMemory.h"
+#include "objects/SharedVector.h"
 
 #define LOGGING_DIR "logging"
+#define LOGGING_BUFFER_SIZE 1024
 
 class LogCollector: public IRunnable{
     public:
@@ -34,6 +37,9 @@ class LogCollector: public IRunnable{
             _file = _open_file();
             _log = log;
             _msq.emplace(make_key(LOGGING_DIR, _name, &log), false);
+
+            size_t bufsize = sizeof(SharedVector<Message, LOGGING_BUFFER_SIZE>) + sizeof(Item) * LOGGING_BUFFER_SIZE;
+            _buffer.emplace(make_key(LOGGING_DIR, _name, &log), bufsize, &log, false);
         }
 
         [[nodiscard]] std::string _msg(const std::string &msg) const {
@@ -47,6 +53,7 @@ class LogCollector: public IRunnable{
         bool _tty;
 
         std::optional<MessageQueue<Message>> _msq;
+        std::optional<SharedMemory<SharedVector<Message, LOGGING_BUFFER_SIZE>>> _buffer;
         Logger &_log;
 
         std::ofstream _file;

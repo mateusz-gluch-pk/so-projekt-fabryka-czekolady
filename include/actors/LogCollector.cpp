@@ -18,6 +18,8 @@ LogCollector::LogCollector(std::string name, Logger &log, bool tty):
     _tty(tty),
     _running(true), _reloading(false), _paused(false) {
     _msq.emplace(make_key(LOGGING_DIR, _name, &log), false);
+    size_t bufsize = sizeof(SharedVector<Message, LOGGING_BUFFER_SIZE>) + sizeof(Item) * LOGGING_BUFFER_SIZE;
+    _buffer.emplace(make_key(LOGGING_DIR, _name, &log), bufsize, &log, false);
 }
 
 LogCollector::~LogCollector() {
@@ -74,6 +76,13 @@ void LogCollector::_main() {
     Message msg;
 
     _msq->receive(&msg);
+
+    auto buf = _buffer->get();
+    if (buf->size == buf->capacity) {
+        buf->erase(buf->begin());
+    }
+    buf->push_back(msg);
+
     const auto log = msg.string();
     if (_tty) {
         std::cout << log << std::endl;
