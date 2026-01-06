@@ -21,7 +21,7 @@ target_link_libraries(factorylib
 )
 
 target_link_libraries(factorylib
-        PRIVATE
+        PUBLIC
         ftxui::screen
         ftxui::component
         ftxui::dom
