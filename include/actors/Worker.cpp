@@ -18,6 +18,7 @@ Worker::Worker(std::string name, Recipe recipe, Warehouse &in, Warehouse &out, L
 }
 
 void Worker::run(ProcessStats &stats, Logger &log) {
+    stats.pid = getpid();
     _reattach(log);
 
     while (_running) {

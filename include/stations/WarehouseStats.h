@@ -11,7 +11,7 @@
 
 
 class WarehouseStats {
-    public:
+public:
     WarehouseStats(std::string name, const int capacity, const int variety, const int usage, const std::vector<Item> &items):
     _name(std::move(name)), _items(items), _capacity(capacity), _variety(variety), _usage(usage) {}
 
@@ -22,12 +22,34 @@ class WarehouseStats {
     [[nodiscard]] int usage() const {return _usage;}
     [[nodiscard]] std::vector<Item> items() const {return _items;}
 
-    private:
+    std::vector<std::string> row() const {
+        return std::vector<std::string>{
+            _name,
+            std::to_string(_items.size()),
+            std::to_string(_capacity),
+            std::to_string(_variety),
+            std::to_string(_usage),
+        };
+    };
+
+    static std::vector<std::string> headers() {
+        return std::vector<std::string>{
+            "Name",
+            "Item Count",
+            "Item Capacity",
+            "Item Variety",
+            "Usage",
+        };
+    }
+
+private:
     std::string _name;
     std::vector<Item> _items;
     int _capacity;
     int _variety;
     int _usage;
+
+
 };
 
 

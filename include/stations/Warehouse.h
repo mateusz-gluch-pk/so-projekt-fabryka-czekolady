@@ -35,6 +35,7 @@ class Warehouse {
 		[[nodiscard]] std::vector<Item> items() const;
 		[[nodiscard]] std::string name() const;
 		[[nodiscard]] int capacity() const;
+
 		static int variety() ;
 		[[nodiscard]] int usage() const;
 

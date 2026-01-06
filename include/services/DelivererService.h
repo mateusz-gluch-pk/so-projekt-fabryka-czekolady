@@ -28,6 +28,33 @@ class DelivererStats {
 
     // read only pointer to shm
     const ProcessStats *stats = nullptr;
+
+
+    static std::vector<std::string> headers() {
+        return std::vector<std::string>{
+            "Name",
+            "Output",
+            "Item",
+            "Base Delay [ms]",
+            "Status",
+            "Loops",
+            "Reloads",
+            "PID"
+        };
+    }
+
+    std::vector<std::string> row() const {
+        return std::vector<std::string>{
+            name,
+            dst_name,
+            tpl.get().name(),
+            std::to_string(tpl.delay_ms()),
+            state_to_string(stats->state),
+            std::to_string(stats->loops),
+            std::to_string(stats->reloads),
+            std::to_string(stats->pid),
+        };
+    };
 };
 
 class DelivererService {

@@ -27,6 +27,32 @@ public:
 
     // read only pointer to shm
     const ProcessStats *stats = nullptr;
+
+    static std::vector<std::string> headers() {
+        return std::vector<std::string>{
+            "Name",
+            "Input",
+            "Output",
+            "Recipe",
+            "Status",
+            "Loops",
+            "Reloads",
+            "PID"
+        };
+    }
+
+    std::vector<std::string> row() const {
+        return std::vector<std::string>{
+            name,
+            in_name,
+            out_name,
+            recipe.name(),
+            state_to_string(stats->state),
+            std::to_string(stats->loops),
+            std::to_string(stats->reloads),
+            std::to_string(stats->pid),
+        };
+    };
 };
 
 class WorkerService {

@@ -27,6 +27,7 @@ LogCollector::~LogCollector() {
 }
 
 void LogCollector::run(ProcessStats &stats, Logger &log) {
+    stats.pid = getpid();
     _reattach(log);
 
     while (_running) {
