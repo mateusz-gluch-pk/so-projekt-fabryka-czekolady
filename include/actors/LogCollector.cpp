@@ -78,9 +78,11 @@ void LogCollector::_main() {
     _msq->receive(&msg);
 
     auto buf = _buffer->get();
-    if (buf->size == buf->capacity) {
+    if (buf->size == LOGGING_BUFFER_SIZE) {
+        _log.debug(_msg("Erasing beginning of buffer, %d/%d").c_str(), buf->size, buf->capacity);
         buf->erase(buf->begin());
     }
+    _log.debug(_msg("Appending log to buffer").c_str());
     buf->push_back(msg);
 
     const auto log = msg.string();

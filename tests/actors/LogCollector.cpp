@@ -22,6 +22,10 @@ TEST(LogCollector, ProcessControl) {
     Logger log(DEBUG, &msq);
 
     MessageQueue<Message> target_msq(make_key(LOGGING_DIR, "test", &log), true);
+    // we need to create Shared Memory for Log Buffer
+    size_t bufsize = sizeof(SharedVector<Message, LOGGING_BUFFER_SIZE>) + LOGGING_BUFFER_SIZE * sizeof(Message);
+    SharedMemory<SharedVector<Message, LOGGING_BUFFER_SIZE>> mem(make_key(LOGGING_DIR, "test", &log), bufsize, &log, true);
+
     Logger target(DEBUG, &target_msq);
 
     // target logger should be at least of level WARN - to avoid test file pollution
