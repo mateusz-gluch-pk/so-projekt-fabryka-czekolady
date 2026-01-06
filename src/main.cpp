@@ -78,7 +78,7 @@ int main() {
             {"B", 1, 1},
             {"D", 3, 1},
         };
-    Recipe r2(r1_in, {"T1", 1, 1});
+    Recipe r2(r1_in, {"T2", 1, 1});
     workers.create("worker-t2", r1, *ingredients, *outputs);
 
     // Setup UI
