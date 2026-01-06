@@ -69,7 +69,7 @@ TEST(Warehouse, AddRemoveItem) {
     // ASSERT_EQ(1, m.count());
 }
 
-TEST(Warehouse, FileStorage) {
+TEST(Warehouse, FileStorageSave) {
     MockQueue<Message> msq;
     Logger log(DEBUG, &msq);
 
@@ -98,6 +98,29 @@ TEST(Warehouse, FileStorage) {
     std::string actual;
     f >> actual;
     ASSERT_EQ(expected, actual);
+}
+
+TEST(Warehouse, FileStorageLoad) {
+    MockQueue<Message> msq;
+    Logger log(DEBUG, &msq);
+
+    std::string expected = R"([{"count":2,"name":"a","size":1},{"count":1,"name":"b","size":1}])";
+    std::ofstream f{"warehouses/test2.json"};
+    if (!f) {
+        FAIL() << "File not found";
+    }
+    f << expected;
+    f.close();
+
+    ASSERT_EQ(true, fs::is_regular_file("warehouses/test2.json"));
+
+    auto warehouse = Warehouse("test2", 3, &log);
+    ASSERT_EQ(2, warehouse.items().size());
+    ASSERT_EQ(Item("a", 1, 2), warehouse.items()[0]);
+    ASSERT_EQ(2, warehouse.items()[0].count());
+    ASSERT_EQ(Item("b", 1, 1), warehouse.items()[1]);
+    ASSERT_EQ(1, warehouse.items()[1].count());
+    ASSERT_EQ(3, warehouse.usage());
 }
 
 TEST(Warehouse, MultiProcess) {

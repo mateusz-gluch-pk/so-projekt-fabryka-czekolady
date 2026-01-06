@@ -106,7 +106,7 @@ void from_json(const nlohmann::json& j, SharedVector<T, Capacity>& vec) {
     if (!j.is_array())
         throw std::runtime_error("JSON is not an array for SharedVector");
 
-    if (j.size() > vec.capacity)
+    if (j.size() > Capacity)
         throw std::runtime_error("JSON array too large for SharedVector capacity");
 
     vec.size = j.size();
