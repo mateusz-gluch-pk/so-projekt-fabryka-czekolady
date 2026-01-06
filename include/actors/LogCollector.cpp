@@ -90,7 +90,7 @@ void LogCollector::_main() {
     if (_tty) {
         std::cout << log << std::endl;
     }
-    _file << log;
+    _file << log << std::endl;
 }
 
 std::ofstream LogCollector::_open_file() const {
