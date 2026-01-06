@@ -34,7 +34,7 @@ private:
         // Header
         ftxui::Elements headers;
         for (auto& h : DelivererStats::headers()) {
-            headers.push_back(ftxui::text(" " + h + " ") | ftxui::bold | ftxui::border);
+            headers.push_back(ftxui::text(" " + h + " ") | ftxui::bold );
         }
         elements.push_back(ftxui::hbox(headers));
 
@@ -42,7 +42,7 @@ private:
         for (int i = _scroll; i < workers.size(); ++i) {
             ftxui::Elements cells;
             for (auto& h : workers[i]->row()) {
-                headers.push_back(ftxui::text(" " + h + " ") | ftxui::bold | ftxui::border);
+                headers.push_back(ftxui::text(" " + h + " ") | ftxui::bold );
             }
             elements.push_back(ftxui::hbox(cells));
         }
@@ -92,7 +92,7 @@ private:
         // Header
         ftxui::Elements headers;
         for (auto& h : WarehouseStats::headers()) {
-            headers.push_back(ftxui::text(" " + h + " ") | ftxui::bold | ftxui::border);
+            headers.push_back(ftxui::text(" " + h + " ") | ftxui::bold );
         }
         elements.push_back(ftxui::hbox(headers));
 
@@ -100,7 +100,7 @@ private:
         for (int i = _scroll; i < workers.size(); ++i) {
             ftxui::Elements cells;
             for (auto& h : workers[i].row()) {
-                headers.push_back(ftxui::text(" " + h + " ") | ftxui::bold | ftxui::border);
+                headers.push_back(ftxui::text(" " + h + " ") | ftxui::bold );
             }
             elements.push_back(ftxui::hbox(cells));
         }
@@ -150,7 +150,7 @@ private:
         // Header
         ftxui::Elements headers;
         for (auto& h : WorkerStats::headers()) {
-            headers.push_back(ftxui::text(" " + h + " ") | ftxui::bold | ftxui::border);
+            headers.push_back(ftxui::text(" " + h + " ") | ftxui::bold );
         }
         elements.push_back(ftxui::hbox(headers));
 
@@ -158,7 +158,7 @@ private:
         for (int i = _scroll; i < workers.size(); ++i) {
             ftxui::Elements cells;
             for (auto& h : workers[i]->row()) {
-                headers.push_back(ftxui::text(" " + h + " ") | ftxui::bold | ftxui::border);
+                headers.push_back(ftxui::text(" " + h + " ") | ftxui::bold );
             }
             elements.push_back(ftxui::hbox(cells));
         }
