@@ -11,7 +11,7 @@ LoggerService::LoggerService(const std::string &name, const MessageLevel level):
     _msq(_key, true),
     _rootLogger(level, &_msq, _key),
     _buffer(_key, bufsize, &_rootLogger, true),
-    _collector(std::make_unique<LogCollector>(name, _rootLogger, true), _rootLogger) {
+    _collector(std::make_unique<LogCollector>(name, _rootLogger, false), _rootLogger) {
     _collector.run();
 }
 
