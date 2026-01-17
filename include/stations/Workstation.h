@@ -16,6 +16,7 @@
 
 #define WORKSTATION_DIR "workstations"
 
+// unused
 class Workstation {
      public:
          static Workstation create(const std::string &name, const Recipe &recipe, Logger &log) {

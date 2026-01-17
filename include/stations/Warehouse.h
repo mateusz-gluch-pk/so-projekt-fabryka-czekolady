@@ -20,48 +20,117 @@
 
 namespace fs = std::filesystem;
 
+/**
+ * @brief Represents a warehouse with IPC-safe storage and concurrency control.
+ *
+ * Provides an interface to add and retrieve items while supporting multiple
+ * processes via System V shared memory and semaphores. Supports RAII-style
+ * creation and automatic cleanup.
+ *
+ * Ownership model:
+ * - If created via `create`, the instance owns the underlying IPC resources
+ *   (shared memory, semaphore) and deletes them in the destructor.
+ * - If attached via `attach`, the instance does not own the resources and
+ *   leaves them intact on destruction.
+ */
 class Warehouse {
-	public:
-		static Warehouse attach(const std::string& name, int capacity, Logger *log);
-		static Warehouse create(const std::string& name, int capacity, Logger *log);
-		Warehouse(const std::string& name, int capacity, Logger *log, bool create = true);
-		~Warehouse();
+public:
+    /**
+     * @brief Attach to an existing warehouse.
+     * @param name Warehouse name.
+     * @param capacity Maximum capacity.
+     * @param log Logger for debug/info/error messages.
+     * @return Warehouse instance attached to existing IPC resources.
+     */
+    static Warehouse attach(const std::string& name, int capacity, Logger *log);
 
-		void add(Item &item) const;
+    /**
+     * @brief Create a new warehouse.
+     * @param name Warehouse name.
+     * @param capacity Maximum capacity.
+     * @param log Logger for debug/info/error messages.
+     * @return Warehouse instance owning the IPC resources.
+     */
+    static Warehouse create(const std::string& name, int capacity, Logger *log);
 
-		// pointer is necessary; retrieved item can (and will in many cases) be null!
-		void get(const std::string &itemName, Item *output) const;
+    /**
+     * @brief Construct a warehouse (attach or create).
+     * @param name Warehouse name.
+     * @param capacity Maximum capacity.
+     * @param log Logger instance.
+     * @param create True to create new resources; false to attach existing.
+     */
+    Warehouse(const std::string& name, int capacity, Logger *log, bool create = true);
 
-		[[nodiscard]] std::vector<Item> items() const;
-		[[nodiscard]] std::string name() const;
-		[[nodiscard]] int capacity() const;
+    /** @brief Destructor cleans up IPC resources if owned. */
+    ~Warehouse();
 
-		static int variety() ;
-		[[nodiscard]] int usage() const;
+    /**
+     * @brief Add an item to the warehouse.
+     * @param item Item to add.
+     * @note Thread/process-safe via internal semaphore.
+     */
+    void add(Item &item) const;
 
-	private:
-		Warehouse(std::string name, int capacity, size_t total_size, key_t key, Logger *log, bool create);
+    /**
+     * @brief Retrieve an item from the warehouse by name.
+     * @param itemName Name of the item to fetch.
+     * @param output Pointer to store the retrieved item; may be null.
+     */
+    void get(const std::string &itemName, Item *output) const;
 
-		[[nodiscard]] std::string _msg(const std::string &msg) const {
-			return "stations/Warehouse/" + _name + ":\t" + msg;
-		}
+    /** @brief Get a copy of all items currently in the warehouse. */
+    [[nodiscard]] std::vector<Item> items() const;
 
-		int _capacity;
-		std::string _name;
-		fs::path _filename;
+    /** @brief Get the warehouse name. */
+    [[nodiscard]] std::string name() const;
 
-		// IPCS
-		bool _owner;
-		Semaphore _sem;
-		SharedMemory<SharedVector<Item, WAREHOUSE_MAX_VARIETY>> _shm;
-		SharedVector<Item, WAREHOUSE_MAX_VARIETY> *_content;
+    /** @brief Get the maximum capacity of the warehouse. */
+    [[nodiscard]] int capacity() const;
 
-		// logger
-		Logger *_log;
+    /** @brief Get number of distinct item types (variety) in the warehouse. */
+    static int variety();
 
-		// file wrappers
-		void _write_file();
-		void _read_file() const;
+    /** @brief Get current number of items stored (usage). */
+    [[nodiscard]] int usage() const;
+
+private:
+    /**
+     * @brief Internal constructor used by `attach`/`create`.
+     * @param name Warehouse name.
+     * @param capacity Maximum capacity.
+     * @param total_size Total shared memory size in bytes.
+     * @param key IPC key for shared memory and semaphore.
+     * @param log Logger instance.
+     * @param create True to create resources; false to attach.
+     */
+    Warehouse(std::string name, int capacity, size_t total_size, key_t key, Logger *log, bool create);
+
+    /**
+     * @brief Format a log message with warehouse context.
+     * @param msg Message text.
+     * @return Formatted string.
+     */
+    [[nodiscard]] std::string _msg(const std::string &msg) const {
+        return "stations/Warehouse/" + _name + ":\t" + msg;
+    }
+
+    int _capacity;  /**< Maximum number of items warehouse can hold */
+    std::string _name;  /**< Warehouse name */
+    fs::path _filename; /**< Path for file-based persistence */
+
+    // IPC resources
+    bool _owner;  /**< True if this instance created the IPC resources */
+    Semaphore _sem;  /**< Semaphore for thread/process-safe access */
+    SharedMemory<SharedVector<Item, WAREHOUSE_MAX_VARIETY>> _shm; /**< Shared memory for items */
+    SharedVector<Item, WAREHOUSE_MAX_VARIETY> *_content; /**< Pointer to shared memory content */
+
+    // Logger
+    Logger *_log;  /**< Logger instance for debug/info/error messages */
+
+    // File persistence helpers
+    void _write_file();
+    void _read_file() const;
 };
 
 #endif //PROJEKT_WAREHOUSE_H
