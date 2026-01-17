@@ -29,7 +29,6 @@ int main() {
     // Supervisor
     Supervisor sv(warehouses, deliverers, workers, run, log);
 
-
     // Setup Warehouses
     // WH 1 - with capacity
     constexpr int capacity = 100;
@@ -55,11 +54,11 @@ int main() {
     deliverers.create("deliverer-b", b, *ingredients);
 
     // D3 - Item C
-    ItemTemplate c("C", 2, 100);
+    ItemTemplate c("C", 2, 200);
     deliverers.create("deliverer-c", c, *ingredients);
 
     // D4 - Item D
-    ItemTemplate d("D", 3, 100);
+    ItemTemplate d("D", 3, 200);
     deliverers.create("deliverer-d", d, *ingredients);
 
     // Setup Workers
@@ -102,7 +101,16 @@ int main() {
 
     // --- Start terminal UI ---
     auto screen = ftxui::ScreenInteractive::TerminalOutput();
+
+    std::thread refresher([&] {
+      while (!run.requested()) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(20));
+        screen.PostEvent(ftxui::Event::Custom);
+      }
+    });
+
     screen.Loop(layout->component());
 
+    refresher.join();
     return 0;
 }
