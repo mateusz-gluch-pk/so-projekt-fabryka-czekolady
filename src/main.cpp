@@ -14,7 +14,7 @@
 
 #include <ftxui/component/screen_interactive.hpp>
 
-# define BASE_DELIVERER_DELAY 0
+# define BASE_DELIVERER_DELAY 10
 
 int main() {
     // Setup Logger

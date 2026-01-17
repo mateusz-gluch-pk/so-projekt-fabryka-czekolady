@@ -17,7 +17,7 @@
 namespace stime = std::chrono;
 namespace sthr = std::this_thread;
 
-#define WORKER_TICK_DELAY 0
+#define WORKER_TICK_DELAY 10
 
 class Worker : public IRunnable {
     public:
