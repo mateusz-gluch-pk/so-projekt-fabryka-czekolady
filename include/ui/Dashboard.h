@@ -35,7 +35,7 @@ private:
         // Header
         std::vector<std::vector<std::string>> contents;
         std::vector<std::string> headers;
-        for (auto& h : WarehouseStats::headers()) {
+        for (auto& h : DelivererStats::headers()) {
             headers.push_back(h);
         }
         contents.push_back(headers);
@@ -161,7 +161,7 @@ private:
         // Header
         std::vector<std::vector<std::string>> contents;
         std::vector<std::string> headers;
-        for (auto& h : WarehouseStats::headers()) {
+        for (auto& h : WorkerStats::headers()) {
             headers.push_back(h);
         }
         contents.push_back(headers);

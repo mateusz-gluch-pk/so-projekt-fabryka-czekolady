@@ -31,6 +31,7 @@ public:
                     | ftxui::frame
                     | ftxui::yframe
                     | ftxui::focusPositionRelative(0.f, 1.f)
+                    | ftxui::size(ftxui::HEIGHT, ftxui::GREATER_THAN, 20)
             );
         });
     }

@@ -103,10 +103,11 @@ int main() {
     auto screen = ftxui::ScreenInteractive::TerminalOutput();
 
     std::thread refresher([&] {
-      while (!run.requested()) {
-        std::this_thread::sleep_for(std::chrono::milliseconds(20));
-        screen.PostEvent(ftxui::Event::Custom);
-      }
+        while (!run.requested()) {
+            std::this_thread::sleep_for(std::chrono::milliseconds(20));
+            screen.PostEvent(ftxui::Event::Custom);
+        }
+        screen.Exit();
     });
 
     screen.Loop(layout->component());
