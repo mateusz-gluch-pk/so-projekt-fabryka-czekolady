@@ -10,54 +10,94 @@
 
 #include "Item.h"
 
+/**
+ * @brief Fixed-capacity vector with shared semantics. (Fixed size necessary for Shared Memory)
+ *
+ * @tparam T Type of elements stored.
+ * @tparam Capacity Maximum number of elements.
+ */
 template<typename T, size_t Capacity>
 class SharedVector {
     public:
-        // SharedVector();
-        // explicit SharedVector(const int capacity): _data(new T[capacity]), _size(0), _capacity(capacity) {}
-        // void init(const int capacity);
-        // ~SharedVector();
-
+        /**
+         * @brief Adds an item to the end of the vector.
+         * @param item Item to add.
+         * @throw std::runtime_error if vector is full.
+         */
         void push_back(const T &item);
 
-        // overload [] - so that SharedVector won't hurt my eyes so much
+        /**
+         * @brief Access element by index (modifiable).
+         * @param index Index of element.
+         * @return Reference to element.
+         * @throw std::out_of_range if index >= size.
+         */
         T& operator[](size_t index);
 
+        /**
+         * @brief Access element by index (const version).
+         * @param index Index of element.
+         * @return Const reference to element.
+         * @throw std::out_of_range if index >= size.
+         */
         const T& operator[](size_t index) const;
 
-        // support "auto" range loops
+        /**
+         * @brief Returns iterator to first element. Necessary to support foreach loops.
+         * @return Pointer to first element.
+         */
         T* begin() { return data; }
+
+        /**
+         * @brief Returns iterator past the last element.
+         * @return Pointer past the last element.
+         */
         T* end()   { return data + size; }
 
+        /**
+         * @brief Const iterator to first element.
+         * @return Const pointer to first element.
+         */
         const T* begin() const { return data; }
+
+        /**
+         * @brief Const iterator past the last element.
+         * @return Const pointer past the last element.
+         */
         const T* end()   const { return data + size; }
 
+        /**
+         * @brief Erases element at given iterator.
+         * @param it Pointer to element to erase.
+         * @throw std::out_of_range if iterator is invalid.
+         */
         void erase(T* it);
 
+        /**
+         * @brief Serialization to JSON.
+         * @tparam U Type of elements.
+         * @tparam JCapacity Capacity of vector.
+         * @param j JSON object to store result.
+         * @param vec Vector to serialize.
+         */
         template<typename U, size_t JCapacity>
         friend void from_json(const nlohmann::json &j, SharedVector<U, JCapacity> &vec);
 
+        /**
+         * @brief Deserialization from JSON.
+         * @tparam U Type of elements.
+         * @tparam JCapacity Capacity of vector.
+         * @param j JSON array to read from.
+         * @param vec Vector to fill.
+         * @throw std::runtime_error if JSON is not an array or too large.
+         */
         template<typename U, size_t JCapacity>
         friend void to_json(nlohmann::json &j, const SharedVector<U, JCapacity> &vec);
 
-        T data[Capacity];
-        size_t size = 0;
-        size_t capacity = Capacity;
+        T data[Capacity];   /**< Storage array for elements */
+        size_t size = 0;    /**< Current number of elements */
+        size_t capacity = Capacity; /**< Maximum capacity */
 };
-
-// template<typename T>
-// SharedVector<T>::SharedVector(): _data(nullptr), _size(0), _capacity(0) {}
-
-// template<typename T>
-// void SharedVector<T>::init(const int capacity) {
-//     _data = new T[capacity];
-//     _capacity = capacity;
-// }
-
-// template<typename T>
-// SharedVector<T>::~SharedVector() {
-//     if (_data != nullptr) delete[] _data;
-// }
 
 template<typename T, size_t Capacity>
 void SharedVector<T, Capacity>::push_back(const T &item) {

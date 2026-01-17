@@ -48,7 +48,7 @@ class DelivererStats {
             name,
             dst_name,
             tpl.get().name(),
-            std::to_string(tpl.delay_ms()),
+            std::to_string(tpl.base_delay_ms()),
             state_to_string(stats->state),
             std::to_string(stats->loops),
             std::to_string(stats->reloads),

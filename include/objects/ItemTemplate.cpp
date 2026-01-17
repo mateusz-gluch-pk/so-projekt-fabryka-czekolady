@@ -19,6 +19,10 @@ int ItemTemplate::delay_ms() const {
     return static_cast<int>(_base_delay * (0.5 + factor));
 }
 
+int ItemTemplate::base_delay_ms() const {
+    return _base_delay;
+}
+
 Item ItemTemplate::get() const {
     return Item(_name, _size, 1);
 }
