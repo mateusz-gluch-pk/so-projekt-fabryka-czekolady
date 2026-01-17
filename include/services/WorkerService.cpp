@@ -4,6 +4,32 @@
 
 #include "WorkerService.h"
 
+std::vector<std::string> WorkerStats::headers() {
+    return std::vector<std::string>{
+        "Name",
+        "Input",
+        "Output",
+        "Recipe",
+        "Status",
+        "Loops",
+        "Reloads",
+        "PID"
+    };
+}
+
+std::vector<std::string> WorkerStats::row() const {
+    return std::vector<std::string>{
+        name,
+        in_name,
+        out_name,
+        recipe.name(),
+        state_to_string(stats->state),
+        std::to_string(stats->loops),
+        std::to_string(stats->reloads),
+        std::to_string(stats->pid),
+    };
+}
+
 WorkerService::~WorkerService() {
     for (auto &pair: _workers) {
         if (pair.second->stats()->state != STOPPED) {
@@ -157,4 +183,8 @@ void WorkerService::reload_all() {
     for (auto &pair : _workers) {
         reload(pair.first);
     }
+}
+
+std::string WorkerService::_msg(const std::string &msg) {
+    return "services/WorkersService:\t" + msg;
 }

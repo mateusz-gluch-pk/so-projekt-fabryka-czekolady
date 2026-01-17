@@ -4,6 +4,32 @@
 
 #include "DelivererService.h"
 
+std::vector<std::string> DelivererStats::headers() {
+    return std::vector<std::string>{
+        "Name",
+        "Output",
+        "Item",
+        "Base Delay [ms]",
+        "Status",
+        "Loops",
+        "Reloads",
+        "PID"
+    };
+}
+
+std::vector<std::string> DelivererStats::row() const {
+    return std::vector<std::string>{
+        name,
+        dst_name,
+        tpl.get().name(),
+        std::to_string(tpl.base_delay_ms()),
+        state_to_string(stats->state),
+        std::to_string(stats->loops),
+        std::to_string(stats->reloads),
+        std::to_string(stats->pid),
+    };
+}
+
 DelivererService::~DelivererService() {
     for (auto &pair: _deliverers) {
         if (pair.second->stats()->state != STOPPED) {
@@ -157,4 +183,8 @@ void DelivererService::reload_all() {
     for (auto &pair : _deliverers) {
         reload(pair.first);
     }
+}
+
+std::string DelivererService::_msg(const std::string &msg) {
+    return "services/DeliverersService:\t" + msg;
 }
