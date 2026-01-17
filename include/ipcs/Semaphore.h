@@ -9,7 +9,7 @@
 
 #include "logger/Logger.h"
 
-#define SEM_PERMS 0644
+#define SEM_PERMS 0600
 
 class Semaphore {
     public:

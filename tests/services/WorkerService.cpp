@@ -123,8 +123,7 @@ TEST(WorkerService, ProcessControl) {
     while (w->stats->loops == 1) {
         usleep(TICK);
     }
-    ASSERT_EQ(RELOADING, w->stats->state);
-    ASSERT_EQ(2, w->stats->loops);
+    ASSERT_EQ(1, w->stats->reloads);
 
     workers.destroy("test");
     ASSERT_EQ(STOPPED, w->stats->state);

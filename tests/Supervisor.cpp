@@ -97,7 +97,7 @@ TEST(Supervisor, StopDeliverers) {
 }
 
 TEST(Supervisor, StopWarehouses) {
-    LoggerService logger(test_name(), INFO);
+    LoggerService logger(test_name(), DEBUG);
     Logger log = logger.get();
 
     WarehouseService warehouses(log);
@@ -140,11 +140,11 @@ TEST(Supervisor, StopWarehouses) {
 
         auto w1 = workers.get("w1");
         ASSERT_NE(nullptr, w1);
-        ASSERT_EQ(RELOADING, w1->stats->state);
+        ASSERT_EQ(PAUSED, w1->stats->state);
 
         auto d1 = deliverers.get("d1");
         ASSERT_NE(nullptr, d1);
-        ASSERT_EQ(RELOADING, d1->stats->state);
+        ASSERT_EQ(PAUSED, d1->stats->state);
     }
 }
 

@@ -14,7 +14,7 @@
 
 #include "logger/Logger.h"
 
-#define SHM_PERMS 0644
+#define SHM_PERMS 0600
 
 template<typename T>
 std::string type_name() {

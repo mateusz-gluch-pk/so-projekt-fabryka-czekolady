@@ -13,7 +13,7 @@
 #include "logger/Logger.h"
 #include "objects/Message.h"
 
-#define MSQ_PERMS 0644
+#define MSQ_PERMS 0600
 #define MSQ_LOG_LEVEL MessageLevel::INFO
 
 template <typename T>

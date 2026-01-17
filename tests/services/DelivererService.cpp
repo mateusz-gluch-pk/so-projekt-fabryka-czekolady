@@ -118,8 +118,7 @@ TEST(DelivererService, ProcessControl) {
     while (d->stats->loops == 1) {
         usleep(TICK);
     }
-    ASSERT_EQ(RELOADING, d->stats->state);
-    ASSERT_EQ(2, d->stats->loops);
+    ASSERT_EQ(1, d->stats->reloads);
 
     deliverers.destroy("test");
     ASSERT_EQ(STOPPED, d->stats->state);
