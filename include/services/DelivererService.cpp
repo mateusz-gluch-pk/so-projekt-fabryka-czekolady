@@ -18,7 +18,7 @@ std::vector<std::string> DelivererStats::headers() {
 }
 
 std::vector<std::string> DelivererStats::row() const {
-    return std::vector<std::string>{
+    return std::vector{
         name,
         dst_name,
         tpl.get().name(),

@@ -18,7 +18,7 @@ std::vector<std::string> WorkerStats::headers() {
 }
 
 std::vector<std::string> WorkerStats::row() const {
-    return std::vector<std::string>{
+    return std::vector{
         name,
         in_name,
         out_name,
