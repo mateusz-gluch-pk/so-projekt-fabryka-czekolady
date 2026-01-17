@@ -30,22 +30,14 @@ public:
      * @param other Item to copy from
      * @return Reference to this item
      */
-    Item& operator=(const Item& other) {
-        if (this == &other) return *this;
-        std::memcpy(_name, other._name, ITEM_NAME_LENGTH);
-        _size  = other._size;
-        _count = other._count;
-        return *this;
-    }
+    Item& operator=(const Item& other);
 
     /**
      * @brief Check equality
      * @param other Item to compare with
      * @return true if same name and size
      */
-    bool operator==(const Item& other) const {
-        return strcmp(_name, other._name) == 0 && _size == other._size;
-    }
+    bool operator==(const Item& other) const;
 
     [[nodiscard]] std::string name() const { return _name; }  ///< Item name
     [[nodiscard]] int size() const { return _size; }          ///< Item size

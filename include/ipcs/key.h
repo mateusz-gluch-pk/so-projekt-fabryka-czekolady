@@ -13,6 +13,19 @@
 
 namespace fs = std::filesystem;
 
+/**
+ * @brief Generate a System V IPC key using a file and ftok.
+ *
+ * Creates the directory and key file if they do not exist, then
+ * generates a `key_t` using `ftok`.
+ *
+ * @param dir Directory where the key file will be stored. Created if missing.
+ * @param name Name of the key file (without extension).
+ * @param log Optional logger for debug messages.
+ * @return System V IPC key (`key_t`) derived from the file.
+ *
+ * @note The file is created if missing, ensuring `ftok` can generate a key.
+ */
 inline key_t make_key(const std::string dir, const std::string& name, const Logger *log = nullptr) {
     fs::create_directories(dir);
 

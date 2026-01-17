@@ -50,7 +50,6 @@ void Semaphore::lock() const {
     // lock semaphore operation:
     // semnum = 0 (only one)
     // semop = -1 - lock semaphore
-    // flags - SEM_UNDO; unlock if process exits
     sembuf op = {0, -1, 0};
     while (true) {
         if (semop(_semid, &op, 1) == 0) break;
@@ -65,7 +64,6 @@ void Semaphore::unlock() const {
     // unlock semaphore operation:
     // semnum = 0 (only one)
     // semop = +1 - unlock semaphore
-    // flags - IPC_NOWAIT
     sembuf op = {0, +1, 0};
     while (true) {
         if (semop(_semid, &op, 1) == 0) break;
@@ -83,4 +81,10 @@ int Semaphore::value() const {
         _log->error(_msg("Cannot get value").c_str());
     }
     return v;
+}
+
+std::string Semaphore::_msg(const std::string &msg) const {
+    std::ostringstream ss;
+    ss << _semid;
+    return "ipcs/Semaphore/" + ss.str() + ":\t" + msg;
 }

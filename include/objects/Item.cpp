@@ -16,6 +16,18 @@ Item::Item(const std::string &name, const int size, const int count): _size(size
     strcpy(_name, name.c_str());
 }
 
+Item & Item::operator=(const Item &other) {
+    if (this == &other) return *this;
+    std::memcpy(_name, other._name, ITEM_NAME_LENGTH);
+    _size  = other._size;
+    _count = other._count;
+    return *this;
+}
+
+bool Item::operator==(const Item &other) const {
+    return strcmp(_name, other._name) == 0 && _size == other._size;
+}
+
 int Item::stack(Item &item) {
     // names must match to stack
     // size must match too
