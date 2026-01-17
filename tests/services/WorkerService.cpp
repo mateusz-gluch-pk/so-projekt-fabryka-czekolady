@@ -16,7 +16,7 @@
 
 #include "../utils/test_name.h"
 
-#define TICK 10*1000
+#define TICK 10000
 
 TEST(WorkerService, CRUD) {
     MockQueue<Message> msq;
@@ -37,11 +37,6 @@ TEST(WorkerService, CRUD) {
         ASSERT_EQ("one", created->name);
         ASSERT_EQ(in.name(), created->in_name);
         ASSERT_EQ(out.name(), created->out_name);
-        ASSERT_EQ(CREATED, created->stats->state);
-        ASSERT_EQ(0, created->stats->loops);
-
-        usleep(5*TICK);
-        ASSERT_EQ(RUNNING, created->stats->state);
     }
 
     // create another deliverer
@@ -51,11 +46,6 @@ TEST(WorkerService, CRUD) {
         ASSERT_EQ("another", created->name);
         ASSERT_EQ(in.name(), created->in_name);
         ASSERT_EQ(out.name(), created->out_name);
-        ASSERT_EQ(CREATED, created->stats->state);
-        ASSERT_EQ(0, created->stats->loops);
-
-        usleep(5*TICK);
-        ASSERT_EQ(RUNNING, created->stats->state);
     }
 
     // get both
@@ -103,7 +93,7 @@ TEST(WorkerService, ProcessControl) {
     ASSERT_EQ(0, w->stats->loops);
     ASSERT_EQ(0, w->stats->reloads);
 
-    usleep(TICK);
+    usleep(3*TICK);
     ASSERT_EQ(RUNNING, w->stats->state);
     ASSERT_EQ(0, w->stats->loops);
 

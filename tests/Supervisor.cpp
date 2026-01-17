@@ -12,7 +12,7 @@
 #include "services/WorkerService.h"
 #include "utils/test_name.h"
 
-#define TICK 10*1000
+#define TICK 1000
 
 TEST(Supervisor, StopWorkers) {
     LoggerService logger(test_name(), INFO);

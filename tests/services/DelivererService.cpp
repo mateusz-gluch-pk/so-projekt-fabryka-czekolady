@@ -26,12 +26,12 @@ TEST(DelivererService, CRUD) {
     // create one deliverer
     {
         const auto created = deliverers.create("one", tpl, dst);
+        ASSERT_EQ(CREATED, created->stats->state);
         ASSERT_NE(nullptr, created);
         ASSERT_EQ("one", created->name);
         ASSERT_EQ(dst.name(), created->dst_name);
         ASSERT_EQ("a", created->tpl.get().name());
         ASSERT_EQ(1, created->tpl.get().size());
-        ASSERT_EQ(CREATED, created->stats->state);
         ASSERT_EQ(0, created->stats->loops);
 
         usleep(5*TICK);
@@ -41,12 +41,12 @@ TEST(DelivererService, CRUD) {
     // create another deliverer
     {
         const auto created = deliverers.create("another", tpl, dst);
+        ASSERT_EQ(CREATED, created->stats->state);
         ASSERT_NE(nullptr, created);
         ASSERT_EQ("another", created->name);
         ASSERT_EQ(dst.name(), created->dst_name);
         ASSERT_EQ("a", created->tpl.get().name());
         ASSERT_EQ(1, created->tpl.get().size());
-        ASSERT_EQ(CREATED, created->stats->state);
         ASSERT_EQ(0, created->stats->loops);
 
         usleep(5*TICK);

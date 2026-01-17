@@ -6,6 +6,7 @@ file(GLOB_RECURSE LIB_SOURCES
 
 add_library(factorylib STATIC
         ${LIB_SOURCES}
+        ../include/objects/SharedVector.cpp
 )
 
 set_target_properties(factorylib PROPERTIES

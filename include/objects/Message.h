@@ -46,7 +46,6 @@ public:
     /// Convert message to JSON string (not implemented)
     // std::string serialize();
 
-private:
     /**
      * @brief Get the string representation of the message level.
      * @return Level as a string (e.g., "DEBUG", "ERROR")
