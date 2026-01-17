@@ -45,3 +45,15 @@ ftxui::Element DelivererTable::Render() const {
 
     return table.Render();
 }
+
+bool DelivererTable::OnEvent(const ftxui::Event &e) {
+    if (e == ftxui::Event::ArrowDown) {
+        _scroll++;
+        return true;
+    }
+    if (e == ftxui::Event::ArrowUp) {
+        _scroll = std::max(0, _scroll - 1);
+        return true;
+    }
+    return false;
+}

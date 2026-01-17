@@ -24,6 +24,7 @@ LogPanel::LogPanel(LoggerService &svc): _svc(svc) {
     _component = ftxui::Renderer([&] {
         ftxui::Elements elements;
 
+        // this is a little workaround - TODO develop a callback to contain enough logs to display in panel
         if (const auto logs = _svc.logs(); logs != nullptr) {
             for (size_t i = logs->size-50; i < logs->size; i++) {
                 auto msg = (*logs)[i];
@@ -47,7 +48,7 @@ LogPanel::LogPanel(LoggerService &svc): _svc(svc) {
 ftxui::Element LogPanel::_format(const Message &msg) {
     using namespace ftxui;
 
-    const Element line = text(expand_tabs(msg.string()));
+    const Element line = text(expand_tabs(msg.string(), 8));
 
     switch (msg._level) {
         case DEBUG:

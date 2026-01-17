@@ -10,29 +10,64 @@
 #include "services/DelivererService.h"
 
 
+
+/**
+ * @class DelivererTable
+ * @brief Scrollable table view displaying deliverer statistics.
+ *
+ * This component renders a table of deliverers obtained from the
+ * DelivererService and allows vertical scrolling using keyboard events.
+ *
+ * @inputs
+ *  - Deliverer data provided by DelivererService.
+ *  - Keyboard events (ArrowUp / ArrowDown).
+ *
+ * @outputs
+ *  - Renders a formatted FTXUI table element.
+ */
 class DelivererTable {
 public:
-    explicit DelivererTable(DelivererService &svc);
+    /**
+     * @brief Constructs the deliverer table bound to a service.
+     *
+     * @param svc Reference to the DelivererService providing deliverer data.
+     */
+    explicit DelivererTable(DelivererService& svc);
 
-    ftxui::Component component() {return _component;}
+    /**
+     * @brief Returns the root FTXUI component for rendering.
+     *
+     * @return ftxui::Component representing the deliverer table UI.
+     */
+    ftxui::Component component() { return _component; }
 
 private:
+    /**
+     * @brief Renders the deliverer table.
+     *
+     * Builds the table header and visible rows based on the current
+     * scroll offset.
+     *
+     * @return ftxui::Element representing the rendered table.
+     */
     [[nodiscard]] ftxui::Element Render() const;
 
-    bool OnEvent(const ftxui::Event& e) {
-        if (e == ftxui::Event::ArrowDown) {
-            _scroll++;
-            return true;
-        }
-        if (e == ftxui::Event::ArrowUp) {
-            _scroll = std::max(0, _scroll - 1);
-            return true;
-        }
-        return false;
-    }
+    /**
+     * @brief Handles keyboard events for scrolling.
+     *
+     * @param e Incoming FTXUI event.
+     * @return true if the event was handled, false otherwise.
+     */
+    bool OnEvent(const ftxui::Event& e);
 
-    DelivererService &_svc;
+private:
+    /// Reference to the deliverer service providing data.
+    DelivererService& _svc;
+
+    /// Current vertical scroll offset.
     int _scroll = 0;
+
+    /// Root FTXUI component.
     ftxui::Component _component;
 };
 
