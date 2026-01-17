@@ -30,7 +30,7 @@ void Worker::run(ProcessStats &stats, Logger &log) {
 
         if (_reloading) {
             stats.state = RELOADING;
-            sthr::sleep_for(stime::milliseconds(100));
+            // sthr::sleep_for(stime::milliseconds(100));
             _reload();
             stats.reloads++;
             continue;
@@ -92,9 +92,10 @@ void Worker::_main() {
 // Use RELOAD to make the worker check its warehouses - if not available; turn into IDLE
 void Worker::_reload() {
     try {
-        _reattach(_log);
         _reloading = false;
+        _reattach(_log);
     } catch (std::exception &e) {
+        _paused = true;
         _log.warn(e.what());
     }
 }

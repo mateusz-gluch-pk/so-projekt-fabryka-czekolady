@@ -30,7 +30,7 @@ void Deliverer::run(ProcessStats &stats, Logger &log) {
 
         if (_reloading) {
             stats.state = RELOADING;
-            sthr::sleep_for(stime::milliseconds(100));
+            // sthr::sleep_for(stime::milliseconds(100));
             _reload();
             stats.reloads++;
             continue;
@@ -74,9 +74,10 @@ void Deliverer::_main() const {
 
 void Deliverer::_reload() {
     try {
+        _reloading = false;
         _reattach(_log);
-        _reloading = true;
     } catch (std::exception &e) {
+        _paused = true;
         _log.warn(e.what());
     }
 }

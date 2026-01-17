@@ -101,7 +101,7 @@ int main() {
     );
 
     // --- Start terminal UI ---
-    auto screen = ftxui::ScreenInteractive::TerminalOutput();
+    auto screen = ftxui::ScreenInteractive::Fullscreen();
 
     std::thread refresher([&] {
         while (!run.requested()) {
