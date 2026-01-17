@@ -19,42 +19,91 @@ namespace sthr = std::this_thread;
 
 #define WORKER_TICK_DELAY 100
 
+/**
+ * @brief Represents a worker that processes recipes between warehouses.
+ */
 class Worker : public IRunnable {
-    public:
-        Worker(std::string name, Recipe recipe, Warehouse &in, Warehouse &out, Logger &log);
+public:
+    /**
+     * @brief Constructs a Worker.
+     * @param name Name of the worker.
+     * @param recipe Recipe to process.
+     * @param in Reference to input warehouse.
+     * @param out Reference to output warehouse.
+     * @param log Reference to logger.
+     * @throws std::exception if warehouse or logger setup fails.
+     */
+    Worker(std::string name, Recipe recipe, Warehouse &in, Warehouse &out, Logger &log);
 
-        void run(ProcessStats &stats, Logger &log) override;
-        void stop() override;
-        void pause() override;
-        void resume() override;
-        void reload() override;
-        const std::string &name() override { return _name; }
+    /**
+     * @brief Main execution loop for processing items.
+     * @param stats Reference to process statistics to update.
+     * @param log Reference to a logger for runtime messages.
+     * @throws std::runtime_error on processing failure.
+     */
+    void run(ProcessStats &stats, Logger &log) override;
 
-    private:
-        void _main();
-        void _reload();
+    /**
+     * @brief Stops the worker safely.
+     */
+    void stop() override;
 
-        void _reattach(Logger &log) {
-            _log = log;
-            _in.emplace(_in->name(), _in->capacity(), &log, false);
-            _out.emplace(_out->name(), _out->capacity(), &log, false);
-        };
+    /**
+     * @brief Pauses the worker's execution.
+     */
+    void pause() override;
 
-        [[nodiscard]] std::string _msg(const std::string &msg) const {
-            return "actors/Worker/" + _name + ":\t" + msg;
-        }
+    /**
+     * @brief Resumes execution after pause.
+     */
+    void resume() override;
 
-        std::string _name;
-        Recipe _recipe;
+    /**
+     * @brief Reloads internal state or configuration.
+     */
+    void reload() override;
 
-        std::optional<Warehouse> _in;
-        std::optional<Warehouse> _out;
+    /**
+     * @brief Returns the name of the worker.
+     * @return Reference to the worker's name string.
+     */
+    const std::string &name() override { return _name; }
 
-        Logger &_log;
+private:
+    /**
+     * @brief Internal main loop for processing items.
+     */
+    void _main();
 
-        std::vector<Item> _inventory;
-        std::atomic<bool> _running, _paused, _reloading;
+    /**
+     * @brief Internal reload implementation.
+     */
+    void _reload();
+
+    /**
+     * @brief Reattaches the worker to a new logger and resets warehouses.
+     * @param log Reference to a new logger.
+     */
+    void _reattach(Logger &log) {
+        _log = log;
+        _in.emplace(_in->name(), _in->capacity(), &log, false);
+        _out.emplace(_out->name(), _out->capacity(), &log, false);
+    }
+
+    /**
+     * @brief Generates a formatted log message.
+     * @param msg Message content.
+     * @return Formatted string with worker prefix.
+     */
+    [[nodiscard]] std::string _msg(const std::string &msg) const;
+
+    std::string _name;                 ///< Name of the worker
+    Recipe _recipe;                     ///< Recipe to process
+    std::optional<Warehouse> _in;       ///< Optional input warehouse
+    std::optional<Warehouse> _out;      ///< Optional output warehouse
+    Logger &_log;                        ///< Reference to logger
+    std::vector<Item> _inventory;       ///< Worker inventory
+    std::atomic<bool> _running, _paused, _reloading; ///< Thread control flags
 };
-
 
 #endif //PROJEKT_WORKER_H

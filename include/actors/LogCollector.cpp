@@ -93,6 +93,19 @@ void LogCollector::_main() {
     _file << log << std::endl;
 }
 
+void LogCollector::_reattach(Logger &log) {
+    _file = _open_file();
+    _log = log;
+    _msq.emplace(make_key(LOGGING_DIR, _name, &log), false);
+
+    size_t bufsize = sizeof(SharedVector<Message, LOGGING_BUFFER_SIZE>) + sizeof(Item) * LOGGING_BUFFER_SIZE;
+    _buffer.emplace(make_key(LOGGING_DIR, _name, &log), bufsize, &log, false);
+}
+
+std::string LogCollector::_msg(const std::string &msg) const {
+    return "actors/LogCollector/" + _name + ":\t" + msg;
+}
+
 std::ofstream LogCollector::_open_file() const {
     stime::sys_seconds tp{stime::seconds{time(nullptr)}};
     stime::zoned_time local{stime::current_zone(), tp};

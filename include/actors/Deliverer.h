@@ -18,38 +18,84 @@ namespace stime = std::chrono;
 namespace sthr = std::this_thread;
 
 
+/**
+ * @brief Represents a delivery worker that runs tasks and interacts with a warehouse.
+ */
 class Deliverer : public IRunnable {
-    public:
-        Deliverer(std::string name, ItemTemplate tpl, Warehouse &dst, Logger &log);
+public:
+    /**
+     * @brief Constructs a Deliverer.
+     * @param name Name of the deliverer.
+     * @param tpl Template of the item to deliver.
+     * @param dst Target warehouse reference.
+     * @param log Logger reference.
+     * @throws std::exception if warehouse or logger setup fails.
+     */
+    Deliverer(std::string name, ItemTemplate tpl, Warehouse &dst, Logger &log);
 
-        void run(ProcessStats &stats, Logger &log) override;
-        void stop() override;
-        void pause() override;
-        void resume() override;
-        void reload() override;
-        const std::string &name() override { return _name; }
+    /**
+     * @brief Main execution function for the deliverer.
+     * @param stats Reference to process statistics to update.
+     * @param log Reference to a logger for runtime messages.
+     * @throws std::runtime_error on delivery failure.
+     */
+    void run(ProcessStats &stats, Logger &log) override;
 
-    private:
-        void _main() const;
-        void _reload();
+    /**
+     * @brief Stops the deliverer thread safely.
+     */
+    void stop() override;
 
-        void _reattach(Logger &log) {
-            _log = log;
-            _dst.emplace(_dst->name(), _dst->capacity(), &log, false);
-        }
+    /**
+     * @brief Pauses the deliverer's execution.
+     */
+    void pause() override;
 
-        [[nodiscard]] std::string _msg(const std::string &msg) const {
-            return "actors/Deliverer/" + _name + ":\t" + msg;
-        }
+    /**
+     * @brief Resumes execution after a pause.
+     */
+    void resume() override;
 
-        std::string _name;
-        ItemTemplate _tpl;
+    /**
+     * @brief Reloads internal state or configuration.
+     */
+    void reload() override;
 
-        std::optional<Warehouse> _dst;
+    /**
+     * @brief Returns the deliverer's name.
+     * @return Reference to the name string.
+     */
+    const std::string &name() override { return _name; }
 
-        Logger &_log;
+private:
+    /**
+     * @brief Internal main loop for delivery logic.
+     */
+    void _main() const;
 
-        std::atomic<bool> _running, _paused, _reloading;
+    /**
+     * @brief Internal reload implementation.
+     */
+    void _reload();
+
+    /**
+     * @brief Reattaches the deliverer to a new logger and warehouse.
+     * @param log Logger reference.
+     */
+    void _reattach(Logger &log);
+
+    /**
+     * @brief Generates a formatted log message.
+     * @param msg Message content.
+     * @return Formatted string with deliverer prefix.
+     */
+    [[nodiscard]] std::string _msg(const std::string &msg) const;
+
+    std::string _name;                        ///< Name of the deliverer
+    ItemTemplate _tpl;                        ///< Item template to deliver
+    std::optional<Warehouse> _dst;            ///< Optional target warehouse
+    Logger &_log;                              ///< Reference to logger
+    std::atomic<bool> _running, _paused, _reloading; ///< Thread control flags
 };
 
 

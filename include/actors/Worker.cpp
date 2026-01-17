@@ -99,3 +99,7 @@ void Worker::_reload() {
         _log.warn(e.what());
     }
 }
+
+std::string Worker::_msg(const std::string &msg) const {
+    return "actors/Worker/" + _name + ":\t" + msg;
+}

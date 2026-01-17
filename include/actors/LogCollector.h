@@ -19,46 +19,102 @@
 #define LOGGING_DIR "logging"
 #define LOGGING_BUFFER_SIZE 1024
 
-class LogCollector: public IRunnable{
-    public:
-        explicit LogCollector(std::string name, Logger &log, bool tty = true);
-        ~LogCollector() override;
-        void run(ProcessStats &stats, Logger &log) override;
-        void stop() override;
-        void pause() override;
-        void resume() override;
-        void reload() override;
-        const std::string &name() override { return _name; }
+/**
+ * @brief Collects and manages log messages in a separate thread.
+ */
+class LogCollector: public IRunnable {
+public:
+    /**
+     * @brief Constructs a LogCollector.
+     * @param name Name of the log collector.
+     * @param log Reference to a logger.
+     * @param tty Whether output should be TTY-formatted (default true).
+     * @throws std::exception if initialization fails.
+     */
+    explicit LogCollector(std::string name, Logger &log, bool tty = true);
 
-    private:
-        void _main();
-        void _reload() {};
-        void _reattach(Logger &log) {
-            _file = _open_file();
-            _log = log;
-            _msq.emplace(make_key(LOGGING_DIR, _name, &log), false);
+    /**
+     * @brief Destructor; closes file and cleans up resources.
+     */
+    ~LogCollector() override;
 
-            size_t bufsize = sizeof(SharedVector<Message, LOGGING_BUFFER_SIZE>) + sizeof(Item) * LOGGING_BUFFER_SIZE;
-            _buffer.emplace(make_key(LOGGING_DIR, _name, &log), bufsize, &log, false);
-        }
+    /**
+     * @brief Main execution loop for collecting logs.
+     * @param stats Reference to process statistics.
+     * @param log Reference to a logger for runtime messages.
+     * @throws std::runtime_error on logging failure.
+     */
+    void run(ProcessStats &stats, Logger &log) override;
 
-        [[nodiscard]] std::string _msg(const std::string &msg) const {
-            return "actors/LogCollector/" + _name + ":\t" + msg;
-        }
+    /**
+     * @brief Stops log collection safely.
+     */
+    void stop() override;
 
-        std::ofstream _open_file() const;
-        void _close_file();
+    /**
+     * @brief Pauses log collection.
+     */
+    void pause() override;
 
-        std::string _name;
-        bool _tty;
+    /**
+     * @brief Resumes log collection after pause.
+     */
+    void resume() override;
 
-        std::optional<MessageQueue<Message>> _msq;
-        std::optional<SharedMemory<SharedVector<Message, LOGGING_BUFFER_SIZE>>> _buffer;
-        Logger &_log;
+    /**
+     * @brief Reloads internal state or configuration.
+     */
+    void reload() override;
 
-        std::ofstream _file;
-        std::atomic<bool> _running, _paused, _reloading;
+    /**
+     * @brief Returns the name of the log collector.
+     * @return Reference to the collector name.
+     */
+    const std::string &name() override { return _name; }
+
+private:
+    /**
+     * @brief Internal main loop for log collection.
+     */
+    void _main();
+
+    /**
+     * @brief Reloads internal resources (no-op placeholder).
+     */
+    void _reload() {};
+
+    /**
+     * @brief Reattaches the collector to a new logger and resets resources.
+     * @param log Reference to a new logger.
+     */
+    void _reattach(Logger &log);
+
+    /**
+     * @brief Generates a formatted log message.
+     * @param msg Message content.
+     * @return Formatted string with collector prefix.
+     */
+    [[nodiscard]] std::string _msg(const std::string &msg) const;
+
+    /**
+     * @brief Opens the log file for writing.
+     * @return Output file stream object.
+     * @throws std::runtime_error if file cannot be opened.
+     */
+    std::ofstream _open_file() const;
+
+    /**
+     * @brief Closes the currently opened log file.
+     */
+    void _close_file();
+
+    std::string _name;                       ///< Name of the log collector
+    bool _tty;                               ///< TTY output flag
+    std::optional<MessageQueue<Message>> _msq; ///< Optional message queue
+    std::optional<SharedMemory<SharedVector<Message, LOGGING_BUFFER_SIZE>>> _buffer; ///< Optional shared memory buffer
+    Logger &_log;                             ///< Reference to logger
+    std::ofstream _file;                      ///< Output file stream
+    std::atomic<bool> _running, _paused, _reloading; ///< Thread control flags
 };
-
 
 #endif //PROJEKT_LOGCOLLECTOR_H

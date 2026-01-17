@@ -81,3 +81,12 @@ void Deliverer::_reload() {
         _log.warn(e.what());
     }
 }
+
+void Deliverer::_reattach(Logger &log) {
+    _log = log;
+    _dst.emplace(_dst->name(), _dst->capacity(), &log, false);
+}
+
+std::string Deliverer::_msg(const std::string &msg) const {
+    return "actors/Deliverer/" + _name + ":\t" + msg;
+}
