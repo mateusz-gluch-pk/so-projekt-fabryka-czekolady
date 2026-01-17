@@ -13,6 +13,8 @@
 #include "services/WarehouseService.h"
 #include <services/WorkerService.h>
 
+#include "ftxui/dom/table.hpp"
+
 class DelivererTable {
 public:
     explicit DelivererTable(DelivererService &svc)
@@ -28,29 +30,34 @@ public:
 
 private:
     ftxui::Element Render() {
-        ftxui::Elements elements;
         auto workers = _svc.get_all();
 
         // Header
-        ftxui::Elements headers;
-        for (auto& h : DelivererStats::headers()) {
-            headers.push_back(ftxui::text(" " + h + " ") | ftxui::bold );
+        std::vector<std::vector<std::string>> contents;
+        std::vector<std::string> headers;
+        for (auto& h : WarehouseStats::headers()) {
+            headers.push_back(h);
         }
-        elements.push_back(ftxui::hbox(headers));
+        contents.push_back(headers);
 
         // Rows
         for (int i = _scroll; i < workers.size(); ++i) {
-            ftxui::Elements cells;
+            std::vector<std::string> cells;
             for (auto& h : workers[i]->row()) {
-                headers.push_back(ftxui::text(" " + h + " ") | ftxui::bold );
+                cells.push_back(h);
             }
-            elements.push_back(ftxui::hbox(cells));
+            contents.push_back(cells);
         }
 
-        return ftxui::vbox(elements)
-               | ftxui::frame
-               | ftxui::vscroll_indicator
-               | ftxui::border;
+        auto table =  ftxui::Table(contents);
+        table.SelectColumn(0).Border(ftxui::LIGHT);
+
+        // Make first row bold with a double border.
+        table.SelectRow(0).Decorate(ftxui::bold);
+        table.SelectRow(0).SeparatorVertical(ftxui::LIGHT);
+        table.SelectRow(0).Border(ftxui::DOUBLE);
+        
+        return table.Render();
     }
 
     bool OnEvent(const ftxui::Event& e) {
@@ -86,29 +93,34 @@ public:
 
 private:
     ftxui::Element Render() {
-        ftxui::Elements elements;
         auto workers = _svc.get_all_stats();
 
         // Header
-        ftxui::Elements headers;
+        std::vector<std::vector<std::string>> contents;
+        std::vector<std::string> headers;
         for (auto& h : WarehouseStats::headers()) {
-            headers.push_back(ftxui::text(" " + h + " ") | ftxui::bold );
+            headers.push_back(h);
         }
-        elements.push_back(ftxui::hbox(headers));
+        contents.push_back(headers);
 
         // Rows
         for (int i = _scroll; i < workers.size(); ++i) {
-            ftxui::Elements cells;
+            std::vector<std::string> cells;
             for (auto& h : workers[i].row()) {
-                headers.push_back(ftxui::text(" " + h + " ") | ftxui::bold );
+                cells.push_back(h);
             }
-            elements.push_back(ftxui::hbox(cells));
+            contents.push_back(cells);
         }
 
-        return ftxui::vbox(elements)
-               | ftxui::frame
-               | ftxui::vscroll_indicator
-               | ftxui::border;
+        auto table =  ftxui::Table(contents);
+        table.SelectColumn(0).Border(ftxui::LIGHT);
+
+        // Make first row bold with a double border.
+        table.SelectRow(0).Decorate(ftxui::bold);
+        table.SelectRow(0).SeparatorVertical(ftxui::LIGHT);
+        table.SelectRow(0).Border(ftxui::DOUBLE);
+
+        return table.Render();
     }
 
     bool OnEvent(const ftxui::Event& e) {
@@ -144,29 +156,34 @@ public:
 
 private:
     ftxui::Element Render() {
-        ftxui::Elements elements;
         auto workers = _svc.get_all();
 
         // Header
-        ftxui::Elements headers;
-        for (auto& h : WorkerStats::headers()) {
-            headers.push_back(ftxui::text(" " + h + " ") | ftxui::bold );
+        std::vector<std::vector<std::string>> contents;
+        std::vector<std::string> headers;
+        for (auto& h : WarehouseStats::headers()) {
+            headers.push_back(h);
         }
-        elements.push_back(ftxui::hbox(headers));
+        contents.push_back(headers);
 
         // Rows
         for (int i = _scroll; i < workers.size(); ++i) {
-            ftxui::Elements cells;
+            std::vector<std::string> cells;
             for (auto& h : workers[i]->row()) {
-                headers.push_back(ftxui::text(" " + h + " ") | ftxui::bold );
+                cells.push_back(h);
             }
-            elements.push_back(ftxui::hbox(cells));
+            contents.push_back(cells);
         }
 
-        return ftxui::vbox(elements)
-               | ftxui::frame
-               | ftxui::vscroll_indicator
-               | ftxui::border;
+        auto table =  ftxui::Table(contents);
+        table.SelectColumn(0).Border(ftxui::LIGHT);
+
+        // Make first row bold with a double border.
+        table.SelectRow(0).Decorate(ftxui::bold);
+        table.SelectRow(0).SeparatorVertical(ftxui::LIGHT);
+        table.SelectRow(0).Border(ftxui::DOUBLE);
+
+        return table.Render();
     }
 
     bool OnEvent(const ftxui::Event& e) {

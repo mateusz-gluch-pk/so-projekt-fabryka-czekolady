@@ -79,7 +79,7 @@ int main() {
             {"D", 3, 1},
         };
     Recipe r2(r1_in, {"T2", 1, 1});
-    workers.create("worker-t2", r1, *ingredients, *outputs);
+    workers.create("worker-t2", r2, *ingredients, *outputs);
 
     // Setup UI
     auto control_panel = std::make_shared<ControlPanel>(sv);
