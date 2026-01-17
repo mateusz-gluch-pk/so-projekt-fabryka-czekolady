@@ -25,11 +25,12 @@ LogPanel::LogPanel(LoggerService &svc): _svc(svc) {
         ftxui::Elements elements;
 
         if (const auto logs = _svc.logs(); logs != nullptr) {
-            for (const auto& log : *logs) {
-                elements.push_back(_format(log));
+            for (size_t i = logs->size-50; i < logs->size; i++) {
+                auto msg = (*logs)[i];
+                elements.push_back(_format(msg));
             }
         }
-        while (elements.size() < 20) {
+        while (elements.size() < 50) {
             elements.push_back(ftxui::text(""));
         }
 

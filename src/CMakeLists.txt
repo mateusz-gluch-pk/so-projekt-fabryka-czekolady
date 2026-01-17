@@ -7,6 +7,12 @@ file(GLOB_RECURSE LIB_SOURCES
 add_library(factorylib STATIC
         ${LIB_SOURCES}
         ../include/objects/SharedVector.cpp
+        ../include/ui/WarehouseTable.cpp
+        ../include/ui/WarehouseTable.h
+        ../include/ui/DelivererTable.cpp
+        ../include/ui/DelivererTable.h
+        ../include/ui/WorkerTable.cpp
+        ../include/ui/WorkerTable.h
 )
 
 set_target_properties(factorylib PROPERTIES

@@ -14,7 +14,11 @@
 
 #include <ftxui/component/screen_interactive.hpp>
 
-# define BASE_DELIVERER_DELAY 10
+#include "ui/DelivererTable.h"
+#include "ui/WarehouseTable.h"
+#include "ui/WorkerTable.h"
+
+# define BASE_DELIVERER_DELAY 1000
 
 int main() {
     // Setup Logger
