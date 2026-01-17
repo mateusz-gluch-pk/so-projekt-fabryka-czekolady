@@ -51,11 +51,11 @@ public:
 
     void stop_warehouses() {
 
-        for (auto workers : _workers.get_all()) {
-            _workers.pause(workers->name);
+        for (auto worker : _workers.get_all()) {
+            _workers.pause(worker->name);
         }
-        for (auto deliverers : _deliverers.get_all()) {
-            _deliverers.pause(deliverers->name);
+        for (auto deliverer : _deliverers.get_all()) {
+            _deliverers.pause(deliverer->name);
         }
 
         auto warehouses = _warehouses.get_all();
@@ -66,13 +66,12 @@ public:
         _workers.reload_all();
         _deliverers.reload_all();
 
-        for (auto workers : _workers.get_all()) {
-            _workers.resume(workers->name);
+        for (auto worker : _workers.get_all()) {
+            _workers.resume(worker->name);
         }
-        for (auto deliverers : _deliverers.get_all()) {
-            _deliverers.resume(deliverers->name);
+        for (auto deliverer : _deliverers.get_all()) {
+            _deliverers.resume(deliverer->name);
         }
-
     };
 
     void stop_all() {

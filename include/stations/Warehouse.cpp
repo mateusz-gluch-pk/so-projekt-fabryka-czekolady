@@ -99,6 +99,7 @@ Warehouse::~Warehouse () {
 		_log->info(_msg("Saved to file %s").c_str(), _filename.c_str());
 	}
 
+	if (_owner) _sem.lock();
 	// semaphore is removed automatically upon destruction
 	// as well as shared memory
 }

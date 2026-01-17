@@ -100,12 +100,19 @@ void DelivererService::pause(const std::string &name) {
     }
 
     const ProcessState state = it->second->stats()->state;
+    if (state == STOPPED) {
+        _log.warn(_msg("Deliverer is terminated: " + name).c_str());
+        return;
+    }
     if (state != RUNNING) {
         _log.warn(_msg("Deliverer is not running: " + name).c_str());
     }
 
     _log.info(_msg("Pausing deliverer: " + name).c_str());
     it->second->pause();
+    while (it->second->stats()->state != PAUSED) {
+        sthr::sleep_for(std::chrono::milliseconds(10));
+    }
 }
 
 void DelivererService::resume(const std::string &name) {
@@ -115,6 +122,10 @@ void DelivererService::resume(const std::string &name) {
     }
 
     const ProcessState state = it->second->stats()->state;
+    if (state == STOPPED) {
+        _log.warn(_msg("Deliverer is terminated: " + name).c_str());
+        return;
+    }
     if (state != PAUSED) {
         _log.warn(_msg("Deliverer is not paused: " + name).c_str());
     }
@@ -130,6 +141,10 @@ void DelivererService::reload(const std::string &name) {
     }
 
     const ProcessState state = it->second->stats()->state;
+    if (state == STOPPED) {
+        _log.warn(_msg("Deliverer is terminated: " + name).c_str());
+        return;
+    }
     if (state != RUNNING) {
         _log.warn(_msg("Deliverer is not running: " + name).c_str());
     }

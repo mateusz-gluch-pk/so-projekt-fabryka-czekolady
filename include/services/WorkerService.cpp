@@ -100,12 +100,19 @@ void WorkerService::pause(const std::string &name) {
     }
 
     const ProcessState state = it->second->stats()->state;
+    if (state == STOPPED) {
+        _log.warn(_msg("Worker is terminated: " + name).c_str());
+        return;
+    }
     if (state != RUNNING) {
         _log.warn(_msg("Worker is not running: " + name).c_str());
     }
 
     _log.info(_msg("Pausing worker: " + name).c_str());
     it->second->pause();
+    while (it->second->stats()->state != PAUSED) {
+        sthr::sleep_for(std::chrono::milliseconds(10));
+    }
 }
 
 void WorkerService::resume(const std::string &name) {
@@ -115,6 +122,10 @@ void WorkerService::resume(const std::string &name) {
     }
 
     const ProcessState state = it->second->stats()->state;
+    if (state == STOPPED) {
+        _log.warn(_msg("Worker is terminated: " + name).c_str());
+        return;
+    }
     if (state != PAUSED) {
         _log.warn(_msg("Worker is not paused: " + name).c_str());
     }
@@ -130,6 +141,10 @@ void WorkerService::reload(const std::string &name) {
     }
 
     const ProcessState state = it->second->stats()->state;
+    if (state == STOPPED) {
+        _log.warn(_msg("Worker is terminated: " + name).c_str());
+        return;
+    }
     if (state != RUNNING) {
         _log.warn(_msg("Worker is not running: " + name).c_str());
     }

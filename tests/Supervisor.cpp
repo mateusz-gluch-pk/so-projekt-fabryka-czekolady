@@ -97,15 +97,15 @@ TEST(Supervisor, StopDeliverers) {
 }
 
 TEST(Supervisor, StopWarehouses) {
-    LoggerService logger(test_name(), DEBUG);
-    Logger log = logger.get();
+    MockQueue<Message> mock;
+    Logger mockLog = Logger(INFO, &mock, 0);
 
-    WarehouseService warehouses(log);
-    WorkerService workers(log);
-    DelivererService deliverers(log);
+    WarehouseService warehouses(mockLog);
+    WorkerService workers(mockLog);
+    DelivererService deliverers(mockLog);
     ShutdownToken run;
 
-    Supervisor sv(warehouses, deliverers, workers, run, log);
+    Supervisor sv(warehouses, deliverers, workers, run, mockLog);
 
     std::vector<Item> recipe_input;
     recipe_input.emplace_back("a", 1, 1);
