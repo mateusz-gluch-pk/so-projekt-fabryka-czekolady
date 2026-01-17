@@ -35,7 +35,7 @@ ProcessController::~ProcessController() {
     if (_pid > 0) {
         _log.debug(_msg("Parent terminated - sending SIGKILL").c_str());
         kill(_pid, SIGTERM);
-        waitpid(_pid)
+        waitpid(_pid, &status, 0);
     }
 
     if (_msq != nullptr) {
