@@ -31,7 +31,7 @@ int main() {
 
     // Setup Warehouses
     // WH 1 - with capacity
-    constexpr int capacity = 100;
+    constexpr int capacity = 1000;
     auto ingredients = warehouses.create("ingredients", capacity);
     if (ingredients == nullptr) {
         return 1;

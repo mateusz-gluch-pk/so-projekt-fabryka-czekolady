@@ -79,13 +79,13 @@ void Worker::_main() {
         return;
     }
 
-    _log.info(_msg("Failed to produce " + _recipe.name() + ", missing " + missing).c_str());
+    _log.debug(_msg("Failed to produce " + _recipe.name() + ", missing " + missing).c_str());
     _in->get(missing, &output);
     if (output.count() != 0) {
-        _log.info(_msg("Retrieved " + output.name()).c_str());
+        _log.debug(_msg("Retrieved " + output.name()).c_str());
         _inventory.push_back(output);
     } else {
-        _log.warn(_msg("Failed to retrieve" + output.name()).c_str());
+        _log.debug(_msg("Failed to retrieve" + output.name()).c_str());
     }
 }
 

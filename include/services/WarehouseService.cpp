@@ -48,7 +48,7 @@ Warehouse * WarehouseService::get(const std::string &name) {
         return nullptr;
     }
 
-    _log.info(_msg("Fetched warehouse: " + name).c_str());
+    _log.debug(_msg("Fetched warehouse: " + name).c_str());
     return it->second;
 }
 
@@ -60,7 +60,7 @@ WarehouseStats WarehouseService::get_stats(const std::string &name) {
     }
 
     const auto *wh = it->second;
-    _log.info(_msg("Fetched warehouse stats: " + name).c_str());
+    _log.debug(_msg("Fetched warehouse stats: " + name).c_str());
     return {name, wh->capacity(), wh->variety(), wh->usage(), wh->items()};
 }
 
@@ -72,7 +72,7 @@ std::vector<Warehouse *> WarehouseService::get_all() {
         result.push_back(pair.second);
     }
 
-    _log.info(_msg("Fetched all warehouses").c_str());
+    _log.debug(_msg("Fetched all warehouses").c_str());
     return result;
 }
 
@@ -85,6 +85,6 @@ std::vector<WarehouseStats> WarehouseService::get_all_stats() {
         result.emplace_back(wh->name(), wh->capacity(), wh->variety(), wh->usage(), wh->items());
     }
 
-    _log.info(_msg("Fetched all warehouses stats").c_str());
+    _log.debug(_msg("Fetched all warehouses stats").c_str());
     return result;
 }

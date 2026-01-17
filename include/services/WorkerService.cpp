@@ -54,7 +54,7 @@ WorkerStats *WorkerService::get(const std::string &name) {
         return nullptr;
     }
 
-    _log.info(_msg("Fetched worker: " + name).c_str());
+    _log.debug(_msg("Fetched worker: " + name).c_str());
     return &it->second;
 }
 
@@ -77,7 +77,7 @@ std::vector<WorkerStats *> WorkerService::get_all() {
         result.push_back(&pair.second);
     }
 
-    _log.info(_msg("Fetched all workers").c_str());
+    _log.debug(_msg("Fetched all workers").c_str());
     return result;
 }
 

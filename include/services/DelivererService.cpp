@@ -54,7 +54,7 @@ DelivererStats *DelivererService::get(const std::string &name) {
         return nullptr;
     }
 
-    _log.info(_msg("Fetched deliverer: " + name).c_str());
+    _log.debug(_msg("Fetched deliverer: " + name).c_str());
     return &it->second;
 }
 
@@ -77,7 +77,7 @@ std::vector<DelivererStats *> DelivererService::get_all() {
         result.push_back(&pair.second);
     }
 
-    _log.info(_msg("Fetched all deliverers").c_str());
+    _log.debug(_msg("Fetched all deliverers").c_str());
     return result;
 }
 

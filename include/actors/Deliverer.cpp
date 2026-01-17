@@ -66,7 +66,7 @@ void Deliverer::reload() {
 }
 
 void Deliverer::_main() const {
-    _log.info(_msg("Delivering item to warehouse").c_str());
+    _log.debug(_msg("Delivering item to warehouse").c_str());
     auto item = _tpl.get();
     _dst->add(item);
     sthr::sleep_for(stime::milliseconds(_tpl.delay_ms()));
