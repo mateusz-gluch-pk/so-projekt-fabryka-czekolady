@@ -10,49 +10,9 @@
 
 #include "services/LoggerService.h"
 
-std::string expand_tabs(const std::string &line, int tab_width = 4) {
-    std::string out;
-    int col = 0;
-    for (char c : line) {
-        if (c == '\t') {
-            int spaces = tab_width - (col % tab_width);
-            out.append(spaces, ' ');
-            col += spaces;
-        } else {
-            out.push_back(c);
-            col++;
-        }
-    }
-    return out;
-}
-
 class LogPanel {
 public:
-    explicit LogPanel(LoggerService& svc)
-        : _svc(svc)
-    {
-        _component = ftxui::Renderer([&] {
-            ftxui::Elements elements;
-
-            const auto logs = _svc.logs();
-            if (logs != nullptr) {
-                for (const auto& log : *logs) {
-                    elements.push_back(_format(log));
-                }
-            }
-            while (elements.size() < 20) {
-                elements.push_back(ftxui::text(""));
-            }
-
-            return ftxui::window(
-                ftxui::text(" Logs "),
-                ftxui::vbox(std::move(elements))
-                    | ftxui::frame
-                    | ftxui::yframe
-                    | ftxui::focusPositionRelative(0.f, 1.f)
-            );
-        });
-    }
+    explicit LogPanel(LoggerService& svc);
 
     ftxui::Component component() { return _component; }
 
@@ -60,26 +20,7 @@ private:
     LoggerService& _svc;
     ftxui::Component _component;
 
-    static ftxui::Element _format(const Message& msg) {
-        using namespace ftxui;
-
-        Element line = text(expand_tabs(msg.string()));
-
-        switch (msg._level) {
-            case DEBUG:
-                return line | color(Color::GrayLight);
-            case INFO:
-                return line | color(Color::White);
-            case WARNING:
-                return line | color(Color::Yellow);
-            case ERROR:
-                return line | color(Color::Red);
-            case FATAL:
-                return line | color(Color::RedLight) | bold;
-            default:
-                return line | color(Color::GrayDark);
-        }
-    }
+    static ftxui::Element _format(const Message& msg);
 };
 
 
