@@ -117,11 +117,10 @@ MessageQueue<T> & MessageQueue<T>::operator=(MessageQueue<T> &&other) noexcept {
 template<typename T>
 void MessageQueue<T>::send(T data) const {
     const void *data_ptr = reinterpret_cast<void *>(&data);
-    const int result = msgsnd(_msqid, data_ptr, sizeof(T) - sizeof(long), IPC_NOWAIT);
+    const int result = msgsnd(_msqid, data_ptr, sizeof(T) - sizeof(long), 0);
     if (result == -1) {
         _log->error(_msg("Cannot send; errno: %d").c_str(), errno);
     }
-
     _log->debug(_msg("Sent").c_str());
 }
 
@@ -130,8 +129,6 @@ void MessageQueue<T>::receive(T *data) const {
     const int msize = msgrcv(_msqid, data, sizeof(T) - sizeof(long), 0, 0);
 
     if (msize == -1) {
-        // free(data_ptr);
-        // data_ptr = nullptr;
         _log->error(_msg("Cannot receive; errno: %d").c_str(), errno);
         return;
     }

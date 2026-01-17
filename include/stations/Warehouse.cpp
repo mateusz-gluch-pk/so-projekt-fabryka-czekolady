@@ -149,7 +149,7 @@ void Warehouse::get(const std::string &itemName, Item *output) const {
 	while (it != _content->end()) {
 		if (it->name() == itemName) {
 			*output = *it->unstack();
-			_log->info(_msg("Found item %s").c_str(), itemName.c_str());
+			_log->info(_msg("Fetched item %s").c_str(), itemName.c_str());
 			_log->debug(_msg("%s stack size: %d").c_str(), itemName.c_str(), it->count());
 		}
 

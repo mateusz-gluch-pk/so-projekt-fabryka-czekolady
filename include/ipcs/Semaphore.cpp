@@ -51,8 +51,10 @@ void Semaphore::lock() const {
     // semnum = 0 (only one)
     // semop = -1 - lock semaphore
     // flags - SEM_UNDO; unlock if process exits
-    sembuf op = {0, -1, SEM_UNDO};
-    if (semop(_semid, &op, 1) == -1) {
+    sembuf op = {0, -1, 0};
+    while (true) {
+        if (semop(_semid, &op, 1) == 0) break;
+        if (errno == EINTR) continue;
         _log->fatal(_msg("Cannot lock; errno: %d").c_str(), errno);
     }
 
@@ -64,8 +66,10 @@ void Semaphore::unlock() const {
     // semnum = 0 (only one)
     // semop = +1 - unlock semaphore
     // flags - IPC_NOWAIT
-    sembuf op = {0, +1, IPC_NOWAIT};
-    if (semop(_semid, &op, 1) == -1) {
+    sembuf op = {0, +1, 0};
+    while (true) {
+        if (semop(_semid, &op, 1) == 0) break;
+        if (errno == EINTR) continue;
         _log->fatal(_msg("Cannot unlock; errno: %d").c_str(), errno);
     }
 

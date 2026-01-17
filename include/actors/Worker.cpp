@@ -68,7 +68,7 @@ void Worker::_main() {
     Item output;
 
     // sleep for a tick (optional)
-    sthr::sleep_for(stime::milliseconds(10));
+    sthr::sleep_for(stime::milliseconds(WORKER_TICK_DELAY));
 
     _log.debug(_msg("Producing " + _recipe.name()).c_str());
     const std::string missing = _recipe.try_produce(_inventory, &output);
@@ -82,10 +82,10 @@ void Worker::_main() {
     _log.debug(_msg("Failed to produce " + _recipe.name() + ", missing " + missing).c_str());
     _in->get(missing, &output);
     if (output.count() != 0) {
-        _log.debug(_msg("Retrieved " + output.name()).c_str());
+        _log.info(_msg("Retrieved " + output.name()).c_str());
         _inventory.push_back(output);
     } else {
-        _log.debug(_msg("Failed to retrieve" + output.name()).c_str());
+        _log.warn(_msg("Failed to retrieve " + missing).c_str());
     }
 }
 

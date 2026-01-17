@@ -17,6 +17,8 @@
 namespace stime = std::chrono;
 namespace sthr = std::this_thread;
 
+#define WORKER_TICK_DELAY 0
+
 class Worker : public IRunnable {
     public:
         Worker(std::string name, Recipe recipe, Warehouse &in, Warehouse &out, Logger &log);

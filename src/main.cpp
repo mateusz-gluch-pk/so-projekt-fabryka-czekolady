@@ -14,6 +14,7 @@
 
 #include <ftxui/component/screen_interactive.hpp>
 
+# define BASE_DELIVERER_DELAY 0
 
 int main() {
     // Setup Logger
@@ -46,19 +47,19 @@ int main() {
 
     // Setup Deliverers
     // D1 - Item A
-    ItemTemplate a("A", 1, 100);
+    ItemTemplate a("A", 1, BASE_DELIVERER_DELAY);
     deliverers.create("deliverer-a", a, *ingredients);
 
     // D2 - Item B
-    ItemTemplate b("B", 1, 100);
+    ItemTemplate b("B", 1, BASE_DELIVERER_DELAY);
     deliverers.create("deliverer-b", b, *ingredients);
 
     // D3 - Item C
-    ItemTemplate c("C", 2, 200);
+    ItemTemplate c("C", 2, 2*BASE_DELIVERER_DELAY);
     deliverers.create("deliverer-c", c, *ingredients);
 
     // D4 - Item D
-    ItemTemplate d("D", 3, 200);
+    ItemTemplate d("D", 3, 2*BASE_DELIVERER_DELAY);
     deliverers.create("deliverer-d", d, *ingredients);
 
     // Setup Workers
@@ -77,7 +78,7 @@ int main() {
             {"B", 1, 1},
             {"D", 3, 1},
         };
-    Recipe r2(r1_in, {"T2", 1, 1});
+    Recipe r2(r2_in, {"T2", 1, 1});
     workers.create("worker-t2", r2, *ingredients, *outputs);
 
     // Setup UI
