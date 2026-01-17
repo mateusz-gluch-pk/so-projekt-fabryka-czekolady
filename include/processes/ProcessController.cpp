@@ -34,7 +34,8 @@ ProcessController::ProcessController(std::unique_ptr<IRunnable> proc, const Logg
 ProcessController::~ProcessController() {
     if (_pid > 0) {
         _log.debug(_msg("Parent terminated - sending SIGKILL").c_str());
-        kill(_pid, SIGKILL);
+        kill(_pid, SIGTERM);
+        waitpid(_pid)
     }
 
     if (_msq != nullptr) {
