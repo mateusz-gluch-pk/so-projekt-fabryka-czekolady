@@ -52,7 +52,7 @@ public:
      * @brief Retrieves all warehouses managed by the service.
      * @return Vector of pointers to all Warehouse objects.
      */
-    std::vector<Warehouse *> get_all();
+    std::vector<Warehouse *> get_all() const;
 
     /**
      * @brief Retrieves statistics for a specific warehouse.
@@ -66,7 +66,7 @@ public:
      * @brief Retrieves statistics for all warehouses.
      * @return Vector of WarehouseStats objects for all warehouses.
      */
-    std::vector<WarehouseStats> get_all_stats();
+    std::vector<WarehouseStats> get_all_stats() const;
 
 private:
     /**

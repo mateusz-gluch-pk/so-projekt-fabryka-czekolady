@@ -12,78 +12,78 @@
 
 #include <atomic>
 
+/**
+ * @brief Thread-safe token used to signal shutdown requests.
+ */
 class ShutdownToken {
 public:
+    /**
+     * @brief Requests shutdown.
+     */
     void request() { stop.store(true); }
+
+    /**
+     * @brief Checks whether shutdown was requested.
+     * @return True if shutdown was requested, false otherwise.
+     */
     bool requested() const { return stop.load(); }
 
 private:
-    std::atomic<bool> stop{false};
+    std::atomic<bool> stop{false}; ///< Shutdown request flag
 };
 
+/**
+ * @brief Coordinates orderly shutdown of system services.
+ */
 class Supervisor {
 public:
+    /**
+     * @brief Constructs a Supervisor.
+     * @param warehouses Reference to warehouse service.
+     * @param deliverers Reference to deliverer service.
+     * @param workers Reference to worker service.
+     * @param exit Reference to shutdown token.
+     * @param log Reference to logger.
+     */
     explicit Supervisor(
         WarehouseService &warehouses,
         DelivererService &deliverers,
         WorkerService &workers,
         ShutdownToken &exit,
         Logger &log
-    ):
-        _log(log), _exit(exit), _warehouses(warehouses), _workers(workers), _deliverers(deliverers)
-    {}
+    );
 
+    /**
+     * @brief Default destructor.
+     */
     ~Supervisor() = default;
 
-    void stop_deliverers() {
-        auto deliverers = _deliverers.get_all();
-        for (auto deliverer: deliverers) {
-            _deliverers.destroy(deliverer->name);
-        }
-    };
+    /**
+     * @brief Stops all deliverers.
+     */
+    void stop_deliverers() const;
 
-    void stop_workers() {
-        auto workers = _workers.get_all();
-        for (auto worker : workers) {
-            _workers.destroy(worker->name);
-        }
-    };
+    /**
+     * @brief Stops all workers.
+     */
+    void stop_workers() const;
 
-    void stop_warehouses() {
+    /**
+     * @brief Stops all warehouses.
+     */
+    void stop_warehouses() const;
 
-        for (auto worker : _workers.get_all()) {
-            _workers.pause(worker->name);
-        }
-        for (auto deliverer : _deliverers.get_all()) {
-            _deliverers.pause(deliverer->name);
-        }
-
-        auto warehouses = _warehouses.get_all();
-        for (auto wh: warehouses) {
-            _warehouses.destroy(wh->name());
-        }
-
-        _workers.reload_all();
-        _deliverers.reload_all();
-
-        for (auto worker : _workers.get_all()) {
-            _workers.resume(worker->name);
-        }
-        for (auto deliverer : _deliverers.get_all()) {
-            _deliverers.resume(deliverer->name);
-        }
-    };
-
-    void stop_all() {
-        _exit.request();
-    };
+    /**
+     * @brief Stops all managed services.
+     */
+    void stop_all() const;
 
 private:
-    Logger &_log;
-    ShutdownToken &_exit;
-    WarehouseService &_warehouses;
-    WorkerService &_workers;
-    DelivererService &_deliverers;
+    Logger &_log;                     ///< Reference to logger
+    ShutdownToken &_exit;             ///< Shutdown coordination token
+    WarehouseService &_warehouses;    ///< Managed warehouse service
+    WorkerService &_workers;          ///< Managed worker service
+    DelivererService &_deliverers;    ///< Managed deliverer service
 };
 
 #endif //PROJEKT_SUPERVISOR_H

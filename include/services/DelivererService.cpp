@@ -120,7 +120,7 @@ std::vector<DelivererStats *> DelivererService::get_all() {
 // }
 
 void DelivererService::pause(const std::string &name) {
-    auto it = _deliverers.find(name);
+    const auto it = _deliverers.find(name);
     if (it == _deliverers.end()) {
         _log.error(_msg("Deliverer not found: " + name).c_str());
     }
@@ -142,7 +142,7 @@ void DelivererService::pause(const std::string &name) {
 }
 
 void DelivererService::resume(const std::string &name) {
-    auto it = _deliverers.find(name);
+    const auto it = _deliverers.find(name);
     if (it == _deliverers.end()) {
         _log.error(_msg("Deliverer not found: " + name).c_str());
     }
@@ -161,7 +161,7 @@ void DelivererService::resume(const std::string &name) {
 }
 
 void DelivererService::reload(const std::string &name) {
-    auto it = _deliverers.find(name);
+    const auto it = _deliverers.find(name);
     if (it == _deliverers.end()) {
         _log.error(_msg("Deliverer not found: " + name).c_str());
     }

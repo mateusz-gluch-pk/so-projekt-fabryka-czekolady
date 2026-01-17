@@ -31,7 +31,7 @@ std::vector<std::string> WorkerStats::row() const {
 }
 
 WorkerService::~WorkerService() {
-    for (auto &pair: _workers) {
+    for (const auto &pair: _workers) {
         if (pair.second->stats()->state != STOPPED) {
             pair.second->stop();
         }
@@ -63,7 +63,7 @@ create(const std::string &name, const Recipe &recipe, Warehouse &in, Warehouse &
 }
 
 void WorkerService::destroy(const std::string &name) {
-    auto it = _workers.find(name);
+    const auto it = _workers.find(name);
     if (it == _workers.end()) {
         _log.error(_msg("Worker not found: " + name).c_str());
         return;
@@ -74,7 +74,7 @@ void WorkerService::destroy(const std::string &name) {
 }
 
 WorkerStats *WorkerService::get(const std::string &name) {
-    auto it = _stats.find(name);
+    const auto it = _stats.find(name);
     if (it == _stats.end()) {
         _log.error(_msg("Worker not found: " + name).c_str());
         return nullptr;
@@ -120,7 +120,7 @@ std::vector<WorkerStats *> WorkerService::get_all() {
 // }
 
 void WorkerService::pause(const std::string &name) {
-    auto it = _workers.find(name);
+    const auto it = _workers.find(name);
     if (it == _workers.end()) {
         _log.error(_msg("Worker not found: " + name).c_str());
     }
@@ -142,7 +142,7 @@ void WorkerService::pause(const std::string &name) {
 }
 
 void WorkerService::resume(const std::string &name) {
-    auto it = _workers.find(name);
+    const auto it = _workers.find(name);
     if (it == _workers.end()) {
         _log.error(_msg("Worker not found: " + name).c_str());
     }

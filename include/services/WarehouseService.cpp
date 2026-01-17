@@ -6,7 +6,7 @@
 
 WarehouseService::~WarehouseService() {
     _log.info(_msg("Clearing warehouses").c_str());
-    for (auto &pair: _warehouses) {
+    for (const auto &pair: _warehouses) {
         delete pair.second;
     }
     _warehouses.clear();
@@ -30,7 +30,7 @@ Warehouse * WarehouseService::create(const std::string &name, int capacity) {
 }
 
 void WarehouseService::destroy(const std::string &name) {
-    auto it = _warehouses.find(name);
+    const auto it = _warehouses.find(name);
     if (it == _warehouses.end()) {
         _log.error(_msg("Warehouse not found: " + name).c_str());
         return;
@@ -42,7 +42,7 @@ void WarehouseService::destroy(const std::string &name) {
 }
 
 Warehouse * WarehouseService::get(const std::string &name) {
-    auto it = _warehouses.find(name);
+    const auto it = _warehouses.find(name);
     if (it == _warehouses.end()) {
         _log.error(_msg("Warehouse not found: " + name).c_str());
         return nullptr;
@@ -53,7 +53,7 @@ Warehouse * WarehouseService::get(const std::string &name) {
 }
 
 WarehouseStats WarehouseService::get_stats(const std::string &name) {
-    auto it = _warehouses.find(name);
+    const auto it = _warehouses.find(name);
     if (it == _warehouses.end()) {
         _log.error(_msg("Warehouse not found: " + name).c_str());
         return {name, 0, 0, 0, std::vector<Item>()};
@@ -64,7 +64,7 @@ WarehouseStats WarehouseService::get_stats(const std::string &name) {
     return {name, wh->capacity(), wh->variety(), wh->usage(), wh->items()};
 }
 
-std::vector<Warehouse *> WarehouseService::get_all() {
+std::vector<Warehouse *> WarehouseService::get_all() const {
     std::vector<Warehouse *> result;
     result.reserve(_warehouses.size());
 
@@ -76,7 +76,7 @@ std::vector<Warehouse *> WarehouseService::get_all() {
     return result;
 }
 
-std::vector<WarehouseStats> WarehouseService::get_all_stats() {
+std::vector<WarehouseStats> WarehouseService::get_all_stats() const {
     std::vector<WarehouseStats> result;
     result.reserve(_warehouses.size());
 

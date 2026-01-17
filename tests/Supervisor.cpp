@@ -163,3 +163,4 @@ TEST(Supervisor, StopAll) {
 
     ASSERT_EQ(true, run.requested());
 }
+

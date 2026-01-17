@@ -6,6 +6,7 @@
 #define FACTORY_DELIVERERSERVICE_H
 #include <map>
 #include <string>
+#include <utility>
 
 #include "actors/Deliverer.h"
 #include "logger/Logger.h"
@@ -28,10 +29,10 @@ public:
      * @param tpl Item template used by the deliverer.
      * @param stats Pointer to shared process statistics (read-only).
      */
-    DelivererStats(std::string name, std::string dst_name, const ItemTemplate &tpl, const ProcessStats *stats)
+    DelivererStats(std::string name, std::string dst_name, ItemTemplate tpl, const ProcessStats *stats)
         : name(std::move(name)),
           dst_name(std::move(dst_name)),
-          tpl(tpl),
+          tpl(std::move(tpl)),
           stats(stats)
     {}
 
@@ -50,7 +51,7 @@ public:
      * @brief Returns this deliverer's data as a table row.
      * @return Vector of string representations of the data fields.
      */
-    std::vector<std::string> row() const;
+    [[nodiscard]] std::vector<std::string> row() const;
 };
 
 
