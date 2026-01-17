@@ -10,6 +10,22 @@
 
 #include "services/LoggerService.h"
 
+std::string expand_tabs(const std::string &line, int tab_width = 4) {
+    std::string out;
+    int col = 0;
+    for (char c : line) {
+        if (c == '\t') {
+            int spaces = tab_width - (col % tab_width);
+            out.append(spaces, ' ');
+            col += spaces;
+        } else {
+            out.push_back(c);
+            col++;
+        }
+    }
+    return out;
+}
+
 class LogPanel {
 public:
     explicit LogPanel(LoggerService& svc)
@@ -24,6 +40,9 @@ public:
                     elements.push_back(_format(log));
                 }
             }
+            while (elements.size() < 20) {
+                elements.push_back(ftxui::text(""));
+            }
 
             return ftxui::window(
                 ftxui::text(" Logs "),
@@ -31,7 +50,6 @@ public:
                     | ftxui::frame
                     | ftxui::yframe
                     | ftxui::focusPositionRelative(0.f, 1.f)
-                    | ftxui::size(ftxui::HEIGHT, ftxui::GREATER_THAN, 20)
             );
         });
     }
@@ -45,7 +63,7 @@ private:
     static ftxui::Element _format(const Message& msg) {
         using namespace ftxui;
 
-        Element line = text(msg.string());
+        Element line = text(expand_tabs(msg.string()));
 
         switch (msg._level) {
             case DEBUG:
@@ -63,6 +81,7 @@ private:
         }
     }
 };
+
 
 
 #endif //FACTORY_LOGS_H

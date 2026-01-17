@@ -22,8 +22,8 @@ public:
 
         // --- Compose root layout (top row + logs) ---
         _root = ftxui::Container::Vertical({
-            _top_row | ftxui::flex,
-            _log_panel | ftxui::size(ftxui::HEIGHT, ftxui::EQUAL, 7)
+            _top_row | ftxui::size(ftxui::HEIGHT, ftxui::EQUAL, 12),
+            _log_panel | ftxui::flex
         });
     }
 
