@@ -17,30 +17,30 @@ Worker::Worker(std::string name, Recipe recipe, Warehouse &in, Warehouse &out, L
     _log.info(_msg("Created").c_str());
 }
 
-void Worker::run(ProcessStats &stats, Logger &log) {
-    stats.pid = getpid();
-    _reattach(log);
+void Worker::run(ProcessStats *stats) {
+    stats->pid = getpid();
+    // _reattach(log);
 
     while (_running) {
         if (_paused) {
-            stats.state = PAUSED;
+            stats->state = PAUSED;
             sthr::sleep_for(stime::milliseconds(10));
             continue;
         }
 
         if (_reloading) {
-            stats.state = RELOADING;
+            stats->state = RELOADING;
             _reload();
-            stats.reloads++;
+            stats->reloads++;
             continue;
         }
 
-        stats.state = RUNNING;
+        stats->state = RUNNING;
         _main();
         _log.debug(_msg("Loop completed").c_str());
-        stats.loops++;
+        stats->loops++;
     }
-    stats.state = STOPPED;
+    stats->state = STOPPED;
 }
 
 void Worker::stop() {
@@ -101,4 +101,40 @@ void Worker::_reload() {
 
 std::string Worker::_msg(const std::string &msg) const {
     return "actors/Worker/" + _name + ":\t" + msg;
+}
+
+
+std::vector<std::string> Worker::argv() {
+    auto args = std::vector<std::string>();
+
+    args.push_back("/proc/self/exe");
+    args.push_back("--worker");
+    args.push_back("Worker");
+
+    args.push_back("--name");
+    args.push_back(_name);
+
+    args.push_back("--in_name");
+    args.push_back(_in->name());
+
+    args.push_back("--in_cap");
+    args.push_back(std::to_string(_in->capacity()));
+
+    args.push_back("--out_name");
+    args.push_back(_out->name());
+
+    args.push_back("--out_cap");
+    args.push_back(std::to_string(_out->capacity()));
+
+    args.push_back("--recipe_output");
+    args.push_back(_recipe.name());
+
+    nlohmann::json j = _recipe.inputs();
+    args.push_back("--recipe_inputs");
+    args.push_back(j.dump());
+
+    args.push_back("--log_key");
+    args.push_back(std::to_string(_log.key()));
+
+    return args;
 }

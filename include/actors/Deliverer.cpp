@@ -17,31 +17,31 @@ Deliverer::Deliverer(std::string name, ItemTemplate tpl, Warehouse &dst, Logger 
     _log.info(_msg("Created").c_str());
 }
 
-void Deliverer::run(ProcessStats &stats, Logger &log) {
-    stats.pid = getpid();
-    _reattach(log);
+void Deliverer::run(ProcessStats *stats) {
+    stats->pid = getpid();
+    // _reattach(log);
 
     while (_running) {
         if (_paused) {
-            stats.state = PAUSED;
+            stats->state = PAUSED;
             sthr::sleep_for(stime::milliseconds(10));
             continue;
         }
 
         if (_reloading) {
-            stats.state = RELOADING;
+            stats->state = RELOADING;
             _reload();
-            stats.reloads++;
+            stats->reloads++;
             continue;
         }
 
-        stats.state = RUNNING;
+        stats->state = RUNNING;
         // _main is a <long> operation
         _main();
         _log.debug(_msg("Loop completed").c_str());
-        stats.loops++;
+        stats->loops++;
     }
-    stats.state = STOPPED;
+    stats->state = STOPPED;
 }
 
 void Deliverer::stop() {
@@ -94,7 +94,6 @@ std::vector<std::string> Deliverer::argv() {
     auto args = std::vector<std::string>();
 
     args.push_back("/proc/self/exe");
-
     args.push_back("--worker");
     args.push_back("Deliverer");
 

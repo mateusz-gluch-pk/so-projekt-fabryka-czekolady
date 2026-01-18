@@ -23,12 +23,17 @@
 
 
 void create_log_collector(std::unordered_map<std::string, std::string> args) {
+    std::string name = args["--name"];
 
+    const auto log_key = make_key(LOGGING_DIR, name);
+    auto msq = MessageQueue<Message>::attach(log_key);
+    Logger log(INFO, &msq, log_key);
+
+    auto proc = std::make_unique<LogCollector>(name, log);
+    ProcessController::run_local(std::move(proc), log);
 }
 
 void create_deliverer(std::unordered_map<std::string, std::string> args) {
-
-    // Extract parameters
     std::string name = args["--name"];
     std::string dst_name = args["--dst_name"];
     std::string item_name = args["--item_name"];
@@ -37,48 +42,46 @@ void create_deliverer(std::unordered_map<std::string, std::string> args) {
     int item_delay = std::stoi(args["--item_delay"]);
     int item_size = std::stoi(args["--item_size"]);
 
-    auto msq = MessageQueue<Message>::attach(log_key);
+    // auto msq = MessageQueue<Message>::attach(log_key);
+    auto msq = MockQueue<Message>();
     Logger log(INFO, &msq, log_key);
 
     ItemTemplate t(item_name, item_size, item_delay);
     auto dst = Warehouse::attach(dst_name, dst_cap, &log);
 
     auto proc = std::make_unique<Deliverer>(name, t, dst, log);
-    auto controller = ProcessController(std::move(proc), log, true, false);
-    controller.run();
+    ProcessController::run_local(std::move(proc), log);
 }
 
 void create_worker(std::unordered_map<std::string, std::string> args) {
-    // Extract parameters
     std::string name = args["--name"];
-    std::string in_name = args["--dst_name"];
-    std::string item_name = args["--item_name"];
+    std::string in_name = args["--in_name"];
+    int in_cap = std::stoi(args["--in_cap"]);
+
+    std::string out_name = args["--out_name"];
+    int out_cap = std::stoi(args["--out_cap"]);
+
+    std::string output = args["--recipe_output"];
+    nlohmann::json j = args["--recipe_inputs"];
+    auto inputs = j.get<std::vector<Item>>();
     key_t log_key = static_cast<key_t>(std::stoul(args["--log_key"]));
-    int dst_cap = std::stoi(args["--dst_cap"]);
-    int item_delay = std::stoi(args["--item_delay"]);
-    int item_size = std::stoi(args["--item_size"]);
 
-    std::vector<Item> r1_in{
-            {"A", 1, 1},
-            {"B", 1, 1},
-            {"C", 2, 1},
-        };
-    Recipe r1(r1_in, {"T1", 1, 1});
-    workers.create("worker-t1", r1, *ingredients, *outputs);
+    // auto msq = MessageQueue<Message>::attach(log_key);
+    auto msq = MockQueue<Message>();
+    Logger log(INFO, &msq, log_key);
 
+    auto in = Warehouse::attach(in_name, in_cap, &log);
+    auto out = Warehouse::attach(out_name, out_cap, &log);
 
-    std::string name;
-    ItemTemplate t();
-    auto dst = Warehouse::attach();
-    auto stats = SharedMemory<ProcessStats>::attach();
+    Recipe r(inputs, {output, 1, 1});
 
-    auto proc = Deliverer(name, t, dst, log);
+    auto proc = std::make_unique<Worker>(name, r, in, out, log);
+    ProcessController::run_local(std::move(proc), log);
 }
 
 int main(int argc, char **argv) {
     // Worker code
-    if (argc >= 3 && std::string(argv[1]) == "--worker") {
-
+    if (argc >= 3) {
         std::unordered_map<std::string, std::string> kv;
         for (int i = 3; i + 1 < argc; i += 2) {
             kv[argv[i]] = argv[i + 1];
@@ -95,8 +98,10 @@ int main(int argc, char **argv) {
     // Supervisor code
 
     // Setup Logger
-    LoggerService logger("factory-simulation", INFO);
-    Logger log = logger.get();
+    // LoggerService logger("factory-simulation", INFO);
+    // Logger log = logger.get();
+    auto msq = MockQueue<Message>();
+    Logger log = Logger(INFO, &msq, 0);
 
     // Setup Services
     WarehouseService warehouses(log);
@@ -160,7 +165,7 @@ int main(int argc, char **argv) {
 
     // Setup UI
     auto control_panel = std::make_shared<ControlPanel>(sv);
-    auto log_panel = std::make_shared<LogPanel>(logger);
+    // auto log_panel = std::make_shared<LogPanel>(logger);
 
     auto workers_table = std::make_shared<WorkerTable>(workers);
     auto warehouses_table = std::make_shared<WarehouseTable>(warehouses);
@@ -174,7 +179,8 @@ int main(int argc, char **argv) {
     auto layout = std::make_shared<Layout>(
         dashboard->component(),
         control_panel->component(),
-        log_panel->component()
+        control_panel->component()
+        // log_panel->component()
     );
 
     // --- Start terminal UI ---

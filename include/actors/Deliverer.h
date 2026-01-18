@@ -39,7 +39,7 @@ public:
      * @param log Reference to a logger for runtime messages.
      * @throws std::runtime_error on delivery failure.
      */
-    void run(ProcessStats &stats, Logger &log) override;
+    void run(ProcessStats *stats) override;
 
     /**
      * @brief Stops the deliverer thread safely.

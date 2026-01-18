@@ -48,17 +48,24 @@ ProcessController::~ProcessController() {
 }
 
 void ProcessController::run() {
+    // get args from runnable
+    auto argv = _proc->argv();
+    std::string cmd;
+    std::vector<char*> c_argv;
+    for (auto &arg : argv) {
+        c_argv.push_back(arg.data());
+        if (!cmd.empty()) cmd += ' ';
+        cmd += arg;
+    }
+    _log.info(_msg("Exec: /proc/self/exe" + cmd).c_str());
+    c_argv.push_back(nullptr);
+
     _pid = fork();
-
     if (_pid == 0) {
-        // get args from runnable
-        auto argv = _proc->argv();
-
-        // destroys all _pid memory space; and executes main again
-        execv(argv[0].c_str(), reinterpret_cast<char* const*>(argv.data()));
+        execv("/proc/self/exe", c_argv.data());
 
         // exec only returns on error
-        _log.fatal(_msg("Execv failed").c_str());
+        _log.fatal(_msg("Exec failed").c_str());
         std::exit(1);
     }
 
@@ -94,8 +101,8 @@ void ProcessController::reload() const {
     kill(_pid, SIGHUP);
 }
 
-void ProcessController::_setup_handlers() {
-    _cls->_log.debug(_cls->_msg("setting up signals").c_str());
+void ProcessController::setup_handlers() {
+    // _cls->_log.debug(_cls->_msg("setting up signals").c_str());
     signal(SIGTERM, _handle_stop);
     signal(SIGUSR1, _handle_pause);
     signal(SIGCONT, _handle_resume);

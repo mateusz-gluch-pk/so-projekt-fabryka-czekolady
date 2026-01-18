@@ -26,10 +26,9 @@ public:
     /**
      * @brief Main execution method of the process.
      * @param stats Reference to ProcessStats to update runtime info.
-     * @param log Logger for debug/info/error messages.
      * @note Typically invoked in a forked or controlled process context.
      */
-    virtual void run(ProcessStats &stats, Logger &log) = 0;
+    virtual void run(ProcessStats *stats) = 0;
 
     /**
      * @brief Stop the process (e.g., via SIGTERM).

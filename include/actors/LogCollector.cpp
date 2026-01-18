@@ -20,37 +20,38 @@ LogCollector::LogCollector(std::string name, Logger &log, bool tty):
     _msq.emplace(make_key(LOGGING_DIR, _name, &log), false);
     size_t bufsize = sizeof(SharedVector<Message, LOGGING_BUFFER_SIZE>) + sizeof(Item) * LOGGING_BUFFER_SIZE;
     _buffer.emplace(make_key(LOGGING_DIR, _name, &log), bufsize, &log, false);
+    _log.info(_msg("Created").c_str());
 }
 
 LogCollector::~LogCollector() {
     _close_file();
 }
 
-void LogCollector::run(ProcessStats &stats, Logger &log) {
-    stats.pid = getpid();
-    _reattach(log);
+void LogCollector::run(ProcessStats *stats) {
+    stats->pid = getpid();
+    // _reattach(log);
 
     while (_running || _msq->messages() > 0) {
         if (_paused) {
-            stats.state = PAUSED;
+            stats->state = PAUSED;
             sthr::sleep_for(stime::milliseconds(10));
             continue;
         }
 
         if (_reloading) {
-            stats.state = RELOADING;
+            stats->state = RELOADING;
             _reload();
             _reloading = false;
-            stats.reloads++;
+            stats->reloads++;
             continue;
         }
 
-        stats.state = RUNNING;
+        stats->state = RUNNING;
         _main();
         _log.debug(_msg("Loop completed").c_str());
-        stats.loops++;
+        stats->loops++;
     }
-    stats.state = STOPPED;
+    stats->state = STOPPED;
 }
 
 void LogCollector::stop() {
@@ -125,4 +126,17 @@ void LogCollector::_close_file() {
         _file.close();
         _log.info(_msg("Log file closed").c_str());
     }
+}
+
+std::vector<std::string> LogCollector::argv() {
+    auto args = std::vector<std::string>();
+
+    args.push_back("/proc/self/exe");
+    args.push_back("--worker");
+    args.push_back("LogCollector");
+
+    args.push_back("--name");
+    args.push_back(_name);
+
+    return args;
 }

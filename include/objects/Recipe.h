@@ -42,6 +42,8 @@ public:
      */
     [[nodiscard]] std::string name() const { return _output.name(); }
 
+    std::vector<Item> inputs() const { return _inputs; }
+
 private:
     std::vector<Item> _inputs; ///< Items required as input
     Item _output;              ///< Item produced by the recipe

@@ -39,8 +39,15 @@ public:
     /** @brief Destructor stops the process and cleans up IPC resources. */
     ~ProcessController();
 
-    /** @brief Start or resume the process execution. */
+    /** @brief Start or resume the process execution. Creates a child process. */
     void run();
+
+    /** @brief Start or resume the process execution. Runs in fg */
+    static void run_local(std::unique_ptr<IRunnable> proc, const Logger &log) {
+        _cls = std::make_unique<ProcessController>(std::move(proc), log, false, false);
+        _cls->setup_handlers();
+        _cls->_proc->run(_cls->_stats.get());
+    }
 
     /** @brief Stop the process and release resources. */
     void stop();
@@ -55,12 +62,12 @@ public:
     void reload() const;
 
     /** @brief Get a pointer to the current process statistics. */
-    [[nodiscard]] const ProcessStats *stats() const { return _stats.get(); }
+    ProcessStats *stats() const { return _stats.get(); }
+
+    /** @brief Setup signal handlers for process control. */
+    static void setup_handlers();
 
 private:
-    /** @brief Setup signal handlers for process control. */
-    static void _setup_handlers();
-
     /** @brief Signal handler for stop requests. */
     static void _handle_stop(int);
 

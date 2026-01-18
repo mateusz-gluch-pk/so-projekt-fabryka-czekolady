@@ -44,7 +44,7 @@ public:
      * @param log Reference to a logger for runtime messages.
      * @throws std::runtime_error on logging failure.
      */
-    void run(ProcessStats &stats, Logger &log) override;
+    void run(ProcessStats *stats) override;
 
     /**
      * @brief Stops log collection safely.
@@ -71,6 +71,9 @@ public:
      * @return Reference to the collector name.
      */
     const std::string &name() override { return _name; }
+
+    // Args to run exec
+    std::vector<std::string> argv() override;
 
 private:
     /**
