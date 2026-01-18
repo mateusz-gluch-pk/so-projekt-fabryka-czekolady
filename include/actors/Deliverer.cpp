@@ -89,3 +89,35 @@ void Deliverer::_reattach(Logger &log) {
 std::string Deliverer::_msg(const std::string &msg) const {
     return "actors/Deliverer/" + _name + ":\t" + msg;
 }
+
+std::vector<std::string> Deliverer::argv() {
+    auto args = std::vector<std::string>();
+
+    args.push_back("/proc/self/exe");
+
+    args.push_back("--worker");
+    args.push_back("Deliverer");
+
+    args.push_back("--name");
+    args.push_back(_name);
+
+    args.push_back("--dst_name");
+    args.push_back(_dst->name());
+
+    args.push_back("--item_name");
+    args.push_back(_tpl.get().name());
+
+    args.push_back("--log_key");
+    args.push_back(std::to_string(_log.key()));
+
+    args.push_back("--dst_cap");
+    args.push_back(std::to_string(_dst->capacity()));
+
+    args.push_back("--item_delay");
+    args.push_back(std::to_string(_tpl.base_delay_ms()));
+
+    args.push_back("--item_size");
+    args.push_back(std::to_string(_tpl.get().size()));
+
+    return args;
+}

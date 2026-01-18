@@ -34,6 +34,7 @@ target_link_libraries(factorylib
         ftxui::dom
 )
 
-add_executable(factory main.cpp)
+add_executable(factory main.cpp
+)
 
 target_link_libraries(factory PRIVATE factorylib)

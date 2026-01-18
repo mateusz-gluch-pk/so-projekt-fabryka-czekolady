@@ -91,6 +91,8 @@ private:
      */
     [[nodiscard]] std::string _msg(const std::string &msg) const;
 
+    std::vector<std::string> argv() override;
+
     std::string _name;                        ///< Name of the deliverer
     ItemTemplate _tpl;                        ///< Item template to deliver
     std::optional<Warehouse> _dst;            ///< Optional target warehouse

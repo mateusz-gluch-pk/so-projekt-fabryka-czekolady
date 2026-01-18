@@ -49,13 +49,17 @@ ProcessController::~ProcessController() {
 
 void ProcessController::run() {
     _pid = fork();
+
     if (_pid == 0) {
-        // this makes process controller behave like a singleton in child
-        _cls = std::make_unique<ProcessController>(std::move(_proc), _log, false, _debug);
-        // _stats = SharedMemory<ProcessStats>::attach(_key, sizeof(ProcessStats), &_log);
-        _setup_handlers();
-        _cls->_proc->run(*_stats, _log);
-        std::exit(0);
+        // get args from runnable
+        auto argv = _proc->argv();
+
+        // destroys all _pid memory space; and executes main again
+        execv(argv[0].c_str(), reinterpret_cast<char* const*>(argv.data()));
+
+        // exec only returns on error
+        _log.fatal(_msg("Execv failed").c_str());
+        std::exit(1);
     }
 
     if (_pid > 0) {

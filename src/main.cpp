@@ -21,7 +21,79 @@
 # define BASE_DELIVERER_DELAY 1000
 // # define BASE_DELIVERER_DELAY 0
 
-int main() {
+
+void create_log_collector(std::unordered_map<std::string, std::string> args) {
+
+}
+
+void create_deliverer(std::unordered_map<std::string, std::string> args) {
+
+    // Extract parameters
+    std::string name = args["--name"];
+    std::string dst_name = args["--dst_name"];
+    std::string item_name = args["--item_name"];
+    key_t log_key = static_cast<key_t>(std::stoul(args["--log_key"]));
+    int dst_cap = std::stoi(args["--dst_cap"]);
+    int item_delay = std::stoi(args["--item_delay"]);
+    int item_size = std::stoi(args["--item_size"]);
+
+    auto msq = MessageQueue<Message>::attach(log_key);
+    Logger log(INFO, &msq, log_key);
+
+    ItemTemplate t(item_name, item_size, item_delay);
+    auto dst = Warehouse::attach(dst_name, dst_cap, &log);
+
+    auto proc = std::make_unique<Deliverer>(name, t, dst, log);
+    auto controller = ProcessController(std::move(proc), log, true, false);
+    controller.run();
+}
+
+void create_worker(std::unordered_map<std::string, std::string> args) {
+    // Extract parameters
+    std::string name = args["--name"];
+    std::string in_name = args["--dst_name"];
+    std::string item_name = args["--item_name"];
+    key_t log_key = static_cast<key_t>(std::stoul(args["--log_key"]));
+    int dst_cap = std::stoi(args["--dst_cap"]);
+    int item_delay = std::stoi(args["--item_delay"]);
+    int item_size = std::stoi(args["--item_size"]);
+
+    std::vector<Item> r1_in{
+            {"A", 1, 1},
+            {"B", 1, 1},
+            {"C", 2, 1},
+        };
+    Recipe r1(r1_in, {"T1", 1, 1});
+    workers.create("worker-t1", r1, *ingredients, *outputs);
+
+
+    std::string name;
+    ItemTemplate t();
+    auto dst = Warehouse::attach();
+    auto stats = SharedMemory<ProcessStats>::attach();
+
+    auto proc = Deliverer(name, t, dst, log);
+}
+
+int main(int argc, char **argv) {
+    // Worker code
+    if (argc >= 3 && std::string(argv[1]) == "--worker") {
+
+        std::unordered_map<std::string, std::string> kv;
+        for (int i = 3; i + 1 < argc; i += 2) {
+            kv[argv[i]] = argv[i + 1];
+        }
+
+        std::string proc_name = argv[2];
+        if (proc_name == "Worker") create_worker(kv);
+        if (proc_name == "Deliverer") create_deliverer(kv);
+        if (proc_name == "LogCollector") create_log_collector(kv);
+
+        return 0;
+    }
+
+    // Supervisor code
+
     // Setup Logger
     LoggerService logger("factory-simulation", INFO);
     Logger log = logger.get();

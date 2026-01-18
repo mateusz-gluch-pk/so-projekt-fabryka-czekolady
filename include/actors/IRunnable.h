@@ -7,6 +7,7 @@
 
 #include "processes/ProcessStats.h"
 #include <string>
+#include <vector>
 
 #include "logger/Logger.h"
 
@@ -55,6 +56,8 @@ public:
      * @return Reference to a string containing the process name.
      */
     virtual const std::string &name() = 0;
+
+    virtual std::vector<std::string> argv() = 0;
 };
 
 

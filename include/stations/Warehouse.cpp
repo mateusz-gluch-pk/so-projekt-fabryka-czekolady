@@ -10,6 +10,8 @@
 #include <cstring>
 #include <cstdio>
 
+// warehouse ma mieć fizycznie N pojemności (n obiektów)
+
 #define WAREHOUSE_SHM_SIZE 4096
 #define WAREHOUSE_IPC_MODE 0644
 #define WAREHOUSE_DIR "warehouses"
