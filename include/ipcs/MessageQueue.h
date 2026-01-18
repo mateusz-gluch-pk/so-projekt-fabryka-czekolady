@@ -83,6 +83,12 @@ public:
      */
     void receive(T *data) const override;
 
+    [[nodiscard]] ulong messages() const {
+        msqid_ds ds;
+        msgctl(_msqid, IPC_STAT, &ds);
+        return ds.msg_qnum;
+    };
+
 private:
     /**
      * @brief Format a log message with queue ID.

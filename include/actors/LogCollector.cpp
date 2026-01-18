@@ -30,7 +30,7 @@ void LogCollector::run(ProcessStats &stats, Logger &log) {
     stats.pid = getpid();
     _reattach(log);
 
-    while (_running) {
+    while (_running || _msq->messages() > 0) {
         if (_paused) {
             stats.state = PAUSED;
             sthr::sleep_for(stime::milliseconds(10));
