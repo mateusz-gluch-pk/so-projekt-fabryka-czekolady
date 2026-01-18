@@ -19,6 +19,7 @@
 #include "ui/WorkerTable.h"
 
 # define BASE_DELIVERER_DELAY 1000
+// # define BASE_DELIVERER_DELAY 0
 
 int main() {
     // Setup Logger

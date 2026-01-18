@@ -26,13 +26,11 @@ LogPanel::LogPanel(LoggerService &svc): _svc(svc) {
 
         // this is a little workaround - TODO develop a callback to contain enough logs to display in panel
         if (const auto logs = _svc.logs(); logs != nullptr) {
-            for (size_t i = logs->size-50; i < logs->size; i++) {
-                auto msg = (*logs)[i];
+            size_t count = std::min<size_t>(50, logs->size);
+            for (size_t i = 0; i < count; ++i) {
+                auto& msg = (*logs)[logs->size - 1 - i];
                 elements.push_back(_format(msg));
             }
-        }
-        while (elements.size() < 50) {
-            elements.push_back(ftxui::text(""));
         }
 
         return ftxui::window(

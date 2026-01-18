@@ -18,6 +18,7 @@ namespace stime = std::chrono;
 namespace sthr = std::this_thread;
 
 #define WORKER_TICK_DELAY 1000
+// #define WORKER_TICK_DELAY 0
 
 /**
  * @brief Represents a worker that processes recipes between warehouses.
