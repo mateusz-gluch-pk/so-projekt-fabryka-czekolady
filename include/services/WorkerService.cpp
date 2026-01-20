@@ -56,8 +56,8 @@ create(const std::string &name, const Recipe &recipe, Warehouse &in, Warehouse &
         _stats[name] = WorkerStats(name, in.name(), out.name(), recipe, pw->stats());
         _log.info(_msg("Created worker: " + name).c_str());
         return &_stats[name];
-    } catch (...) {
-        _log.error(_msg("Failed to create worker: " + name).c_str());
+    } catch (std::exception &e) {
+        _log.error(_msg("Failed to create worker: " + name + " " + e.what()).c_str());
         return nullptr;
     }
 }

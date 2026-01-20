@@ -50,14 +50,14 @@ ProcessController::~ProcessController() {
 void ProcessController::run() {
     // get args from runnable
     auto argv = _proc->argv();
-    std::string cmd;
+    // std::string cmd;
     std::vector<char*> c_argv;
     for (auto &arg : argv) {
         c_argv.push_back(arg.data());
-        if (!cmd.empty()) cmd += ' ';
-        cmd += arg;
+        // if (!cmd.empty()) cmd += ' ';
+        // cmd += arg;
     }
-    _log.info(_msg("Exec: /proc/self/exe" + cmd).c_str());
+    // _log.info(_msg("Exec: /proc/self/exe" + cmd).c_str());
     c_argv.push_back(nullptr);
 
     _pid = fork();

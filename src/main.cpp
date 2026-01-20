@@ -18,6 +18,7 @@
 #include "ui/WarehouseTable.h"
 #include "ui/WorkerTable.h"
 
+# define SIMULATION_LOG_LEVEL MessageLevel::INFO
 # define BASE_DELIVERER_DELAY 1000
 // # define BASE_DELIVERER_DELAY 0
 
@@ -42,9 +43,9 @@ void create_deliverer(std::unordered_map<std::string, std::string> args) {
     int item_delay = std::stoi(args["--item_delay"]);
     int item_size = std::stoi(args["--item_size"]);
 
-    // auto msq = MessageQueue<Message>::attach(log_key);
-    auto msq = MockQueue<Message>();
-    Logger log(INFO, &msq, log_key);
+    auto msq = MessageQueue<Message>::attach(log_key);
+    // auto msq = MockQueue<Message>();
+    Logger log(SIMULATION_LOG_LEVEL, &msq, log_key);
 
     ItemTemplate t(item_name, item_size, item_delay);
     auto dst = Warehouse::attach(dst_name, dst_cap, &log);
@@ -63,12 +64,17 @@ void create_worker(std::unordered_map<std::string, std::string> args) {
 
     std::string output = args["--recipe_output"];
     nlohmann::json j = args["--recipe_inputs"];
+
+    if (j.is_string()) {
+        j = nlohmann::json::parse(j.get<std::string>());
+    }
+
     auto inputs = j.get<std::vector<Item>>();
     key_t log_key = static_cast<key_t>(std::stoul(args["--log_key"]));
 
-    // auto msq = MessageQueue<Message>::attach(log_key);
-    auto msq = MockQueue<Message>();
-    Logger log(INFO, &msq, log_key);
+    auto msq = MessageQueue<Message>::attach(log_key);
+    // auto msq = MockQueue<Message>();
+    Logger log(SIMULATION_LOG_LEVEL, &msq, log_key);
 
     auto in = Warehouse::attach(in_name, in_cap, &log);
     auto out = Warehouse::attach(out_name, out_cap, &log);
@@ -98,10 +104,10 @@ int main(int argc, char **argv) {
     // Supervisor code
 
     // Setup Logger
-    // LoggerService logger("factory-simulation", INFO);
-    // Logger log = logger.get();
-    auto msq = MockQueue<Message>();
-    Logger log = Logger(INFO, &msq, 0);
+    LoggerService logger("factory-simulation", SIMULATION_LOG_LEVEL);
+    Logger log = logger.get();
+    // auto msq = MockQueue<Message>();
+    // Logger log = Logger(SIMULATION_LOG_LEVEL, &msq, 0);
 
     // Setup Services
     WarehouseService warehouses(log);
@@ -165,7 +171,7 @@ int main(int argc, char **argv) {
 
     // Setup UI
     auto control_panel = std::make_shared<ControlPanel>(sv);
-    // auto log_panel = std::make_shared<LogPanel>(logger);
+    auto log_panel = std::make_shared<LogPanel>(logger);
 
     auto workers_table = std::make_shared<WorkerTable>(workers);
     auto warehouses_table = std::make_shared<WarehouseTable>(warehouses);
@@ -179,8 +185,7 @@ int main(int argc, char **argv) {
     auto layout = std::make_shared<Layout>(
         dashboard->component(),
         control_panel->component(),
-        control_panel->component()
-        // log_panel->component()
+        log_panel->component()
     );
 
     // --- Start terminal UI ---
