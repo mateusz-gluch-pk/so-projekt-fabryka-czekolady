@@ -12,8 +12,6 @@
 
 // warehouse ma mieć fizycznie N pojemności (n obiektów)
 
-#define WAREHOUSE_SHM_SIZE 4096
-#define WAREHOUSE_IPC_MODE 0644
 #define WAREHOUSE_DIR "warehouses"
 
 #include <fstream>
@@ -79,7 +77,7 @@ Warehouse::Warehouse(
 Warehouse::Warehouse(const std::string &name, const int capacity, Logger *log, bool create): Warehouse(
 	name,
 	capacity,
-	sizeof(SharedVector<Item, WAREHOUSE_MAX_VARIETY>) + sizeof(Item) * WAREHOUSE_MAX_VARIETY,
+	sizeof(SharedVector<Item, WAREHOUSE_MAX_VARIETY>),
 	make_key(WAREHOUSE_DIR, name, log),
 	log,
 	create

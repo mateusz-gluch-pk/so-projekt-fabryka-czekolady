@@ -7,7 +7,7 @@
 #include <string>
 #include <nlohmann/json.hpp>
 
-#define ITEM_NAME_LENGTH 20
+#define ITEM_NAME_LENGTH 16
 
 /**
  * @brief Represents an item with a name, size, and count.
@@ -72,8 +72,8 @@ public:
 
 private:
     char _name[ITEM_NAME_LENGTH]; ///< Null-terminated item name
-    int _size;                     ///< Item size
-    int _count;                    ///< Item quantity
+    int64_t _size;                     ///< Item size
+    int64_t _count;                    ///< Item quantity
 };
 
 inline void to_json(nlohmann::json &j, const Item &item) {
