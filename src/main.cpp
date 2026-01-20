@@ -27,10 +27,11 @@ void create_log_collector(std::unordered_map<std::string, std::string> args) {
     std::string name = args["--name"];
 
     const auto log_key = make_key(LOGGING_DIR, name);
-    auto msq = MessageQueue<Message>::attach(log_key);
-    Logger log(INFO, &msq, log_key);
+    // auto msq = MessageQueue<Message>::attach(log_key);
+    auto msq = MockQueue<Message>();
+    Logger log(SIMULATION_LOG_LEVEL, &msq, log_key);
 
-    auto proc = std::make_unique<LogCollector>(name, log);
+    auto proc = std::make_unique<LogCollector>(name, log, false);
     ProcessController::run_local(std::move(proc), log);
 }
 
