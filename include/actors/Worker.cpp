@@ -4,16 +4,22 @@
 
 #include "Worker.h"
 
-Worker::Worker(std::string name, Recipe recipe, Warehouse &in, Warehouse &out, Logger &log):
+Worker::Worker(std::string name, Recipe recipe, Warehouse &in, Warehouse &out, Logger &log, bool child):
     _name(std::move(name)),
     _recipe(std::move(recipe)),
     _inventory(std::vector<Item>()),
     _log(log),
     _running(true),
     _paused(false),
+    _in_name(in.name()),
+    _out_name(out.name()),
+    _in_capacity(in.capacity()),
+    _out_capacity(out.capacity()),
     _reloading(false) {
-    _in.emplace(in.name(), in.capacity(), &_log, false);
-    _out.emplace(out.name(), out.capacity(), &_log, false);
+    if (child) {
+        _in.emplace(_in_name, _in_capacity, &_log, false);
+        _out.emplace(_out_name, _out_capacity, &_log, false);
+    }
     _log.info(_msg("Created").c_str());
 }
 
@@ -115,16 +121,16 @@ std::vector<std::string> Worker::argv() {
     args.push_back(_name);
 
     args.push_back("--in_name");
-    args.push_back(_in->name());
+    args.push_back(_in_name);
 
     args.push_back("--in_cap");
-    args.push_back(std::to_string(_in->capacity()));
+    args.push_back(std::to_string(_in_capacity));
 
     args.push_back("--out_name");
-    args.push_back(_out->name());
+    args.push_back(_out_name);
 
     args.push_back("--out_cap");
-    args.push_back(std::to_string(_out->capacity()));
+    args.push_back(std::to_string(_out_capacity));
 
     args.push_back("--recipe_output");
     args.push_back(_recipe.name());

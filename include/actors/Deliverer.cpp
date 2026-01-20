@@ -6,14 +6,18 @@
 
 #include <utility>
 
-Deliverer::Deliverer(std::string name, ItemTemplate tpl, Warehouse &dst, Logger &log) :
+Deliverer::Deliverer(std::string name, ItemTemplate tpl, Warehouse &dst, Logger &log, bool child) :
     _name(std::move(name)),
     _tpl(std::move(tpl)),
     _log(log),
     _running(true),
     _paused(false),
-    _reloading(false) {
-    _dst.emplace(dst.name(), dst.capacity(), &_log, false);
+    _reloading(false),
+    _dst_name(dst.name()),
+    _dst_capacity(dst.capacity()) {
+    if (child) {
+        _dst.emplace(_dst_name, _dst_capacity, &_log, false);
+    }
     _log.info(_msg("Created").c_str());
 }
 
@@ -101,7 +105,7 @@ std::vector<std::string> Deliverer::argv() {
     args.push_back(_name);
 
     args.push_back("--dst_name");
-    args.push_back(_dst->name());
+    args.push_back(_dst_name);
 
     args.push_back("--item_name");
     args.push_back(_tpl.get().name());
@@ -110,7 +114,7 @@ std::vector<std::string> Deliverer::argv() {
     args.push_back(std::to_string(_log.key()));
 
     args.push_back("--dst_cap");
-    args.push_back(std::to_string(_dst->capacity()));
+    args.push_back(std::to_string(_dst_capacity));
 
     args.push_back("--item_delay");
     args.push_back(std::to_string(_tpl.base_delay_ms()));

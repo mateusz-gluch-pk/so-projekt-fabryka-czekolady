@@ -51,7 +51,7 @@ void create_deliverer(std::unordered_map<std::string, std::string> args) {
     ItemTemplate t(item_name, item_size, item_delay);
     auto dst = Warehouse::attach(dst_name, dst_cap, &log);
 
-    auto proc = std::make_unique<Deliverer>(name, t, dst, log);
+    auto proc = std::make_unique<Deliverer>(name, t, dst, log, true);
     ProcessController::run_local(std::move(proc), log);
 }
 
@@ -82,7 +82,7 @@ void create_worker(std::unordered_map<std::string, std::string> args) {
 
     Recipe r(inputs, {output, 1, 1});
 
-    auto proc = std::make_unique<Worker>(name, r, in, out, log);
+    auto proc = std::make_unique<Worker>(name, r, in, out, log, true);
     ProcessController::run_local(std::move(proc), log);
 }
 

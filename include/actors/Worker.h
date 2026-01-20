@@ -34,7 +34,7 @@ public:
      * @param log Reference to logger.
      * @throws std::exception if warehouse or logger setup fails.
      */
-    Worker(std::string name, Recipe recipe, Warehouse &in, Warehouse &out, Logger &log);
+    Worker(std::string name, Recipe recipe, Warehouse &in, Warehouse &out, Logger &log, bool child = false);
 
     /**
      * @brief Main execution loop for processing items.
@@ -103,11 +103,16 @@ private:
 
     std::string _name;                 ///< Name of the worker
     Recipe _recipe;                     ///< Recipe to process
-    std::optional<Warehouse> _in;       ///< Optional input warehouse
-    std::optional<Warehouse> _out;      ///< Optional output warehouse
+    std::optional<Warehouse> _in;                     ///< Optional input warehouse
+    std::optional<Warehouse> _out;                    ///< Optional output warehouse
     Logger &_log;                        ///< Reference to logger
     std::vector<Item> _inventory;       ///< Worker inventory
     std::atomic<bool> _running, _paused, _reloading; ///< Thread control flags
+
+    std::string _in_name;
+    int _in_capacity;
+    std::string _out_name;
+    int _out_capacity;
 };
 
 #endif //PROJEKT_WORKER_H
