@@ -91,8 +91,7 @@ void Deliverer::_reattach(Logger &log) {
     _log = log;
     auto item = _tpl.get();
     _svc.destroy(item->name());
-    auto wh = _svc.attach(item->name(), item->size());
-    if (wh == nullptr) {
+    if (const auto wh = _svc.attach(item->name(), item->size()); wh == nullptr) {
         _log.fatal(_msg("Cannot reattach to warehouse Item<%d>(\"%s\")").c_str(), item->name().c_str(), item->size());
     }
 }

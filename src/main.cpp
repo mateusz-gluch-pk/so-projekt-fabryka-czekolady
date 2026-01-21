@@ -21,79 +21,17 @@
 #include <ranges>
 #include <string_view>
 
+#include "processes/runners.h"
 
 
 // Do not, under any circumstances, run MessageLevel::DEBUG!
 # define SIMULATION_LOG_LEVEL MessageLevel::INFO
+
 # define BASE_DELIVERER_DELAY 1000
-# define BASE_WORKER_DELAY 1000
-// # define BASE_WORKER_DELAY 0
 // # define BASE_DELIVERER_DELAY 0
 
-void create_log_collector(std::unordered_map<std::string, std::string> args) {
-    std::string name = args["--name"];
-
-    const auto log_key = make_key(LOGGING_DIR, name);
-    // auto msq = MessageQueue<Message>::attach(log_key);
-    auto msq = MockQueue<Message>();
-    Logger log(SIMULATION_LOG_LEVEL, &msq, log_key);
-
-    auto proc = std::make_unique<LogCollector>(name, log, false);
-    ProcessController::run_local(std::move(proc), log);
-}
-
-void create_deliverer(std::unordered_map<std::string, std::string> args) {
-    std::string name = args["--name"];
-    std::string item_name = args["--item_name"];
-    int item_delay = std::stoi(args["--item_delay"]);
-    int item_size = std::stoi(args["--item_size"]);
-
-    key_t log_key = static_cast<key_t>(std::stoul(args["--log_key"]));
-    auto msq = MessageQueue<Message>::attach(log_key);
-    Logger log(SIMULATION_LOG_LEVEL, &msq, log_key);
-    WarehouseService svc(log);
-
-    if (const auto out = svc.attach(item_name, item_size); out == nullptr) {
-        log.fatal("Cannot attach to output warehouse");
-    }
-
-    ItemTemplate t(item_name, item_size, item_delay);
-    auto proc = std::make_unique<Deliverer>(name, t, svc, log);
-    ProcessController::run_local(std::move(proc), log);
-}
-
-void create_worker(std::unordered_map<std::string, std::string> args) {
-    std::string name = args["--name"];
-
-    const key_t log_key = static_cast<key_t>(std::stoul(args["--log_key"]));
-    auto msq = MessageQueue<Message>::attach(log_key);
-    Logger log(SIMULATION_LOG_LEVEL, &msq, log_key);
-    WarehouseService svc(log);
-
-    if (const auto out = svc.attach(args["--output_name"], 1); out == nullptr) {
-        log.fatal("Cannot attach to output warehouse");
-    }
-
-    auto inputs = std::vector<std::unique_ptr<IItem>>();
-    auto names = std::vector<std::string>();
-    auto sizes = std::vector<int>();
-    for (auto&& part : args["--input_names"] | std::views::split(',')) {
-        names.emplace_back(part.begin(), part.end());
-    }
-    for (auto&& part : args["--input_sizes"] | std::views::split(',')) {
-        sizes.emplace_back(std::stoi(std::string(part.begin(), part.end())));
-    }
-    for (int i=0; i < names.size(); i++) {
-        if (const auto in = svc.attach(names[i], sizes[i]); in == nullptr) {
-            log.fatal("Cannot attach to input warehouse");
-        }
-        inputs.emplace_back(new_item(names[i], sizes[i]));
-    }
-
-    auto r = std::make_unique<Recipe>(std::move(inputs), new_item(args["--output_name"], 1), BASE_WORKER_DELAY);
-    auto proc = std::make_unique<Worker>(name, std::move(r), svc, log);
-    ProcessController::run_local(std::move(proc), log);
-}
+#define BASE_WORKER_DELAY 1000
+// #define BASE_WORKER_DELAY 0
 
 int main(int argc, char **argv) {
     // Worker code
@@ -104,10 +42,17 @@ int main(int argc, char **argv) {
         }
 
         std::string proc_name = argv[2];
-        if (proc_name == "Worker") create_worker(kv);
-        if (proc_name == "Deliverer") create_deliverer(kv);
-        if (proc_name == "LogCollector") create_log_collector(kv);
+        if (proc_name == "LogCollector") {
+            create_log_collector(kv);
+            return 0;
+        }
 
+        const key_t log_key = static_cast<key_t>(std::stoul(kv["--log_key"]));
+        auto msq = MessageQueue<Message>::attach(log_key);
+        Logger log(SIMULATION_LOG_LEVEL, &msq, log_key);
+
+        if (proc_name == "Worker") create_worker(log, BASE_WORKER_DELAY, kv);
+        if (proc_name == "Deliverer") create_deliverer(log, kv);
         return 0;
     }
 

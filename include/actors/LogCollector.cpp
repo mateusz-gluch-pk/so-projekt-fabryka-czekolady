@@ -20,6 +20,7 @@ LogCollector::LogCollector(std::string name, Logger &log, bool tty):
     _msq.emplace(make_key(LOGGING_DIR, _name, &log), false);
     size_t bufsize = sizeof(SharedVector<Message, LOGGING_BUFFER_SIZE>);
     _buffer.emplace(make_key(LOGGING_DIR, _name, &log), bufsize, &log, false);
+    if (tty) _log.info(_msg("TTY output enabled").c_str());
     _log.info(_msg("Created").c_str());
 }
 
@@ -29,7 +30,7 @@ LogCollector::~LogCollector() {
 
 void LogCollector::run(ProcessStats *stats) {
     stats->pid = getpid();
-    // _reattach(log);
+    _file = _open_file();
 
     while (_running || _msq->messages() > 0) {
         if (_paused) {
@@ -88,9 +89,7 @@ void LogCollector::_main() {
     buf->push_back(msg);
 
     const auto log = msg.string();
-    if (_tty) {
-        std::cout << log << std::endl;
-    }
+    if (_tty) std::cout << log << std::endl;
     _file << log << std::endl;
 }
 
@@ -124,7 +123,7 @@ std::ofstream LogCollector::_open_file() const {
 void LogCollector::_close_file() {
     if (_file.is_open()) {
         _file.close();
-        _log.info(_msg("Log file closed").c_str());
+        std::cout << _msg("Log file closed") << std::endl;
     }
 }
 
@@ -137,6 +136,9 @@ std::vector<std::string> LogCollector::argv() {
 
     args.push_back("--name");
     args.push_back(_name);
+
+    args.push_back("--tty");
+    args.push_back(_tty? "1": "0");
 
     return args;
 }

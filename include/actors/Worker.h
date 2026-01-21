@@ -82,17 +82,22 @@ private:
         _log = log;
         std::vector<std::string> names;
         std::vector<int> sizes;
+
         for (auto &wh : _svc.get_all_stats()) {
             names.push_back(wh.name());
             sizes.push_back(wh.size());
         }
+
         for (int i = 0; i < names.size(); i++) {
             _svc.destroy(names[i]);
-            auto wh = _svc.attach(names[i], sizes[i]);
-            if (wh == nullptr) {
-                _log.error(_msg("Cannot reattach to warehouse Item<%d>(\"%s\")").c_str(), names[i].c_str(), sizes[i]);
+        }
+
+        for (int i = 0; i < names.size(); i++) {
+            if (const auto wh = _svc.attach(names[i], sizes[i]); wh == nullptr) {
+                _log.fatal(_msg("Cannot reattach to warehouse Item<%d>(\"%s\")").c_str(), names[i].c_str(), sizes[i]);
             }
         }
+
     }
 
     /**
@@ -112,5 +117,6 @@ private:
     std::vector<std::unique_ptr<IItem>> _inventory;       ///< Worker inventory
     std::atomic<bool> _running, _paused, _reloading; ///< Thread control flags
 };
+
 
 #endif //PROJEKT_WORKER_H

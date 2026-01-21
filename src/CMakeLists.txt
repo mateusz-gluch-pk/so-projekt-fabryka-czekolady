@@ -15,6 +15,7 @@ add_library(factorylib STATIC
         ../include/ui/WorkerTable.h
         ../include/objects/IItem.h
         ../include/stations/IWarehouse.h
+        ../include/processes/runners.h
 )
 
 set_target_properties(factorylib PROPERTIES

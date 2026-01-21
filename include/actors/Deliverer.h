@@ -104,4 +104,5 @@ private:
 };
 
 
+
 #endif //PROJEKT_DELIVERER_H

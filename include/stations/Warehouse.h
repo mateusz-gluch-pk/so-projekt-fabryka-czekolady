@@ -26,8 +26,6 @@
 using json = nlohmann::json;
 namespace fs = std::filesystem;
 
-
-#define WAREHOUSE_CAPACITY 1024
 #define WAREHOUSE_DIR "warehouses"
 
 namespace fs = std::filesystem;
@@ -204,7 +202,7 @@ void Warehouse<Size, Capacity>::add(IItem &item) const {
 	_sem.lock();
 
 	// check capacity - if no space, just release semaphore
-	if (usage() + 1 >= Capacity) {
+	if (usage() + 1 > Capacity) {
 		_log->warn(_msg("Max capacity - cannot add item %s").c_str(), item.name().c_str());
 		_sem.unlock();
 		return;

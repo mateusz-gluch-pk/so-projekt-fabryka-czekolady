@@ -23,7 +23,7 @@ public:
      * @param level Logging level for messages.
      * @throws std::runtime_error if initialization fails.
      */
-    LoggerService(const std::string &name, MessageLevel level);
+    LoggerService(const std::string &name, MessageLevel level, bool tty = false);
 
     /**
      * @brief Destructor; stops the collector process and cleans up resources.

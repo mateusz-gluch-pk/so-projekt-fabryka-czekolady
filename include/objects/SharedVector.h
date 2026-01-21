@@ -101,9 +101,9 @@ class SharedVector {
         template<typename U, size_t JCapacity>
         friend void to_json(nlohmann::json &j, const SharedVector<U, JCapacity> &vec);
 
-        T data[Capacity];   /**< Storage array for elements */
         size_t size = 0;    /**< Current number of elements */
         size_t capacity = Capacity; /**< Maximum capacity */
+        T data[Capacity];   /**< Storage array for elements */
 };
 
 template<typename T, size_t Capacity>

@@ -39,7 +39,7 @@ IWarehouse * WarehouseService::attach(const std::string &name, int size) {
         _log.info(_msg("Created warehouse: " + name).c_str());
         return wh;
     } catch (...) {
-        _log.error(_msg("Failed to create warehouse: " + name).c_str());
+        _log.fatal(_msg("Failed to create warehouse: " + name).c_str());
         return nullptr;
     }
 }
