@@ -49,6 +49,9 @@ public:
     /** @brief Get the maximum capacity of the warehouse. */
     [[nodiscard]] virtual int capacity() const = 0;
 
+    /** @brief Get the item size of the warehouse. */
+    [[nodiscard]] virtual int size() const = 0;
+
     /** @brief Get current number of items stored (usage). */
     [[nodiscard]] virtual int usage() const = 0;
 };

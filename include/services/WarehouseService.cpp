@@ -87,7 +87,7 @@ void WarehouseService::destroy(const std::string &name) {
     _log.info(_msg("Deleted warehouse: " + name).c_str());
 }
 
-Warehouse * WarehouseService::get(const std::string &name) {
+IWarehouse * WarehouseService::get(const std::string &name) {
     const auto it = _warehouses.find(name);
     if (it == _warehouses.end()) {
         _log.error(_msg("Warehouse not found: " + name).c_str());
@@ -102,16 +102,16 @@ WarehouseStats WarehouseService::get_stats(const std::string &name) {
     const auto it = _warehouses.find(name);
     if (it == _warehouses.end()) {
         _log.error(_msg("Warehouse not found: " + name).c_str());
-        return {name, 0, 0, 0, std::vector<Item>()};
+        return {name, 0, 0, 0};
     }
 
     const auto *wh = it->second;
     _log.debug(_msg("Fetched warehouse stats: " + name).c_str());
-    return {name, wh->capacity(), wh->variety(), wh->usage(), wh->items()};
+    return {name, wh->size(), wh->capacity(), wh->usage()};
 }
 
-std::vector<Warehouse *> WarehouseService::get_all() const {
-    std::vector<Warehouse *> result;
+std::vector<IWarehouse *> WarehouseService::get_all() const {
+    std::vector<IWarehouse *> result;
     result.reserve(_warehouses.size());
 
     for (auto &pair : _warehouses) {
@@ -128,7 +128,7 @@ std::vector<WarehouseStats> WarehouseService::get_all_stats() const {
 
     for (auto &pair : _warehouses) {
         const auto *wh = pair.second;
-        result.emplace_back(wh->name(), wh->capacity(), wh->variety(), wh->usage(), wh->items());
+        result.emplace_back(wh->name(), wh->size(), wh->capacity(), wh->usage());
     }
 
     _log.debug(_msg("Fetched all warehouses stats").c_str());

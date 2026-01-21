@@ -22,10 +22,13 @@
 #include <string_view>
 
 
+
+// Do not, under any circumstances, run MessageLevel::DEBUG!
 # define SIMULATION_LOG_LEVEL MessageLevel::INFO
 # define BASE_DELIVERER_DELAY 1000
+# define BASE_WORKER_DELAY 1000
+// # define BASE_WORKER_DELAY 0
 // # define BASE_DELIVERER_DELAY 0
-
 
 void create_log_collector(std::unordered_map<std::string, std::string> args) {
     std::string name = args["--name"];
@@ -50,7 +53,7 @@ void create_deliverer(std::unordered_map<std::string, std::string> args) {
     Logger log(SIMULATION_LOG_LEVEL, &msq, log_key);
     WarehouseService svc(log);
 
-    if (const auto out = svc.attach(args["--output_name"], 1); out == nullptr) {
+    if (const auto out = svc.attach(item_name, item_size); out == nullptr) {
         log.fatal("Cannot attach to output warehouse");
     }
 
@@ -71,13 +74,13 @@ void create_worker(std::unordered_map<std::string, std::string> args) {
         log.fatal("Cannot attach to output warehouse");
     }
 
-    std::vector<std::string> names;
-    for (auto part : std::views::split(args["--input_names"], ",")) {
+    auto inputs = std::vector<std::unique_ptr<IItem>>();
+    auto names = std::vector<std::string>();
+    auto sizes = std::vector<int>();
+    for (auto&& part : args["--input_names"] | std::views::split(',')) {
         names.emplace_back(part.begin(), part.end());
     }
-    std::vector<int> sizes;
-    auto inputs = std::vector<std::unique_ptr<IItem>>();
-    for (auto part : std::views::split(args["--input_sizes"], ",")) {
+    for (auto&& part : args["--input_sizes"] | std::views::split(',')) {
         sizes.emplace_back(std::stoi(std::string(part.begin(), part.end())));
     }
     for (int i=0; i < names.size(); i++) {
@@ -87,8 +90,8 @@ void create_worker(std::unordered_map<std::string, std::string> args) {
         inputs.emplace_back(new_item(names[i], sizes[i]));
     }
 
-    auto r = std::make_unique<Recipe>(std::move(inputs), new_item(args["--output_name"], 1));
-    auto proc = std::make_unique<Worker>(name, std::move(r), svc, log, true);
+    auto r = std::make_unique<Recipe>(std::move(inputs), new_item(args["--output_name"], 1), BASE_WORKER_DELAY);
+    auto proc = std::make_unique<Worker>(name, std::move(r), svc, log);
     ProcessController::run_local(std::move(proc), log);
 }
 
@@ -127,17 +130,10 @@ int main(int argc, char **argv) {
 
     // Setup Warehouses
     // WH set 1 -- for ingredients
-    auto ia = warehouses.create("A", 1);
-    if (ia == nullptr) return 1;
-
-    auto ib = warehouses.create("B", 1);
-    if (ib == nullptr) return 1;
-
-    auto ic = warehouses.create("C", 2);
-    if (ic == nullptr) return 1;
-
-    auto id = warehouses.create("D", 3);
-    if (id == nullptr) return 1;
+    if (auto ia = warehouses.create("A", 1); ia == nullptr) return 1;
+    if (auto ib = warehouses.create("B", 1); ib == nullptr) return 1;
+    if (auto ic = warehouses.create("C", 2); ic == nullptr) return 1;
+    if (auto id = warehouses.create("D", 3); id == nullptr) return 1;
 
     // WH set 2 - for outputs
     if (auto ot1 = warehouses.create("T1", 1); ot1 == nullptr) return 1;
@@ -146,19 +142,19 @@ int main(int argc, char **argv) {
     // Setup Deliverers
     // D1 - Item A
     ItemTemplate a("A", 1, BASE_DELIVERER_DELAY);
-    deliverers.create("deliverer-a", a, ia);
+    deliverers.create("deliverer-a", a, warehouses);
 
     // D2 - Item B
     ItemTemplate b("B", 1, BASE_DELIVERER_DELAY);
-    deliverers.create("deliverer-b", b, ib);
+    deliverers.create("deliverer-b", b, warehouses);
 
     // D3 - Item C
     ItemTemplate c("C", 2, 2*BASE_DELIVERER_DELAY);
-    deliverers.create("deliverer-c", c, ic);
+    deliverers.create("deliverer-c", c, warehouses);
 
     // D4 - Item D
     ItemTemplate d("D", 3, 2*BASE_DELIVERER_DELAY);
-    deliverers.create("deliverer-d", d, id);
+    deliverers.create("deliverer-d", d, warehouses);
 
     // Setup Workers
     // W1 - {A, B, C} -> T1
@@ -166,7 +162,7 @@ int main(int argc, char **argv) {
     r1_in.push_back(new_item("A", 1));
     r1_in.push_back(new_item("B", 1));
     r1_in.push_back(new_item("C", 2));
-    auto r1 = std::make_unique<Recipe>(std::move(r1_in), new_item("T1", 1));
+    auto r1 = std::make_unique<Recipe>(std::move(r1_in), new_item("T1", 1), BASE_WORKER_DELAY);
     workers.create("worker-t1", std::move(r1), warehouses);
 
     // W2 - {A, B, D} -> T2
@@ -174,7 +170,7 @@ int main(int argc, char **argv) {
     r2_in.push_back(new_item("A", 1));
     r2_in.push_back(new_item("B", 1));
     r2_in.push_back(new_item("D", 3));
-    auto r2 = std::make_unique<Recipe>(std::move(r2_in), new_item("T2", 1));
+    auto r2 = std::make_unique<Recipe>(std::move(r2_in), new_item("T2", 1), BASE_WORKER_DELAY);
     workers.create("worker-t2", std::move(r2), warehouses);
 
     // Setup UI

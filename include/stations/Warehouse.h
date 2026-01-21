@@ -91,13 +91,16 @@ public:
 
 
     /** @brief Get the warehouse name. */
-    [[nodiscard]] std::string name() const override;
+    [[nodiscard]] std::string name() const override {return _name;}
 
     /** @brief Get the maximum capacity of the warehouse. */
-    [[nodiscard]] int capacity() const override;
+    [[nodiscard]] int capacity() const override {return Capacity;}
+
+	/** @brief Get the item size of the warehouse. */
+	[[nodiscard]] int size() const override {return Size;}
 
     /** @brief Get current number of items stored (usage). */
-    [[nodiscard]] int usage() const override;
+    [[nodiscard]] int usage() const override {return _content == nullptr? 0 : _content->size;}
 
 private:
     /**
@@ -134,16 +137,6 @@ private:
     void _write_file();
     void _read_file() const;
 };
-
-
-template<int Size, int Capacity>
-int Warehouse<Size, Capacity>::usage() const {
-	if (_content == nullptr) {
-		return 0;
-	}
-
-	return _content->size();
-}
 
 template<int Size, int Capacity>
 Warehouse<Size, Capacity>::Warehouse(
@@ -211,7 +204,7 @@ void Warehouse<Size, Capacity>::add(IItem &item) const {
 	_sem.lock();
 
 	// check capacity - if no space, just release semaphore
-	if (usage() + Size > Capacity) {
+	if (usage() + 1 >= Capacity) {
 		_log->warn(_msg("Max capacity - cannot add item %s").c_str(), item.name().c_str());
 		_sem.unlock();
 		return;
@@ -232,7 +225,7 @@ std::unique_ptr<IItem> Warehouse<Size, Capacity>::get(const std::string &itemNam
 	// lock warehouse
 	_sem.lock();
 
-	if (_content->size() == 0) {
+	if (_content->size == 0) {
 		_log->info(_msg("No item %s").c_str(), itemName.c_str());
 		_sem.unlock();
 		return nullptr;
@@ -246,14 +239,8 @@ std::unique_ptr<IItem> Warehouse<Size, Capacity>::get(const std::string &itemNam
 	_sem.unlock();
 
 	// copy Item over to heap
-	return std::make_unique<IItem>>(std::move(output));
+	return new_item(output.name(), output.size());
 }
-
-template<int Size, int Capacity>
-std::string Warehouse<Size, Capacity>::name() const {return _name;}
-
-template<int Size, int Capacity>
-int Warehouse<Size, Capacity>::capacity() const {return Capacity;}
 
 template<int Size, int Capacity>
 void Warehouse<Size, Capacity>::_write_file() {

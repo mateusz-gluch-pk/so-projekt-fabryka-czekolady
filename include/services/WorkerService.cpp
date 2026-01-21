@@ -4,6 +4,9 @@
 
 #include "WorkerService.h"
 
+namespace sthr = std::this_thread;
+namespace stime = std::chrono;
+
 std::vector<std::string> WorkerStats::headers() {
     return std::vector<std::string>{
         "Name",
@@ -40,7 +43,7 @@ WorkerService::~WorkerService() {
 }
 
 WorkerStats *WorkerService::
-create(const std::string &name, std::unique_ptr<Recipe> &recipe, WarehouseService &svc) {
+create(const std::string &name, std::unique_ptr<Recipe> recipe, WarehouseService &svc) {
     if (_workers.contains(name)) {
         _log.error(_msg("Worker exists: " + name).c_str());
         return nullptr;

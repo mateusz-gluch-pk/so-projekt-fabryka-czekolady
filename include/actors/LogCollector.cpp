@@ -18,7 +18,7 @@ LogCollector::LogCollector(std::string name, Logger &log, bool tty):
     _tty(tty),
     _running(true), _reloading(false), _paused(false) {
     _msq.emplace(make_key(LOGGING_DIR, _name, &log), false);
-    size_t bufsize = sizeof(SharedVector<Message, LOGGING_BUFFER_SIZE>) + sizeof(Item) * LOGGING_BUFFER_SIZE;
+    size_t bufsize = sizeof(SharedVector<Message, LOGGING_BUFFER_SIZE>);
     _buffer.emplace(make_key(LOGGING_DIR, _name, &log), bufsize, &log, false);
     _log.info(_msg("Created").c_str());
 }
@@ -99,7 +99,7 @@ void LogCollector::_reattach(Logger &log) {
     _log = log;
     _msq.emplace(make_key(LOGGING_DIR, _name, &log), false);
 
-    size_t bufsize = sizeof(SharedVector<Message, LOGGING_BUFFER_SIZE>) + sizeof(Item) * LOGGING_BUFFER_SIZE;
+    size_t bufsize = sizeof(SharedVector<Message, LOGGING_BUFFER_SIZE>);
     _buffer.emplace(make_key(LOGGING_DIR, _name, &log), bufsize, &log, false);
 }
 

@@ -5,6 +5,9 @@
 #include "Worker.h"
 #include "services/WarehouseService.h"
 
+namespace sthr = std::this_thread;
+namespace stime = std::chrono;
+
 Worker::Worker(std::string name, std::unique_ptr<Recipe> recipe, WarehouseService &svc, Logger &log):
     _name(std::move(name)),
     _recipe(std::move(recipe)),
@@ -64,9 +67,6 @@ void Worker::reload() {
 
 void Worker::_main() {
     std::unique_ptr<IItem> output = nullptr;
-
-    // sleep for a tick (optional)
-    sthr::sleep_for(stime::milliseconds(WORKER_TICK_DELAY));
 
     _log.debug(_msg("Producing " + _recipe->name()).c_str());
     const std::string missing = _recipe->try_produce(_inventory, output);

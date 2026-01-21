@@ -14,7 +14,7 @@ Layout::Layout(ftxui::Component dashboard, ftxui::Component control_panel, ftxui
 
     // --- Compose root layout (top row + logs) ---
     _root = ftxui::Container::Vertical({
-        _top_row | ftxui::size(ftxui::HEIGHT, ftxui::EQUAL, 12),
+        _top_row | ftxui::size(ftxui::HEIGHT, ftxui::EQUAL, 15),
         _log_panel | ftxui::flex
     });
 }

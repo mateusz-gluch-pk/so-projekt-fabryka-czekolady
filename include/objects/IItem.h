@@ -7,12 +7,6 @@
 
 #include <string>
 
-#include "Item.h"
-#include "Item.h"
-#include "Item.h"
-#include "Item.h"
-#include "ftxui/component/event.hpp"
-
 class IItem {
 public:
     virtual ~IItem() = default;  // REQUIRED for polymorphic deletion

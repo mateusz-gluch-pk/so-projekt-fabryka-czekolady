@@ -20,8 +20,8 @@ public:
      * @param output  Output item produced by the recipe
      */
     Recipe(std::vector<std::unique_ptr<IItem>> inputs,
-            std::unique_ptr<IItem> output)
-         : _inputs(std::move(inputs)), _output(std::move(output)) {}
+            std::unique_ptr<IItem> output, int delay_ms)
+         : _inputs(std::move(inputs)), _output(std::move(output)), _delay_ms(delay_ms) {}
 
     /// Default constructor (empty recipe)
     Recipe() {};
@@ -52,6 +52,7 @@ public:
             if (begin) {
                 names = input->name();
                 begin = false;
+                continue;
             }
             names += "," + input->name();
         }
@@ -65,6 +66,7 @@ public:
             if (begin) {
                 sizes = std::to_string(input->size());
                 begin = false;
+                continue;
             }
             sizes += "," + std::to_string(input->size());
         }
@@ -76,6 +78,7 @@ public:
 private:
     std::vector<std::unique_ptr<IItem>> _inputs; ///< Items required as input
     std::unique_ptr<IItem> _output;              ///< Item produced by the recipe
+    int _delay_ms; ///< worker cycle delay
 };
 
 #endif //PROJEKT_RECIPE_H

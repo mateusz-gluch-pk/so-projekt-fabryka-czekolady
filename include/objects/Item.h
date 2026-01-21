@@ -8,9 +8,9 @@
 #include <nlohmann/json.hpp>
 
 #include "IItem.h"
-#include "ftxui/component/event.hpp"
 
 #define BASE_LEN 16
+#define TYPESIZE 8
 
 using json = nlohmann::json;
 
@@ -60,7 +60,7 @@ public:
     }
 
 private:
-    char _name[Size*BASE_LEN];      ///< Null-terminated item name
+    char _name[Size*BASE_LEN-TYPESIZE];      ///< Null-terminated item name
 };
 
 template<int Size>
@@ -73,7 +73,7 @@ void from_json(const nlohmann::json &j, Item<Size> &item) {
     std::string name;
     j.at("name").get_to(name);
 
-    constexpr size_t max_len = Size * BASE_LEN - 1; // maximum characters
+    constexpr size_t max_len = Size * BASE_LEN - 1 - TYPESIZE; // maximum characters
     size_t copy_len = std::min(name.size(), max_len);
 
     std::copy_n(name.c_str(), copy_len, item._name);
@@ -82,7 +82,7 @@ void from_json(const nlohmann::json &j, Item<Size> &item) {
 
 template<int Size>
 Item<Size>::Item() {
-    for (size_t i = 0; i < Size * BASE_LEN; ++i) {
+    for (size_t i = 0; i < Size * BASE_LEN - TYPESIZE; ++i) {
         _name[i] = '\0';
     }
 }

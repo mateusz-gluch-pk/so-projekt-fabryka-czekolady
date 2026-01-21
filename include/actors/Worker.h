@@ -15,12 +15,6 @@
 #include "objects/Recipe.h"
 #include "services/WarehouseService.h"
 
-namespace stime = std::chrono;
-namespace sthr = std::this_thread;
-
-#define WORKER_TICK_DELAY 1000
-// #define WORKER_TICK_DELAY 0
-
 /**
  * @brief Represents a worker that processes recipes between warehouses.
  */
@@ -32,10 +26,9 @@ public:
      * @param recipe Recipe to process.
      * @param svc Warehouse service (for parent or child)
      * @param log Reference to logger.
-     * @param child indicator if this is a child process
      * @throws std::exception if warehouse or logger setup fails.
      */
-    Worker(std::string name, std::unique_ptr<Recipe> recipe, WarehouseService &svc, Logger &log, bool child = false);
+    Worker(std::string name, std::unique_ptr<Recipe> recipe, WarehouseService &svc, Logger &log);
 
     /**
      * @brief Main execution loop for processing items.

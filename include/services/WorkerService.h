@@ -27,14 +27,14 @@ public:
      */
     WorkerStats(std::string name, std::string inputs, std::string outputs, const ProcessStats *stats)
         : name(std::move(name)),
-          in_name(std::move(inputs)),
-          out_name(std::move(outputs)),
+          inputs(std::move(inputs)),
+          outputs(std::move(outputs)),
           stats(stats)
     {}
 
     std::string name;           ///< Name of the worker
-    std::string in_name;        ///< Name of the input warehouse
-    std::string out_name;       ///< Name of the output warehouse
+    std::string inputs;        ///< Name of the input warehouse
+    std::string outputs;       ///< Name of the output warehouse
     Recipe recipe;              ///< Recipe processed by the worker
     const ProcessStats *stats = nullptr; ///< Read-only pointer to process statistics
 
