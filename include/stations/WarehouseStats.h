@@ -21,12 +21,11 @@ public:
     /**
      * @brief Construct a WarehouseStats object.
      * @param name Name of the warehouse.
+     * @param size Size of item in the warehouse.
      * @param capacity Maximum number of items the warehouse can hold.
-     * @param variety Number of distinct item types.
      * @param usage Current number of items stored.
-     * @param items List of items stored in the warehouse.
      */
-    WarehouseStats(std::string name, int capacity, int variety, int usage, const std::vector<Item> &items);
+    WarehouseStats(std::string name, int size, int capacity, int usage);
 
     /** @brief Get the warehouse name. */
     [[nodiscard]] const std::string &name() const { return _name; }
@@ -34,14 +33,11 @@ public:
     /** @brief Get warehouse capacity. */
     [[nodiscard]] int capacity() const { return _capacity; }
 
-    /** @brief Get number of distinct item types in the warehouse. */
-    [[nodiscard]] int variety() const { return _variety; }
+    /** @brief Get warehouse item size. */
+    [[nodiscard]] int size() const { return _size; }
 
     /** @brief Get current number of items stored. */
     [[nodiscard]] int usage() const { return _usage; }
-
-    /** @brief Get a copy of the items stored in the warehouse. */
-    [[nodiscard]] std::vector<Item> items() const { return _items; }
 
     /**
      * @brief Get warehouse stats as a vector of strings (one row for tabular display).
@@ -57,33 +53,29 @@ public:
 
 private:
     std::string _name;            /**< Warehouse name */
-    std::vector<Item> _items;     /**< List of items in the warehouse */
     int _capacity;                /**< Maximum number of items the warehouse can hold */
-    int _variety;                 /**< Number of distinct item types */
+    int _size;
     int _usage;                   /**< Current number of items stored */
 };
 
-inline WarehouseStats::WarehouseStats(std::string name, const int capacity, const int variety, const int usage,
-    const std::vector<Item> &items):
-    _name(std::move(name)), _items(items), _capacity(capacity), _variety(variety), _usage(usage) {}
+inline WarehouseStats::WarehouseStats(std::string name, const int size, const int capacity, const int usage):
+    _name(std::move(name)), _capacity(capacity), _size(size), _usage(usage) {}
 
 inline std::vector<std::string> WarehouseStats::row() const {
     return std::vector<std::string>{
         _name,
-        std::to_string(_items.size()),
-        std::to_string(_capacity),
-        std::to_string(_variety),
+        std::to_string(_size),
         std::to_string(_usage),
+        std::to_string(_capacity),
     };
 }
 
 inline std::vector<std::string> WarehouseStats::headers() {
     return std::vector<std::string>{
         "Name",
-        "Item Count",
-        "Item Capacity",
-        "Item Variety",
+        "Item Size",
         "Usage",
+        "Capacity",
     };
 }
 

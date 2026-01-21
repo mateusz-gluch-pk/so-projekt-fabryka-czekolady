@@ -23,8 +23,17 @@ int ItemTemplate::base_delay_ms() const {
     return _base_delay;
 }
 
-Item ItemTemplate::get() const {
-    return Item(_name, _size, 1);
+std::unique_ptr<IItem> ItemTemplate::get() const {
+    switch (_size) {
+        case 1:
+            return std::make_unique<Item<1>>(_name);
+        case 2:
+            return std::make_unique<Item<2>>(_name);
+        case 3:
+            return std::make_unique<Item<3>>(_name);
+        default:
+            return nullptr;
+    }
 }
 
 

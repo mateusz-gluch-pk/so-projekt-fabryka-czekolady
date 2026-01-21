@@ -7,7 +7,6 @@
 std::vector<std::string> DelivererStats::headers() {
     return std::vector<std::string>{
         "Name",
-        "Output",
         "Item",
         "Base Delay [ms]",
         "Status",
@@ -20,8 +19,7 @@ std::vector<std::string> DelivererStats::headers() {
 std::vector<std::string> DelivererStats::row() const {
     return std::vector{
         name,
-        dst_name,
-        tpl.get().name(),
+        tpl.get()->name(),
         std::to_string(tpl.base_delay_ms()),
         state_to_string(stats->state),
         std::to_string(stats->loops),
@@ -42,18 +40,18 @@ DelivererService::~DelivererService() {
     _stats.clear();
 }
 
-DelivererStats *DelivererService::create(const std::string &name, const ItemTemplate &tpl, Warehouse &dst) {
+DelivererStats *DelivererService::create(const std::string &name, const ItemTemplate &tpl, WarehouseService &svc) {
     if (_deliverers.contains(name)) {
         _log.error(_msg("Deliverer exists: " + name).c_str());
         return nullptr;
     }
 
     try {
-        auto d = std::make_unique<Deliverer>(name, tpl, dst, _log);
+        auto d = std::make_unique<Deliverer>(name, tpl, svc, _log);
         const auto pd = new ProcessController(std::move(d), _log, true, _debug);
         pd->run();
         _deliverers[name] = pd;
-        _stats[name] = DelivererStats(name, dst.name(), tpl, pd->stats());
+        _stats[name] = DelivererStats(name, tpl, pd->stats());
         _log.info(_msg("Created deliverer: " + name).c_str());
         return &_stats[name];
     } catch (...) {

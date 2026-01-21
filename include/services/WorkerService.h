@@ -21,16 +21,14 @@ public:
     /**
      * @brief Constructs a WorkerStats instance.
      * @param name Name of the worker.
-     * @param in_name Name of the input warehouse.
-     * @param out_name Name of the output warehouse.
-     * @param recipe Recipe processed by the worker.
+     * @param inputs Worker inputs.
+     * @param outputs Worker outputs.
      * @param stats Pointer to shared process statistics (read-only).
      */
-    WorkerStats(std::string name, std::string in_name, std::string out_name, const Recipe &recipe, const ProcessStats *stats)
+    WorkerStats(std::string name, std::string inputs, std::string outputs, const ProcessStats *stats)
         : name(std::move(name)),
-          in_name(std::move(in_name)),
-          out_name(std::move(out_name)),
-          recipe(recipe),
+          in_name(std::move(inputs)),
+          out_name(std::move(outputs)),
           stats(stats)
     {}
 
@@ -74,12 +72,11 @@ public:
      * @brief Creates a new worker instance.
      * @param name Name of the worker.
      * @param recipe Recipe for processing.
-     * @param in Reference to input warehouse.
-     * @param out Reference to output warehouse.
+     * @param svc Warehouses.
      * @return Pointer to the new WorkerStats object.
      * @throws std::runtime_error if creation fails or name exists.
      */
-    WorkerStats *create(const std::string &name, const Recipe &recipe, Warehouse &in, Warehouse &out);
+    WorkerStats *create(const std::string &name, std::unique_ptr<Recipe> recipe, WarehouseService &svc);
 
     /**
      * @brief Destroys an existing worker.

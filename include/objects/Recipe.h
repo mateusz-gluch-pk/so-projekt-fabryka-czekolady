@@ -19,7 +19,9 @@ public:
      * @param inputs  List of input items required
      * @param output  Output item produced by the recipe
      */
-    Recipe(const std::vector<Item> &inputs, const Item &output);
+    Recipe(std::vector<std::unique_ptr<IItem>> inputs,
+            std::unique_ptr<IItem> output)
+         : _inputs(std::move(inputs)), _output(std::move(output)) {}
 
     /// Default constructor (empty recipe)
     Recipe() {};
@@ -34,20 +36,46 @@ public:
      * @param output  Pointer to store the produced item
      * @return Empty string if successful, otherwise a missing item name
      */
-    std::string try_produce(std::vector<Item> &inputs, Item *output) const;
+    std::string try_produce(std::vector<std::unique_ptr<IItem>>& inputs,
+                            std::unique_ptr<IItem>& output) const;
 
     /**
      * @brief Get the name of the output item.
      * @return Name of the output item
      */
-    [[nodiscard]] std::string name() const { return _output.name(); }
+    [[nodiscard]] std::string name() const { return _output->name(); }
 
-    std::vector<Item> inputs() const { return _inputs; }
+    std::string input_names() const {
+        std::string names;
+        bool begin = true;
+        for (auto &input : _inputs) {
+            if (begin) {
+                names = input->name();
+                begin = false;
+            }
+            names += "," + input->name();
+        }
+        return names;
+    }
+
+    std::string input_sizes() const {
+        std::string sizes;
+        bool begin = true;
+        for (auto &input : _inputs) {
+            if (begin) {
+                sizes = std::to_string(input->size());
+                begin = false;
+            }
+            sizes += "," + std::to_string(input->size());
+        }
+        return sizes;
+    }
+
+
 
 private:
-    std::vector<Item> _inputs; ///< Items required as input
-    Item _output;              ///< Item produced by the recipe
+    std::vector<std::unique_ptr<IItem>> _inputs; ///< Items required as input
+    std::unique_ptr<IItem> _output;              ///< Item produced by the recipe
 };
-
 
 #endif //PROJEKT_RECIPE_H

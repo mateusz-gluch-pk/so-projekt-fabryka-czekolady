@@ -13,6 +13,8 @@ add_library(factorylib STATIC
         ../include/ui/DelivererTable.h
         ../include/ui/WorkerTable.cpp
         ../include/ui/WorkerTable.h
+        ../include/objects/IItem.h
+        ../include/stations/IWarehouse.h
 )
 
 set_target_properties(factorylib PROPERTIES

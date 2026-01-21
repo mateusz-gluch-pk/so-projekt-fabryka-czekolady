@@ -27,6 +27,13 @@ class SharedVector {
         void push_back(const T &item);
 
         /**
+         * @brief Fetches the item from the end of the vector.
+        * @return Last item.
+        * @throw std::runtime_error if vector is full.
+         */
+        T pop_back();
+
+        /**
          * @brief Access element by index (modifiable).
          * @param index Index of element.
          * @return Reference to element.
@@ -155,6 +162,15 @@ void from_json(const nlohmann::json& j, SharedVector<T, Capacity>& vec) {
     for (size_t i = 0; i < vec.size; ++i) {
         data[i] = j[i].get<T>();
     }
+}
+
+template<typename T, size_t Capacity>
+T SharedVector<T, Capacity>::pop_back() {
+    if (size == 0)
+        throw std::runtime_error("pop_back on empty vector");
+
+    --size;
+    return data[size];  // copies the last element
 }
 
 #endif //PROJEKT_SHAREDVECTOR_H

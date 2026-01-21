@@ -13,6 +13,7 @@
 #include "stations/Warehouse.h"
 #include "logger/Logger.h"
 #include "processes/ProcessStats.h"
+#include "services/WarehouseService.h"
 
 namespace stime = std::chrono;
 namespace sthr = std::this_thread;
@@ -27,16 +28,15 @@ public:
      * @brief Constructs a Deliverer.
      * @param name Name of the deliverer.
      * @param tpl Template of the item to deliver.
-     * @param dst Target warehouse reference.
+     * @param svc Warehouse Service.
      * @param log Logger reference.
      * @throws std::exception if warehouse or logger setup fails.
      */
-    Deliverer(std::string name, ItemTemplate tpl, Warehouse &dst, Logger &log, bool child = false);
+    Deliverer(std::string name, ItemTemplate tpl, WarehouseService &svc, Logger &log);
 
     /**
      * @brief Main execution function for the deliverer.
      * @param stats Reference to process statistics to update.
-     * @param log Reference to a logger for runtime messages.
      * @throws std::runtime_error on delivery failure.
      */
     void run(ProcessStats *stats) override;
@@ -95,7 +95,7 @@ private:
 
     std::string _name;                        ///< Name of the deliverer
     ItemTemplate _tpl;                        ///< Item template to deliver
-    std::optional<Warehouse> _dst;            ///< Optional target warehouse
+    WarehouseService &_svc;                    ///< Target warehouse
     Logger &_log;                              ///< Reference to logger
     std::atomic<bool> _running, _paused, _reloading; ///< Thread control flags
 

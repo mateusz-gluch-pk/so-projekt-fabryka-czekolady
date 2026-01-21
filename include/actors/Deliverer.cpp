@@ -6,24 +6,21 @@
 
 #include <utility>
 
-Deliverer::Deliverer(std::string name, ItemTemplate tpl, Warehouse &dst, Logger &log, bool child) :
+#include "services/WarehouseService.h"
+
+Deliverer::Deliverer(std::string name, ItemTemplate tpl, WarehouseService &svc, Logger &log) :
     _name(std::move(name)),
     _tpl(std::move(tpl)),
+    _svc(svc),
     _log(log),
     _running(true),
     _paused(false),
-    _reloading(false),
-    _dst_name(dst.name()),
-    _dst_capacity(dst.capacity()) {
-    if (child) {
-        _dst.emplace(_dst_name, _dst_capacity, &_log, false);
-    }
+    _reloading(false) {
     _log.info(_msg("Created").c_str());
 }
 
 void Deliverer::run(ProcessStats *stats) {
     stats->pid = getpid();
-    // _reattach(log);
 
     while (_running) {
         if (_paused) {
@@ -71,7 +68,12 @@ void Deliverer::reload() {
 void Deliverer::_main() const {
     _log.debug(_msg("Delivering item to warehouse").c_str());
     auto item = _tpl.get();
-    _dst->add(item);
+    auto dst = _svc.get(item->name());
+    if (dst != nullptr) {
+        dst->add(*item.get());
+    } else {
+        _log.error(_msg("Could not find dst warehouse").c_str());
+    }
     sthr::sleep_for(stime::milliseconds(_tpl.delay_ms()));
 }
 
@@ -87,7 +89,12 @@ void Deliverer::_reload() {
 
 void Deliverer::_reattach(Logger &log) {
     _log = log;
-    _dst.emplace(_dst->name(), _dst->capacity(), &log, false);
+    auto item = _tpl.get();
+    _svc.destroy(item->name());
+    auto wh = _svc.attach(item->name(), item->size());
+    if (wh == nullptr) {
+        _log.error(_msg("Cannot reattach to warehouse Item<%d>(\"%s\")").c_str(), item->name().c_str(), item->size());
+    }
 }
 
 std::string Deliverer::_msg(const std::string &msg) const {
@@ -104,23 +111,18 @@ std::vector<std::string> Deliverer::argv() {
     args.push_back("--name");
     args.push_back(_name);
 
-    args.push_back("--dst_name");
-    args.push_back(_dst_name);
-
+    const auto i = _tpl.get();
     args.push_back("--item_name");
-    args.push_back(_tpl.get().name());
+    args.push_back(i->name());
 
-    args.push_back("--log_key");
-    args.push_back(std::to_string(_log.key()));
-
-    args.push_back("--dst_cap");
-    args.push_back(std::to_string(_dst_capacity));
+    args.push_back("--item_size");
+    args.push_back(std::to_string(i->size()));
 
     args.push_back("--item_delay");
     args.push_back(std::to_string(_tpl.base_delay_ms()));
 
-    args.push_back("--item_size");
-    args.push_back(std::to_string(_tpl.get().size()));
+    args.push_back("--log_key");
+    args.push_back(std::to_string(_log.key()));
 
     return args;
 }

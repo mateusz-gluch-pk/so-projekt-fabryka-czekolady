@@ -7,9 +7,8 @@
 std::vector<std::string> WorkerStats::headers() {
     return std::vector<std::string>{
         "Name",
-        "Input",
+        "Inputs",
         "Output",
-        "Recipe",
         "Status",
         "Loops",
         "Reloads",
@@ -20,9 +19,8 @@ std::vector<std::string> WorkerStats::headers() {
 std::vector<std::string> WorkerStats::row() const {
     return std::vector{
         name,
-        in_name,
-        out_name,
-        recipe.name(),
+        inputs,
+        outputs,
         state_to_string(stats->state),
         std::to_string(stats->loops),
         std::to_string(stats->reloads),
@@ -42,18 +40,20 @@ WorkerService::~WorkerService() {
 }
 
 WorkerStats *WorkerService::
-create(const std::string &name, const Recipe &recipe, Warehouse &in, Warehouse &out) {
+create(const std::string &name, std::unique_ptr<Recipe> &recipe, WarehouseService &svc) {
     if (_workers.contains(name)) {
         _log.error(_msg("Worker exists: " + name).c_str());
         return nullptr;
     }
 
     try {
-        auto w = std::make_unique<Worker>(name, recipe, in, out, _log);
+        auto inputs = recipe->input_names();
+        auto output = recipe->name();
+        auto w = std::make_unique<Worker>(name, std::move(recipe), svc, _log);
         const auto pw = new ProcessController(std::move(w), _log, true, _debug);
         pw->run();
         _workers[name] = pw;
-        _stats[name] = WorkerStats(name, in.name(), out.name(), recipe, pw->stats());
+        _stats[name] = WorkerStats(name, inputs, output, pw->stats());
         _log.info(_msg("Created worker: " + name).c_str());
         return &_stats[name];
     } catch (std::exception &e) {

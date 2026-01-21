@@ -13,6 +13,7 @@
 #include "stations/Workstation.h"
 #include "logger/Logger.h"
 #include "objects/Recipe.h"
+#include "services/WarehouseService.h"
 
 namespace stime = std::chrono;
 namespace sthr = std::this_thread;
@@ -29,17 +30,16 @@ public:
      * @brief Constructs a Worker.
      * @param name Name of the worker.
      * @param recipe Recipe to process.
-     * @param in Reference to input warehouse.
-     * @param out Reference to output warehouse.
+     * @param svc Warehouse service (for parent or child)
      * @param log Reference to logger.
+     * @param child indicator if this is a child process
      * @throws std::exception if warehouse or logger setup fails.
      */
-    Worker(std::string name, Recipe recipe, Warehouse &in, Warehouse &out, Logger &log, bool child = false);
+    Worker(std::string name, std::unique_ptr<Recipe> recipe, WarehouseService &svc, Logger &log, bool child = false);
 
     /**
      * @brief Main execution loop for processing items.
      * @param stats Reference to process statistics to update.
-     * @param log Reference to a logger for runtime messages.
      * @throws std::runtime_error on processing failure.
      */
     void run(ProcessStats *stats) override;
@@ -87,8 +87,19 @@ private:
      */
     void _reattach(Logger &log) {
         _log = log;
-        _in.emplace(_in->name(), _in->capacity(), &log, false);
-        _out.emplace(_out->name(), _out->capacity(), &log, false);
+        std::vector<std::string> names;
+        std::vector<int> sizes;
+        for (auto &wh : _svc.get_all_stats()) {
+            names.push_back(wh.name());
+            sizes.push_back(wh.size());
+        }
+        for (int i = 0; i < names.size(); i++) {
+            _svc.destroy(names[i]);
+            auto wh = _svc.attach(names[i], sizes[i]);
+            if (wh == nullptr) {
+                _log.error(_msg("Cannot reattach to warehouse Item<%d>(\"%s\")").c_str(), names[i].c_str(), sizes[i]);
+            }
+        }
     }
 
     /**
@@ -102,17 +113,11 @@ private:
     std::vector<std::string> argv() override;
 
     std::string _name;                 ///< Name of the worker
-    Recipe _recipe;                     ///< Recipe to process
-    std::optional<Warehouse> _in;                     ///< Optional input warehouse
-    std::optional<Warehouse> _out;                    ///< Optional output warehouse
+    std::unique_ptr<Recipe> _recipe;                     ///< Recipe to process
+    WarehouseService &_svc;               ///<Service to access warehouses
     Logger &_log;                        ///< Reference to logger
-    std::vector<Item> _inventory;       ///< Worker inventory
+    std::vector<std::unique_ptr<IItem>> _inventory;       ///< Worker inventory
     std::atomic<bool> _running, _paused, _reloading; ///< Thread control flags
-
-    std::string _in_name;
-    int _in_capacity;
-    std::string _out_name;
-    int _out_capacity;
 };
 
 #endif //PROJEKT_WORKER_H

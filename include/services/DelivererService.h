@@ -25,19 +25,16 @@ public:
     /**
      * @brief Constructs a DelivererStats instance.
      * @param name Name of the deliverer.
-     * @param dst_name Name of the destination warehouse.
      * @param tpl Item template used by the deliverer.
      * @param stats Pointer to shared process statistics (read-only).
      */
-    DelivererStats(std::string name, std::string dst_name, ItemTemplate tpl, const ProcessStats *stats)
+    DelivererStats(std::string name, ItemTemplate tpl, const ProcessStats *stats)
         : name(std::move(name)),
-          dst_name(std::move(dst_name)),
           tpl(std::move(tpl)),
           stats(stats)
     {}
 
     std::string name;           ///< Deliverer's name
-    std::string dst_name;       ///< Destination warehouse name
     ItemTemplate tpl;           ///< Template of the item being delivered
     const ProcessStats *stats = nullptr; ///< Read-only pointer to process statistics
 
@@ -77,11 +74,11 @@ public:
      * @brief Creates a new deliverer instance.
      * @param name Name of the deliverer.
      * @param tpl Item template for delivery.
-     * @param dst Destination warehouse reference.
+     * @param svc Warehouse service.
      * @return Pointer to the new DelivererStats object.
      * @throws std::runtime_error if creation fails or name exists.
      */
-    DelivererStats *create(const std::string &name, const ItemTemplate &tpl, Warehouse &dst);
+    DelivererStats *create(const std::string &name, const ItemTemplate &tpl, WarehouseService &svc);
 
     /**
      * @brief Destroys an existing deliverer.

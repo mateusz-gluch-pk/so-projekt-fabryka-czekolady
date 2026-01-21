@@ -4,6 +4,8 @@
 
 #include "WarehouseService.h"
 
+#define CAPACITY 1024
+
 WarehouseService::~WarehouseService() {
     _log.info(_msg("Clearing warehouses").c_str());
     for (const auto &pair: _warehouses) {
@@ -12,14 +14,58 @@ WarehouseService::~WarehouseService() {
     _warehouses.clear();
 }
 
-Warehouse * WarehouseService::create(const std::string &name, int capacity) {
+IWarehouse * WarehouseService::attach(const std::string &name, int size) {
     if (_warehouses.contains(name)) {
         _log.error(_msg("Warehouse exists: " + name).c_str());
         return nullptr;
     }
 
     try {
-        auto *wh = new Warehouse(name, capacity, &_log);
+        IWarehouse *wh = nullptr;
+        switch (size) {
+            case 1:
+                wh = new Warehouse<1, CAPACITY>(name, &_log, false);
+                break;
+            case 2:
+                wh = new Warehouse<2, CAPACITY>(name, &_log, false);
+                break;
+            case 3:
+                wh = new Warehouse<3, CAPACITY>(name, &_log, false);
+                break;
+            default:
+                throw std::invalid_argument(_msg("Warehouse size not supported").c_str());
+        }
+        _warehouses[name] = wh;
+        _log.info(_msg("Created warehouse: " + name).c_str());
+        return wh;
+    } catch (...) {
+        _log.error(_msg("Failed to create warehouse: " + name).c_str());
+        return nullptr;
+    }
+}
+
+
+IWarehouse * WarehouseService::create(const std::string &name, int size) {
+    if (_warehouses.contains(name)) {
+        _log.error(_msg("Warehouse exists: " + name).c_str());
+        return nullptr;
+    }
+
+    try {
+        IWarehouse *wh = nullptr;
+        switch (size) {
+            case 1:
+                wh = new Warehouse<1, CAPACITY>(name, &_log);
+                break;
+            case 2:
+                wh = new Warehouse<2, CAPACITY>(name, &_log);
+                break;
+            case 3:
+                wh = new Warehouse<3, CAPACITY>(name, &_log);
+                break;
+            default:
+                throw std::invalid_argument(_msg("Warehouse size not supported").c_str());
+        }
         _warehouses[name] = wh;
         _log.info(_msg("Created warehouse: " + name).c_str());
         return wh;

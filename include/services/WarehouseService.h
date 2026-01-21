@@ -29,11 +29,20 @@ public:
     /**
      * @brief Creates a new warehouse instance.
      * @param name Name of the warehouse.
-     * @param capacity Maximum capacity of the warehouse.
+     * @param size Item size.
      * @return Pointer to the created Warehouse object.
      * @throws std::runtime_error if creation fails or name already exists.
      */
-    Warehouse *create(const std::string &name, int capacity);
+    IWarehouse *create(const std::string &name, int size);
+
+    /**
+     * @brief Creates a new warehouse instance.
+     * @param name Name of the warehouse.
+     * @param size Item Size.
+     * @return Pointer to the created Warehouse object.
+     * @throws std::runtime_error if creation fails or name already exists.
+     */
+    IWarehouse *attach(const std::string &name, int size);
 
     /**
      * @brief Destroys a warehouse by name.
@@ -46,13 +55,13 @@ public:
      * @param name Name of the warehouse.
      * @return Pointer to the Warehouse, or nullptr if not found.
      */
-    Warehouse *get(const std::string &name);
+    IWarehouse *get(const std::string &name);
 
     /**
      * @brief Retrieves all warehouses managed by the service.
      * @return Vector of pointers to all Warehouse objects.
      */
-    std::vector<Warehouse *> get_all() const;
+    std::vector<IWarehouse *> get_all() const;
 
     /**
      * @brief Retrieves statistics for a specific warehouse.
@@ -78,7 +87,7 @@ private:
         return "services/WarehouseService:\t" + msg;
     }
 
-    std::map<std::string, Warehouse *> _warehouses; ///< Managed warehouse instances
+    std::map<std::string, IWarehouse *> _warehouses; ///< Managed warehouse instances
     Logger &_log;                                   ///< Reference to logger
     bool _debug;                                    ///< Debug mode flag
 };

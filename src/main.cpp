@@ -18,6 +18,10 @@
 #include "ui/WarehouseTable.h"
 #include "ui/WorkerTable.h"
 
+#include <ranges>
+#include <string_view>
+
+
 # define SIMULATION_LOG_LEVEL MessageLevel::INFO
 # define BASE_DELIVERER_DELAY 1000
 // # define BASE_DELIVERER_DELAY 0
@@ -37,52 +41,54 @@ void create_log_collector(std::unordered_map<std::string, std::string> args) {
 
 void create_deliverer(std::unordered_map<std::string, std::string> args) {
     std::string name = args["--name"];
-    std::string dst_name = args["--dst_name"];
     std::string item_name = args["--item_name"];
-    key_t log_key = static_cast<key_t>(std::stoul(args["--log_key"]));
-    int dst_cap = std::stoi(args["--dst_cap"]);
     int item_delay = std::stoi(args["--item_delay"]);
     int item_size = std::stoi(args["--item_size"]);
 
+    key_t log_key = static_cast<key_t>(std::stoul(args["--log_key"]));
     auto msq = MessageQueue<Message>::attach(log_key);
-    // auto msq = MockQueue<Message>();
     Logger log(SIMULATION_LOG_LEVEL, &msq, log_key);
+    WarehouseService svc(log);
+
+    if (const auto out = svc.attach(args["--output_name"], 1); out == nullptr) {
+        log.fatal("Cannot attach to output warehouse");
+    }
 
     ItemTemplate t(item_name, item_size, item_delay);
-    auto dst = Warehouse::attach(dst_name, dst_cap, &log);
-
-    auto proc = std::make_unique<Deliverer>(name, t, dst, log, true);
+    auto proc = std::make_unique<Deliverer>(name, t, svc, log);
     ProcessController::run_local(std::move(proc), log);
 }
 
 void create_worker(std::unordered_map<std::string, std::string> args) {
     std::string name = args["--name"];
-    std::string in_name = args["--in_name"];
-    int in_cap = std::stoi(args["--in_cap"]);
 
-    std::string out_name = args["--out_name"];
-    int out_cap = std::stoi(args["--out_cap"]);
+    const key_t log_key = static_cast<key_t>(std::stoul(args["--log_key"]));
+    auto msq = MessageQueue<Message>::attach(log_key);
+    Logger log(SIMULATION_LOG_LEVEL, &msq, log_key);
+    WarehouseService svc(log);
 
-    std::string output = args["--recipe_output"];
-    nlohmann::json j = args["--recipe_inputs"];
-
-    if (j.is_string()) {
-        j = nlohmann::json::parse(j.get<std::string>());
+    if (const auto out = svc.attach(args["--output_name"], 1); out == nullptr) {
+        log.fatal("Cannot attach to output warehouse");
     }
 
-    auto inputs = j.get<std::vector<Item>>();
-    key_t log_key = static_cast<key_t>(std::stoul(args["--log_key"]));
+    std::vector<std::string> names;
+    for (auto part : std::views::split(args["--input_names"], ",")) {
+        names.emplace_back(part.begin(), part.end());
+    }
+    std::vector<int> sizes;
+    auto inputs = std::vector<std::unique_ptr<IItem>>();
+    for (auto part : std::views::split(args["--input_sizes"], ",")) {
+        sizes.emplace_back(std::stoi(std::string(part.begin(), part.end())));
+    }
+    for (int i=0; i < names.size(); i++) {
+        if (const auto in = svc.attach(names[i], sizes[i]); in == nullptr) {
+            log.fatal("Cannot attach to input warehouse");
+        }
+        inputs.emplace_back(new_item(names[i], sizes[i]));
+    }
 
-    auto msq = MessageQueue<Message>::attach(log_key);
-    // auto msq = MockQueue<Message>();
-    Logger log(SIMULATION_LOG_LEVEL, &msq, log_key);
-
-    auto in = Warehouse::attach(in_name, in_cap, &log);
-    auto out = Warehouse::attach(out_name, out_cap, &log);
-
-    Recipe r(inputs, {output, 1, 1});
-
-    auto proc = std::make_unique<Worker>(name, r, in, out, log, true);
+    auto r = std::make_unique<Recipe>(std::move(inputs), new_item(args["--output_name"], 1));
+    auto proc = std::make_unique<Worker>(name, std::move(r), svc, log, true);
     ProcessController::run_local(std::move(proc), log);
 }
 
@@ -120,55 +126,56 @@ int main(int argc, char **argv) {
     Supervisor sv(warehouses, deliverers, workers, run, log);
 
     // Setup Warehouses
-    // WH 1 - with capacity
-    constexpr int capacity = 1000;
-    auto ingredients = warehouses.create("ingredients", capacity);
-    if (ingredients == nullptr) {
-        return 1;
-    }
+    // WH set 1 -- for ingredients
+    auto ia = warehouses.create("A", 1);
+    if (ia == nullptr) return 1;
 
-    // WH 2 - with large capacity
-    constexpr int output_capacity = 1000000;
-    auto outputs = warehouses.create("outputs", output_capacity);
-    if (outputs == nullptr) {
-        return 1;
-    }
+    auto ib = warehouses.create("B", 1);
+    if (ib == nullptr) return 1;
+
+    auto ic = warehouses.create("C", 2);
+    if (ic == nullptr) return 1;
+
+    auto id = warehouses.create("D", 3);
+    if (id == nullptr) return 1;
+
+    // WH set 2 - for outputs
+    if (auto ot1 = warehouses.create("T1", 1); ot1 == nullptr) return 1;
+    if (auto ot2 = warehouses.create("T2", 1); ot2 == nullptr) return 1;
 
     // Setup Deliverers
     // D1 - Item A
     ItemTemplate a("A", 1, BASE_DELIVERER_DELAY);
-    deliverers.create("deliverer-a", a, *ingredients);
+    deliverers.create("deliverer-a", a, ia);
 
     // D2 - Item B
     ItemTemplate b("B", 1, BASE_DELIVERER_DELAY);
-    deliverers.create("deliverer-b", b, *ingredients);
+    deliverers.create("deliverer-b", b, ib);
 
     // D3 - Item C
     ItemTemplate c("C", 2, 2*BASE_DELIVERER_DELAY);
-    deliverers.create("deliverer-c", c, *ingredients);
+    deliverers.create("deliverer-c", c, ic);
 
     // D4 - Item D
     ItemTemplate d("D", 3, 2*BASE_DELIVERER_DELAY);
-    deliverers.create("deliverer-d", d, *ingredients);
+    deliverers.create("deliverer-d", d, id);
 
     // Setup Workers
     // W1 - {A, B, C} -> T1
-    std::vector<Item> r1_in{
-        {"A", 1, 1},
-        {"B", 1, 1},
-        {"C", 2, 1},
-    };
-    Recipe r1(r1_in, {"T1", 1, 1});
-    workers.create("worker-t1", r1, *ingredients, *outputs);
+    std::vector<std::unique_ptr<IItem>> r1_in;
+    r1_in.push_back(new_item("A", 1));
+    r1_in.push_back(new_item("B", 1));
+    r1_in.push_back(new_item("C", 2));
+    auto r1 = std::make_unique<Recipe>(std::move(r1_in), new_item("T1", 1));
+    workers.create("worker-t1", std::move(r1), warehouses);
 
     // W2 - {A, B, D} -> T2
-    std::vector<Item> r2_in{
-            {"A", 1, 1},
-            {"B", 1, 1},
-            {"D", 3, 1},
-        };
-    Recipe r2(r2_in, {"T2", 1, 1});
-    workers.create("worker-t2", r2, *ingredients, *outputs);
+    std::vector<std::unique_ptr<IItem>> r2_in;
+    r2_in.push_back(new_item("A", 1));
+    r2_in.push_back(new_item("B", 1));
+    r2_in.push_back(new_item("D", 3));
+    auto r2 = std::make_unique<Recipe>(std::move(r2_in), new_item("T2", 1));
+    workers.create("worker-t2", std::move(r2), warehouses);
 
     // Setup UI
     auto control_panel = std::make_shared<ControlPanel>(sv);

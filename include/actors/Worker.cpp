@@ -3,29 +3,22 @@
 //
 
 #include "Worker.h"
+#include "services/WarehouseService.h"
 
-Worker::Worker(std::string name, Recipe recipe, Warehouse &in, Warehouse &out, Logger &log, bool child):
+Worker::Worker(std::string name, std::unique_ptr<Recipe> recipe, WarehouseService &svc, Logger &log):
     _name(std::move(name)),
     _recipe(std::move(recipe)),
-    _inventory(std::vector<Item>()),
+    _inventory(std::vector<std::unique_ptr<IItem>>()),
     _log(log),
     _running(true),
     _paused(false),
-    _in_name(in.name()),
-    _out_name(out.name()),
-    _in_capacity(in.capacity()),
-    _out_capacity(out.capacity()),
-    _reloading(false) {
-    if (child) {
-        _in.emplace(_in_name, _in_capacity, &_log, false);
-        _out.emplace(_out_name, _out_capacity, &_log, false);
-    }
+    _reloading(false),
+    _svc(svc) {
     _log.info(_msg("Created").c_str());
 }
 
 void Worker::run(ProcessStats *stats) {
     stats->pid = getpid();
-    // _reattach(log);
 
     while (_running) {
         if (_paused) {
@@ -70,25 +63,38 @@ void Worker::reload() {
 }
 
 void Worker::_main() {
-    Item output;
+    std::unique_ptr<IItem> output = nullptr;
 
     // sleep for a tick (optional)
     sthr::sleep_for(stime::milliseconds(WORKER_TICK_DELAY));
 
-    _log.debug(_msg("Producing " + _recipe.name()).c_str());
-    const std::string missing = _recipe.try_produce(_inventory, &output);
+    _log.debug(_msg("Producing " + _recipe->name()).c_str());
+    const std::string missing = _recipe->try_produce(_inventory, output);
 
-    if (output.count() != 0) {
-        _log.info(_msg("Produced " + output.name()).c_str());
-        _out->add(output);
+    if (missing.empty() && output != nullptr) {
+        _log.info(_msg("Produced " + output->name()).c_str());
+
+        auto wh = _svc.get(output->name());
+        if (wh == nullptr) {
+            _log.error(_msg("Cannot store " + output->name()).c_str());
+            return;
+        }
+        wh->add(*output.get());
         return;
     }
 
-    _log.debug(_msg("Failed to produce " + _recipe.name() + ", missing " + missing).c_str());
-    _in->get(missing, &output);
-    if (output.count() != 0) {
-        _log.info(_msg("Retrieved " + output.name()).c_str());
-        _inventory.push_back(output);
+    _log.debug(_msg("Failed to produce " + _recipe->name() + ", missing " + missing).c_str());
+
+    auto wh = _svc.get(missing);
+    if (wh == nullptr) {
+        _log.error(_msg("No warehouse found for " + missing).c_str());
+        return;
+    }
+
+    auto fetched = wh->get(missing);
+    if (fetched != nullptr) {
+        _log.info(_msg("Retrieved " + fetched->name()).c_str());
+        _inventory.push_back(std::move(fetched));
     } else {
         _log.warn(_msg("Failed to retrieve " + missing).c_str());
     }
@@ -109,7 +115,6 @@ std::string Worker::_msg(const std::string &msg) const {
     return "actors/Worker/" + _name + ":\t" + msg;
 }
 
-
 std::vector<std::string> Worker::argv() {
     auto args = std::vector<std::string>();
 
@@ -120,24 +125,14 @@ std::vector<std::string> Worker::argv() {
     args.push_back("--name");
     args.push_back(_name);
 
-    args.push_back("--in_name");
-    args.push_back(_in_name);
+    args.push_back("--output_name");
+    args.push_back(_recipe->name());
 
-    args.push_back("--in_cap");
-    args.push_back(std::to_string(_in_capacity));
+    args.push_back("--input_names");
+    args.push_back(_recipe->input_names());
 
-    args.push_back("--out_name");
-    args.push_back(_out_name);
-
-    args.push_back("--out_cap");
-    args.push_back(std::to_string(_out_capacity));
-
-    args.push_back("--recipe_output");
-    args.push_back(_recipe.name());
-
-    nlohmann::json j = _recipe.inputs();
-    args.push_back("--recipe_inputs");
-    args.push_back(j.dump());
+    args.push_back("--input_sizes");
+    args.push_back(_recipe->input_sizes());
 
     args.push_back("--log_key");
     args.push_back(std::to_string(_log.key()));

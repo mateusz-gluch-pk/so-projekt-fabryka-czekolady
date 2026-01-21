@@ -38,12 +38,11 @@ public:
      */
     [[nodiscard]] int base_delay_ms() const;
 
-
     /**
      * @brief Create an Item from this template.
      * @return Item object with the template's name and size
      */
-    [[nodiscard]] Item get() const;
+    [[nodiscard]] std::unique_ptr<IItem> get() const;
 
 private:
     std::string _name;   ///< Item name

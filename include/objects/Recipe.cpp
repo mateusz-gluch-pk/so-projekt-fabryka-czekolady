@@ -4,17 +4,24 @@
 
 #include "Recipe.h"
 
-Recipe::Recipe(const std::vector<Item> &inputs, const Item &output): _inputs(inputs), _output(output) {}
+std::string Recipe::try_produce(std::vector<std::unique_ptr<IItem>>& inputs,
+                                std::unique_ptr<IItem>& output) const {
 
-std::string Recipe::try_produce(std::vector<Item> &inputs, Item *output) const {
-    for (const Item &item : _inputs) {
-        if (std::ranges::find(inputs, item) == inputs.end()) {
-            return item.name();
+    // Check if all required inputs exist
+    for (const auto& required : _inputs) {
+        auto it = std::find_if(inputs.begin(), inputs.end(),
+            [&](const std::unique_ptr<IItem>& item) {
+                return item->name() == required->name() &&
+                       item->size() == required->size();
+            });
+
+        if (it == inputs.end()) {
+            return required->name(); // missing ingredient
         }
     }
 
-    // if output is produced, inputs are consumed
     inputs.clear();
-    *output = Item(_output.name(), _output.size(), 1);
-    return"";
+    output = _output->clone();
+
+    return ""; // production succeeded
 }
