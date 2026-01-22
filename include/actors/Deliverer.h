@@ -32,7 +32,7 @@ public:
      * @param log Logger reference.
      * @throws std::exception if warehouse or logger setup fails.
      */
-    Deliverer(std::string name, ItemTemplate tpl, WarehouseService &svc, Logger &log);
+    Deliverer(std::string name, ItemTemplate tpl, WarehouseService &svc, Logger &log, bool child = false);
 
     /**
      * @brief Main execution function for the deliverer.
@@ -74,11 +74,6 @@ private:
     void _main() const;
 
     /**
-     * @brief Internal reload implementation.
-     */
-    void _reload();
-
-    /**
      * @brief Reattaches the deliverer to a new logger and warehouse.
      * @param log Logger reference.
      */
@@ -97,10 +92,9 @@ private:
     ItemTemplate _tpl;                        ///< Item template to deliver
     WarehouseService &_svc;                    ///< Target warehouse
     Logger &_log;                              ///< Reference to logger
-    std::atomic<bool> _running, _paused, _reloading; ///< Thread control flags
 
-    std::string _dst_name;
-    int _dst_capacity;
+    ProcessStats *_stats = nullptr;
+    Semaphore _sem_paused;
 };
 
 

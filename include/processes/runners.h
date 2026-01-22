@@ -36,7 +36,7 @@ inline void create_worker(Logger &log, int delay_ms, std::unordered_map<std::str
     }
 
     auto r = std::make_unique<Recipe>(std::move(inputs), new_item(args["--output_name"], 1), delay_ms);
-    auto proc = std::make_unique<Worker>(name, std::move(r), svc, log);
+    auto proc = std::make_unique<Worker>(name, std::move(r), svc, log, true);
     ProcessController::run_local(std::move(proc), log);
 }
 
@@ -53,11 +53,11 @@ inline void create_deliverer(Logger &log, std::unordered_map<std::string, std::s
     }
 
     ItemTemplate t(item_name, item_size, item_delay);
-    auto proc = std::make_unique<Deliverer>(name, t, svc, log);
+    auto proc = std::make_unique<Deliverer>(name, t, svc, log, true);
     ProcessController::run_local(std::move(proc), log);
 }
 
-void create_log_collector(std::unordered_map<std::string, std::string> args) {
+inline void create_log_collector(std::unordered_map<std::string, std::string> args) {
     std::string name = args["--name"];
     const int tty = std::stoi(args["--tty"]);
 

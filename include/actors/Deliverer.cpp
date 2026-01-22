@@ -8,61 +8,70 @@
 
 #include "services/WarehouseService.h"
 
-Deliverer::Deliverer(std::string name, ItemTemplate tpl, WarehouseService &svc, Logger &log) :
+#define PROCESS_DIR "processes"
+
+Deliverer::Deliverer(std::string name, ItemTemplate tpl, WarehouseService &svc, Logger &log, const bool child) :
     _name(std::move(name)),
     _tpl(std::move(tpl)),
     _svc(svc),
     _log(log),
-    _running(true),
-    _paused(false),
-    _reloading(false) {
+    _sem_paused(make_key(PROCESS_DIR, _name, &log), &log, !child) {
     _log.info(_msg("Created").c_str());
 }
 
 void Deliverer::run(ProcessStats *stats) {
+    _stats = stats;
     stats->pid = getpid();
+    stats->state = RUNNING;
 
-    while (_running) {
-        if (_paused) {
-            stats->state = PAUSED;
-            sthr::sleep_for(stime::milliseconds(10));
-            continue;
-        }
+    while (true) {
+        _sem_paused.lock();
+        _sem_paused.unlock();
 
-        if (_reloading) {
-            stats->state = RELOADING;
-            _reload();
-            stats->reloads++;
-            continue;
-        }
-
-        stats->state = RUNNING;
         // _main is a <long> operation
         _main();
         _log.debug(_msg("Loop completed").c_str());
         stats->loops++;
     }
-    stats->state = STOPPED;
 }
 
 void Deliverer::stop() {
     _log.info(_msg("Received SIGTERM - terminating").c_str());
-    _running = false;
+    _stats->state = STOPPED;
+    exit(0);
 }
 
 void Deliverer::pause() {
     _log.info(_msg("Received SIGUSR1 - pausing").c_str());
-    _paused = true;
+    if (_stats != nullptr) {
+        _stats->state = PAUSED;
+    }
+    if (_sem_paused.value() != 0) {
+        _sem_paused.lock();
+    }
 }
 
 void Deliverer::resume() {
     _log.info(_msg("Received SIGCONT - resuming").c_str());
-    _paused = false;
+    if (_stats != nullptr) {
+        _stats->state = RUNNING;
+    }
+    if (_sem_paused.value() != 1) {
+        _sem_paused.unlock();
+    }
 }
 
 void Deliverer::reload() {
     _log.info(_msg("Received SIGHUP - reloading").c_str());
-    _reloading = true;
+    if (_stats != nullptr) {
+        _stats->state = RELOADING;
+    }
+    try {
+        _reattach(_log);
+    } catch (std::exception &e) {
+        _log.warn(e.what());
+        pause();
+    }
 }
 
 void Deliverer::_main() const {
@@ -75,16 +84,6 @@ void Deliverer::_main() const {
         _log.error(_msg("Could not find dst warehouse").c_str());
     }
     sthr::sleep_for(stime::milliseconds(_tpl.delay_ms()));
-}
-
-void Deliverer::_reload() {
-    try {
-        _reloading = false;
-        _reattach(_log);
-    } catch (std::exception &e) {
-        _paused = true;
-        _log.warn(e.what());
-    }
 }
 
 void Deliverer::_reattach(Logger &log) {

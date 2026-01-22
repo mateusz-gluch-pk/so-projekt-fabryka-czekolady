@@ -24,8 +24,10 @@ public:
      * @param size Size of item in the warehouse.
      * @param capacity Maximum number of items the warehouse can hold.
      * @param usage Current number of items stored.
+     * @param empty
+     * @param full
      */
-    WarehouseStats(std::string name, int size, int capacity, int usage);
+    WarehouseStats(std::string name, int size, int capacity, int usage, int empty, int full);
 
     /** @brief Get the warehouse name. */
     [[nodiscard]] const std::string &name() const { return _name; }
@@ -54,12 +56,12 @@ public:
 private:
     std::string _name;            /**< Warehouse name */
     int _capacity;                /**< Maximum number of items the warehouse can hold */
-    int _size;
+    int _size, _empty, _full;
     int _usage;                   /**< Current number of items stored */
 };
 
-inline WarehouseStats::WarehouseStats(std::string name, const int size, const int capacity, const int usage):
-    _name(std::move(name)), _capacity(capacity), _size(size), _usage(usage) {}
+inline WarehouseStats::WarehouseStats(std::string name, const int size, const int capacity, const int usage, const int empty, const int full):
+    _name(std::move(name)), _capacity(capacity), _size(size), _usage(usage), _empty(empty), _full(full) {}
 
 inline std::vector<std::string> WarehouseStats::row() const {
     return std::vector<std::string>{
@@ -67,6 +69,8 @@ inline std::vector<std::string> WarehouseStats::row() const {
         std::to_string(_size),
         std::to_string(_usage),
         std::to_string(_capacity),
+        std::to_string(_empty),
+        std::to_string(_full)
     };
 }
 
@@ -76,6 +80,8 @@ inline std::vector<std::string> WarehouseStats::headers() {
         "Item Size",
         "Usage",
         "Capacity",
+        "Empty",
+        "Full"
     };
 }
 

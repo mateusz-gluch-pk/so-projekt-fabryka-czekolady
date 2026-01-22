@@ -14,9 +14,34 @@ void Supervisor::stop_deliverers() const {
     }
 }
 
+void Supervisor::pause_deliverers() const {
+    for (const auto deliverer: _deliverers.get_all()) {
+        _deliverers.pause(deliverer->name);
+    }
+}
+
+void Supervisor::resume_deliverers() const {
+    for (const auto deliverer: _deliverers.get_all()) {
+        _deliverers.resume(deliverer->name);
+    }
+}
+
+
 void Supervisor::stop_workers() const {
     for (const auto worker : _workers.get_all()) {
         _workers.destroy(worker->name);
+    }
+}
+
+void Supervisor::pause_workers() const {
+    for (const auto worker : _workers.get_all()) {
+        _workers.pause(worker->name);
+    }
+}
+
+void Supervisor::resume_workers() const {
+    for (const auto worker : _workers.get_all()) {
+        _workers.resume(worker->name);
     }
 }
 

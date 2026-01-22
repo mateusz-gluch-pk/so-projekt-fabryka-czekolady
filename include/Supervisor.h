@@ -62,11 +62,15 @@ public:
      * @brief Stops all deliverers.
      */
     void stop_deliverers() const;
+    void pause_deliverers() const;
+    void resume_deliverers() const;
 
     /**
      * @brief Stops all workers.
      */
     void stop_workers() const;
+    void pause_workers() const;
+    void resume_workers() const;
 
     /**
      * @brief Stops all warehouses.

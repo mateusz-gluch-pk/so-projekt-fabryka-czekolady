@@ -54,6 +54,9 @@ public:
 
     /** @brief Get current number of items stored (usage). */
     [[nodiscard]] virtual int usage() const = 0;
+
+    [[nodiscard]] virtual int empty() const = 0;
+    [[nodiscard]] virtual int full() const = 0;
 };
 
 #endif //FACTORY_IWAREHOUSE_H

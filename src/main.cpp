@@ -27,10 +27,10 @@
 // Do not, under any circumstances, run MessageLevel::DEBUG!
 # define SIMULATION_LOG_LEVEL MessageLevel::INFO
 
-# define BASE_DELIVERER_DELAY 1000
+# define BASE_DELIVERER_DELAY 50
 // # define BASE_DELIVERER_DELAY 0
 
-#define BASE_WORKER_DELAY 1000
+# define BASE_WORKER_DELAY 20
 // #define BASE_WORKER_DELAY 0
 
 int main(int argc, char **argv) {

@@ -18,7 +18,7 @@ LogCollector::LogCollector(std::string name, Logger &log, bool tty):
     _tty(tty),
     _running(true), _reloading(false), _paused(false) {
     _msq.emplace(make_key(LOGGING_DIR, _name, &log), false);
-    size_t bufsize = sizeof(SharedVector<Message, LOGGING_BUFFER_SIZE>);
+    size_t bufsize = sizeof(SharedVector<Message, LOGGING_BUFFER_SIZE>) + sizeof(Message);
     _buffer.emplace(make_key(LOGGING_DIR, _name, &log), bufsize, &log, false);
     if (tty) _log.info(_msg("TTY output enabled").c_str());
     _log.info(_msg("Created").c_str());

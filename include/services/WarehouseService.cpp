@@ -102,12 +102,12 @@ WarehouseStats WarehouseService::get_stats(const std::string &name) {
     const auto it = _warehouses.find(name);
     if (it == _warehouses.end()) {
         _log.error(_msg("Warehouse not found: " + name).c_str());
-        return {name, 0, 0, 0};
+        return {name, 0, 0, 0, 0, 0};
     }
 
     const auto *wh = it->second;
     _log.debug(_msg("Fetched warehouse stats: " + name).c_str());
-    return {name, wh->size(), wh->capacity(), wh->usage()};
+    return {name, wh->size(), wh->capacity(), wh->usage(), wh->empty(), wh->full()};
 }
 
 std::vector<IWarehouse *> WarehouseService::get_all() const {
@@ -128,7 +128,7 @@ std::vector<WarehouseStats> WarehouseService::get_all_stats() const {
 
     for (auto &pair : _warehouses) {
         const auto *wh = pair.second;
-        result.emplace_back(wh->name(), wh->size(), wh->capacity(), wh->usage());
+        result.emplace_back(wh->name(), wh->size(), wh->capacity(), wh->usage(), wh->empty(), wh->full());
     }
 
     _log.debug(_msg("Fetched all warehouses stats").c_str());

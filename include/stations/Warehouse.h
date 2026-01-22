@@ -62,12 +62,12 @@ public:
      */
     static Warehouse create(const std::string& name, Logger *log);
 
-    /**
-     * @brief Construct a warehouse (attach or create).
-     * @param name Warehouse name.
-     * @param log Logger instance.
-     * @param create True to create new resources; false to attach existing.
-     */
+	/**
+	 * @brief Internal constructor used by `attach`/`create`.
+	 * @param name Warehouse name.
+	 * @param log Logger instance.
+	 * @param create True to create resources; false to attach.
+	 */
     Warehouse(const std::string& name, Logger *log, bool create = true);
 
     /** @brief Destructor cleans up IPC resources if owned. */
@@ -100,16 +100,10 @@ public:
     /** @brief Get current number of items stored (usage). */
     [[nodiscard]] int usage() const override {return _content == nullptr? 0 : _content->size;}
 
-private:
-    /**
-     * @brief Internal constructor used by `attach`/`create`.
-     * @param name Warehouse name.
-     * @param key IPC key for shared memory and semaphore.
-     * @param log Logger instance.
-     * @param create True to create resources; false to attach.
-     */
-    Warehouse(std::string name, key_t key, Logger *log, bool create);
+	int empty() const override {return _empty.value();}
+	int full() const override {return _full.value();}
 
+private:
     /**
      * @brief Format a log message with warehouse context.
      * @param msg Message text.
@@ -125,6 +119,8 @@ private:
     // IPC resources
     bool _owner;  /**< True if this instance created the IPC resources */
     Semaphore _sem;  /**< Semaphore for thread/process-safe access */
+	Semaphore _full;  /**< Semaphore for thread/process-safe access */
+	Semaphore _empty;  /**< Semaphore for thread/process-safe access */
     SharedMemory<SharedVector<Item<Size>, Capacity>> _shm; /**< Shared memory for items */
     SharedVector<Item<Size>, Capacity> *_content; /**< Pointer to shared memory content */
 
@@ -138,13 +134,14 @@ private:
 
 template<int Size, int Capacity>
 Warehouse<Size, Capacity>::Warehouse(
-	std::string name,
-	key_t key,
+	const std::string &name,
 	Logger *log,
 	bool create):
 		_name(std::move(name)),
-		_sem(key, log, create),
-		_shm(key, sizeof(SharedVector<Item<Size>, Capacity>), log, create),
+		_sem(make_key(WAREHOUSE_DIR, name, log), log, create),
+		_full(make_key(WAREHOUSE_DIR, name+"_full", log), log, create),
+		_empty(make_key(WAREHOUSE_DIR, name+"_empty", log), log, create),
+		_shm(make_key(WAREHOUSE_DIR, name, log), sizeof(SharedVector<Item<Size>, Capacity>), log, create),
 		_log(log),
 		_owner(create)
 	{
@@ -155,22 +152,21 @@ Warehouse<Size, Capacity>::Warehouse(
 	if (fs::exists(_filename) && _owner) {
 		_read_file();
 		_log->info(_msg("Loaded state").c_str());
+		if (_content->size == Capacity-1) {
+			_full.lock();
+		}
+		if (_content->size == 0) {
+			_empty.lock();
+		}
 		_log->info(_msg("Created - item size: %d cap: %d").c_str(), Size, Capacity);
 	} else if (_owner) {
 		_log->info(_msg("Initializing").c_str());
+		_empty.lock();
 		_log->info(_msg("Created - item size: %d cap: %d").c_str(), Size, Capacity);
 	} else {
 		_log->info(_msg("Attached - item size: %d cap: %d").c_str(), Size, Capacity);
 	}
 }
-
-template<int Size, int Capacity>
-Warehouse<Size, Capacity>::Warehouse(const std::string &name, Logger *log, bool create): Warehouse(
-	name,
-	make_key(WAREHOUSE_DIR, name, log),
-	log,
-	create
-) {}
 
 template<int Size, int Capacity>
 Warehouse<Size, Capacity> Warehouse<Size, Capacity>::attach(const std::string &name, Logger *log) {
@@ -199,10 +195,11 @@ Warehouse<Size, Capacity>::~Warehouse () {
 template<int Size, int Capacity>
 void Warehouse<Size, Capacity>::add(IItem &item) const {
 	// lock warehouse
+	_full.lock();
 	_sem.lock();
 
 	// check capacity - if no space, just release semaphore
-	if (usage() + 1 > Capacity) {
+	if (usage() + 1 >= Capacity) {
 		_log->warn(_msg("Max capacity - cannot add item %s").c_str(), item.name().c_str());
 		_sem.unlock();
 		return;
@@ -214,6 +211,13 @@ void Warehouse<Size, Capacity>::add(IItem &item) const {
 	_log->info(_msg("Added item %s").c_str(), item.name().c_str());
 	_log->debug(_msg("Capacity: %d/%d").c_str(), usage(), Capacity);
 
+	// i *should* not do that
+	if (_content->size == 1 && _empty.value() == 0) {
+		_empty.unlock();
+	}
+	if (_content->size < Capacity) {
+		_full.unlock();
+	}
 	// unlock warehouse
 	_sem.unlock();
 }
@@ -221,6 +225,7 @@ void Warehouse<Size, Capacity>::add(IItem &item) const {
 template<int Size, int Capacity>
 std::unique_ptr<IItem> Warehouse<Size, Capacity>::get(const std::string &itemName) const {
 	// lock warehouse
+	_empty.lock();
 	_sem.lock();
 
 	if (_content->size == 0) {
@@ -229,9 +234,18 @@ std::unique_ptr<IItem> Warehouse<Size, Capacity>::get(const std::string &itemNam
 		return nullptr;
 	}
 
+
 	auto output = _content->pop_back();
 	_log->info(_msg("Fetched item %s").c_str(), itemName.c_str());
 	_log->debug(_msg("Capacity: %d/%d").c_str(), usage(), Capacity);
+
+	// i *should* not do that
+	if (_content->size == Capacity - 2 && _full.value() == 0) {
+		_full.unlock();
+	}
+	if (_content->size > 0) {
+		_empty.unlock();
+	}
 
 	// unlock warehouse
 	_sem.unlock();

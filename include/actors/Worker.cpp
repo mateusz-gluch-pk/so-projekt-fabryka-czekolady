@@ -5,64 +5,89 @@
 #include "Worker.h"
 #include "services/WarehouseService.h"
 
+#define PROCESS_DIR "processes"
+
 namespace sthr = std::this_thread;
 namespace stime = std::chrono;
 
-Worker::Worker(std::string name, std::unique_ptr<Recipe> recipe, WarehouseService &svc, Logger &log):
+Worker::Worker(std::string name, std::unique_ptr<Recipe> recipe, WarehouseService &svc, Logger &log, bool child):
     _name(std::move(name)),
     _recipe(std::move(recipe)),
     _inventory(std::vector<std::unique_ptr<IItem>>()),
     _log(log),
-    _running(true),
-    _paused(false),
-    _reloading(false),
-    _svc(svc) {
+    _svc(svc),
+    _sem_paused(make_key(PROCESS_DIR, _name, &log), &log, !child) {
     _log.info(_msg("Created").c_str());
 }
 
-void Worker::run(ProcessStats *stats) {
+[[noreturn]] void Worker::run(ProcessStats *stats) {
+    _stats = stats;
+    stats->state = RUNNING;
     stats->pid = getpid();
 
-    while (_running) {
-        if (_paused) {
-            stats->state = PAUSED;
-            sthr::sleep_for(stime::milliseconds(10));
-            continue;
-        }
+    while (true) {
+        _sem_paused.lock();
+        _sem_paused.unlock();
+        // if (_paused) {
+        //     stats->state = PAUSED;
+        //     sthr::sleep_for(stime::milliseconds(10));
+        //     continue;
+        // }
+        //
+        // if (_reloading) {
+        //     stats->state = RELOADING;
+        //     _reload();
+        //     stats->reloads++;
+        //     continue;
+        // }
 
-        if (_reloading) {
-            stats->state = RELOADING;
-            _reload();
-            stats->reloads++;
-            continue;
-        }
-
-        stats->state = RUNNING;
+        // stats->state = RUNNING;
         _main();
         _log.debug(_msg("Loop completed").c_str());
         stats->loops++;
     }
-    stats->state = STOPPED;
+    // stats->state = STOPPED;
 }
 
 void Worker::stop() {
     _log.info(_msg("Received SIGTERM - terminating").c_str());
-    _running = false;
+    if (_stats != nullptr) {
+        _stats->state = STOPPED;
+    }
+    exit(0);
 }
 
 void Worker::pause() {
     _log.info(_msg("Received SIGUSR1 - pausing").c_str());
-    _paused = true;
+    if (_stats != nullptr) {
+        _stats->state = PAUSED;
+    }
+    if (_sem_paused.value() != 0) {
+        _sem_paused.lock();
+    }
 }
 
 void Worker::resume() {
     _log.info(_msg("Received SIGCONT - resuming").c_str());
-    _paused = false;
+    if (_stats != nullptr) {
+        _stats->state = RUNNING;
+    }
+    if (_sem_paused.value() != 1) {
+        _sem_paused.unlock();
+    }
 }
 
 void Worker::reload() {
     _log.info(_msg("Received SIGHUP - reloading").c_str());
-    _reloading = true;
+    if (_stats != nullptr) {
+        _stats->state = RELOADING;
+    }
+    try {
+        _reattach(_log);
+    } catch (std::exception &e) {
+        _log.warn(e.what());
+        pause();
+    }
 }
 
 void Worker::_main() {
@@ -79,7 +104,7 @@ void Worker::_main() {
             _log.error(_msg("Cannot store " + output->name()).c_str());
             return;
         }
-        wh->add(*output.get());
+        wh->add(*output);
         return;
     }
 
@@ -100,16 +125,6 @@ void Worker::_main() {
     }
 }
 
-// Use RELOAD to make the worker check its warehouses - if not available; turn into IDLE
-void Worker::_reload() {
-    try {
-        _reloading = false;
-        _reattach(_log);
-    } catch (std::exception &e) {
-        _paused = true;
-        _log.warn(e.what());
-    }
-}
 
 std::string Worker::_msg(const std::string &msg) const {
     return "actors/Worker/" + _name + ":\t" + msg;

@@ -28,14 +28,14 @@ public:
      * @param log Reference to logger.
      * @throws std::exception if warehouse or logger setup fails.
      */
-    Worker(std::string name, std::unique_ptr<Recipe> recipe, WarehouseService &svc, Logger &log);
+    Worker(std::string name, std::unique_ptr<Recipe> recipe, WarehouseService &svc, Logger &log, bool child = false);
 
     /**
      * @brief Main execution loop for processing items.
      * @param stats Reference to process statistics to update.
      * @throws std::runtime_error on processing failure.
      */
-    void run(ProcessStats *stats) override;
+    [[noreturn]] void run(ProcessStats *stats) override;
 
     /**
      * @brief Stops the worker safely.
@@ -68,11 +68,6 @@ private:
      * @brief Internal main loop for processing items.
      */
     void _main();
-
-    /**
-     * @brief Internal reload implementation.
-     */
-    void _reload();
 
     /**
      * @brief Reattaches the worker to a new logger and resets warehouses.
@@ -115,7 +110,9 @@ private:
     WarehouseService &_svc;               ///<Service to access warehouses
     Logger &_log;                        ///< Reference to logger
     std::vector<std::unique_ptr<IItem>> _inventory;       ///< Worker inventory
-    std::atomic<bool> _running, _paused, _reloading; ///< Thread control flags
+
+    ProcessStats *_stats = nullptr;
+    Semaphore _sem_paused;
 };
 
 
