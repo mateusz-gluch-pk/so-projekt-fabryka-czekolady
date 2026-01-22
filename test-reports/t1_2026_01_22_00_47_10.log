@@ -1,0 +1,80 @@
+2026-01-22 00:47:10	INF	[9862]	ipcs/SharedMemory/163863/SharedVector<Message, 1024ul>:	Initializing
+2026-01-22 00:47:10	INF	[9862]	ipcs/SharedMemory/163863/SharedVector<Message, 1024ul>:	Created with key 10283ed
+2026-01-22 00:47:10	DBG	[9862]	logging/key:	Fetched logging/t1.key - 10283ed
+2026-01-22 00:47:10	DBG	[9862]	logging/key:	Fetched logging/t1.key - 10283ed
+2026-01-22 00:47:10	INF	[9862]	ipcs/SharedMemory/163863/SharedVector<Message, 1024ul>:	Acquired with key 10283ed
+2026-01-22 00:47:10	INF	[9862]	actors/LogCollector/t1:	TTY output enabled
+2026-01-22 00:47:10	INF	[9862]	actors/LogCollector/t1:	Created
+2026-01-22 00:47:10	DBG	[9862]	processes/key:	Creating processes/t1.key
+2026-01-22 00:47:10	DBG	[9862]	processes/key:	Fetched processes/t1.key - 10283ef
+2026-01-22 00:47:10	INF	[9862]	ipcs/SharedMemory/163864/ProcessStats:	Initializing
+2026-01-22 00:47:10	INF	[9862]	ipcs/SharedMemory/163864/ProcessStats:	Created with key 10283ef
+2026-01-22 00:47:10	INF	[9862]	processes/ProcessController/9863:	Created
+2026-01-22 00:47:10	DBG	[9862]	warehouses/key:	Creating warehouses/t1.key
+2026-01-22 00:47:10	DBG	[9862]	warehouses/key:	Fetched warehouses/t1.key - 10283f1
+2026-01-22 00:47:10	INF	[9862]	ipcs/Semaphore/33:	Created with value 1 and key 10283f1
+2026-01-22 00:47:10	INF	[9862]	ipcs/SharedMemory/163865/SharedVector<Item<1>, 1024ul>:	Initializing
+2026-01-22 00:47:10	INF	[9862]	ipcs/SharedMemory/163865/SharedVector<Item<1>, 1024ul>:	Created with key 10283f1
+2026-01-22 00:47:10	DBG	[9862]	ipcs/SharedMemory/163865/SharedVector<Item<1>, 1024ul>:	Fetching pointer
+2026-01-22 00:47:10	INF	[9862]	stations/Warehouse/t1:	Initializing
+2026-01-22 00:47:10	INF	[9862]	stations/Warehouse/t1:	Created - item size: 1 cap: 1024
+2026-01-22 00:47:10	INF	[9862]	services/WarehouseService:	Created warehouse: t1
+2026-01-22 00:47:10	INF	[9862]	actors/Deliverer/t1-deliverer:	Created
+2026-01-22 00:47:10	DBG	[9862]	processes/key:	Creating processes/t1-deliverer.key
+2026-01-22 00:47:10	DBG	[9862]	processes/key:	Fetched processes/t1-deliverer.key - 10283f2
+2026-01-22 00:47:10	INF	[9862]	ipcs/SharedMemory/163866/ProcessStats:	Initializing
+2026-01-22 00:47:10	INF	[9862]	ipcs/SharedMemory/163866/ProcessStats:	Created with key 10283f2
+2026-01-22 00:47:10	INF	[9862]	processes/ProcessController/9864:	Created
+2026-01-22 00:47:10	DBG	[9862]	ipcs/SharedMemory/163866/ProcessStats:	Fetching pointer
+2026-01-22 00:47:10	INF	[9862]	services/DeliverersService:	Created deliverer: t1-deliverer
+2026-01-22 00:47:10	DBG	[9864]	warehouses/key:	Fetched warehouses/t1.key - 10283f1
+2026-01-22 00:47:10	INF	[9864]	ipcs/Semaphore/33:	Acquired with key 10283f1
+2026-01-22 00:47:10	INF	[9864]	ipcs/SharedMemory/163865/SharedVector<Item<1>, 1024ul>:	Acquired with key 10283f1
+2026-01-22 00:47:10	DBG	[9864]	ipcs/SharedMemory/163865/SharedVector<Item<1>, 1024ul>:	Fetching pointer
+2026-01-22 00:47:10	INF	[9864]	stations/Warehouse/t1:	Attached - item size: 1 cap: 1024
+2026-01-22 00:47:10	INF	[9864]	services/WarehouseService:	Created warehouse: t1
+2026-01-22 00:47:10	INF	[9864]	actors/Deliverer/t1-deliverer:	Created
+2026-01-22 00:47:10	DBG	[9864]	processes/key:	Fetched processes/t1-deliverer.key - 10283f2
+2026-01-22 00:47:10	INF	[9864]	ipcs/SharedMemory/163866/ProcessStats:	Acquired with key 10283f2
+2026-01-22 00:47:10	DBG	[9864]	ipcs/SharedMemory/163866/ProcessStats:	Fetching pointer
+2026-01-22 00:47:10	DBG	[9864]	actors/Deliverer/t1-deliverer:	Delivering item to warehouse
+2026-01-22 00:47:10	DBG	[9864]	services/WarehouseService:	Fetched warehouse: t1
+2026-01-22 00:47:10	DBG	[9864]	ipcs/Semaphore/33:	Locked
+2026-01-22 00:47:10	INF	[9864]	stations/Warehouse/t1:	Added item t1
+2026-01-22 00:47:10	DBG	[9864]	stations/Warehouse/t1:	Capacity: 1/1024
+2026-01-22 00:47:10	DBG	[9864]	ipcs/Semaphore/33:	Unlocked
+[...]
+2026-01-22 00:47:10	DBG	[9864]	ipcs/Semaphore/33:	Unlocked
+2026-01-22 00:47:10	DBG	[9864]	actors/Deliverer/t1-deliverer:	Loop completed
+2026-01-22 00:47:10	DBG	[9864]	actors/Deliverer/t1-deliverer:	Delivering item to warehouse
+2026-01-22 00:47:10	DBG	[9864]	services/WarehouseService:	Fetched warehouse: t1
+2026-01-22 00:47:10	DBG	[9864]	ipcs/Semaphore/33:	Locked
+2026-01-22 00:47:10	DBG	[9862]	ipcs/SharedMemory/163866/ProcessStats:	Fetching pointer
+2026-01-22 00:47:10	INF	[9862]	services/DeliverersService:	Pausing deliverer: t1-deliverer
+2026-01-22 00:47:10	DBG	[9862]	processes/ProcessController/9864:	Sending SIGUSR1(stop)
+2026-01-22 00:47:10	DBG	[9862]	ipcs/SharedMemory/163866/ProcessStats:	Fetching pointer
+2026-01-22 00:47:10	DBG	[9864]	processes/ProcessController/0:	Received SIGUSR1(stop)
+2026-01-22 00:47:10	INF	[9864]	actors/Deliverer/t1-deliverer:	Received SIGUSR1 - pausing
+2026-01-22 00:47:10	DBG	[9864]	stations/Warehouse/t1:	Capacity: 11/1024
+2026-01-22 00:47:10	DBG	[9864]	ipcs/Semaphore/33:	Unlocked
+2026-01-22 00:47:10	DBG	[9864]	actors/Deliverer/t1-deliverer:	Loop completed
+2026-01-22 00:47:10	DBG	[9862]	ipcs/SharedMemory/163866/ProcessStats:	Fetching pointer
+2026-01-22 00:47:10	INF	[9862]	Deliverer state: PAUSED
+2026-01-22 00:47:10	INF	[9862]	Items in warehouse: 11
+2026-01-22 00:47:10	INF	[9862]	Test 1 finished
+2026-01-22 00:47:10	DBG	[9862]	ipcs/SharedMemory/163866/ProcessStats:	Fetching pointer
+2026-01-22 00:47:10	DBG	[9862]	processes/ProcessController/9864:	Sending SIGTERM
+2026-01-22 00:47:10	DBG	[9864]	processes/ProcessController/0:	Received SIGTERM
+2026-01-22 00:47:10	INF	[9864]	actors/Deliverer/t1-deliverer:	Received SIGTERM - terminating
+2026-01-22 00:47:10	INF	[9864]	services/WarehouseService:	Clearing warehouses
+2026-01-22 00:47:10	INF	[9864]	ipcs/SharedMemory/163865/SharedVector<Item<1>, 1024ul>:	Detached
+2026-01-22 00:47:10	DBG	[9862]	processes/ProcessController/9864:	Terminated
+2026-01-22 00:47:10	INF	[9862]	ipcs/SharedMemory/163866/ProcessStats:	Detached
+2026-01-22 00:47:10	INF	[9862]	ipcs/SharedMemory/163866/ProcessStats:	Deleted
+2026-01-22 00:47:10	INF	[9862]	services/WarehouseService:	Clearing warehouses
+2026-01-22 00:47:10	INF	[9862]	stations/Warehouse/t1:	Saved to file warehouses/t1.json
+2026-01-22 00:47:10	DBG	[9862]	ipcs/Semaphore/33:	Locked
+2026-01-22 00:47:10	INF	[9862]	ipcs/SharedMemory/163865/SharedVector<Item<1>, 1024ul>:	Detached
+2026-01-22 00:47:10	INF	[9862]	ipcs/SharedMemory/163865/SharedVector<Item<1>, 1024ul>:	Deleted
+2026-01-22 00:47:10	INF	[9862]	ipcs/Semaphore/33:	Deleted
+2026-01-22 00:47:10	DBG	[9862]	processes/ProcessController/9863:	Sending SIGTERM

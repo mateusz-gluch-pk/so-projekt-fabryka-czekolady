@@ -64,8 +64,8 @@ int main(int argc, char **argv) {
         if (d == nullptr) return 1;
     }
 
-    while (ia->usage() < ia->capacity()) {
-        log.warn("Items in warehouse: %d", ia->usage());
+    while (ia->usage() < ia->capacity()-1) {
+        log.warn("Items in warehouse: %d/%d", ia->usage(), ia->capacity()-1);
         usleep(TEST_TICK);
     }
     sv.stop_deliverers();

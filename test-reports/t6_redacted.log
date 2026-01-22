@@ -1,0 +1,121 @@
+2026-01-22 00:54:08	INF	[11250]	ipcs/SharedMemory/360462/SharedVector<Message, 1024ul>:	Initializing
+2026-01-22 00:54:08	INF	[11250]	ipcs/SharedMemory/360462/SharedVector<Message, 1024ul>:	Created with key 1028495
+2026-01-22 00:54:08	INF	[11250]	ipcs/SharedMemory/360462/SharedVector<Message, 1024ul>:	Acquired with key 1028495
+2026-01-22 00:54:08	INF	[11250]	actors/LogCollector/t6:	TTY output enabled
+2026-01-22 00:54:08	INF	[11250]	actors/LogCollector/t6:	Created
+2026-01-22 00:54:08	INF	[11250]	ipcs/SharedMemory/360463/ProcessStats:	Initializing
+2026-01-22 00:54:08	INF	[11250]	ipcs/SharedMemory/360463/ProcessStats:	Created with key 10284a1
+2026-01-22 00:54:08	INF	[11250]	processes/ProcessController/11251:	Created
+2026-01-22 00:54:08	INF	[11250]	ipcs/Semaphore/50:	Created with value 1 and key 10284a2
+2026-01-22 00:54:08	INF	[11250]	ipcs/SharedMemory/360464/SharedVector<Item<1>, 1024ul>:	Initializing
+2026-01-22 00:54:08	INF	[11250]	ipcs/SharedMemory/360464/SharedVector<Item<1>, 1024ul>:	Created with key 10284a2
+2026-01-22 00:54:08	INF	[11250]	stations/Warehouse/t6a:	Initializing
+2026-01-22 00:54:08	INF	[11250]	stations/Warehouse/t6a:	Created - item size: 1 cap: 1024
+2026-01-22 00:54:08	INF	[11250]	services/WarehouseService:	Created warehouse: t6a
+2026-01-22 00:54:08	INF	[11250]	ipcs/Semaphore/51:	Created with value 1 and key 10284a3
+2026-01-22 00:54:08	INF	[11250]	ipcs/SharedMemory/360465/SharedVector<Item<1>, 1024ul>:	Initializing
+2026-01-22 00:54:08	INF	[11250]	ipcs/SharedMemory/360465/SharedVector<Item<1>, 1024ul>:	Created with key 10284a3
+2026-01-22 00:54:08	INF	[11250]	stations/Warehouse/t6b:	Initializing
+2026-01-22 00:54:08	INF	[11250]	stations/Warehouse/t6b:	Created - item size: 1 cap: 1024
+2026-01-22 00:54:08	INF	[11250]	services/WarehouseService:	Created warehouse: t6b
+2026-01-22 00:54:08	INF	[11250]	actors/Deliverer/t6-deliverer:	Created
+2026-01-22 00:54:08	INF	[11250]	ipcs/SharedMemory/360466/ProcessStats:	Initializing
+2026-01-22 00:54:08	INF	[11250]	ipcs/SharedMemory/360466/ProcessStats:	Created with key 10284a4
+2026-01-22 00:54:08	INF	[11250]	processes/ProcessController/11252:	Created
+2026-01-22 00:54:08	INF	[11250]	services/DeliverersService:	Created deliverer: t6-deliverer
+2026-01-22 00:54:08	INF	[11250]	actors/Worker/t6-worker:	Created
+2026-01-22 00:54:08	INF	[11250]	ipcs/SharedMemory/360467/ProcessStats:	Initializing
+2026-01-22 00:54:08	INF	[11250]	ipcs/SharedMemory/360467/ProcessStats:	Created with key 10284a5
+2026-01-22 00:54:08	INF	[11250]	processes/ProcessController/11253:	Created
+2026-01-22 00:54:08	INF	[11250]	services/WorkersService:	Created worker: t6-worker
+2026-01-22 00:54:08	INF	[11252]	ipcs/Semaphore/50:	Acquired with key 10284a2
+2026-01-22 00:54:08	INF	[11252]	ipcs/SharedMemory/360464/SharedVector<Item<1>, 1024ul>:	Acquired with key 10284a2
+2026-01-22 00:54:08	INF	[11252]	stations/Warehouse/t6a:	Attached - item size: 1 cap: 1024
+2026-01-22 00:54:08	INF	[11252]	services/WarehouseService:	Created warehouse: t6a
+2026-01-22 00:54:08	INF	[11252]	actors/Deliverer/t6-deliverer:	Created
+2026-01-22 00:54:08	INF	[11252]	ipcs/SharedMemory/360466/ProcessStats:	Acquired with key 10284a4
+2026-01-22 00:54:08	INF	[11252]	stations/Warehouse/t6a:	Added item t6a
+2026-01-22 00:54:08	INF	[11252]	stations/Warehouse/t6a:	Added item t6a
+2026-01-22 00:54:08	INF	[11252]	stations/Warehouse/t6a:	Added item t6a
+2026-01-22 00:54:08	INF	[11252]	stations/Warehouse/t6a:	Added item t6a
+2026-01-22 00:54:08	INF	[11252]	stations/Warehouse/t6a:	Added item t6a
+[...]
+2026-01-22 00:54:08	INF	[11252]	stations/Warehouse/t6a:	Added item t6a
+2026-01-22 00:54:08	INF	[11252]	stations/Warehouse/t6a:	Added item t6a
+2026-01-22 00:54:08	INF	[11252]	stations/Warehouse/t6a:	Added item t6a
+2026-01-22 00:54:08	INF	[11252]	stations/Warehouse/t6a:	Added item t6a
+2026-01-22 00:54:08	INF	[11252]	stations/Warehouse/t6a:	Added item t6a
+2026-01-22 00:54:08	INF	[11252]	stations/Warehouse/t6a:	Added item t6a
+2026-01-22 00:54:08	INF	[11252]	stations/Warehouse/t6a:	Added item t6a
+2026-01-22 00:54:08	INF	[11252]	stations/Warehouse/t6a:	Added item t6a
+2026-01-22 00:54:08	INF	[11252]	stations/Warehouse/t6a:	Added item t6a
+2026-01-22 00:54:08	INF	[11252]	stations/Warehouse/t6a:	Added item t6a
+2026-01-22 00:54:08	INF	[11252]	stations/Warehouse/t6a:	Added item t6a
+2026-01-22 00:54:08	INF	[11253]	ipcs/Semaphore/51:	Acquired with key 10284a3
+2026-01-22 00:54:08	INF	[11252]	stations/Warehouse/t6a:	Added item t6a
+2026-01-22 00:54:08	INF	[11252]	stations/Warehouse/t6a:	Added item t6a
+2026-01-22 00:54:08	INF	[11253]	ipcs/SharedMemory/360465/SharedVector<Item<1>, 1024ul>:	Acquired with key 10284a3
+2026-01-22 00:54:08	INF	[11253]	stations/Warehouse/t6b:	Attached - item size: 1 cap: 1024
+2026-01-22 00:54:08	INF	[11253]	services/WarehouseService:	Created warehouse: t6b
+2026-01-22 00:54:08	INF	[11253]	ipcs/Semaphore/50:	Acquired with key 10284a2
+2026-01-22 00:54:08	INF	[11253]	ipcs/SharedMemory/360464/SharedVector<Item<1>, 1024ul>:	Acquired with key 10284a2
+2026-01-22 00:54:08	INF	[11253]	stations/Warehouse/t6a:	Attached - item size: 1 cap: 1024
+2026-01-22 00:54:08	INF	[11253]	services/WarehouseService:	Created warehouse: t6a
+2026-01-22 00:54:08	INF	[11253]	actors/Worker/t6-worker:	Created
+2026-01-22 00:54:08	INF	[11252]	stations/Warehouse/t6a:	Added item t6a
+2026-01-22 00:54:08	INF	[11253]	ipcs/SharedMemory/360467/ProcessStats:	Acquired with key 10284a5
+2026-01-22 00:54:08	INF	[11252]	stations/Warehouse/t6a:	Added item t6a
+2026-01-22 00:54:08	INF	[11253]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-22 00:54:08	INF	[11253]	actors/Worker/t6-worker:	Retrieved t6a
+[...]
+2026-01-22 00:54:09	INF	[11252]	stations/Warehouse/t6a:	Added item t6a
+2026-01-22 00:54:09	INF	[11252]	stations/Warehouse/t6a:	Added item t6a
+2026-01-22 00:54:09	INF	[11253]	actors/Worker/t6-worker:	Received SIGTERM - terminating
+2026-01-22 00:54:09	INF	[11252]	stations/Warehouse/t6a:	Added item t6a
+2026-01-22 00:54:09	INF	[11252]	stations/Warehouse/t6a:	Added item t6a
+2026-01-22 00:54:09	INF	[11252]	stations/Warehouse/t6a:	Added item t6a
+2026-01-22 00:54:09	INF	[11253]	services/WarehouseService:	Clearing warehouses
+2026-01-22 00:54:09	INF	[11252]	stations/Warehouse/t6a:	Added item t6a
+2026-01-22 00:54:09	INF	[11253]	ipcs/SharedMemory/360464/SharedVector<Item<1>, 1024ul>:	Detached
+2026-01-22 00:54:09	INF	[11253]	ipcs/SharedMemory/360465/SharedVector<Item<1>, 1024ul>:	Detached
+2026-01-22 00:54:09	INF	[11252]	stations/Warehouse/t6a:	Added item t6a
+2026-01-22 00:54:09	INF	[11252]	stations/Warehouse/t6a:	Added item t6a
+[...]
+2026-01-22 00:54:09	INF	[11252]	stations/Warehouse/t6a:	Added item t6a
+2026-01-22 00:54:09	INF	[11252]	stations/Warehouse/t6a:	Added item t6a
+2026-01-22 00:54:09	INF	[11252]	stations/Warehouse/t6a:	Added item t6a
+2026-01-22 00:54:10	INF	[11250]	services/WorkersService:	(Soft) Deleted worker: t6-worker
+2026-01-22 00:54:10	INF	[11250]	Worker state: STOPPED
+2026-01-22 00:54:10	INF	[11250]	Deliverer state: RUNNING
+2026-01-22 00:54:10	WAR	[11250]	services/WorkersService:	Worker is terminated: t6-worker
+2026-01-22 00:54:10	INF	[11250]	services/DeliverersService:	Pausing deliverer: t6-deliverer
+2026-01-22 00:54:10	INF	[11252]	actors/Deliverer/t6-deliverer:	Received SIGUSR1 - pausing
+2026-01-22 00:54:10	INF	[11250]	stations/Warehouse/t6a:	Saved to file warehouses/t6a.json
+2026-01-22 00:54:10	INF	[11250]	ipcs/SharedMemory/360464/SharedVector<Item<1>, 1024ul>:	Detached
+2026-01-22 00:54:10	INF	[11250]	ipcs/SharedMemory/360464/SharedVector<Item<1>, 1024ul>:	Deleted
+2026-01-22 00:54:10	INF	[11250]	ipcs/Semaphore/50:	Deleted
+2026-01-22 00:54:10	INF	[11250]	services/WarehouseService:	Deleted warehouse: t6a
+2026-01-22 00:54:10	INF	[11250]	stations/Warehouse/t6b:	Saved to file warehouses/t6b.json
+2026-01-22 00:54:10	INF	[11250]	ipcs/SharedMemory/360465/SharedVector<Item<1>, 1024ul>:	Detached
+2026-01-22 00:54:10	INF	[11250]	ipcs/SharedMemory/360465/SharedVector<Item<1>, 1024ul>:	Deleted
+2026-01-22 00:54:10	INF	[11250]	ipcs/Semaphore/51:	Deleted
+2026-01-22 00:54:10	INF	[11250]	services/WarehouseService:	Deleted warehouse: t6b
+2026-01-22 00:54:10	WAR	[11250]	services/WorkersService:	Worker is terminated: t6-worker
+2026-01-22 00:54:10	WAR	[11250]	services/DeliverersService:	Deliverer is not running: t6-deliverer
+2026-01-22 00:54:10	INF	[11250]	services/DeliverersService:	Reloading deliverer: t6-deliverer
+2026-01-22 00:54:10	WAR	[11250]	services/WorkersService:	Worker is terminated: t6-worker
+2026-01-22 00:54:10	INF	[11250]	services/DeliverersService:	Resuming deliverer: t6-deliverer
+2026-01-22 00:54:10	ERR	[11250]	services/WarehouseService:	Warehouse not found: t6a
+2026-01-22 00:54:10	INF	[11252]	actors/Deliverer/t6-deliverer:	Received SIGCONT - resuming
+2026-01-22 00:54:10	INF	[11252]	actors/Deliverer/t6-deliverer:	Received SIGHUP - reloading
+2026-01-22 00:54:10	INF	[11250]	Worker state: STOPPED
+2026-01-22 00:54:10	INF	[11250]	Deliverer state: PAUSED
+2026-01-22 00:54:10	INF	[11250]	Test 5 finished
+2026-01-22 00:54:10	INF	[11252]	actors/Deliverer/t6-deliverer:	Received SIGTERM - terminating
+2026-01-22 00:54:10	INF	[11252]	services/WarehouseService:	Clearing warehouses
+2026-01-22 00:54:10	INF	[11252]	ipcs/SharedMemory/360464/SharedVector<Item<1>, 1024ul>:	Detached
+2026-01-22 00:54:11	INF	[11250]	ipcs/SharedMemory/360466/ProcessStats:	Detached
+2026-01-22 00:54:11	INF	[11250]	ipcs/SharedMemory/360466/ProcessStats:	Deleted
+2026-01-22 00:54:11	INF	[11250]	ipcs/SharedMemory/360467/ProcessStats:	Detached
+2026-01-22 00:54:11	INF	[11250]	ipcs/SharedMemory/360467/ProcessStats:	Deleted
+2026-01-22 00:54:11	INF	[11250]	services/WarehouseService:	Clearing warehouses
