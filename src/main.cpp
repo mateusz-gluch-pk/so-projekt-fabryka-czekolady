@@ -33,6 +33,12 @@
 # define BASE_WORKER_DELAY 20
 // #define BASE_WORKER_DELAY 0
 
+ShutdownToken run;
+
+void sigterm_handler(int signum) {
+    run.request();
+}
+
 int main(int argc, char **argv) {
     // Worker code
     if (argc >= 3) {
@@ -68,7 +74,6 @@ int main(int argc, char **argv) {
     WarehouseService warehouses(log);
     WorkerService workers(log);
     DelivererService deliverers(log);
-    ShutdownToken run;
 
     // Supervisor
     Supervisor sv(warehouses, deliverers, workers, run, log);
@@ -148,8 +153,12 @@ int main(int argc, char **argv) {
         screen.Exit();
     });
 
-    screen.Loop(layout->component());
+    signal(SIGTERM, sigterm_handler);
+    signal(SIGINT,  sigterm_handler);
 
+    // signal(SIGTERM, sv.stop_all);
+    screen.Loop(layout->component()) ;
     refresher.join();
     return 0;
 }
+
