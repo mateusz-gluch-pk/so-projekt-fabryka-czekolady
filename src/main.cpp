@@ -27,11 +27,11 @@
 // Do not, under any circumstances, run MessageLevel::DEBUG!
 # define SIMULATION_LOG_LEVEL MessageLevel::INFO
 
-# define BASE_DELIVERER_DELAY 50
-// # define BASE_DELIVERER_DELAY 0
+// # define BASE_DELIVERER_DELAY 50
+// # define BASE_WORKER_DELAY 20
 
-# define BASE_WORKER_DELAY 20
-// #define BASE_WORKER_DELAY 0
+# define BASE_DELIVERER_DELAY 0
+# define BASE_WORKER_DELAY 0
 
 ShutdownToken run;
 
@@ -155,8 +155,6 @@ int main(int argc, char **argv) {
 
     signal(SIGTERM, sigterm_handler);
     signal(SIGINT,  sigterm_handler);
-
-    // signal(SIGTERM, sv.stop_all);
     screen.Loop(layout->component()) ;
     refresher.join();
     return 0;
