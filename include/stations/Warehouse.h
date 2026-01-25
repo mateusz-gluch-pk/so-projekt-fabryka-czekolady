@@ -199,7 +199,7 @@ void Warehouse<Size, Capacity>::add(IItem &item) const {
 	_sem.lock();
 
 	// check capacity - if no space, just release semaphore
-	if (usage() + 1 >= Capacity) {
+	if (_content->size >= Capacity) {
 		_log->warn(_msg("Max capacity - cannot add item %s").c_str(), item.name().c_str());
 		_sem.unlock();
 		return;
@@ -240,7 +240,7 @@ std::unique_ptr<IItem> Warehouse<Size, Capacity>::get(const std::string &itemNam
 	_log->debug(_msg("Capacity: %d/%d").c_str(), usage(), Capacity);
 
 	// i *should* not do that
-	if (_content->size == Capacity - 2 && _full.value() == 0) {
+	if (_content->size == Capacity - 1 && _full.value() == 0) {
 		_full.unlock();
 	}
 	if (_content->size > 0) {

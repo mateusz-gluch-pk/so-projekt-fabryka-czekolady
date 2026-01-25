@@ -82,7 +82,7 @@ void LogCollector::_main() {
 
     auto buf = _buffer->get();
     if (buf->size == LOGGING_BUFFER_SIZE) {
-        _log.debug(_msg("Erasing beginning of buffer, %d/%d").c_str(), buf->size, buf->capacity);
+        _log.debug(_msg("Erasing beginning of buffer, %d").c_str(), buf->size);
         buf->erase(buf->begin());
     }
     _log.debug(_msg("Appending log to buffer").c_str());
