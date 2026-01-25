@@ -27,11 +27,11 @@
 // Do not, under any circumstances, run MessageLevel::DEBUG!
 # define SIMULATION_LOG_LEVEL MessageLevel::INFO
 
-// # define BASE_DELIVERER_DELAY 50
-// # define BASE_WORKER_DELAY 20
+# define BASE_DELIVERER_DELAY 50
+# define BASE_WORKER_DELAY 20
 
-# define BASE_DELIVERER_DELAY 0
-# define BASE_WORKER_DELAY 0
+// # define BASE_DELIVERER_DELAY 0
+// # define BASE_WORKER_DELAY 0
 
 ShutdownToken run;
 
@@ -147,6 +147,7 @@ int main(int argc, char **argv) {
 
     std::thread refresher([&] {
         while (!run.requested()) {
+            // this one refreshes GUI - i need this thread to run in while to achieve live monitoring
             std::this_thread::sleep_for(std::chrono::milliseconds(20));
             screen.PostEvent(ftxui::Event::Custom);
         }

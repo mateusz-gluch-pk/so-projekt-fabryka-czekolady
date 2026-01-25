@@ -71,7 +71,7 @@ private:
     /**
      * @brief Internal main loop for delivery logic.
      */
-    void _main() const;
+    void _main();
 
     /**
      * @brief Reattaches the deliverer to a new logger and warehouse.

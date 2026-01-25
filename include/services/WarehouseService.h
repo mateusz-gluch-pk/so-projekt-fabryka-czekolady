@@ -9,6 +9,8 @@
 
 #include "stations/Warehouse.h"
 
+#define SERVICE_DIR "services"
+
 /**
  * @brief Service class for managing Warehouse instances and their statistics.
  */
@@ -18,8 +20,12 @@ public:
      * @brief Constructs a WarehouseService.
      * @param log Reference to a logger.
      * @param debug Whether to enable debug mode (default false).
+     * @param child
      */
-    explicit WarehouseService(Logger &log, const bool debug = false) : _log(log), _debug(debug) {}
+    explicit WarehouseService(Logger &log, const bool debug = false, const bool child = false):
+        _available(make_key(SERVICE_DIR, "warehouses", &log), &log, !child),
+        _log(log),
+        _debug(debug) {}
 
     /**
      * @brief Destructor; cleans up all warehouses managed by the service.
@@ -77,6 +83,28 @@ public:
      */
     std::vector<WarehouseStats> get_all_stats() const;
 
+    /// Supervisor function - lock all warehouses
+    void lock() {
+        if (!_available_sv) {
+            _log.warn(_msg("Warehouses already locked").c_str());
+            return;
+        }
+        _log.info(_msg("Locking Warehouses").c_str());
+        _available_sv = false;
+        _available.lock();
+    }
+
+    /// Supervisor function - unlock all warehouses
+    void unlock() {
+        if (_available_sv) {
+            _log.warn(_msg("Warehouses already unlocked").c_str());
+            return;
+        }
+        _log.info(_msg("Unlocking Warehouses").c_str());
+        _available_sv = true;
+        _available.unlock();
+    }
+
 private:
     /**
      * @brief Formats a service log message.
@@ -88,6 +116,12 @@ private:
     }
 
     std::map<std::string, IWarehouse *> _warehouses; ///< Managed warehouse instances
+
+    /// Supervisor lock for warehouses
+    Semaphore _available;
+    /// bool value to prevent double locking and sem interference
+    bool _available_sv = true;
+
     Logger &_log;                                   ///< Reference to logger
     bool _debug;                                    ///< Debug mode flag
 };

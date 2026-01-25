@@ -66,6 +66,10 @@ void DelivererService::destroy(const std::string &name) {
         _log.error(_msg("Deliverer not found: " + name).c_str());
         return;
     }
+    if (it->second->stats()->state == STOPPED) {
+        _log.warn(_msg("Deliverer is terminated: " + name).c_str());
+        return;
+    }
 
     it->second->stop();
     _log.info(_msg("(Soft) Deleted deliverer: " + name).c_str());

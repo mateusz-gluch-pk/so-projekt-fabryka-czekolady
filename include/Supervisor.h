@@ -76,6 +76,10 @@ public:
      * @brief Stops all warehouses.
      */
     void stop_warehouses() const;
+    void pause_warehouses() const;
+    void resume_warehouses() const;
+
+    void stop_workers_warehouses() const;
 
     /**
      * @brief Stops all managed services.

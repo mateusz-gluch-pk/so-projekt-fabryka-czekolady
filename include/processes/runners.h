@@ -13,7 +13,7 @@
 
 inline void create_worker(Logger &log, int delay_ms, std::unordered_map<std::string, std::string> args) {
     std::string name = args["--name"];
-    WarehouseService svc(log);
+    WarehouseService svc(log, false, true);
 
     if (const auto out = svc.attach(args["--output_name"], 1); out == nullptr) {
         log.fatal("Cannot attach to output warehouse");
@@ -46,7 +46,7 @@ inline void create_deliverer(Logger &log, std::unordered_map<std::string, std::s
     int item_delay = std::stoi(args["--item_delay"]);
     int item_size = std::stoi(args["--item_size"]);
 
-    WarehouseService svc(log);
+    WarehouseService svc(log, false, true);
 
     if (const auto out = svc.attach(item_name, item_size); out == nullptr) {
         log.fatal("Cannot attach to output warehouse");

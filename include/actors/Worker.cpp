@@ -28,25 +28,11 @@ Worker::Worker(std::string name, std::unique_ptr<Recipe> recipe, WarehouseServic
     while (true) {
         _sem_paused.lock();
         _sem_paused.unlock();
-        // if (_paused) {
-        //     stats->state = PAUSED;
-        //     sthr::sleep_for(stime::milliseconds(10));
-        //     continue;
-        // }
-        //
-        // if (_reloading) {
-        //     stats->state = RELOADING;
-        //     _reload();
-        //     stats->reloads++;
-        //     continue;
-        // }
 
-        // stats->state = RUNNING;
         _main();
         _log.debug(_msg("Loop completed").c_str());
         stats->loops++;
     }
-    // stats->state = STOPPED;
 }
 
 void Worker::stop() {
@@ -60,27 +46,27 @@ void Worker::stop() {
 void Worker::pause() {
     _log.info(_msg("Received SIGUSR1 - pausing").c_str());
     if (_stats != nullptr) {
+        if (_stats->state == RUNNING) {
+            _sem_paused.lock();
+        }
         _stats->state = PAUSED;
-    }
-    if (_sem_paused.value() != 0) {
-        _sem_paused.lock();
     }
 }
 
 void Worker::resume() {
     _log.info(_msg("Received SIGCONT - resuming").c_str());
     if (_stats != nullptr) {
+        if (_stats->state == PAUSED) {
+            _sem_paused.unlock();
+        }
         _stats->state = RUNNING;
-    }
-    if (_sem_paused.value() != 1) {
-        _sem_paused.unlock();
     }
 }
 
 void Worker::reload() {
     _log.info(_msg("Received SIGHUP - reloading").c_str());
     if (_stats != nullptr) {
-        _stats->state = RELOADING;
+        resume();
     }
     try {
         _reattach(_log);
@@ -102,6 +88,7 @@ void Worker::_main() {
         auto wh = _svc.get(output->name());
         if (wh == nullptr) {
             _log.error(_msg("Cannot store " + output->name()).c_str());
+            pause();
             return;
         }
         wh->add(*output);
@@ -113,6 +100,7 @@ void Worker::_main() {
     auto wh = _svc.get(missing);
     if (wh == nullptr) {
         _log.error(_msg("No warehouse found for " + missing).c_str());
+        pause();
         return;
     }
 

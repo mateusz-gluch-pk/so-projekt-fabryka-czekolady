@@ -45,27 +45,35 @@ void Supervisor::resume_workers() const {
     }
 }
 
+void Supervisor::pause_warehouses() const {
+    _warehouses.lock();
+}
+
+void Supervisor::resume_warehouses() const {
+    _warehouses.unlock();
+}
+
 void Supervisor::stop_warehouses() const {
-    for (const auto worker : _workers.get_all()) {
-        _workers.pause(worker->name);
-    }
-    for (const auto deliverer : _deliverers.get_all()) {
-        _deliverers.pause(deliverer->name);
-    }
-
-    for (const auto wh : _warehouses.get_all()) {
-        _warehouses.destroy(wh->name());
-    }
-
+    _warehouses.lock();
     _workers.reload_all();
     _deliverers.reload_all();
+    for (const auto &wh : _warehouses.get_all_stats()) {
+        _warehouses.destroy(wh.name());
+    }
+    _warehouses.unlock();
+}
 
+void Supervisor::stop_workers_warehouses() const {
+    _warehouses.lock();
     for (const auto worker : _workers.get_all()) {
-        _workers.resume(worker->name);
+        _workers.destroy(worker->name);
     }
-    for (const auto deliverer : _deliverers.get_all()) {
-        _deliverers.resume(deliverer->name);
+
+    _deliverers.reload_all();
+    for (const auto &wh : _warehouses.get_all_stats()) {
+        _warehouses.destroy(wh.name());
     }
+    _warehouses.unlock();
 }
 
 void Supervisor::stop_all() const {

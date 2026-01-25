@@ -72,6 +72,11 @@ void WorkerService::destroy(const std::string &name) {
         return;
     }
 
+    if (it->second->stats()->state == STOPPED) {
+        _log.warn(_msg("Worker is terminated: " + name).c_str());
+        return;
+    }
+
     it->second->stop();
     _log.info(_msg("(Soft) Deleted worker: " + name).c_str());
 }

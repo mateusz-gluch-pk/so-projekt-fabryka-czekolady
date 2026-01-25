@@ -44,27 +44,27 @@ void Deliverer::stop() {
 void Deliverer::pause() {
     _log.info(_msg("Received SIGUSR1 - pausing").c_str());
     if (_stats != nullptr) {
+        if (_stats->state == RUNNING) {
+            _sem_paused.lock();
+        }
         _stats->state = PAUSED;
-    }
-    if (_sem_paused.value() != 0) {
-        _sem_paused.lock();
     }
 }
 
 void Deliverer::resume() {
     _log.info(_msg("Received SIGCONT - resuming").c_str());
     if (_stats != nullptr) {
+        if (_stats->state == PAUSED) {
+            _sem_paused.unlock();
+        }
         _stats->state = RUNNING;
-    }
-    if (_sem_paused.value() != 1) {
-        _sem_paused.unlock();
     }
 }
 
 void Deliverer::reload() {
     _log.info(_msg("Received SIGHUP - reloading").c_str());
     if (_stats != nullptr) {
-        _stats->state = RELOADING;
+        resume();
     }
     try {
         _reattach(_log);
@@ -74,14 +74,16 @@ void Deliverer::reload() {
     }
 }
 
-void Deliverer::_main() const {
+void Deliverer::_main() {
     _log.debug(_msg("Delivering item to warehouse").c_str());
     auto item = _tpl.get();
     auto dst = _svc.get(item->name());
     if (dst != nullptr) {
         dst->add(*item.get());
     } else {
+        pause();
         _log.error(_msg("Could not find dst warehouse").c_str());
+        return;
     }
     sthr::sleep_for(stime::milliseconds(_tpl.delay_ms()));
 }

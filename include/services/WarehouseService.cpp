@@ -15,6 +15,8 @@ WarehouseService::~WarehouseService() {
 }
 
 IWarehouse * WarehouseService::attach(const std::string &name, int size) {
+    _available.lock();
+
     if (_warehouses.contains(name)) {
         _log.error(_msg("Warehouse exists: " + name).c_str());
         return nullptr;
@@ -37,8 +39,10 @@ IWarehouse * WarehouseService::attach(const std::string &name, int size) {
         }
         _warehouses[name] = wh;
         _log.info(_msg("Created warehouse: " + name).c_str());
+        _available.unlock();
         return wh;
     } catch (...) {
+        _available.unlock();
         _log.fatal(_msg("Failed to create warehouse: " + name).c_str());
         return nullptr;
     }
@@ -46,6 +50,8 @@ IWarehouse * WarehouseService::attach(const std::string &name, int size) {
 
 
 IWarehouse * WarehouseService::create(const std::string &name, int size) {
+    _available.lock();
+
     if (_warehouses.contains(name)) {
         _log.error(_msg("Warehouse exists: " + name).c_str());
         return nullptr;
@@ -68,8 +74,10 @@ IWarehouse * WarehouseService::create(const std::string &name, int size) {
         }
         _warehouses[name] = wh;
         _log.info(_msg("Created warehouse: " + name).c_str());
+        _available.unlock();
         return wh;
     } catch (...) {
+        _available.unlock();
         _log.error(_msg("Failed to create warehouse: " + name).c_str());
         return nullptr;
     }
@@ -88,13 +96,17 @@ void WarehouseService::destroy(const std::string &name) {
 }
 
 IWarehouse * WarehouseService::get(const std::string &name) {
+    _available.lock();
+
     const auto it = _warehouses.find(name);
     if (it == _warehouses.end()) {
         _log.error(_msg("Warehouse not found: " + name).c_str());
+        _available.unlock();
         return nullptr;
     }
 
     _log.debug(_msg("Fetched warehouse: " + name).c_str());
+    _available.unlock();
     return it->second;
 }
 
@@ -111,6 +123,8 @@ WarehouseStats WarehouseService::get_stats(const std::string &name) {
 }
 
 std::vector<IWarehouse *> WarehouseService::get_all() const {
+    _available.lock();
+
     std::vector<IWarehouse *> result;
     result.reserve(_warehouses.size());
 
@@ -119,6 +133,7 @@ std::vector<IWarehouse *> WarehouseService::get_all() const {
     }
 
     _log.debug(_msg("Fetched all warehouses").c_str());
+    _available.unlock();
     return result;
 }
 

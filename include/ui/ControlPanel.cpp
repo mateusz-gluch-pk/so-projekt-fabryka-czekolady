@@ -40,24 +40,32 @@ ControlPanel::ControlPanel(Supervisor &sv): _supervisor(sv) {
         [&]{sv.stop_warehouses();}
     );
 
+    auto pause_warehouses = ftxui::Button(
+    "Pause Warehouses",
+    [&]{sv.pause_warehouses();}
+    );
+
+    auto resume_warehouses = ftxui::Button(
+        "Resume Warehouses",
+        [&]{sv.resume_warehouses();}
+    );
+
+
     auto stop_all = ftxui::Button(
         "Stop Simulation",
         [&]{sv.stop_all();}
     );
 
-    auto row1 = ftxui::Container::Horizontal({
-        stop_workers,
-        pause_workers,
-        resume_workers,
-    });
-    auto row2 = ftxui::Container::Horizontal({
-        stop_deliverers,
-        pause_deliverers,
-        resume_deliverers,
-    });
-    auto row3 = ftxui::Container::Horizontal({
-        stop_warehouses, stop_all
-    });
 
-    _component = ftxui::Container::Vertical({row1, row2, row3});
+    auto stop_workers_whs = ftxui::Button(
+        "Stop Workers+Warehouses",
+        [&]{sv.stop_workers_warehouses();}
+    );
+
+
+    auto col1 = ftxui::Container::Vertical({stop_workers, stop_deliverers, stop_warehouses});
+    auto col2 = ftxui::Container::Vertical({pause_workers, pause_deliverers, pause_warehouses});
+    auto col3 = ftxui::Container::Vertical({resume_workers, resume_deliverers, resume_warehouses});
+    auto col4 = ftxui::Container::Vertical({stop_all, stop_workers_whs});
+    _component = ftxui::Container::Horizontal({col1, col2, col3, col4});
 }
