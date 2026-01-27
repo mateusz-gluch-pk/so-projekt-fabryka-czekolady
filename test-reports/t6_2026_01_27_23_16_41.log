@@ -1,0 +1,2716 @@
+2026-01-27 23:16:41	INF	[17088]	ipcs/SharedMemory/753684/SharedVector<Message, 1024ul>:	Initializing
+2026-01-27 23:16:41	INF	[17088]	ipcs/SharedMemory/753684/SharedVector<Message, 1024ul>:	Created with key 10277b2
+2026-01-27 23:16:41	INF	[17088]	ipcs/SharedMemory/753684/SharedVector<Message, 1024ul>:	Acquired with key 10277b2
+2026-01-27 23:16:41	INF	[17088]	actors/LogCollector/t6:	TTY output enabled
+2026-01-27 23:16:41	INF	[17088]	actors/LogCollector/t6:	Created
+2026-01-27 23:16:41	INF	[17088]	ipcs/SharedMemory/753685/ProcessStats:	Initializing
+2026-01-27 23:16:41	INF	[17088]	ipcs/SharedMemory/753685/ProcessStats:	Created with key 10277b6
+2026-01-27 23:16:41	INF	[17088]	processes/ProcessController/17089:	Created
+2026-01-27 23:16:41	INF	[17088]	ipcs/Semaphore/163849:	Created with value 1 and key 10275a5
+2026-01-27 23:16:41	INF	[17088]	ipcs/Semaphore/163850:	Created with value 1 and key 10277c7
+2026-01-27 23:16:41	INF	[17088]	ipcs/Semaphore/163851:	Created with value 1 and key 10277c8
+2026-01-27 23:16:41	INF	[17088]	ipcs/Semaphore/163852:	Created with value 1 and key 10277c9
+2026-01-27 23:16:41	INF	[17088]	ipcs/SharedMemory/753686/SharedVector<Item<1>, 1024ul>:	Initializing
+2026-01-27 23:16:41	INF	[17088]	ipcs/SharedMemory/753686/SharedVector<Item<1>, 1024ul>:	Created with key 10277c7
+2026-01-27 23:16:41	INF	[17088]	stations/Warehouse/t6a:	Initializing
+2026-01-27 23:16:41	INF	[17088]	stations/Warehouse/t6a:	Created - item size: 1 cap: 1024
+2026-01-27 23:16:41	INF	[17088]	services/WarehouseService:	Created warehouse: t6a
+2026-01-27 23:16:41	INF	[17088]	ipcs/Semaphore/163853:	Created with value 1 and key 1027814
+2026-01-27 23:16:41	INF	[17088]	ipcs/Semaphore/163854:	Created with value 1 and key 1027824
+2026-01-27 23:16:41	INF	[17088]	ipcs/Semaphore/163855:	Created with value 1 and key 102782d
+2026-01-27 23:16:41	INF	[17088]	ipcs/SharedMemory/753687/SharedVector<Item<1>, 1024ul>:	Initializing
+2026-01-27 23:16:41	INF	[17088]	ipcs/SharedMemory/753687/SharedVector<Item<1>, 1024ul>:	Created with key 1027814
+2026-01-27 23:16:41	INF	[17088]	stations/Warehouse/t6b:	Initializing
+2026-01-27 23:16:41	INF	[17088]	stations/Warehouse/t6b:	Created - item size: 1 cap: 1024
+2026-01-27 23:16:41	INF	[17088]	services/WarehouseService:	Created warehouse: t6b
+2026-01-27 23:16:41	INF	[17088]	ipcs/Semaphore/163856:	Created with value 1 and key 102791b
+2026-01-27 23:16:41	INF	[17088]	actors/Deliverer/t6-deliverer:	Created
+2026-01-27 23:16:41	INF	[17088]	ipcs/SharedMemory/753688/ProcessStats:	Initializing
+2026-01-27 23:16:41	INF	[17088]	ipcs/SharedMemory/753688/ProcessStats:	Created with key 102791b
+2026-01-27 23:16:41	INF	[17088]	processes/ProcessController/17090:	Created
+2026-01-27 23:16:41	INF	[17088]	services/DeliverersService:	Created deliverer: t6-deliverer
+2026-01-27 23:16:41	INF	[17088]	ipcs/Semaphore/163857:	Created with value 1 and key 102791c
+2026-01-27 23:16:41	INF	[17088]	actors/Worker/t6-worker:	Created
+2026-01-27 23:16:41	INF	[17088]	ipcs/SharedMemory/753689/ProcessStats:	Initializing
+2026-01-27 23:16:41	INF	[17088]	ipcs/SharedMemory/753689/ProcessStats:	Created with key 102791c
+2026-01-27 23:16:41	INF	[17088]	processes/ProcessController/17091:	Created
+2026-01-27 23:16:41	INF	[17088]	services/WorkersService:	Created worker: t6-worker
+2026-01-27 23:16:41	INF	[17090]	ipcs/Semaphore/163849:	Acquired with key 10275a5
+2026-01-27 23:16:41	INF	[17090]	ipcs/Semaphore/163850:	Acquired with key 10277c7
+2026-01-27 23:16:41	INF	[17090]	ipcs/Semaphore/163851:	Acquired with key 10277c8
+2026-01-27 23:16:41	INF	[17090]	ipcs/Semaphore/163852:	Acquired with key 10277c9
+2026-01-27 23:16:41	INF	[17090]	ipcs/SharedMemory/753686/SharedVector<Item<1>, 1024ul>:	Acquired with key 10277c7
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Attached - item size: 1 cap: 1024
+2026-01-27 23:16:41	INF	[17090]	services/WarehouseService:	Created warehouse: t6a
+2026-01-27 23:16:41	INF	[17091]	ipcs/Semaphore/163849:	Acquired with key 10275a5
+2026-01-27 23:16:41	INF	[17090]	ipcs/Semaphore/163856:	Acquired with key 102791b
+2026-01-27 23:16:41	INF	[17090]	actors/Deliverer/t6-deliverer:	Created
+2026-01-27 23:16:41	INF	[17091]	ipcs/Semaphore/163853:	Acquired with key 1027814
+2026-01-27 23:16:41	INF	[17091]	ipcs/Semaphore/163854:	Acquired with key 1027824
+2026-01-27 23:16:41	INF	[17090]	ipcs/SharedMemory/753688/ProcessStats:	Acquired with key 102791b
+2026-01-27 23:16:41	INF	[17091]	ipcs/Semaphore/163855:	Acquired with key 102782d
+2026-01-27 23:16:41	INF	[17091]	ipcs/SharedMemory/753687/SharedVector<Item<1>, 1024ul>:	Acquired with key 1027814
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Attached - item size: 1 cap: 1024
+2026-01-27 23:16:41	INF	[17091]	services/WarehouseService:	Created warehouse: t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	ipcs/Semaphore/163850:	Acquired with key 10277c7
+2026-01-27 23:16:41	INF	[17091]	ipcs/Semaphore/163851:	Acquired with key 10277c8
+2026-01-27 23:16:41	INF	[17091]	ipcs/Semaphore/163852:	Acquired with key 10277c9
+2026-01-27 23:16:41	INF	[17091]	ipcs/SharedMemory/753686/SharedVector<Item<1>, 1024ul>:	Acquired with key 10277c7
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Attached - item size: 1 cap: 1024
+2026-01-27 23:16:41	INF	[17091]	services/WarehouseService:	Created warehouse: t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	ipcs/Semaphore/163857:	Acquired with key 102791c
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Created
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	ipcs/SharedMemory/753689/ProcessStats:	Acquired with key 102791c
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6b:	Added item t6b
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	stations/Warehouse/t6a:	Fetched item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Retrieved t6a
+2026-01-27 23:16:41	INF	[17090]	stations/Warehouse/t6a:	Added item t6a
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Produced t6b
+2026-01-27 23:16:41	INF	[17091]	actors/Worker/t6-worker:	Received SIGTERM - terminating
+2026-01-27 23:16:41	INF	[17091]	ipcs/SharedMemory/753689/ProcessStats:	Detached
+2026-01-27 23:16:41	INF	[17088]	services/WorkersService:	(Soft) Deleted worker: t6-worker
+2026-01-27 23:16:41	INF	[17088]	Worker state: STOPPED
+2026-01-27 23:16:41	INF	[17088]	Deliverer state: RUNNING
+2026-01-27 23:16:41	INF	[17088]	services/WarehouseService:	Locking Warehouses
+2026-01-27 23:16:41	WAR	[17088]	services/WorkersService:	Worker is terminated: t6-worker
+2026-01-27 23:16:41	INF	[17088]	services/DeliverersService:	Reloading deliverer: t6-deliverer
+2026-01-27 23:16:41	INF	[17090]	actors/Deliverer/t6-deliverer:	Received SIGHUP - reloading
+2026-01-27 23:16:41	INF	[17090]	actors/Deliverer/t6-deliverer:	Received SIGCONT - resuming
+2026-01-27 23:16:41	INF	[17090]	ipcs/SharedMemory/753686/SharedVector<Item<1>, 1024ul>:	Detached
+2026-01-27 23:16:41	INF	[17090]	services/WarehouseService:	Deleted warehouse: t6a
+2026-01-27 23:16:41	INF	[17088]	stations/Warehouse/t6a:	Saved to file warehouses/t6a.json
+2026-01-27 23:16:41	INF	[17088]	ipcs/SharedMemory/753686/SharedVector<Item<1>, 1024ul>:	Detached
+2026-01-27 23:16:41	INF	[17088]	ipcs/SharedMemory/753686/SharedVector<Item<1>, 1024ul>:	Deleted
+2026-01-27 23:16:41	INF	[17088]	ipcs/Semaphore/163852:	Deleted
+2026-01-27 23:16:41	INF	[17088]	ipcs/Semaphore/163851:	Deleted
+2026-01-27 23:16:41	INF	[17088]	ipcs/Semaphore/163850:	Deleted
+2026-01-27 23:16:41	INF	[17088]	services/WarehouseService:	Deleted warehouse: t6a
+2026-01-27 23:16:41	INF	[17088]	stations/Warehouse/t6b:	Saved to file warehouses/t6b.json
+2026-01-27 23:16:41	INF	[17088]	ipcs/SharedMemory/753687/SharedVector<Item<1>, 1024ul>:	Detached
+2026-01-27 23:16:41	INF	[17088]	ipcs/SharedMemory/753687/SharedVector<Item<1>, 1024ul>:	Deleted
+2026-01-27 23:16:41	INF	[17088]	ipcs/Semaphore/163855:	Deleted
+2026-01-27 23:16:41	INF	[17088]	ipcs/Semaphore/163854:	Deleted
+2026-01-27 23:16:41	INF	[17088]	ipcs/Semaphore/163853:	Deleted
+2026-01-27 23:16:41	INF	[17088]	services/WarehouseService:	Deleted warehouse: t6b
+2026-01-27 23:16:41	INF	[17088]	services/WarehouseService:	Unlocking Warehouses
+2026-01-27 23:16:41	WAR	[17090]	services/WarehouseService:	Failed to create warehouse: t6a
+2026-01-27 23:16:41	INF	[17090]	actors/Deliverer/t6-deliverer:	Received SIGUSR1 - pausing
+2026-01-27 23:16:41	INF	[17088]	Worker state: STOPPED
+2026-01-27 23:16:41	INF	[17088]	Deliverer state: PAUSED
+2026-01-27 23:16:41	INF	[17088]	Test 5 finished
+2026-01-27 23:16:43	INF	[17088]	ipcs/SharedMemory/753688/ProcessStats:	Detached
+2026-01-27 23:16:43	INF	[17088]	ipcs/SharedMemory/753688/ProcessStats:	Deleted
+2026-01-27 23:16:43	INF	[17088]	ipcs/Semaphore/163856:	Deleted
+2026-01-27 23:16:43	INF	[17088]	ipcs/SharedMemory/753689/ProcessStats:	Detached
+2026-01-27 23:16:43	INF	[17088]	ipcs/SharedMemory/753689/ProcessStats:	Deleted
+2026-01-27 23:16:43	INF	[17088]	ipcs/Semaphore/163857:	Deleted
+2026-01-27 23:16:43	INF	[17088]	services/WarehouseService:	Clearing warehouses
+2026-01-27 23:16:43	INF	[17088]	ipcs/Semaphore/163849:	Deleted

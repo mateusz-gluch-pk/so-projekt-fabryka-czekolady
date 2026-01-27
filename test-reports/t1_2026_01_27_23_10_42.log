@@ -1,0 +1,420 @@
+2026-01-27 23:10:42	INF	[16132]	ipcs/SharedMemory/622641/SharedVector<Message, 1024ul>:	Initializing
+2026-01-27 23:10:42	INF	[16132]	ipcs/SharedMemory/622641/SharedVector<Message, 1024ul>:	Created with key 10275a1
+2026-01-27 23:10:42	DBG	[16132]	logging/key:	Fetched logging/t1.key - 10275a1
+2026-01-27 23:10:42	DBG	[16132]	logging/key:	Fetched logging/t1.key - 10275a1
+2026-01-27 23:10:42	INF	[16132]	ipcs/SharedMemory/622641/SharedVector<Message, 1024ul>:	Acquired with key 10275a1
+2026-01-27 23:10:42	INF	[16132]	actors/LogCollector/t1:	TTY output enabled
+2026-01-27 23:10:42	INF	[16132]	actors/LogCollector/t1:	Created
+2026-01-27 23:10:42	DBG	[16132]	processes/key:	Creating processes/t1.key
+2026-01-27 23:10:42	DBG	[16132]	processes/key:	Fetched processes/t1.key - 10275a3
+2026-01-27 23:10:42	INF	[16132]	ipcs/SharedMemory/622642/ProcessStats:	Initializing
+2026-01-27 23:10:42	INF	[16132]	ipcs/SharedMemory/622642/ProcessStats:	Created with key 10275a3
+2026-01-27 23:10:42	INF	[16132]	processes/ProcessController/16134:	Created
+2026-01-27 23:10:42	DBG	[16132]	services/key:	Creating services/warehouses.key
+2026-01-27 23:10:42	DBG	[16132]	services/key:	Fetched services/warehouses.key - 10275a5
+2026-01-27 23:10:42	INF	[16132]	ipcs/Semaphore/65587:	Created with value 1 and key 10275a5
+2026-01-27 23:10:42	DBG	[16132]	ipcs/Semaphore/65587:	Locked
+2026-01-27 23:10:42	DBG	[16132]	warehouses/key:	Creating warehouses/t1.key
+2026-01-27 23:10:42	DBG	[16132]	warehouses/key:	Fetched warehouses/t1.key - 10275a7
+2026-01-27 23:10:42	INF	[16132]	ipcs/Semaphore/65588:	Created with value 1 and key 10275a7
+2026-01-27 23:10:42	DBG	[16132]	warehouses/key:	Creating warehouses/t1_full.key
+2026-01-27 23:10:42	DBG	[16132]	warehouses/key:	Fetched warehouses/t1_full.key - 10275a8
+2026-01-27 23:10:42	INF	[16132]	ipcs/Semaphore/65589:	Created with value 1 and key 10275a8
+2026-01-27 23:10:42	DBG	[16132]	warehouses/key:	Creating warehouses/t1_empty.key
+2026-01-27 23:10:42	DBG	[16132]	warehouses/key:	Fetched warehouses/t1_empty.key - 10275a9
+2026-01-27 23:10:42	INF	[16132]	ipcs/Semaphore/65590:	Created with value 1 and key 10275a9
+2026-01-27 23:10:42	DBG	[16132]	warehouses/key:	Fetched warehouses/t1.key - 10275a7
+2026-01-27 23:10:42	INF	[16132]	ipcs/SharedMemory/622643/SharedVector<Item<1>, 1024ul>:	Initializing
+2026-01-27 23:10:42	INF	[16132]	ipcs/SharedMemory/622643/SharedVector<Item<1>, 1024ul>:	Created with key 10275a7
+2026-01-27 23:10:42	DBG	[16132]	ipcs/SharedMemory/622643/SharedVector<Item<1>, 1024ul>:	Fetching pointer
+2026-01-27 23:10:42	INF	[16132]	stations/Warehouse/t1:	Initializing
+2026-01-27 23:10:42	DBG	[16132]	ipcs/Semaphore/65590:	Locked
+2026-01-27 23:10:42	INF	[16132]	stations/Warehouse/t1:	Created - item size: 1 cap: 1024
+2026-01-27 23:10:42	INF	[16132]	services/WarehouseService:	Created warehouse: t1
+2026-01-27 23:10:42	DBG	[16132]	ipcs/Semaphore/65587:	Unlocked
+2026-01-27 23:10:42	DBG	[16132]	processes/key:	Creating processes/t1-deliverer.key
+2026-01-27 23:10:42	DBG	[16132]	processes/key:	Fetched processes/t1-deliverer.key - 10275aa
+2026-01-27 23:10:42	INF	[16132]	ipcs/Semaphore/65591:	Created with value 1 and key 10275aa
+2026-01-27 23:10:42	INF	[16132]	actors/Deliverer/t1-deliverer:	Created
+2026-01-27 23:10:42	DBG	[16132]	processes/key:	Fetched processes/t1-deliverer.key - 10275aa
+2026-01-27 23:10:42	INF	[16132]	ipcs/SharedMemory/622644/ProcessStats:	Initializing
+2026-01-27 23:10:42	INF	[16132]	ipcs/SharedMemory/622644/ProcessStats:	Created with key 10275aa
+2026-01-27 23:10:42	INF	[16132]	processes/ProcessController/16135:	Created
+2026-01-27 23:10:42	DBG	[16132]	ipcs/SharedMemory/622644/ProcessStats:	Fetching pointer
+2026-01-27 23:10:42	INF	[16132]	services/DeliverersService:	Created deliverer: t1-deliverer
+2026-01-27 23:10:42	DBG	[16135]	services/key:	Fetched services/warehouses.key - 10275a5
+2026-01-27 23:10:42	INF	[16135]	ipcs/Semaphore/65587:	Acquired with key 10275a5
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Locked
+2026-01-27 23:10:42	DBG	[16135]	warehouses/key:	Fetched warehouses/t1.key - 10275a7
+2026-01-27 23:10:42	INF	[16135]	ipcs/Semaphore/65588:	Acquired with key 10275a7
+2026-01-27 23:10:42	DBG	[16135]	warehouses/key:	Fetched warehouses/t1_full.key - 10275a8
+2026-01-27 23:10:42	INF	[16135]	ipcs/Semaphore/65589:	Acquired with key 10275a8
+2026-01-27 23:10:42	DBG	[16135]	warehouses/key:	Fetched warehouses/t1_empty.key - 10275a9
+2026-01-27 23:10:42	INF	[16135]	ipcs/Semaphore/65590:	Acquired with key 10275a9
+2026-01-27 23:10:42	DBG	[16135]	warehouses/key:	Fetched warehouses/t1.key - 10275a7
+2026-01-27 23:10:42	INF	[16135]	ipcs/SharedMemory/622643/SharedVector<Item<1>, 1024ul>:	Acquired with key 10275a7
+2026-01-27 23:10:42	DBG	[16135]	ipcs/SharedMemory/622643/SharedVector<Item<1>, 1024ul>:	Fetching pointer
+2026-01-27 23:10:42	INF	[16135]	stations/Warehouse/t1:	Attached - item size: 1 cap: 1024
+2026-01-27 23:10:42	INF	[16135]	services/WarehouseService:	Created warehouse: t1
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	processes/key:	Fetched processes/t1-deliverer.key - 10275aa
+2026-01-27 23:10:42	INF	[16135]	ipcs/Semaphore/65591:	Acquired with key 10275aa
+2026-01-27 23:10:42	INF	[16135]	actors/Deliverer/t1-deliverer:	Created
+2026-01-27 23:10:42	DBG	[16135]	processes/key:	Fetched processes/t1-deliverer.key - 10275aa
+2026-01-27 23:10:42	INF	[16135]	ipcs/SharedMemory/622644/ProcessStats:	Acquired with key 10275aa
+2026-01-27 23:10:42	DBG	[16135]	ipcs/SharedMemory/622644/ProcessStats:	Fetching pointer
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Delivering item to warehouse
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Locked
+2026-01-27 23:10:42	DBG	[16135]	services/WarehouseService:	Fetched warehouse: t1
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Locked
+2026-01-27 23:10:42	INF	[16135]	stations/Warehouse/t1:	Added item t1
+2026-01-27 23:10:42	DBG	[16135]	stations/Warehouse/t1:	Capacity: 1/1024
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65590:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Loop completed
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Delivering item to warehouse
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Locked
+2026-01-27 23:10:42	DBG	[16135]	services/WarehouseService:	Fetched warehouse: t1
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Locked
+2026-01-27 23:10:42	INF	[16135]	stations/Warehouse/t1:	Added item t1
+2026-01-27 23:10:42	DBG	[16135]	stations/Warehouse/t1:	Capacity: 2/1024
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Loop completed
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Delivering item to warehouse
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Locked
+2026-01-27 23:10:42	DBG	[16135]	services/WarehouseService:	Fetched warehouse: t1
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Locked
+2026-01-27 23:10:42	INF	[16135]	stations/Warehouse/t1:	Added item t1
+2026-01-27 23:10:42	DBG	[16135]	stations/Warehouse/t1:	Capacity: 3/1024
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Loop completed
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Delivering item to warehouse
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Locked
+2026-01-27 23:10:42	DBG	[16135]	services/WarehouseService:	Fetched warehouse: t1
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Locked
+2026-01-27 23:10:42	INF	[16135]	stations/Warehouse/t1:	Added item t1
+2026-01-27 23:10:42	DBG	[16135]	stations/Warehouse/t1:	Capacity: 4/1024
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Loop completed
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Delivering item to warehouse
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Locked
+2026-01-27 23:10:42	DBG	[16135]	services/WarehouseService:	Fetched warehouse: t1
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Locked
+2026-01-27 23:10:42	INF	[16135]	stations/Warehouse/t1:	Added item t1
+2026-01-27 23:10:42	DBG	[16135]	stations/Warehouse/t1:	Capacity: 5/1024
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Loop completed
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Delivering item to warehouse
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Locked
+2026-01-27 23:10:42	DBG	[16135]	services/WarehouseService:	Fetched warehouse: t1
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Locked
+2026-01-27 23:10:42	INF	[16135]	stations/Warehouse/t1:	Added item t1
+2026-01-27 23:10:42	DBG	[16135]	stations/Warehouse/t1:	Capacity: 6/1024
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Loop completed
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Delivering item to warehouse
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Locked
+2026-01-27 23:10:42	DBG	[16135]	services/WarehouseService:	Fetched warehouse: t1
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Locked
+2026-01-27 23:10:42	INF	[16135]	stations/Warehouse/t1:	Added item t1
+2026-01-27 23:10:42	DBG	[16135]	stations/Warehouse/t1:	Capacity: 7/1024
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Loop completed
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Delivering item to warehouse
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Locked
+2026-01-27 23:10:42	DBG	[16135]	services/WarehouseService:	Fetched warehouse: t1
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Locked
+2026-01-27 23:10:42	INF	[16135]	stations/Warehouse/t1:	Added item t1
+2026-01-27 23:10:42	DBG	[16135]	stations/Warehouse/t1:	Capacity: 8/1024
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Loop completed
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Delivering item to warehouse
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Locked
+2026-01-27 23:10:42	DBG	[16135]	services/WarehouseService:	Fetched warehouse: t1
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Locked
+2026-01-27 23:10:42	INF	[16135]	stations/Warehouse/t1:	Added item t1
+2026-01-27 23:10:42	DBG	[16135]	stations/Warehouse/t1:	Capacity: 9/1024
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Loop completed
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Delivering item to warehouse
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Locked
+2026-01-27 23:10:42	DBG	[16135]	services/WarehouseService:	Fetched warehouse: t1
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Locked
+2026-01-27 23:10:42	INF	[16135]	stations/Warehouse/t1:	Added item t1
+2026-01-27 23:10:42	DBG	[16135]	stations/Warehouse/t1:	Capacity: 10/1024
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Loop completed
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Delivering item to warehouse
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Locked
+2026-01-27 23:10:42	DBG	[16135]	services/WarehouseService:	Fetched warehouse: t1
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Locked
+2026-01-27 23:10:42	INF	[16135]	stations/Warehouse/t1:	Added item t1
+2026-01-27 23:10:42	DBG	[16135]	stations/Warehouse/t1:	Capacity: 11/1024
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Loop completed
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Delivering item to warehouse
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Locked
+2026-01-27 23:10:42	DBG	[16135]	services/WarehouseService:	Fetched warehouse: t1
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Locked
+2026-01-27 23:10:42	INF	[16135]	stations/Warehouse/t1:	Added item t1
+2026-01-27 23:10:42	DBG	[16135]	stations/Warehouse/t1:	Capacity: 12/1024
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Loop completed
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Delivering item to warehouse
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Locked
+2026-01-27 23:10:42	DBG	[16135]	services/WarehouseService:	Fetched warehouse: t1
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Locked
+2026-01-27 23:10:42	INF	[16135]	stations/Warehouse/t1:	Added item t1
+2026-01-27 23:10:42	DBG	[16135]	stations/Warehouse/t1:	Capacity: 13/1024
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Loop completed
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Delivering item to warehouse
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Locked
+2026-01-27 23:10:42	DBG	[16135]	services/WarehouseService:	Fetched warehouse: t1
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Locked
+2026-01-27 23:10:42	INF	[16135]	stations/Warehouse/t1:	Added item t1
+2026-01-27 23:10:42	DBG	[16135]	stations/Warehouse/t1:	Capacity: 14/1024
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Loop completed
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Delivering item to warehouse
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Locked
+2026-01-27 23:10:42	DBG	[16135]	services/WarehouseService:	Fetched warehouse: t1
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Locked
+2026-01-27 23:10:42	INF	[16135]	stations/Warehouse/t1:	Added item t1
+2026-01-27 23:10:42	DBG	[16135]	stations/Warehouse/t1:	Capacity: 15/1024
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Loop completed
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Delivering item to warehouse
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Locked
+2026-01-27 23:10:42	DBG	[16135]	services/WarehouseService:	Fetched warehouse: t1
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Locked
+2026-01-27 23:10:42	INF	[16135]	stations/Warehouse/t1:	Added item t1
+2026-01-27 23:10:42	DBG	[16135]	stations/Warehouse/t1:	Capacity: 16/1024
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Loop completed
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Delivering item to warehouse
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Locked
+2026-01-27 23:10:42	DBG	[16135]	services/WarehouseService:	Fetched warehouse: t1
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Locked
+2026-01-27 23:10:42	INF	[16135]	stations/Warehouse/t1:	Added item t1
+2026-01-27 23:10:42	DBG	[16135]	stations/Warehouse/t1:	Capacity: 17/1024
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Loop completed
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Delivering item to warehouse
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Locked
+2026-01-27 23:10:42	DBG	[16135]	services/WarehouseService:	Fetched warehouse: t1
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Locked
+2026-01-27 23:10:42	INF	[16135]	stations/Warehouse/t1:	Added item t1
+2026-01-27 23:10:42	DBG	[16135]	stations/Warehouse/t1:	Capacity: 18/1024
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Loop completed
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Delivering item to warehouse
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Locked
+2026-01-27 23:10:42	DBG	[16135]	services/WarehouseService:	Fetched warehouse: t1
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Locked
+2026-01-27 23:10:42	INF	[16135]	stations/Warehouse/t1:	Added item t1
+2026-01-27 23:10:42	DBG	[16135]	stations/Warehouse/t1:	Capacity: 19/1024
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Loop completed
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Delivering item to warehouse
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Locked
+2026-01-27 23:10:42	DBG	[16135]	services/WarehouseService:	Fetched warehouse: t1
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Locked
+2026-01-27 23:10:42	INF	[16135]	stations/Warehouse/t1:	Added item t1
+2026-01-27 23:10:42	DBG	[16135]	stations/Warehouse/t1:	Capacity: 20/1024
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Loop completed
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Delivering item to warehouse
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Locked
+2026-01-27 23:10:42	DBG	[16135]	services/WarehouseService:	Fetched warehouse: t1
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Locked
+2026-01-27 23:10:42	INF	[16135]	stations/Warehouse/t1:	Added item t1
+2026-01-27 23:10:42	DBG	[16135]	stations/Warehouse/t1:	Capacity: 21/1024
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Loop completed
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Delivering item to warehouse
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Locked
+2026-01-27 23:10:42	DBG	[16135]	services/WarehouseService:	Fetched warehouse: t1
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Locked
+2026-01-27 23:10:42	INF	[16135]	stations/Warehouse/t1:	Added item t1
+2026-01-27 23:10:42	DBG	[16135]	stations/Warehouse/t1:	Capacity: 22/1024
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Loop completed
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Delivering item to warehouse
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Locked
+2026-01-27 23:10:42	DBG	[16135]	services/WarehouseService:	Fetched warehouse: t1
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Locked
+2026-01-27 23:10:42	INF	[16135]	stations/Warehouse/t1:	Added item t1
+2026-01-27 23:10:42	DBG	[16135]	stations/Warehouse/t1:	Capacity: 23/1024
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Loop completed
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Delivering item to warehouse
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Locked
+2026-01-27 23:10:42	DBG	[16135]	services/WarehouseService:	Fetched warehouse: t1
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Locked
+2026-01-27 23:10:42	INF	[16135]	stations/Warehouse/t1:	Added item t1
+2026-01-27 23:10:42	DBG	[16135]	stations/Warehouse/t1:	Capacity: 24/1024
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Loop completed
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Delivering item to warehouse
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Locked
+2026-01-27 23:10:42	DBG	[16135]	services/WarehouseService:	Fetched warehouse: t1
+2026-01-27 23:10:42	DBG	[16132]	ipcs/SharedMemory/622644/ProcessStats:	Fetching pointer
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65587:	Unlocked
+2026-01-27 23:10:42	INF	[16132]	services/DeliverersService:	Pausing deliverer: t1-deliverer
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Locked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Locked
+2026-01-27 23:10:42	DBG	[16132]	processes/ProcessController/16135:	Sending SIGUSR1(stop)
+2026-01-27 23:10:42	DBG	[16132]	ipcs/SharedMemory/622644/ProcessStats:	Fetching pointer
+2026-01-27 23:10:42	DBG	[16135]	processes/ProcessController/0:	Received SIGUSR1(stop)
+2026-01-27 23:10:42	INF	[16135]	actors/Deliverer/t1-deliverer:	Received SIGUSR1 - pausing
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65591:	Locked
+2026-01-27 23:10:42	DBG	[16135]	stations/Warehouse/t1:	Capacity: 25/1024
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65589:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	ipcs/Semaphore/65588:	Unlocked
+2026-01-27 23:10:42	DBG	[16135]	actors/Deliverer/t1-deliverer:	Loop completed
+2026-01-27 23:10:42	DBG	[16132]	ipcs/SharedMemory/622644/ProcessStats:	Fetching pointer
+2026-01-27 23:10:42	INF	[16132]	Deliverer state: PAUSED
+2026-01-27 23:10:42	INF	[16132]	Items in warehouse: 25
+2026-01-27 23:10:42	INF	[16132]	Test 1 finished
+2026-01-27 23:10:42	DBG	[16132]	ipcs/SharedMemory/622644/ProcessStats:	Fetching pointer
+2026-01-27 23:10:42	DBG	[16132]	processes/ProcessController/16135:	Sending SIGTERM
+2026-01-27 23:10:42	DBG	[16135]	processes/ProcessController/0:	Received SIGTERM
+2026-01-27 23:10:42	INF	[16135]	actors/Deliverer/t1-deliverer:	Received SIGTERM - terminating
+2026-01-27 23:10:42	INF	[16135]	ipcs/SharedMemory/622644/ProcessStats:	Detached
+2026-01-27 23:10:42	DBG	[16132]	processes/ProcessController/16135:	Terminated
+2026-01-27 23:10:42	INF	[16132]	ipcs/SharedMemory/622644/ProcessStats:	Detached
+2026-01-27 23:10:42	INF	[16132]	ipcs/SharedMemory/622644/ProcessStats:	Deleted
+2026-01-27 23:10:42	INF	[16132]	ipcs/Semaphore/65591:	Deleted
+2026-01-27 23:10:42	INF	[16132]	services/WarehouseService:	Clearing warehouses
+2026-01-27 23:10:42	INF	[16132]	stations/Warehouse/t1:	Saved to file warehouses/t1.json
+2026-01-27 23:10:42	DBG	[16132]	ipcs/Semaphore/65588:	Locked
+2026-01-27 23:10:42	INF	[16132]	ipcs/SharedMemory/622643/SharedVector<Item<1>, 1024ul>:	Detached
+2026-01-27 23:10:42	INF	[16132]	ipcs/SharedMemory/622643/SharedVector<Item<1>, 1024ul>:	Deleted
+2026-01-27 23:10:42	INF	[16132]	ipcs/Semaphore/65590:	Deleted
+2026-01-27 23:10:42	INF	[16132]	ipcs/Semaphore/65589:	Deleted
+2026-01-27 23:10:42	INF	[16132]	ipcs/Semaphore/65588:	Deleted
+2026-01-27 23:10:42	INF	[16132]	ipcs/Semaphore/65587:	Deleted
+2026-01-27 23:10:42	DBG	[16132]	processes/ProcessController/16134:	Sending SIGTERM

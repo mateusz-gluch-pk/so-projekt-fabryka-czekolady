@@ -1,0 +1,191 @@
+2026-01-27 23:11:49	INF	[16207]	ipcs/SharedMemory/622646/SharedVector<Message, 1024ul>:	Initializing
+2026-01-27 23:11:49	INF	[16207]	ipcs/SharedMemory/622646/SharedVector<Message, 1024ul>:	Created with key 102759e
+2026-01-27 23:11:49	DBG	[16207]	logging/key:	Fetched logging/t2.key - 102759e
+2026-01-27 23:11:49	DBG	[16207]	logging/key:	Fetched logging/t2.key - 102759e
+2026-01-27 23:11:49	INF	[16207]	ipcs/SharedMemory/622646/SharedVector<Message, 1024ul>:	Acquired with key 102759e
+2026-01-27 23:11:49	INF	[16207]	actors/LogCollector/t2:	TTY output enabled
+2026-01-27 23:11:49	INF	[16207]	actors/LogCollector/t2:	Created
+2026-01-27 23:11:49	DBG	[16207]	processes/key:	Creating processes/t2.key
+2026-01-27 23:11:49	DBG	[16207]	processes/key:	Fetched processes/t2.key - 10275af
+2026-01-27 23:11:49	INF	[16207]	ipcs/SharedMemory/622647/ProcessStats:	Initializing
+2026-01-27 23:11:49	INF	[16207]	ipcs/SharedMemory/622647/ProcessStats:	Created with key 10275af
+2026-01-27 23:11:49	INF	[16207]	processes/ProcessController/16208:	Created
+2026-01-27 23:11:49	DBG	[16207]	services/key:	Fetched services/warehouses.key - 10275a5
+2026-01-27 23:11:49	INF	[16207]	ipcs/Semaphore/65592:	Created with value 1 and key 10275a5
+2026-01-27 23:11:49	DBG	[16207]	ipcs/Semaphore/65592:	Locked
+2026-01-27 23:11:49	DBG	[16207]	warehouses/key:	Creating warehouses/t2a.key
+2026-01-27 23:11:49	DBG	[16207]	warehouses/key:	Fetched warehouses/t2a.key - 10275b0
+2026-01-27 23:11:49	INF	[16207]	ipcs/Semaphore/65593:	Created with value 1 and key 10275b0
+2026-01-27 23:11:49	DBG	[16207]	warehouses/key:	Creating warehouses/t2a_full.key
+2026-01-27 23:11:49	DBG	[16207]	warehouses/key:	Fetched warehouses/t2a_full.key - 10275b1
+2026-01-27 23:11:49	INF	[16207]	ipcs/Semaphore/65594:	Created with value 1 and key 10275b1
+2026-01-27 23:11:49	DBG	[16207]	warehouses/key:	Creating warehouses/t2a_empty.key
+2026-01-27 23:11:49	DBG	[16207]	warehouses/key:	Fetched warehouses/t2a_empty.key - 10275b2
+2026-01-27 23:11:49	INF	[16207]	ipcs/Semaphore/65595:	Created with value 1 and key 10275b2
+2026-01-27 23:11:49	DBG	[16207]	warehouses/key:	Fetched warehouses/t2a.key - 10275b0
+2026-01-27 23:11:49	INF	[16207]	ipcs/SharedMemory/622648/SharedVector<Item<1>, 1024ul>:	Initializing
+2026-01-27 23:11:49	INF	[16207]	ipcs/SharedMemory/622648/SharedVector<Item<1>, 1024ul>:	Created with key 10275b0
+2026-01-27 23:11:49	DBG	[16207]	ipcs/SharedMemory/622648/SharedVector<Item<1>, 1024ul>:	Fetching pointer
+2026-01-27 23:11:49	INF	[16207]	stations/Warehouse/t2a:	Initializing
+2026-01-27 23:11:49	DBG	[16207]	ipcs/Semaphore/65595:	Locked
+2026-01-27 23:11:49	INF	[16207]	stations/Warehouse/t2a:	Created - item size: 1 cap: 1024
+2026-01-27 23:11:49	INF	[16207]	services/WarehouseService:	Created warehouse: t2a
+2026-01-27 23:11:49	DBG	[16207]	ipcs/Semaphore/65592:	Unlocked
+2026-01-27 23:11:49	DBG	[16207]	ipcs/Semaphore/65594:	Locked
+2026-01-27 23:11:49	DBG	[16207]	ipcs/Semaphore/65593:	Locked
+2026-01-27 23:11:49	INF	[16207]	stations/Warehouse/t2a:	Added item t2a
+2026-01-27 23:11:49	DBG	[16207]	stations/Warehouse/t2a:	Capacity: 1/1024
+2026-01-27 23:11:49	DBG	[16207]	ipcs/Semaphore/65595:	Unlocked
+2026-01-27 23:11:49	DBG	[16207]	ipcs/Semaphore/65594:	Unlocked
+2026-01-27 23:11:49	DBG	[16207]	ipcs/Semaphore/65593:	Unlocked
+2026-01-27 23:11:49	DBG	[16207]	ipcs/Semaphore/65592:	Locked
+2026-01-27 23:11:49	DBG	[16207]	warehouses/key:	Creating warehouses/t2b.key
+2026-01-27 23:11:49	DBG	[16207]	warehouses/key:	Fetched warehouses/t2b.key - 10275b4
+2026-01-27 23:11:49	INF	[16207]	ipcs/Semaphore/65596:	Created with value 1 and key 10275b4
+2026-01-27 23:11:49	DBG	[16207]	warehouses/key:	Creating warehouses/t2b_full.key
+2026-01-27 23:11:49	DBG	[16207]	warehouses/key:	Fetched warehouses/t2b_full.key - 10275b6
+2026-01-27 23:11:49	INF	[16207]	ipcs/Semaphore/65597:	Created with value 1 and key 10275b6
+2026-01-27 23:11:49	DBG	[16207]	warehouses/key:	Creating warehouses/t2b_empty.key
+2026-01-27 23:11:49	DBG	[16207]	warehouses/key:	Fetched warehouses/t2b_empty.key - 10275b7
+2026-01-27 23:11:49	INF	[16207]	ipcs/Semaphore/65598:	Created with value 1 and key 10275b7
+2026-01-27 23:11:49	DBG	[16207]	warehouses/key:	Fetched warehouses/t2b.key - 10275b4
+2026-01-27 23:11:49	INF	[16207]	ipcs/SharedMemory/622649/SharedVector<Item<1>, 1024ul>:	Initializing
+2026-01-27 23:11:49	INF	[16207]	ipcs/SharedMemory/622649/SharedVector<Item<1>, 1024ul>:	Created with key 10275b4
+2026-01-27 23:11:49	DBG	[16207]	ipcs/SharedMemory/622649/SharedVector<Item<1>, 1024ul>:	Fetching pointer
+2026-01-27 23:11:49	INF	[16207]	stations/Warehouse/t2b:	Initializing
+2026-01-27 23:11:49	DBG	[16207]	ipcs/Semaphore/65598:	Locked
+2026-01-27 23:11:49	INF	[16207]	stations/Warehouse/t2b:	Created - item size: 1 cap: 1024
+2026-01-27 23:11:49	INF	[16207]	services/WarehouseService:	Created warehouse: t2b
+2026-01-27 23:11:49	DBG	[16207]	ipcs/Semaphore/65592:	Unlocked
+2026-01-27 23:11:49	DBG	[16207]	processes/key:	Creating processes/t2-worker.key
+2026-01-27 23:11:49	DBG	[16207]	processes/key:	Fetched processes/t2-worker.key - 10275b8
+2026-01-27 23:11:49	INF	[16207]	ipcs/Semaphore/65599:	Created with value 1 and key 10275b8
+2026-01-27 23:11:49	INF	[16207]	actors/Worker/t2-worker:	Created
+2026-01-27 23:11:49	DBG	[16207]	processes/key:	Fetched processes/t2-worker.key - 10275b8
+2026-01-27 23:11:49	INF	[16207]	ipcs/SharedMemory/622650/ProcessStats:	Initializing
+2026-01-27 23:11:49	INF	[16207]	ipcs/SharedMemory/622650/ProcessStats:	Created with key 10275b8
+2026-01-27 23:11:49	INF	[16207]	processes/ProcessController/16209:	Created
+2026-01-27 23:11:49	DBG	[16207]	ipcs/SharedMemory/622650/ProcessStats:	Fetching pointer
+2026-01-27 23:11:49	INF	[16207]	services/WorkersService:	Created worker: t2-worker
+2026-01-27 23:11:49	DBG	[16209]	services/key:	Fetched services/warehouses.key - 10275a5
+2026-01-27 23:11:49	INF	[16209]	ipcs/Semaphore/65592:	Acquired with key 10275a5
+2026-01-27 23:11:49	DBG	[16209]	ipcs/Semaphore/65592:	Locked
+2026-01-27 23:11:49	DBG	[16209]	warehouses/key:	Fetched warehouses/t2b.key - 10275b4
+2026-01-27 23:11:49	INF	[16209]	ipcs/Semaphore/65596:	Acquired with key 10275b4
+2026-01-27 23:11:49	DBG	[16209]	warehouses/key:	Fetched warehouses/t2b_full.key - 10275b6
+2026-01-27 23:11:49	INF	[16209]	ipcs/Semaphore/65597:	Acquired with key 10275b6
+2026-01-27 23:11:49	DBG	[16209]	warehouses/key:	Fetched warehouses/t2b_empty.key - 10275b7
+2026-01-27 23:11:49	INF	[16209]	ipcs/Semaphore/65598:	Acquired with key 10275b7
+2026-01-27 23:11:49	DBG	[16209]	warehouses/key:	Fetched warehouses/t2b.key - 10275b4
+2026-01-27 23:11:49	INF	[16209]	ipcs/SharedMemory/622649/SharedVector<Item<1>, 1024ul>:	Acquired with key 10275b4
+2026-01-27 23:11:49	DBG	[16209]	ipcs/SharedMemory/622649/SharedVector<Item<1>, 1024ul>:	Fetching pointer
+2026-01-27 23:11:49	INF	[16209]	stations/Warehouse/t2b:	Attached - item size: 1 cap: 1024
+2026-01-27 23:11:49	INF	[16209]	services/WarehouseService:	Created warehouse: t2b
+2026-01-27 23:11:49	DBG	[16209]	ipcs/Semaphore/65592:	Unlocked
+2026-01-27 23:11:49	DBG	[16209]	ipcs/Semaphore/65592:	Locked
+2026-01-27 23:11:49	DBG	[16209]	warehouses/key:	Fetched warehouses/t2a.key - 10275b0
+2026-01-27 23:11:49	INF	[16209]	ipcs/Semaphore/65593:	Acquired with key 10275b0
+2026-01-27 23:11:49	DBG	[16209]	warehouses/key:	Fetched warehouses/t2a_full.key - 10275b1
+2026-01-27 23:11:49	INF	[16209]	ipcs/Semaphore/65594:	Acquired with key 10275b1
+2026-01-27 23:11:49	DBG	[16209]	warehouses/key:	Fetched warehouses/t2a_empty.key - 10275b2
+2026-01-27 23:11:49	INF	[16209]	ipcs/Semaphore/65595:	Acquired with key 10275b2
+2026-01-27 23:11:49	DBG	[16209]	warehouses/key:	Fetched warehouses/t2a.key - 10275b0
+2026-01-27 23:11:49	INF	[16209]	ipcs/SharedMemory/622648/SharedVector<Item<1>, 1024ul>:	Acquired with key 10275b0
+2026-01-27 23:11:49	DBG	[16209]	ipcs/SharedMemory/622648/SharedVector<Item<1>, 1024ul>:	Fetching pointer
+2026-01-27 23:11:49	INF	[16209]	stations/Warehouse/t2a:	Attached - item size: 1 cap: 1024
+2026-01-27 23:11:49	INF	[16209]	services/WarehouseService:	Created warehouse: t2a
+2026-01-27 23:11:49	DBG	[16209]	ipcs/Semaphore/65592:	Unlocked
+2026-01-27 23:11:49	DBG	[16209]	processes/key:	Fetched processes/t2-worker.key - 10275b8
+2026-01-27 23:11:49	INF	[16209]	ipcs/Semaphore/65599:	Acquired with key 10275b8
+2026-01-27 23:11:49	INF	[16209]	actors/Worker/t2-worker:	Created
+2026-01-27 23:11:49	DBG	[16209]	processes/key:	Fetched processes/t2-worker.key - 10275b8
+2026-01-27 23:11:49	INF	[16209]	ipcs/SharedMemory/622650/ProcessStats:	Acquired with key 10275b8
+2026-01-27 23:11:49	DBG	[16209]	ipcs/SharedMemory/622650/ProcessStats:	Fetching pointer
+2026-01-27 23:11:49	DBG	[16209]	ipcs/Semaphore/65599:	Locked
+2026-01-27 23:11:49	DBG	[16209]	ipcs/Semaphore/65599:	Unlocked
+2026-01-27 23:11:49	DBG	[16209]	actors/Worker/t2-worker:	Producing t2b
+2026-01-27 23:11:49	DBG	[16209]	actors/Worker/t2-worker:	Failed to produce t2b, missing t2a
+2026-01-27 23:11:49	DBG	[16209]	ipcs/Semaphore/65592:	Locked
+2026-01-27 23:11:49	DBG	[16209]	services/WarehouseService:	Fetched warehouse: t2a
+2026-01-27 23:11:49	DBG	[16209]	ipcs/Semaphore/65592:	Unlocked
+2026-01-27 23:11:49	DBG	[16209]	ipcs/Semaphore/65595:	Locked
+2026-01-27 23:11:49	DBG	[16209]	ipcs/Semaphore/65593:	Locked
+2026-01-27 23:11:49	INF	[16209]	stations/Warehouse/t2a:	Fetched item t2a
+2026-01-27 23:11:49	DBG	[16209]	stations/Warehouse/t2a:	Capacity: 0/1024
+2026-01-27 23:11:49	DBG	[16209]	ipcs/Semaphore/65593:	Unlocked
+2026-01-27 23:11:49	INF	[16209]	actors/Worker/t2-worker:	Retrieved t2a
+2026-01-27 23:11:49	DBG	[16209]	actors/Worker/t2-worker:	Loop completed
+2026-01-27 23:11:49	DBG	[16209]	ipcs/Semaphore/65599:	Locked
+2026-01-27 23:11:49	DBG	[16209]	ipcs/Semaphore/65599:	Unlocked
+2026-01-27 23:11:49	DBG	[16209]	actors/Worker/t2-worker:	Producing t2b
+2026-01-27 23:11:49	INF	[16209]	actors/Worker/t2-worker:	Produced t2b
+2026-01-27 23:11:49	DBG	[16209]	ipcs/Semaphore/65592:	Locked
+2026-01-27 23:11:49	DBG	[16209]	services/WarehouseService:	Fetched warehouse: t2b
+2026-01-27 23:11:49	DBG	[16209]	ipcs/Semaphore/65592:	Unlocked
+2026-01-27 23:11:49	DBG	[16209]	ipcs/Semaphore/65597:	Locked
+2026-01-27 23:11:49	DBG	[16209]	ipcs/Semaphore/65596:	Locked
+2026-01-27 23:11:49	INF	[16209]	stations/Warehouse/t2b:	Added item t2b
+2026-01-27 23:11:49	DBG	[16209]	stations/Warehouse/t2b:	Capacity: 1/1024
+2026-01-27 23:11:49	DBG	[16209]	ipcs/Semaphore/65598:	Unlocked
+2026-01-27 23:11:49	DBG	[16209]	ipcs/Semaphore/65597:	Unlocked
+2026-01-27 23:11:49	DBG	[16209]	ipcs/Semaphore/65596:	Unlocked
+2026-01-27 23:11:49	DBG	[16209]	actors/Worker/t2-worker:	Loop completed
+2026-01-27 23:11:49	DBG	[16209]	ipcs/Semaphore/65599:	Locked
+2026-01-27 23:11:49	DBG	[16209]	ipcs/Semaphore/65599:	Unlocked
+2026-01-27 23:11:49	DBG	[16209]	actors/Worker/t2-worker:	Producing t2b
+2026-01-27 23:11:49	DBG	[16209]	actors/Worker/t2-worker:	Failed to produce t2b, missing t2a
+2026-01-27 23:11:49	DBG	[16209]	ipcs/Semaphore/65592:	Locked
+2026-01-27 23:11:49	DBG	[16209]	services/WarehouseService:	Fetched warehouse: t2a
+2026-01-27 23:11:49	DBG	[16209]	ipcs/Semaphore/65592:	Unlocked
+2026-01-27 23:11:49	DBG	[16207]	ipcs/SharedMemory/622650/ProcessStats:	Fetching pointer
+2026-01-27 23:11:49	INF	[16207]	services/WorkersService:	Pausing worker: t2-worker
+2026-01-27 23:11:49	DBG	[16207]	processes/ProcessController/16209:	Sending SIGUSR1(stop)
+2026-01-27 23:11:49	DBG	[16207]	ipcs/SharedMemory/622650/ProcessStats:	Fetching pointer
+2026-01-27 23:11:49	DBG	[16209]	processes/ProcessController/0:	Received SIGUSR1(stop)
+2026-01-27 23:11:49	INF	[16209]	actors/Worker/t2-worker:	Received SIGUSR1 - pausing
+2026-01-27 23:11:49	DBG	[16209]	ipcs/Semaphore/65599:	Locked
+2026-01-27 23:11:49	DBG	[16207]	ipcs/SharedMemory/622650/ProcessStats:	Fetching pointer
+2026-01-27 23:11:49	DBG	[16207]	ipcs/SharedMemory/622650/ProcessStats:	Fetching pointer
+2026-01-27 23:11:49	INF	[16207]	services/WorkersService:	Resuming worker: t2-worker
+2026-01-27 23:11:49	DBG	[16207]	processes/ProcessController/16209:	Sending SIGCONT
+2026-01-27 23:11:49	DBG	[16209]	processes/ProcessController/0:	Received SIGCONT
+2026-01-27 23:11:49	INF	[16209]	actors/Worker/t2-worker:	Received SIGCONT - resuming
+2026-01-27 23:11:49	DBG	[16209]	ipcs/Semaphore/65599:	Unlocked
+2026-01-27 23:11:49	DBG	[16207]	ipcs/SharedMemory/622650/ProcessStats:	Fetching pointer
+2026-01-27 23:11:49	INF	[16207]	services/WorkersService:	Pausing worker: t2-worker
+2026-01-27 23:11:49	DBG	[16207]	processes/ProcessController/16209:	Sending SIGUSR1(stop)
+2026-01-27 23:11:49	DBG	[16207]	ipcs/SharedMemory/622650/ProcessStats:	Fetching pointer
+2026-01-27 23:11:49	DBG	[16209]	processes/ProcessController/0:	Received SIGUSR1(stop)
+2026-01-27 23:11:49	INF	[16209]	actors/Worker/t2-worker:	Received SIGUSR1 - pausing
+2026-01-27 23:11:49	DBG	[16209]	ipcs/Semaphore/65599:	Locked
+2026-01-27 23:11:49	DBG	[16207]	ipcs/SharedMemory/622650/ProcessStats:	Fetching pointer
+2026-01-27 23:11:49	INF	[16207]	Worker state: PAUSED
+2026-01-27 23:11:49	INF	[16207]	Items in warehouse A: 0
+2026-01-27 23:11:49	INF	[16207]	Items in warehouse B: 1
+2026-01-27 23:11:49	INF	[16207]	Test 2 finished
+2026-01-27 23:11:49	DBG	[16207]	ipcs/SharedMemory/622650/ProcessStats:	Fetching pointer
+2026-01-27 23:11:49	DBG	[16207]	processes/ProcessController/16209:	Sending SIGTERM
+2026-01-27 23:11:49	DBG	[16209]	processes/ProcessController/0:	Received SIGTERM
+2026-01-27 23:11:49	INF	[16209]	actors/Worker/t2-worker:	Received SIGTERM - terminating
+2026-01-27 23:11:49	INF	[16209]	ipcs/SharedMemory/622650/ProcessStats:	Detached
+2026-01-27 23:11:49	DBG	[16207]	processes/ProcessController/16209:	Terminated
+2026-01-27 23:11:49	INF	[16207]	ipcs/SharedMemory/622650/ProcessStats:	Detached
+2026-01-27 23:11:49	INF	[16207]	ipcs/SharedMemory/622650/ProcessStats:	Deleted
+2026-01-27 23:11:49	INF	[16207]	ipcs/Semaphore/65599:	Deleted
+2026-01-27 23:11:49	INF	[16207]	services/WarehouseService:	Clearing warehouses
+2026-01-27 23:11:49	INF	[16207]	stations/Warehouse/t2a:	Saved to file warehouses/t2a.json
+2026-01-27 23:11:49	DBG	[16207]	ipcs/Semaphore/65593:	Locked
+2026-01-27 23:11:49	INF	[16207]	ipcs/SharedMemory/622648/SharedVector<Item<1>, 1024ul>:	Detached
+2026-01-27 23:11:49	INF	[16207]	ipcs/SharedMemory/622648/SharedVector<Item<1>, 1024ul>:	Deleted
+2026-01-27 23:11:49	INF	[16207]	ipcs/Semaphore/65595:	Deleted
+2026-01-27 23:11:49	INF	[16207]	ipcs/Semaphore/65594:	Deleted
+2026-01-27 23:11:49	INF	[16207]	ipcs/Semaphore/65593:	Deleted
+2026-01-27 23:11:49	INF	[16207]	stations/Warehouse/t2b:	Saved to file warehouses/t2b.json
+2026-01-27 23:11:49	DBG	[16207]	ipcs/Semaphore/65596:	Locked
+2026-01-27 23:11:49	INF	[16207]	ipcs/SharedMemory/622649/SharedVector<Item<1>, 1024ul>:	Detached
+2026-01-27 23:11:49	INF	[16207]	ipcs/SharedMemory/622649/SharedVector<Item<1>, 1024ul>:	Deleted
+2026-01-27 23:11:49	INF	[16207]	ipcs/Semaphore/65598:	Deleted
+2026-01-27 23:11:49	INF	[16207]	ipcs/Semaphore/65597:	Deleted
+2026-01-27 23:11:49	INF	[16207]	ipcs/Semaphore/65596:	Deleted
+2026-01-27 23:11:49	INF	[16207]	ipcs/Semaphore/65592:	Deleted
+2026-01-27 23:11:49	DBG	[16207]	processes/ProcessController/16208:	Sending SIGTERM

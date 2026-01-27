@@ -1,0 +1,1746 @@
+2026-01-27 23:16:08	INF	[17056]	ipcs/SharedMemory/753668/SharedVector<Message, 1024ul>:	Initializing
+2026-01-27 23:16:08	INF	[17056]	ipcs/SharedMemory/753668/SharedVector<Message, 1024ul>:	Created with key 1027446
+2026-01-27 23:16:08	INF	[17056]	ipcs/SharedMemory/753668/SharedVector<Message, 1024ul>:	Acquired with key 1027446
+2026-01-27 23:16:08	INF	[17056]	actors/LogCollector/t5:	TTY output enabled
+2026-01-27 23:16:08	INF	[17056]	actors/LogCollector/t5:	Created
+2026-01-27 23:16:08	INF	[17056]	ipcs/SharedMemory/753669/ProcessStats:	Initializing
+2026-01-27 23:16:08	INF	[17056]	ipcs/SharedMemory/753669/ProcessStats:	Created with key 10275bd
+2026-01-27 23:16:08	INF	[17056]	processes/ProcessController/17057:	Created
+2026-01-27 23:16:08	INF	[17056]	ipcs/Semaphore/163840:	Created with value 1 and key 10275a5
+2026-01-27 23:16:08	INF	[17056]	ipcs/Semaphore/163841:	Created with value 1 and key 10275be
+2026-01-27 23:16:08	INF	[17056]	ipcs/Semaphore/163842:	Created with value 1 and key 10275bf
+2026-01-27 23:16:08	INF	[17056]	ipcs/Semaphore/163843:	Created with value 1 and key 10277b3
+2026-01-27 23:16:08	INF	[17056]	ipcs/SharedMemory/753674/SharedVector<Item<1>, 1024ul>:	Initializing
+2026-01-27 23:16:08	INF	[17056]	ipcs/SharedMemory/753674/SharedVector<Item<1>, 1024ul>:	Created with key 10275be
+2026-01-27 23:16:08	INF	[17056]	stations/Warehouse/t5a:	Loaded state
+2026-01-27 23:16:08	INF	[17056]	stations/Warehouse/t5a:	Created - item size: 1 cap: 1024
+2026-01-27 23:16:08	INF	[17056]	services/WarehouseService:	Created warehouse: t5a
+2026-01-27 23:16:08	INF	[17056]	ipcs/Semaphore/163844:	Created with value 1 and key 10277b7
+2026-01-27 23:16:08	INF	[17056]	ipcs/Semaphore/163845:	Created with value 1 and key 10277b8
+2026-01-27 23:16:08	INF	[17056]	ipcs/Semaphore/163846:	Created with value 1 and key 10277b9
+2026-01-27 23:16:08	INF	[17056]	ipcs/SharedMemory/753675/SharedVector<Item<1>, 1024ul>:	Initializing
+2026-01-27 23:16:08	INF	[17056]	ipcs/SharedMemory/753675/SharedVector<Item<1>, 1024ul>:	Created with key 10277b7
+2026-01-27 23:16:08	INF	[17056]	stations/Warehouse/t5b:	Initializing
+2026-01-27 23:16:08	INF	[17056]	stations/Warehouse/t5b:	Created - item size: 1 cap: 1024
+2026-01-27 23:16:08	INF	[17056]	services/WarehouseService:	Created warehouse: t5b
+2026-01-27 23:16:08	INF	[17056]	ipcs/Semaphore/163847:	Created with value 1 and key 10277ba
+2026-01-27 23:16:08	INF	[17056]	actors/Deliverer/t5-deliverer:	Created
+2026-01-27 23:16:08	INF	[17056]	ipcs/SharedMemory/753678/ProcessStats:	Initializing
+2026-01-27 23:16:08	INF	[17056]	ipcs/SharedMemory/753678/ProcessStats:	Created with key 10277ba
+2026-01-27 23:16:08	INF	[17056]	processes/ProcessController/17058:	Created
+2026-01-27 23:16:08	INF	[17056]	services/DeliverersService:	Created deliverer: t5-deliverer
+2026-01-27 23:16:08	INF	[17056]	ipcs/Semaphore/163848:	Created with value 1 and key 10277bb
+2026-01-27 23:16:08	INF	[17056]	actors/Worker/t5-worker:	Created
+2026-01-27 23:16:08	INF	[17056]	ipcs/SharedMemory/753679/ProcessStats:	Initializing
+2026-01-27 23:16:08	INF	[17056]	ipcs/SharedMemory/753679/ProcessStats:	Created with key 10277bb
+2026-01-27 23:16:08	INF	[17056]	processes/ProcessController/17059:	Created
+2026-01-27 23:16:08	INF	[17056]	services/WorkersService:	Created worker: t5-worker
+2026-01-27 23:16:08	INF	[17058]	ipcs/Semaphore/163840:	Acquired with key 10275a5
+2026-01-27 23:16:08	INF	[17058]	ipcs/Semaphore/163841:	Acquired with key 10275be
+2026-01-27 23:16:08	INF	[17058]	ipcs/Semaphore/163842:	Acquired with key 10275bf
+2026-01-27 23:16:08	INF	[17058]	ipcs/Semaphore/163843:	Acquired with key 10277b3
+2026-01-27 23:16:08	INF	[17058]	ipcs/SharedMemory/753674/SharedVector<Item<1>, 1024ul>:	Acquired with key 10275be
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Attached - item size: 1 cap: 1024
+2026-01-27 23:16:08	INF	[17058]	services/WarehouseService:	Created warehouse: t5a
+2026-01-27 23:16:08	INF	[17058]	ipcs/Semaphore/163847:	Acquired with key 10277ba
+2026-01-27 23:16:08	INF	[17058]	actors/Deliverer/t5-deliverer:	Created
+2026-01-27 23:16:08	INF	[17058]	ipcs/SharedMemory/753678/ProcessStats:	Acquired with key 10277ba
+2026-01-27 23:16:08	WAR	[17058]	stations/Warehouse/t5a:	Max capacity - cannot add item t5a
+2026-01-27 23:16:08	INF	[17059]	ipcs/Semaphore/163840:	Acquired with key 10275a5
+2026-01-27 23:16:08	INF	[17059]	ipcs/Semaphore/163844:	Acquired with key 10277b7
+2026-01-27 23:16:08	INF	[17059]	ipcs/Semaphore/163845:	Acquired with key 10277b8
+2026-01-27 23:16:08	INF	[17059]	ipcs/Semaphore/163846:	Acquired with key 10277b9
+2026-01-27 23:16:08	INF	[17059]	ipcs/SharedMemory/753675/SharedVector<Item<1>, 1024ul>:	Acquired with key 10277b7
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Attached - item size: 1 cap: 1024
+2026-01-27 23:16:08	INF	[17059]	services/WarehouseService:	Created warehouse: t5b
+2026-01-27 23:16:08	INF	[17059]	ipcs/Semaphore/163841:	Acquired with key 10275be
+2026-01-27 23:16:08	INF	[17059]	ipcs/Semaphore/163842:	Acquired with key 10275bf
+2026-01-27 23:16:08	INF	[17059]	ipcs/Semaphore/163843:	Acquired with key 10277b3
+2026-01-27 23:16:08	INF	[17059]	ipcs/SharedMemory/753674/SharedVector<Item<1>, 1024ul>:	Acquired with key 10275be
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Attached - item size: 1 cap: 1024
+2026-01-27 23:16:08	INF	[17059]	services/WarehouseService:	Created warehouse: t5a
+2026-01-27 23:16:08	INF	[17059]	ipcs/Semaphore/163848:	Acquired with key 10277bb
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Created
+2026-01-27 23:16:08	INF	[17059]	ipcs/SharedMemory/753679/ProcessStats:	Acquired with key 10277bb
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5a:	Fetched item t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Retrieved t5a
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Produced t5b
+2026-01-27 23:16:08	INF	[17056]	services/WarehouseService:	Locking Warehouses
+2026-01-27 23:16:08	INF	[17059]	stations/Warehouse/t5b:	Added item t5b
+2026-01-27 23:16:08	INF	[17058]	stations/Warehouse/t5a:	Added item t5a
+2026-01-27 23:16:08	INF	[17056]	services/WorkersService:	Reloading worker: t5-worker
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Received SIGHUP - reloading
+2026-01-27 23:16:08	INF	[17056]	services/DeliverersService:	Reloading deliverer: t5-deliverer
+2026-01-27 23:16:08	INF	[17058]	actors/Deliverer/t5-deliverer:	Received SIGHUP - reloading
+2026-01-27 23:16:08	INF	[17058]	actors/Deliverer/t5-deliverer:	Received SIGCONT - resuming
+2026-01-27 23:16:08	INF	[17058]	ipcs/SharedMemory/753674/SharedVector<Item<1>, 1024ul>:	Detached
+2026-01-27 23:16:08	INF	[17058]	services/WarehouseService:	Deleted warehouse: t5a
+2026-01-27 23:16:08	INF	[17056]	stations/Warehouse/t5a:	Saved to file warehouses/t5a.json
+2026-01-27 23:16:08	INF	[17056]	ipcs/SharedMemory/753674/SharedVector<Item<1>, 1024ul>:	Detached
+2026-01-27 23:16:08	INF	[17056]	ipcs/SharedMemory/753674/SharedVector<Item<1>, 1024ul>:	Deleted
+2026-01-27 23:16:08	INF	[17056]	ipcs/Semaphore/163843:	Deleted
+2026-01-27 23:16:08	INF	[17056]	ipcs/Semaphore/163842:	Deleted
+2026-01-27 23:16:08	INF	[17056]	ipcs/Semaphore/163841:	Deleted
+2026-01-27 23:16:08	INF	[17056]	services/WarehouseService:	Deleted warehouse: t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Received SIGCONT - resuming
+2026-01-27 23:16:08	ERR	[17059]	ipcs/Semaphore/163842:	Cannot get value
+2026-01-27 23:16:08	ERR	[17059]	ipcs/Semaphore/163843:	Cannot get value
+2026-01-27 23:16:08	INF	[17059]	ipcs/SharedMemory/753674/SharedVector<Item<1>, 1024ul>:	Detached
+2026-01-27 23:16:08	INF	[17059]	services/WarehouseService:	Deleted warehouse: t5a
+2026-01-27 23:16:08	INF	[17059]	ipcs/SharedMemory/753675/SharedVector<Item<1>, 1024ul>:	Detached
+2026-01-27 23:16:08	INF	[17056]	stations/Warehouse/t5b:	Saved to file warehouses/t5b.json
+2026-01-27 23:16:08	INF	[17059]	services/WarehouseService:	Deleted warehouse: t5b
+2026-01-27 23:16:08	INF	[17056]	ipcs/SharedMemory/753675/SharedVector<Item<1>, 1024ul>:	Detached
+2026-01-27 23:16:08	INF	[17056]	ipcs/SharedMemory/753675/SharedVector<Item<1>, 1024ul>:	Deleted
+2026-01-27 23:16:08	INF	[17056]	ipcs/Semaphore/163846:	Deleted
+2026-01-27 23:16:08	INF	[17056]	ipcs/Semaphore/163845:	Deleted
+2026-01-27 23:16:08	INF	[17056]	ipcs/Semaphore/163844:	Deleted
+2026-01-27 23:16:08	INF	[17056]	services/WarehouseService:	Deleted warehouse: t5b
+2026-01-27 23:16:08	INF	[17056]	services/WarehouseService:	Unlocking Warehouses
+2026-01-27 23:16:08	WAR	[17059]	services/WarehouseService:	Failed to create warehouse: t5a
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Received SIGUSR1 - pausing
+2026-01-27 23:16:08	ERR	[17059]	services/WarehouseService:	Warehouse not found: t5a
+2026-01-27 23:16:08	WAR	[17058]	services/WarehouseService:	Failed to create warehouse: t5a
+2026-01-27 23:16:08	ERR	[17059]	actors/Worker/t5-worker:	No warehouse found for t5a
+2026-01-27 23:16:08	INF	[17058]	actors/Deliverer/t5-deliverer:	Received SIGUSR1 - pausing
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Received SIGUSR1 - pausing
+2026-01-27 23:16:08	ERR	[17058]	services/WarehouseService:	Warehouse not found: t5a
+2026-01-27 23:16:08	INF	[17058]	actors/Deliverer/t5-deliverer:	Received SIGUSR1 - pausing
+2026-01-27 23:16:08	ERR	[17058]	actors/Deliverer/t5-deliverer:	Could not find dst warehouse
+2026-01-27 23:16:08	INF	[17056]	Worker state: PAUSED
+2026-01-27 23:16:08	INF	[17056]	Deliverer state: PAUSED
+2026-01-27 23:16:08	INF	[17056]	Test 5 finished
+2026-01-27 23:16:08	INF	[17058]	actors/Deliverer/t5-deliverer:	Received SIGTERM - terminating
+2026-01-27 23:16:08	INF	[17058]	ipcs/SharedMemory/753678/ProcessStats:	Detached
+2026-01-27 23:16:08	INF	[17056]	ipcs/SharedMemory/753678/ProcessStats:	Detached
+2026-01-27 23:16:08	INF	[17056]	ipcs/SharedMemory/753678/ProcessStats:	Deleted
+2026-01-27 23:16:08	INF	[17056]	ipcs/Semaphore/163847:	Deleted
+2026-01-27 23:16:08	INF	[17059]	actors/Worker/t5-worker:	Received SIGTERM - terminating
+2026-01-27 23:16:08	INF	[17059]	ipcs/SharedMemory/753679/ProcessStats:	Detached
+2026-01-27 23:16:08	INF	[17056]	ipcs/SharedMemory/753679/ProcessStats:	Detached
+2026-01-27 23:16:08	INF	[17056]	ipcs/SharedMemory/753679/ProcessStats:	Deleted
+2026-01-27 23:16:08	INF	[17056]	ipcs/Semaphore/163848:	Deleted
+2026-01-27 23:16:08	INF	[17056]	services/WarehouseService:	Clearing warehouses
+2026-01-27 23:16:08	INF	[17056]	ipcs/Semaphore/163840:	Deleted
