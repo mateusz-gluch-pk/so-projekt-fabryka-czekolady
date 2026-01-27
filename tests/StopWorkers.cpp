@@ -86,5 +86,6 @@ int main(int argc, char **argv) {
     log.warn("Items in warehouse T4A: %d", ia->usage());
     log.warn("Items in warehouse T4B: %d", ib->usage());
     log.warn("Test 4 finished");
+
     return 0;
 }

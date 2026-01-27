@@ -69,18 +69,15 @@ int main(int argc, char **argv) {
 
     // send PAUSE signal - deliverer will deliver exactly once
     workers.pause("t2-worker");
-    while (stats->state == RUNNING) {
-        usleep(TEST_TICK);
-    }
+    usleep(TEST_TICK);
 
     // resume worker - and immediately pause (1 loop)
     workers.resume("t2-worker");
     usleep(TEST_TICK);
-    workers.pause("t2-worker");
 
-    while (stats->state == RUNNING) {
-        usleep(TEST_TICK);
-    }
+    workers.pause("t2-worker");
+    usleep(TEST_TICK);
+
 
     log.info("Worker state: %s", state_to_string(stats->state).c_str());
     log.info("Items in warehouse A: %d", ia->usage());
