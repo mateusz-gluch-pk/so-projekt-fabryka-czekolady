@@ -12,7 +12,7 @@
 #include "services/DelivererService.h"
 #include "services/LoggerService.h"
 
-#define TEST_LOG_LEVEL MessageLevel::WARNING
+#define TEST_LOG_LEVEL MessageLevel::INFO
 
 #define TEST_WORKER_N 64
 #define TEST_WORKER_DELAY 0

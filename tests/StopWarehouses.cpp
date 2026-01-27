@@ -73,10 +73,10 @@ int main(int argc, char **argv) {
     if (w == nullptr) return 1;
 
     usleep(10*TEST_TICK);
+
     sv.stop_warehouses();
-    while (warehouses.get("t5a") != nullptr) {
-        usleep(TEST_TICK);
-    }
+
+    usleep(10*TEST_TICK);
 
     log.info(("Worker state: " + state_to_string(w->stats->state)).c_str());
     log.info(("Deliverer state: " + state_to_string(d->stats->state)).c_str());

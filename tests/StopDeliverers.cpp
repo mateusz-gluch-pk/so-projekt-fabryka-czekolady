@@ -11,7 +11,7 @@
 #include "services/LoggerService.h"
 
 // this test verifies concurrent behaviors - so WARN
-#define TEST_LOG_LEVEL MessageLevel::WARNING
+#define TEST_LOG_LEVEL MessageLevel::INFO
 
 #define TEST_DELIVERER_N 64
 #define TEST_DELIVERER_DELAY 0

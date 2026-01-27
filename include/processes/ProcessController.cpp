@@ -104,6 +104,7 @@ void ProcessController::reload() const {
 void ProcessController::setup_handlers() {
     // _cls->_log.debug(_cls->_msg("setting up signals").c_str());
     signal(SIGTERM, _handle_stop);
+    signal(SIGINT, _handle_stop);
     signal(SIGUSR1, _handle_pause);
     signal(SIGCONT, _handle_resume);
     signal(SIGHUP, _handle_reload);
